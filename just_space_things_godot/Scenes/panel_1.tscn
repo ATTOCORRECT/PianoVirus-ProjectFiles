@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dupcuybhbdxii"]
+
+[ext_resource type="PackedScene" uid="uid://6cr3iyntwfpf" path="res://Scenes/interactive.tscn" id="1_y7tre"]
+[ext_resource type="PackedScene" uid="uid://c0ouxo6t156h5" path="res://Scenes/test_panel.tscn" id="2_rceg3"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_68j71"]
+viewport_path = NodePath("Interactive/Viewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2quar"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_68j71")
+
+[node name="Panel 1" type="Node3D"]
+
+[node name="Interactive" parent="." instance=ExtResource("1_y7tre")]
+
+[node name="Display" parent="Interactive" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_2quar")
+
+[node name="Test_Panel" parent="Interactive/Viewport" index="0" instance=ExtResource("2_rceg3")]
+
+[editable path="Interactive"]

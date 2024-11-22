@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://6cr3iyntwfpf"]
+[gd_scene load_steps=6 format=3 uid="uid://6cr3iyntwfpf"]
 
 [ext_resource type="Script" path="res://Scenes/InteractionController.gd" id="1_a5q61"]
-[ext_resource type="PackedScene" uid="uid://c0ouxo6t156h5" path="res://Scenes/test_panel.tscn" id="2_3ivwa"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_g6cqb"]
 
@@ -28,7 +27,5 @@ surface_material_override/0 = SubResource("StandardMaterial3D_8qheq")
 shape = SubResource("BoxShape3D_6dqh1")
 
 [node name="Viewport" type="SubViewport" parent="."]
-
-[node name="Test_Panel" parent="Viewport" instance=ExtResource("2_3ivwa")]
 
 [connection signal="mouse_entered" from="Area" to="." method="_on_area_mouse_entered"]

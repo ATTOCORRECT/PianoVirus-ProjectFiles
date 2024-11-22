@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bcs17a4kflpae"]
+[gd_scene load_steps=7 format=3 uid="uid://bcs17a4kflpae"]
 
 [ext_resource type="PackedScene" uid="uid://deoqenkjkbrit" path="res://Scenes/Player/player.tscn" id="1_2w8ir"]
-[ext_resource type="PackedScene" uid="uid://6cr3iyntwfpf" path="res://Scenes/interactive.tscn" id="2_u3u36"]
+[ext_resource type="PackedScene" uid="uid://dupcuybhbdxii" path="res://Scenes/panel_1.tscn" id="2_4udp5"]
+[ext_resource type="PackedScene" uid="uid://bcqn1sjuldwm" path="res://Scenes/panel_2.tscn" id="3_obg2p"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_wi0oe"]
 
@@ -30,5 +31,8 @@ mesh = SubResource("BoxMesh_7ssmf")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.849634, 0.0360825, -0.526136, 0.470907, 0.397232, 0.787689, 0.23742, -0.917009, 0.32051, 0, 0, 0)
 
-[node name="Interactive" parent="." instance=ExtResource("2_u3u36")]
-transform = Transform3D(0.781819, 0.335072, -0.525819, 0.0780665, 0.784086, 0.615723, 0.618599, -0.522433, 0.586855, 0.766148, -0.609545, -0.8)
+[node name="Panel 1" parent="." instance=ExtResource("2_4udp5")]
+transform = Transform3D(0.917796, 0, 0.397052, 0, 1, 0, -0.397052, 0, 0.917796, -0.706324, 0, -1.40211)
+
+[node name="Panel 2" parent="." instance=ExtResource("3_obg2p")]
+transform = Transform3D(0.76712, 0, -0.641503, 0, 1, 0, 0.641503, 0, 0.76712, 0.929345, 0, -1.34875)
