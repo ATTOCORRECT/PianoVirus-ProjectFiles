@@ -1,9 +1,8 @@
 extends Node3D
 
-
-@onready var display = $Display
-@onready var area = $Area
-@onready var viewport = $Viewport
+var display: MeshInstance3D
+var area
+var viewport: Viewport
 
 var mesh_size = Vector2()
 
@@ -16,25 +15,28 @@ var last_mouse_position_2D = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	area.mouse_entered.connect(func(): mouse_entered = true)
+	display = $Display
+	area = $Area
+	viewport = $Viewport
+	
 	viewport.set_process_input(true)
-	pass # Replace with function body.
+
+func _process(delta: float) -> void:
+	var material = StandardMaterial3D.new()
+	material.albedo_texture = viewport.get_texture()
+	
+	display.mesh.surface_set_material(1, material)
 
 func _unhandled_input(event):
 	var is_mouse_event = false
 	if event is InputEventMouseMotion or event is InputEventMouseButton:
 		is_mouse_event = true
 	
-	if mouse_entered and (is_mouse_event or mouse_held):
+	if mouse_entered and (is_mouse_event):
 		handle_mouse(event)
-	elif not is_mouse_event:
-		viewport.push_input(event)
 
 func handle_mouse(event):
 	mesh_size = display.mesh.size
-	
-	if event is InputEventMouseButton or event is InputEventScreenTouch:
-		mouse_held = event.pressed
 	
 	var mouse_position_3D = find_mouse(event.global_position)
 	
@@ -51,7 +53,7 @@ func handle_mouse(event):
 	
 	var mouse_position_2D = Vector2(mouse_position_3D.x, -mouse_position_3D.y)
 	
-	mouse_position_2D.x += mesh_size.x / 2 # try making this vector wise
+	mouse_position_2D.x += mesh_size.x / 2
 	mouse_position_2D.y += mesh_size.y / 2
 	
 	# set to 0 - 1 scale
@@ -97,3 +99,11 @@ func find_mouse(event_position: Vector2):
 		return result.position
 	else:
 		return null
+
+
+func _on_area_mouse_entered() -> void:
+	mouse_entered = true
+
+
+func _on_area_mouse_exited() -> void:
+	mouse_entered = false

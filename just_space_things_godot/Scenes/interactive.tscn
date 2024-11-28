@@ -1,15 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://6cr3iyntwfpf"]
+[gd_scene load_steps=4 format=3 uid="uid://6cr3iyntwfpf"]
 
 [ext_resource type="Script" path="res://Scenes/InteractionController.gd" id="1_a5q61"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_g6cqb"]
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_1uai8"]
-viewport_path = NodePath("Viewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8qheq"]
-resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_1uai8")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6dqh1"]
 size = Vector3(1, 1, 0.01)
@@ -19,7 +12,6 @@ script = ExtResource("1_a5q61")
 
 [node name="Display" type="MeshInstance3D" parent="."]
 mesh = SubResource("QuadMesh_g6cqb")
-surface_material_override/0 = SubResource("StandardMaterial3D_8qheq")
 
 [node name="Area" type="Area3D" parent="."]
 
@@ -29,3 +21,4 @@ shape = SubResource("BoxShape3D_6dqh1")
 [node name="Viewport" type="SubViewport" parent="."]
 
 [connection signal="mouse_entered" from="Area" to="." method="_on_area_mouse_entered"]
+[connection signal="mouse_exited" from="Area" to="." method="_on_area_mouse_exited"]

@@ -3,19 +3,23 @@
 [ext_resource type="PackedScene" uid="uid://6cr3iyntwfpf" path="res://Scenes/interactive.tscn" id="1_y7tre"]
 [ext_resource type="PackedScene" uid="uid://c0ouxo6t156h5" path="res://Scenes/test_panel.tscn" id="2_rceg3"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_68j71"]
-viewport_path = NodePath("Interactive/Viewport")
+[sub_resource type="ViewportTexture" id="ViewportTexture_3wiqy"]
+viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2quar"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rakra"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_68j71")
+albedo_texture = SubResource("ViewportTexture_3wiqy")
 
 [node name="Panel 1" type="Node3D"]
 
 [node name="Interactive" parent="." instance=ExtResource("1_y7tre")]
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Display" parent="Interactive" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_2quar")
+surface_material_override/0 = SubResource("StandardMaterial3D_rakra")
+
+[node name="Viewport" parent="Interactive" index="2"]
+size = Vector2i(256, 512)
 
 [node name="Test_Panel" parent="Interactive/Viewport" index="0" instance=ExtResource("2_rceg3")]
 

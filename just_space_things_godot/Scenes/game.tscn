@@ -32,7 +32,7 @@ mesh = SubResource("BoxMesh_7ssmf")
 transform = Transform3D(0.849634, 0.0360825, -0.526136, 0.470907, 0.397232, 0.787689, 0.23742, -0.917009, 0.32051, 0, 0, 0)
 
 [node name="Panel 1" parent="." instance=ExtResource("2_4udp5")]
-transform = Transform3D(0.917796, 0, 0.397052, 0, 1, 0, -0.397052, 0, 0.917796, -0.706324, 0, -1.40211)
+transform = Transform3D(0.921856, 0, 0.387532, 0, 1, 0, -0.387532, 0, 0.921856, -0.633806, 0, -1.59643)
 
 [node name="Panel 2" parent="." instance=ExtResource("3_obg2p")]
-transform = Transform3D(0.76712, 0, -0.641503, 0, 1, 0, 0.641503, 0, 0.76712, 0.929345, 0, -1.34875)
+transform = Transform3D(0.860324, 0, -0.509747, 0, 1, 0, 0.509747, 0, 0.860324, 0.834692, 0, -1.53641)
