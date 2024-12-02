@@ -1,8 +1,8 @@
 extends Node3D
 
-var display: MeshInstance3D
-var area
-var viewport: Viewport
+@onready var display: MeshInstance3D = $Display
+@onready var area = $Area
+@onready var viewport: Viewport = $Viewport
 
 var mesh_size = Vector2()
 
@@ -15,17 +15,26 @@ var last_mouse_position_2D = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	display = $Display
-	area = $Area
-	viewport = $Viewport
 	
 	viewport.set_process_input(true)
+	
+	var material = StandardMaterial3D.new()
+	material.set_local_to_scene(true) 
+	
+	var viewport_texture = ViewportTexture.new()
+	viewport_texture.is_local_to_scene()
+	
+	viewport_texture = $Viewport.get_texture()
+	
+	material.albedo_texture = viewport_texture
+	
+	display.set_surface_override_material(0,material)
+	
+	print_debug(material.is_local_to_scene())
 
 func _process(delta: float) -> void:
-	var material = StandardMaterial3D.new()
-	material.albedo_texture = viewport.get_texture()
-	
-	display.mesh.surface_set_material(1, material)
+	pass
+
 
 func _unhandled_input(event):
 	var is_mouse_event = false

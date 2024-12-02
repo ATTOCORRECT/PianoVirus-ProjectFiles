@@ -1,20 +1,32 @@
-[gd_scene format=3 uid="uid://cnt2umgdl80jo"]
+[gd_scene load_steps=2 format=3 uid="uid://cnt2umgdl80jo"]
+
+[ext_resource type="Script" path="res://Scenes/test_panel_2.gd" id="1_tb6od"]
 
 [node name="Test Panel 2" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+script = ExtResource("1_tb6od")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_right = 312.0
-offset_bottom = 193.0
+offset_right = 392.0
+offset_bottom = 513.0
 color = Color(0.984314, 0.537255, 0.6, 1)
 
-[node name="VSlider" type="VSlider" parent="."]
+[node name="VSlider" type="VSlider" parent="ColorRect"]
 layout_mode = 0
-offset_right = 661.0
-offset_bottom = 346.0
+offset_right = 204.0
+offset_bottom = 495.0
+max_value = 10.0
+rounded = true
+tick_count = 11
+ticks_on_borders = true
+
+[node name="Button" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 419.0
+offset_right = 503.0
+offset_bottom = 501.0
+
+[connection signal="button_down" from="ColorRect/Button" to="." method="_on_button_button_down"]
