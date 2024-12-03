@@ -15,6 +15,8 @@ var left_look_dictionary
 var down_look_dictionary
 var right_look_dictionary
 
+@onready var swooshSFX = $SwooshSound
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	up_anchor = $"../Anchors/Up Anchor"
@@ -48,12 +50,18 @@ func set_look_target(anchor):
 func _input(event):
 	if event.is_action_pressed("look_up"):
 		set_look_target(up_look_dictionary[current_anchor])
+		swooshSFX.play()
 	
 	if event.is_action_pressed("look_left"):
 		set_look_target(left_look_dictionary[current_anchor])
+		swooshSFX.play()
 	
 	if event.is_action_pressed("look_down"):
 		set_look_target(down_look_dictionary[current_anchor])
+		swooshSFX.play()
 	
 	if event.is_action_pressed("look_right"):
 		set_look_target(right_look_dictionary[current_anchor])
+		swooshSFX.play()
+		
+	

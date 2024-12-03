@@ -1,9 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://bcs17a4kflpae"]
+[gd_scene load_steps=14 format=3 uid="uid://bcs17a4kflpae"]
 
 [ext_resource type="PackedScene" uid="uid://deoqenkjkbrit" path="res://Scenes/Player/player.tscn" id="1_2w8ir"]
+[ext_resource type="Script" path="res://Scenes/game.gd" id="1_xybtt"]
 [ext_resource type="PackedScene" uid="uid://dupcuybhbdxii" path="res://Scenes/Panels/Panel T1/panel_1.tscn" id="2_4udp5"]
 [ext_resource type="PackedScene" uid="uid://bcqn1sjuldwm" path="res://Scenes/Panels/Panel T2/panel_2.tscn" id="3_obg2p"]
 [ext_resource type="PackedScene" uid="uid://cm1b0io6v1ino" path="res://interactive_button.tscn" id="4_536go"]
+[ext_resource type="AudioStream" uid="uid://djxjyq2b5ifte" path="res://Sound/wip 3 no ending cropped.wav" id="6_am7dv"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_wi0oe"]
 
@@ -95,6 +97,7 @@ _data = {
 }
 
 [node name="Game" type="Node3D"]
+script = ExtResource("1_xybtt")
 
 [node name="Player" parent="." instance=ExtResource("1_2w8ir")]
 
@@ -128,3 +131,8 @@ transform = Transform3D(0.860324, 0, -0.509747, 0, 1, 0, 0.509747, 0, 0.860324, 
 
 [node name="Interactive Button" parent="." instance=ExtResource("4_536go")]
 transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -1.29771, -0.577002, -0.391513)
+
+[node name="Wip3NoEndingCropped" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_am7dv")
+volume_db = -7.045
+autoplay = true

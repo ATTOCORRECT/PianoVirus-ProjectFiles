@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://djxjyq2b5ifte"
+path="res://.godot/imported/wip 3 no ending cropped.wav-63427788d9b64a366075c4acd3a37fa9.sample"
+
+[deps]
+
+source_file="res://Sound/wip 3 no ending cropped.wav"
+dest_files=["res://.godot/imported/wip 3 no ending cropped.wav-63427788d9b64a366075c4acd3a37fa9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

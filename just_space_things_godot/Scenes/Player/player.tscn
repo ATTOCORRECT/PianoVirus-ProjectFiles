@@ -1,11 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://deoqenkjkbrit"]
+[gd_scene load_steps=3 format=3 uid="uid://deoqenkjkbrit"]
 
 [ext_resource type="Script" path="res://Scenes/Player/LookController.gd" id="1_pnsh4"]
+[ext_resource type="AudioStream" uid="uid://cbo3thjv88atu" path="res://Sound/SwooshSound.wav" id="2_iv14h"]
 
 [node name="Player" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
 script = ExtResource("1_pnsh4")
+
+[node name="SwooshSound" type="AudioStreamPlayer" parent="Camera3D"]
+stream = ExtResource("2_iv14h")
+volume_db = 0.477
 
 [node name="Anchors" type="Node" parent="."]
 
