@@ -29,12 +29,6 @@ func _ready() -> void:
 	material.albedo_texture = viewport_texture
 	
 	display.set_surface_override_material(0,material)
-	
-	print_debug(material.is_local_to_scene())
-
-func _process(delta: float) -> void:
-	pass
-
 
 func _unhandled_input(event):
 	var is_mouse_event = false
@@ -98,8 +92,6 @@ func find_mouse(event_position: Vector2):
 	rayparm.to = rayparm.from + camera.project_ray_normal(event_position) * distance
 	rayparm.collide_with_bodies = false
 	rayparm.collide_with_areas = true
-	
-	#print_debug(camera.project_ray_origin(event_position))
 	
 	var result = dss.intersect_ray(rayparm)
 	

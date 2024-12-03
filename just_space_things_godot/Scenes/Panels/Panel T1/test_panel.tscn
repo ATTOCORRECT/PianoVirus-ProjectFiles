@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://c0ouxo6t156h5"]
 
-[ext_resource type="Script" path="res://Scenes/TestPanel.gd" id="1_7uoif"]
+[ext_resource type="Script" path="res://Scenes/Panels/Panel T1/TestPanel.gd" id="1_7uoif"]
 
-[node name="Test_Panel" type="Control"]
+[node name="Test Panel" type="Control"]
 layout_mode = 3
 anchor_right = 0.444
 anchor_bottom = 0.79

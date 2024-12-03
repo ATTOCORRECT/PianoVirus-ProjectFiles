@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cnt2umgdl80jo"]
 
-[ext_resource type="Script" path="res://Scenes/test_panel_2.gd" id="1_tb6od"]
+[ext_resource type="Script" path="res://Scenes/Panels/Panel T2/test_panel_2.gd" id="1_tb6od"]
 
 [node name="Test Panel 2" type="Control"]
 layout_mode = 3
