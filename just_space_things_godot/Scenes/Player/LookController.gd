@@ -1,7 +1,10 @@
 extends Node3D
+
 var look_target
-var currently_looking
+var currently_looking: Vector3
+
 const LOOK_SPEED = 10
+const TARGET_SIZE = 3
 
 var current_anchor
 
@@ -39,6 +42,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	currently_looking = lerp(currently_looking, look_target, delta * LOOK_SPEED)
 	look_at(currently_looking)
+	
+	field_of_view()
 
 func set_look_target(anchor):
 	if anchor != null:
@@ -57,3 +62,10 @@ func _input(event):
 	
 	if event.is_action_pressed("look_right"):
 		set_look_target(right_look_dictionary[current_anchor])
+
+func field_of_view():
+	var distance = currently_looking.distance_to(Vector3.ZERO)
+	
+	var fov = rad_to_deg(2 * atan(TARGET_SIZE / (2 * distance)))
+	
+	$".".set_fov(fov)

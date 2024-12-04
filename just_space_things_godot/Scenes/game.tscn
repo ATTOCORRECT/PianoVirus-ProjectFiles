@@ -98,13 +98,19 @@ _data = {
 
 [node name="Player" parent="." instance=ExtResource("1_2w8ir")]
 
+[node name="Down Anchor" parent="Player/Anchors" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0465045, -1.7682, -6.72338)
+
+[node name="Right Anchor" parent="Player/Anchors" index="3"]
+transform = Transform3D(4.99514, 0, 0, 0, 1, 0, 0, 0, -6.90267, 5.19856, -3.68591, -6.11328)
+
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.495993, -0.777344, -0.386945, 0.317972, -0.577266, 0.752102, -0.808013, 0.25, 0.533494, 0.0695107, -1.55919, -2.86058)
+transform = Transform3D(-0.495993, -0.777344, -0.386945, 0.317972, -0.577266, 0.752102, -0.808013, 0.25, 0.533493, 0.0695107, -1.55919, -2.86058)
 mesh = SubResource("CylinderMesh_wi0oe")
 skeleton = NodePath("../MeshInstance3D")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.129487, -0.808013, 0.574759, 0.574759, 0.533494, 0.620513, -0.808013, 0.25, 0.533494, 1.23135, -0.148794, -3.25541)
+transform = Transform3D(0.129487, -0.808013, 0.574759, 0.574759, 0.533494, 0.620513, -0.808013, 0.25, 0.533494, 5.25048, -3.7274, -6.2493)
 mesh = SubResource("SphereMesh_a7d6c")
 skeleton = NodePath("../MeshInstance3D")
 
@@ -128,3 +134,5 @@ transform = Transform3D(0.860324, 0, -0.509747, 0, 1, 0, 0.509747, 0, 0.860324, 
 
 [node name="Interactive Button" parent="." instance=ExtResource("4_536go")]
 transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -1.29771, -0.577002, -0.391513)
+
+[editable path="Player"]
