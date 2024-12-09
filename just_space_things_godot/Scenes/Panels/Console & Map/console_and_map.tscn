@@ -1,25 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://cuy3iisp0goct"]
+[gd_scene load_steps=13 format=3 uid="uid://cuy3iisp0goct"]
 
 [ext_resource type="PackedScene" uid="uid://o0s5h4bttqa8" path="res://Scenes/Panels/Console & Map/console.tscn" id="1_2idr0"]
 [ext_resource type="PackedScene" uid="uid://dsy03mo1qbdq3" path="res://Scenes/Panels/Console & Map/map.tscn" id="2_ioad0"]
 [ext_resource type="PackedScene" uid="uid://cm1b0io6v1ino" path="res://interactive_button.tscn" id="3_0cip7"]
 [ext_resource type="Texture2D" uid="uid://byxlx0t5bwyqm" path="res://Assets/Sprites/MAPBACKGROUND.png" id="3_ofnjb"]
-
-[sub_resource type="Animation" id="Animation_a1y55"]
-resource_name = "Switch_down"
-length = 2.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-1.59633, 0, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_vm6lc"]
 length = 5.0
@@ -47,9 +31,126 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(0, 0.1913, 0.00693345), Vector3(0, 0.190896, -0.0111559)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MeshInstance3D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.3, 2.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.194108, -0.108176), Vector3(0, 0.196338, -0.00820118)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MeshInstance3D3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2.3, 2.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.239867, 0.194108, -0.108114), Vector3(0.239867, 0.196338, -0.0081386)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MeshInstance3D2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2.3, 2.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.241451, 0.194108, -0.108176), Vector3(-0.241451, 0.196338, -0.00820118)]
+}
+
+[sub_resource type="Animation" id="Animation_a1y55"]
+resource_name = "Switch_down"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1.59633, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3tm2a"]
+resource_name = "Flip_Map"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.23333, 2.96667, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1.54849, 0, 0), Vector3(-1.54849, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.25, 2.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.1913, 0.00693345), Vector3(0, 0.190896, -0.0111559)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MeshInstance3D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.3, 2.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.194108, -0.108176), Vector3(0, 0.196338, -0.00820118)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MeshInstance3D3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2.3, 2.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.239867, 0.194108, -0.108114), Vector3(0.239867, 0.196338, -0.0081386)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MeshInstance3D2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2.3, 2.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.241451, 0.194108, -0.108176), Vector3(-0.241451, 0.196338, -0.00820118)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2u75y"]
 _data = {
+"Flip_Map": SubResource("Animation_3tm2a"),
 "RESET": SubResource("Animation_vm6lc"),
 "Switch_down": SubResource("Animation_a1y55")
 }
@@ -103,7 +204,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.278972, 0.9)
 
 [node name="Sprite3D" type="Sprite3D" parent="Map"]
 transform = Transform3D(0.064, 0, 0, 0, 0.064, -1.16415e-10, 0, 1.16415e-10, 0.064, 0, 0.1913, 0.00693345)
-visible = false
 texture = ExtResource("3_ofnjb")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Map"]
@@ -112,22 +212,19 @@ libraries = {
 }
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Map"]
-transform = Transform3D(0.162419, 0, 0, 0, -2.05263e-09, -0.162419, 0, 0.0469586, -7.09956e-09, 0, 0.196338, -0.00820118)
+transform = Transform3D(0.162419, 0, 0, 0, -2.09548e-09, -0.162419, 0, 0.0469586, -7.21775e-09, 0, 0.194108, -0.108176)
 mesh = SubResource("CylinderMesh_37aoj")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Map"]
-transform = Transform3D(0.162419, 0, 0, 0, -2.05263e-09, -0.162419, 0, 0.0469586, -7.09956e-09, 0.239867, 0.196338, -0.0081386)
+transform = Transform3D(0.162419, 0, 0, 0, -2.09548e-09, -0.162419, 0, 0.0469586, -7.21775e-09, 0.239867, 0.194108, -0.108114)
 mesh = SubResource("CylinderMesh_37aoj")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Map"]
-transform = Transform3D(0.162419, 0, 0, 0, -2.05263e-09, -0.162419, 0, 0.0469586, -7.09956e-09, -0.241451, 0.196338, -0.00820118)
+transform = Transform3D(0.162419, 0, 0, 0, -2.21189e-09, -0.162419, 0, 0.0469586, -7.45058e-09, -0.241451, 0.194108, -0.108176)
 mesh = SubResource("CylinderMesh_37aoj")
 
 [node name="Interactive Button" parent="." instance=ExtResource("3_0cip7")]
 transform = Transform3D(1, 0, 0, 0, 0.864494, -0.502643, 0, 0.502643, 0.864494, 0.536501, 0.402347, 0.833207)
-
-[node name="MeshInstance3D2" parent="Interactive Button" index="2"]
-transform = Transform3D(0.162887, 0, 0, 0, 0.0479453, -0.094796, 0, 0.0334857, 0.13573, 0, 0, 0.0263153)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Interactive Button"]
 libraries = {

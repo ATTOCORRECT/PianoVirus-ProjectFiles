@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bcs17a4kflpae"]
+[gd_scene load_steps=8 format=3 uid="uid://bcs17a4kflpae"]
 
 [ext_resource type="PackedScene" uid="uid://deoqenkjkbrit" path="res://Scenes/Player/player.tscn" id="1_2w8ir"]
 [ext_resource type="PackedScene" uid="uid://cn66ctg0in2ox" path="res://Assets/Models/AdScreen/JST_Prototype AdScreen.gltf" id="2_6wh14"]
+[ext_resource type="Texture2D" uid="uid://v8157m3bux8e" path="res://Assets/Sprites/SPACEBACKGROUND.png" id="5_tmoeb"]
+[ext_resource type="Texture2D" uid="uid://dcnv010tfcmlw" path="res://Assets/Sprites/TREND BACKGROUND.png" id="6_md78i"]
 [ext_resource type="PackedScene" uid="uid://cuy3iisp0goct" path="res://Scenes/Panels/Console & Map/console_and_map.tscn" id="7_ixr3o"]
+[ext_resource type="Texture2D" uid="uid://bexpfhp20rj6g" path="res://Assets/Sprites/ANALYTICSBACKGROUND.png" id="7_ln4ss"]
 [ext_resource type="PackedScene" uid="uid://8htrreom0a65" path="res://Assets/Models/Ship/JST_Prototype ShipBackground.gltf" id="8_bmx4a"]
 
 [node name="Game" type="Node3D"]
@@ -13,7 +16,7 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0103555, 0.8995, -9.3529)
 
 [node name="Left Anchor" parent="Player/Anchors" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.15112, 0.532652, -3.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.15112, -0.223404, -3.5)
 
 [node name="Down Anchor" parent="Player/Anchors" index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00933254, -2.87806)
@@ -29,10 +32,24 @@ transform = Transform3D(0.849634, 0.0360825, -0.526136, 0.470907, 0.397232, 0.78
 [node name="AdScreen" parent="ScreenModels" instance=ExtResource("2_6wh14")]
 transform = Transform3D(-0.948964, 0, -0.315384, 0, 1, 0, 0.315384, 0, -0.948964, -0.860765, -0.203858, -1.5251)
 
-[node name="Console and Map2" parent="ScreenModels" instance=ExtResource("7_ixr3o")]
+[node name="Console and Map" parent="ScreenModels" instance=ExtResource("7_ixr3o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00661993, -0.808399, -2.29502)
 
 [node name="ShipBackground" parent="." instance=ExtResource("8_bmx4a")]
 transform = Transform3D(-3.0402e-07, 0, 5.10061, 0, 5.14956, 0, -5.10061, 0, -3.0402e-07, 0.0013454, -1.07215, -1.74178)
+
+[node name="Sprites" type="Node" parent="."]
+
+[node name="BG" type="Sprite3D" parent="Sprites"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 8.32304, -28.5509)
+texture = ExtResource("5_tmoeb")
+
+[node name="Analytics" type="Sprite3D" parent="Sprites"]
+transform = Transform3D(0.154165, 0, -0.127409, 0, 0.2, 0, 0.127409, 0, 0.154165, 1.69928, -5.96046e-08, -2.8421)
+texture = ExtResource("7_ln4ss")
+
+[node name="Trend" type="Sprite3D" parent="Sprites"]
+transform = Transform3D(0.15766, 0, 0.123058, 0, 0.2, 0, -0.123058, 0, 0.15766, -1.33765, 0.719083, -2.67152)
+texture = ExtResource("6_md78i")
 
 [editable path="Player"]

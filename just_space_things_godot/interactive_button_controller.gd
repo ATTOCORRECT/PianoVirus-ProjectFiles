@@ -17,10 +17,10 @@ func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Ve
 		return
 	
 	if event.pressed == true:
-		
+		$AnimationPlayer.play("Button_push")
 		if toggle:
 			toggle = false
-			$"../Panel 1/AnimationPlayer".play_backwards("new_animation")
+			$"../Map/AnimationPlayer".play_backwards("Flip_Map")
 		else:
 			toggle = true
-			$"../Panel 1/AnimationPlayer".play("new_animation")
+			$"../Map/AnimationPlayer".play("Flip_Map")
