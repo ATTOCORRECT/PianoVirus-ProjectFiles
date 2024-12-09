@@ -35,8 +35,8 @@ func _ready() -> void:
 	down_look_dictionary = {up_anchor: down_anchor, left_anchor: down_anchor, down_anchor: null, right_anchor: down_anchor}
 	right_look_dictionary = {up_anchor: right_anchor, left_anchor: up_anchor, down_anchor: right_anchor, right_anchor: null}
 	
-	currently_looking = up_anchor.position
-	set_look_target(up_anchor)
+	currently_looking = down_anchor.position
+	set_look_target(down_anchor)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
