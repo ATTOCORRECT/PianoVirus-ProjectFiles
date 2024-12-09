@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://o0s5h4bttqa8"]
+
+[ext_resource type="PackedScene" uid="uid://bj60uguffyypa" path="res://Assets/Models/Console/JST_Prototype Console.gltf" id="1_ltxdx"]
+[ext_resource type="PackedScene" uid="uid://6cr3iyntwfpf" path="res://Scenes/Panels/Template/interactive_screen.tscn" id="2_q7ehe"]
+[ext_resource type="PackedScene" uid="uid://cuw7w5pakdqvd" path="res://Scenes/Panels/Console & Map/console_stream_&_chat.tscn" id="3_q33rw"]
+[ext_resource type="PackedScene" uid="uid://dh4a70pkyvo0" path="res://Scenes/Panels/Console & Map/console_ads.tscn" id="4_gmyin"]
+
+[node name="Console" type="Node3D"]
+
+[node name="Console Model" parent="." instance=ExtResource("1_ltxdx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="Stream & Chat" parent="." instance=ExtResource("2_q7ehe")]
+transform = Transform3D(1.1, 0, 0, 0, 0.55, 0, 0, 0, 1, 0, 0.985, -0.62)
+
+[node name="Viewport" parent="Stream & Chat" index="2"]
+size = Vector2i(896, 128)
+
+[node name="Console Stream & Chat" parent="Stream & Chat/Viewport" index="0" instance=ExtResource("3_q33rw")]
+
+[node name="Ad Bar" parent="." instance=ExtResource("2_q7ehe")]
+transform = Transform3D(1.26, 0, 0, 0, 0.18, 0, 0, 0, 1, 0, 1.467, -0.62)
+
+[node name="Viewport" parent="Ad Bar" index="2"]
+size = Vector2i(768, 384)
+
+[node name="Console Ads" parent="Ad Bar/Viewport" index="0" instance=ExtResource("4_gmyin")]
+
+[editable path="Stream & Chat"]
+[editable path="Ad Bar"]

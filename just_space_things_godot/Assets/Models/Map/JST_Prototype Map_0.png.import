@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dvid0rkbd5x2e"
-path.s3tc="res://.godot/imported/JST_Prototype Map_0.png-6deab8990f3d2c4d1f62507e4c04a6b5.s3tc.ctex"
+path="res://.godot/imported/JST_Prototype Map_0.png-6deab8990f3d2c4d1f62507e4c04a6b5.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "ecec0eddf23a4188a6bbfe5ed46d492a"
@@ -15,12 +14,12 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Models/Map/JST_Prototype Map_0.png"
-dest_files=["res://.godot/imported/JST_Prototype Map_0.png-6deab8990f3d2c4d1f62507e4c04a6b5.s3tc.ctex"]
+dest_files=["res://.godot/imported/JST_Prototype Map_0.png-6deab8990f3d2c4d1f62507e4c04a6b5.ctex"]
 
 [params]
 
-compress/mode=2
-compress/high_quality=false
+compress/mode=0
+compress/high_quality=true
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
