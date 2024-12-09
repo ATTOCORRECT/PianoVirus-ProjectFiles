@@ -1,9 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://bcs17a4kflpae"]
+[gd_scene load_steps=14 format=3 uid="uid://bcs17a4kflpae"]
 
 [ext_resource type="PackedScene" uid="uid://deoqenkjkbrit" path="res://Scenes/Player/player.tscn" id="1_2w8ir"]
-[ext_resource type="PackedScene" path="res://Scenes/Panels/Panel T1/panel_1.tscn" id="2_4udp5"]
 [ext_resource type="PackedScene" uid="uid://cn66ctg0in2ox" path="res://Assets/Models/AdScreen/JST_Prototype AdScreen.gltf" id="2_6wh14"]
-[ext_resource type="PackedScene" path="res://Scenes/Panels/Panel T2/panel_2.tscn" id="3_obg2p"]
 [ext_resource type="PackedScene" uid="uid://cm1b0io6v1ino" path="res://interactive_button.tscn" id="4_536go"]
 [ext_resource type="PackedScene" uid="uid://xr4o5xiw5ky3" path="res://Assets/Models/Map/JST_Prototype Map.gltf" id="5_uac24"]
 [ext_resource type="PackedScene" uid="uid://cuy3iisp0goct" path="res://Scenes/Panels/Console & Map/console_and_map.tscn" id="7_ixr3o"]
@@ -134,16 +132,36 @@ mesh = SubResource("BoxMesh_7ssmf")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.849634, 0.0360825, -0.526136, 0.470907, 0.397232, 0.787689, 0.23742, -0.917009, 0.32051, 0, 0, 0)
 
-[node name="Panel 1" parent="." instance=ExtResource("2_4udp5")]
+[node name="Panel 1" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(2.32021, 0, 0.889709, 0, 2.23296, 0, -1.24753, 0, 1.65472, -2.02818, 0.521621, -3.28771)
+script = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Panel 1"]
 libraries = {
 "": SubResource("AnimationLibrary_25d7y")
 }
 
-[node name="Panel 2" parent="." instance=ExtResource("3_obg2p")]
+[node name="Panel 2" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 transform = Transform3D(0.860324, 0, -0.509747, 0, 1, 0, 0.509747, 0, 0.860324, 1.79074, 0.637834, -3.21545)
+script = null
 
 [node name="Interactive Button" parent="." instance=ExtResource("4_536go")]
 transform = Transform3D(1, 0, 0, 0, 0.914042, -0.40562, 0, 0.40562, 0.914042, 0.523143, -0.408044, -1.47309)

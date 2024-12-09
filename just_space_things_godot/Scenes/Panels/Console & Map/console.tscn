@@ -1,30 +1,64 @@
-[gd_scene load_steps=5 format=3 uid="uid://o0s5h4bttqa8"]
+[gd_scene load_steps=11 format=3 uid="uid://o0s5h4bttqa8"]
 
 [ext_resource type="PackedScene" uid="uid://bj60uguffyypa" path="res://Assets/Models/Console/JST_Prototype Console.gltf" id="1_ltxdx"]
-[ext_resource type="PackedScene" uid="uid://6cr3iyntwfpf" path="res://Scenes/Panels/Template/interactive_screen.tscn" id="2_q7ehe"]
-[ext_resource type="PackedScene" uid="uid://cuw7w5pakdqvd" path="res://Scenes/Panels/Console & Map/console_stream_&_chat.tscn" id="3_q33rw"]
-[ext_resource type="PackedScene" uid="uid://dh4a70pkyvo0" path="res://Scenes/Panels/Console & Map/console_ads.tscn" id="4_gmyin"]
+[ext_resource type="Texture2D" uid="uid://bdjk5bdltesrp" path="res://Assets/Sprites/Streamer/STREAMER1.png" id="2_loniw"]
+[ext_resource type="Texture2D" uid="uid://c631lbpwbiyf" path="res://Assets/Sprites/Streamer/STREAMER2.png" id="3_7lj5m"]
+[ext_resource type="Texture2D" uid="uid://c52kfic5fm031" path="res://Assets/Sprites/Chat/CHAT1.png" id="4_bfj05"]
+[ext_resource type="Texture2D" uid="uid://c1ge83s1ympd8" path="res://Assets/Sprites/Chat/CHAT2.png" id="5_xpyco"]
+[ext_resource type="Texture2D" uid="uid://dqisu4fkvlpua" path="res://Assets/Sprites/Chat/CHAT3.png" id="6_mkssu"]
+[ext_resource type="Texture2D" uid="uid://drg83iuiobgqq" path="res://Assets/Sprites/Chat/CHAT4.png" id="7_w3xn0"]
+[ext_resource type="Texture2D" uid="uid://bky0qr7wekf54" path="res://Assets/Sprites/Chat/CHAT5.png" id="8_vke0g"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q6eio"]
+animations = [{
+"frames": [{
+"duration": 5.0,
+"texture": ExtResource("2_loniw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7lj5m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_edu8f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_bfj05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xpyco")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mkssu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_w3xn0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vke0g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Console" type="Node3D"]
 
 [node name="Console Model" parent="." instance=ExtResource("1_ltxdx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0)
 
-[node name="Stream & Chat" parent="." instance=ExtResource("2_q7ehe")]
-transform = Transform3D(1.1, 0, 0, 0, 0.55, 0, 0, 0, 1, 0, 0.985, -0.62)
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.176834, 0.986232, -0.620586)
+sprite_frames = SubResource("SpriteFrames_q6eio")
+autoplay = "default"
+frame_progress = 0.781966
 
-[node name="Viewport" parent="Stream & Chat" index="2"]
-size = Vector2i(896, 128)
-
-[node name="Console Stream & Chat" parent="Stream & Chat/Viewport" index="0" instance=ExtResource("3_q33rw")]
-
-[node name="Ad Bar" parent="." instance=ExtResource("2_q7ehe")]
-transform = Transform3D(1.26, 0, 0, 0, 0.18, 0, 0, 0, 1, 0, 1.467, -0.62)
-
-[node name="Viewport" parent="Ad Bar" index="2"]
-size = Vector2i(768, 384)
-
-[node name="Console Ads" parent="Ad Bar/Viewport" index="0" instance=ExtResource("4_gmyin")]
-
-[editable path="Stream & Chat"]
-[editable path="Ad Bar"]
+[node name="AnimatedSprite3D2" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(0.11, 0, 0, 0, 0.11, 0, 0, 0, 0.11, 0.291789, 0.979741, -0.619588)
+sprite_frames = SubResource("SpriteFrames_edu8f")
+autoplay = "default"
+frame_progress = 0.215432
