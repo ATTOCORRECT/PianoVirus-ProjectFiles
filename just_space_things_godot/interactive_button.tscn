@@ -19,6 +19,7 @@ albedo_color = Color(1, 1, 0.188235, 1)
 material = SubResource("StandardMaterial3D_ukksg")
 
 [node name="Interactive Button" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000668883, -2.98023e-08, -0.000616133)
 script = ExtResource("1_wejpb")
 
 [node name="Area3D" type="Area3D" parent="."]
