@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://chp06dgd3oifv"]
+[gd_scene load_steps=2 format=3 uid="uid://chp06dgd3oifv"]
+
+[ext_resource type="Texture2D" uid="uid://byxlx0t5bwyqm" path="res://Assets/Sprites/MAPBACKGROUND.png" id="1_muyby"]
 
 [node name="Map UI" type="Control"]
 layout_mode = 3
@@ -8,3 +10,13 @@ offset_right = -0.128052
 offset_bottom = 0.0799866
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1024.0
+offset_bottom = 512.0
+
+[node name="Mapbackground" type="Sprite2D" parent="."]
+position = Vector2(512, 256)
+scale = Vector2(0.88, 0.955)
+texture = ExtResource("1_muyby")
