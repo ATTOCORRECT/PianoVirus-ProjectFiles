@@ -146,7 +146,7 @@ libraries = {
 transform = Transform3D(0.860324, 0, -0.509747, 0, 1, 0, 0.509747, 0, 0.860324, 1.79074, 0.637834, -3.21545)
 
 [node name="Interactive Button" parent="." instance=ExtResource("4_536go")]
-transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -1.29771, -0.577002, -0.391513)
+transform = Transform3D(1, 0, 0, 0, 0.914042, -0.40562, 0, 0.40562, 0.914042, 0.55246, -0.408044, -1.47309)
 
 [node name="ScreenModels" type="Node" parent="."]
 
@@ -159,7 +159,7 @@ transform = Transform3D(-0.948964, 0, -0.315384, 0, 1, 0, 0.315384, 0, -0.948964
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00234294, -0.808399, -1.97882)
 
 [node name="Console" parent="ScreenModels/Console and Map" instance=ExtResource("5_rxhro")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.48969, -0.00661993, -0.808399, -2.29502)
+transform = Transform3D(1.007, 0, 0, 0, 1.007, 0, 0, 0, 1.5, -0.00661993, -0.808399, -2.29502)
 
 [node name="ShipBackground" parent="." instance=ExtResource("8_bmx4a")]
 transform = Transform3D(-3.0402e-07, 0, 5.10061, 0, 5.14956, 0, -5.10061, 0, -3.0402e-07, 0, -1.07617, -1.741)

@@ -1,12 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://cm1b0io6v1ino"]
+[gd_scene load_steps=7 format=3 uid="uid://cm1b0io6v1ino"]
 
 [ext_resource type="Script" path="res://interactive_button_controller.gd" id="1_wejpb"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_pkxdk"]
 radius = 0.2
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fllh1"]
+albedo_color = Color(0.828664, 0.600037, 0.916845, 1)
+
 [sub_resource type="PrismMesh" id="PrismMesh_w6yer"]
+material = SubResource("StandardMaterial3D_fllh1")
 size = Vector3(0.2, 0.2, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ukksg"]
+albedo_color = Color(1, 1, 0.188235, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4vd16"]
+material = SubResource("StandardMaterial3D_ukksg")
 
 [node name="Interactive Button" type="Node3D"]
 script = ExtResource("1_wejpb")
@@ -19,5 +29,9 @@ shape = SubResource("SphereShape3D_pkxdk")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0.5, 0.866025, -2.18557e-08, 0.866025, -0.5, -3.78552e-08, 0, 0, 0)
 mesh = SubResource("PrismMesh_w6yer")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.162887, 0, 0, 0, 0.0479453, -0.094796, 0, 0.0334857, 0.13573, 0, 0, 0.0263153)
+mesh = SubResource("CylinderMesh_4vd16")
 
 [connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]
