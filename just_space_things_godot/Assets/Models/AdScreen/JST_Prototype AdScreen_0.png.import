@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://blj53rkrumyhs"
-path.s3tc="res://.godot/imported/JST_Prototype AdScreen_0.png-172b69b76620fac7f76baa2624541674.s3tc.ctex"
+path="res://.godot/imported/JST_Prototype AdScreen_0.png-172b69b76620fac7f76baa2624541674.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "da32dc1ec0261f0c9732bd3a5d928655"
@@ -15,11 +14,11 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Models/AdScreen/JST_Prototype AdScreen_0.png"
-dest_files=["res://.godot/imported/JST_Prototype AdScreen_0.png-172b69b76620fac7f76baa2624541674.s3tc.ctex"]
+dest_files=["res://.godot/imported/JST_Prototype AdScreen_0.png-172b69b76620fac7f76baa2624541674.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

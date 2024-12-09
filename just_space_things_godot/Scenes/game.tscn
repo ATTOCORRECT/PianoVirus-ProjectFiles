@@ -1,12 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://bcs17a4kflpae"]
+[gd_scene load_steps=9 format=3 uid="uid://bcs17a4kflpae"]
 
 [ext_resource type="PackedScene" uid="uid://deoqenkjkbrit" path="res://Scenes/Player/player.tscn" id="1_2w8ir"]
-[ext_resource type="PackedScene" uid="uid://dupcuybhbdxii" path="res://Scenes/Panels/Panel T1/panel_1.tscn" id="2_4udp5"]
 [ext_resource type="PackedScene" uid="uid://cn66ctg0in2ox" path="res://Assets/Models/AdScreen/JST_Prototype AdScreen.gltf" id="2_6wh14"]
-[ext_resource type="PackedScene" uid="uid://bcqn1sjuldwm" path="res://Scenes/Panels/Panel T2/panel_2.tscn" id="3_obg2p"]
 [ext_resource type="PackedScene" uid="uid://cm1b0io6v1ino" path="res://interactive_button.tscn" id="4_536go"]
-[ext_resource type="PackedScene" uid="uid://bj60uguffyypa" path="res://Assets/Models/Console/JST_Prototype Console.gltf" id="5_rxhro"]
-[ext_resource type="PackedScene" uid="uid://xr4o5xiw5ky3" path="res://Assets/Models/Map/JST_Prototype Map.gltf" id="5_uac24"]
+[ext_resource type="PackedScene" uid="uid://cuy3iisp0goct" path="res://Scenes/Panels/Console & Map/console_and_map.tscn" id="4_cfc6a"]
 [ext_resource type="PackedScene" uid="uid://8htrreom0a65" path="res://Assets/Models/Ship/JST_Prototype ShipBackground.gltf" id="8_bmx4a"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_wi0oe"]
@@ -14,89 +11,6 @@
 [sub_resource type="SphereMesh" id="SphereMesh_a7d6c"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_7ssmf"]
-
-[sub_resource type="Animation" id="Animation_4ryi6"]
-resource_name = "Animate_panel_T1"
-loop_mode = 2
-
-[sub_resource type="Animation" id="Animation_qhgsx"]
-length = 0.001
-
-[sub_resource type="Animation" id="Animation_72r7u"]
-resource_name = "new_animation"
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-0.755469, -0.25, 0, 0.25, 0, -1.02543, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -0.448475, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:position:z")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-1.62817, -0.25, 0, 0.25, 0, -0.813447, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".:rotation:x")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -0.476475, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1)
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath(".:rotation:y")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0.493335, -0.25, 0, 0.25, 0, 0.949459, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1)
-}
-tracks/5/type = "bezier"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath(".:rotation:z")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1)
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_25d7y"]
-_data = {
-"Animate_panel_T1": SubResource("Animation_4ryi6"),
-"RESET": SubResource("Animation_qhgsx"),
-"new_animation": SubResource("Animation_72r7u")
-}
 
 [node name="Game" type="Node3D"]
 
@@ -134,19 +48,8 @@ mesh = SubResource("BoxMesh_7ssmf")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.849634, 0.0360825, -0.526136, 0.470907, 0.397232, 0.787689, 0.23742, -0.917009, 0.32051, 0, 0, 0)
 
-[node name="Panel 1" parent="." instance=ExtResource("2_4udp5")]
-transform = Transform3D(2.32021, 0, 0.88971, 0, 2.23296, 0, -1.24753, 0, 1.65472, -2.02818, 0.521621, -3.28771)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Panel 1"]
-libraries = {
-"": SubResource("AnimationLibrary_25d7y")
-}
-
-[node name="Panel 2" parent="." instance=ExtResource("3_obg2p")]
-transform = Transform3D(0.860324, 0, -0.509747, 0, 1, 0, 0.509747, 0, 0.860324, 1.79074, 0.637834, -3.21545)
-
 [node name="Interactive Button" parent="." instance=ExtResource("4_536go")]
-transform = Transform3D(1, 0, 0, 0, 0.914042, -0.40562, 0, 0.40562, 0.914042, 0.55246, -0.408044, -1.47309)
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -1.29771, -0.577002, -0.391513)
 
 [node name="ScreenModels" type="Node" parent="."]
 
@@ -155,11 +58,8 @@ transform = Transform3D(-0.948964, 0, -0.315384, 0, 1, 0, 0.315384, 0, -0.948964
 
 [node name="Console and Map" type="Node" parent="ScreenModels"]
 
-[node name="MapScreen" parent="ScreenModels/Console and Map" instance=ExtResource("5_uac24")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00234294, -0.808399, -1.97882)
-
-[node name="Console" parent="ScreenModels/Console and Map" instance=ExtResource("5_rxhro")]
-transform = Transform3D(1.007, 0, 0, 0, 1.007, 0, 0, 0, 1.5, -0.00661993, -0.808399, -2.29502)
+[node name="Console and Map2" parent="ScreenModels" instance=ExtResource("4_cfc6a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, -2.3)
 
 [node name="ShipBackground" parent="." instance=ExtResource("8_bmx4a")]
 transform = Transform3D(-3.0402e-07, 0, 5.10061, 0, 5.14956, 0, -5.10061, 0, -3.0402e-07, 0, -1.07617, -1.741)

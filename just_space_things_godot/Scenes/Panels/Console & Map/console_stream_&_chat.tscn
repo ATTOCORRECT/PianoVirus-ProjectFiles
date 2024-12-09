@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cuw7w5pakdqvd"]
+
+[node name="Console Stream & Chat" type="Control"]
+layout_mode = 3
+anchor_right = 0.667
+anchor_bottom = 0.593
+offset_right = -0.384033
+offset_bottom = -0.264038
+grow_horizontal = 2
+grow_vertical = 2

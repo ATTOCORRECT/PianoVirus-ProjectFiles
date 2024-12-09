@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuy3iisp0goct"]
+
+[ext_resource type="PackedScene" uid="uid://o0s5h4bttqa8" path="res://Scenes/Panels/Console & Map/console.tscn" id="1_2idr0"]
+[ext_resource type="PackedScene" uid="uid://dsy03mo1qbdq3" path="res://Scenes/Panels/Console & Map/map.tscn" id="2_ioad0"]
+
+[node name="Console and Map" type="Node3D"]
+
+[node name="Console" parent="." instance=ExtResource("1_2idr0")]
+
+[node name="Map" parent="." instance=ExtResource("2_ioad0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0.9)
