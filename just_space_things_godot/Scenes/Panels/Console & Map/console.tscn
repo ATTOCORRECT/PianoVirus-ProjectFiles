@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://o0s5h4bttqa8"]
+[gd_scene load_steps=12 format=3 uid="uid://o0s5h4bttqa8"]
 
 [ext_resource type="PackedScene" uid="uid://bj60uguffyypa" path="res://Assets/Models/Console/JST_Prototype Console.gltf" id="1_ltxdx"]
 [ext_resource type="Texture2D" uid="uid://bdjk5bdltesrp" path="res://Assets/Sprites/Streamer/STREAMER1.png" id="2_loniw"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dqisu4fkvlpua" path="res://Assets/Sprites/Chat/CHAT3.png" id="6_mkssu"]
 [ext_resource type="Texture2D" uid="uid://drg83iuiobgqq" path="res://Assets/Sprites/Chat/CHAT4.png" id="7_w3xn0"]
 [ext_resource type="Texture2D" uid="uid://bky0qr7wekf54" path="res://Assets/Sprites/Chat/CHAT5.png" id="8_vke0g"]
+[ext_resource type="Texture2D" uid="uid://bskhx5aognekq" path="res://Assets/Sprites/Ads/AD1.png" id="9_8lgjg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_q6eio"]
 animations = [{
@@ -62,3 +63,7 @@ transform = Transform3D(0.11, 0, 0, 0, 0.11, 0, 0, 0, 0.11, 0.291789, 0.979741, 
 sprite_frames = SubResource("SpriteFrames_edu8f")
 autoplay = "default"
 frame_progress = 0.215432
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 1.46465, -0.614776)
+texture = ExtResource("9_8lgjg")
