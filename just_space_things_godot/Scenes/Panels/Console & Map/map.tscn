@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsy03mo1qbdq3"]
+
+[ext_resource type="PackedScene" uid="uid://xr4o5xiw5ky3" path="res://Assets/Models/Map/JST_Prototype Map.gltf" id="1_vcfbq"]
+
+[node name="Map" type="Node3D"]
+
+[node name="Map Panel Model" parent="." instance=ExtResource("1_vcfbq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.5, 0, -0.3, -0.28)

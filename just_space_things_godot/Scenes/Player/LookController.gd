@@ -1,7 +1,10 @@
 extends Node3D
+
 var look_target
-var currently_looking
+var currently_looking: Vector3
+
 const LOOK_SPEED = 10
+const TARGET_SIZE = 3
 
 var current_anchor
 
@@ -14,8 +17,6 @@ var up_look_dictionary
 var left_look_dictionary
 var down_look_dictionary
 var right_look_dictionary
-
-@onready var swooshSFX = $SwooshSound
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -34,13 +35,15 @@ func _ready() -> void:
 	down_look_dictionary = {up_anchor: down_anchor, left_anchor: down_anchor, down_anchor: null, right_anchor: down_anchor}
 	right_look_dictionary = {up_anchor: right_anchor, left_anchor: up_anchor, down_anchor: right_anchor, right_anchor: null}
 	
-	currently_looking = up_anchor.position
-	set_look_target(up_anchor)
+	currently_looking = down_anchor.position
+	set_look_target(down_anchor)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	currently_looking = lerp(currently_looking, look_target, delta * LOOK_SPEED)
 	look_at(currently_looking)
+	
+	field_of_view()
 
 func set_look_target(anchor):
 	if anchor != null:
@@ -50,18 +53,19 @@ func set_look_target(anchor):
 func _input(event):
 	if event.is_action_pressed("look_up"):
 		set_look_target(up_look_dictionary[current_anchor])
-		swooshSFX.play()
 	
 	if event.is_action_pressed("look_left"):
 		set_look_target(left_look_dictionary[current_anchor])
-		swooshSFX.play()
 	
 	if event.is_action_pressed("look_down"):
 		set_look_target(down_look_dictionary[current_anchor])
-		swooshSFX.play()
 	
 	if event.is_action_pressed("look_right"):
 		set_look_target(right_look_dictionary[current_anchor])
-		swooshSFX.play()
-		
+
+func field_of_view():
+	var distance = currently_looking.distance_to(Vector3.ZERO)
 	
+	var fov = rad_to_deg(2 * atan(TARGET_SIZE / (2 * distance)))
+	
+	$".".set_fov(fov)
