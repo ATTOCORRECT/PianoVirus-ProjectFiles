@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://qwlne3knpejv"]
+
+[ext_resource type="PackedScene" uid="uid://cn66ctg0in2ox" path="res://Assets/Models/AdScreen/JST_Prototype AdScreen.gltf" id="1_odvtg"]
+[ext_resource type="Texture2D" uid="uid://du6rl2rj4juj4" path="res://Assets/Sprites/Ads/AD2.png" id="2_k3p1o"]
+
+[node name="blockbench_export" instance=ExtResource("1_odvtg")]
+
+[node name="Node" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.785, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="cuboid" parent="Node" index="0"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="." index="1"]
+transform = Transform3D(0.11, 0, 0, 0, 0.11, 0, 0, 0, 0.11, 0, 0.0474722, -0.109994)
+texture = ExtResource("2_k3p1o")
