@@ -35,13 +35,13 @@ look_right={
 ]
 }
 
-[dotnet]
-
-project/assembly_name="Just_space_things_GODOT"
-
 [autoload]
 
 InteractiveButton="*res://interactive_button.tscn"
+
+[dotnet]
+
+project/assembly_name="Just_space_things_GODOT"
 
 [input]
 

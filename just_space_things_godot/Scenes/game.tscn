@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bcs17a4kflpae"]
+[gd_scene load_steps=9 format=3 uid="uid://bcs17a4kflpae"]
 
 [ext_resource type="PackedScene" uid="uid://deoqenkjkbrit" path="res://Scenes/Player/player.tscn" id="1_2w8ir"]
 [ext_resource type="PackedScene" uid="uid://qwlne3knpejv" path="res://Assets/Models/AdScreen/Ad_screen.tscn" id="3_s0jmq"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cuy3iisp0goct" path="res://Scenes/Panels/Console & Map/console_and_map.tscn" id="7_ixr3o"]
 [ext_resource type="Texture2D" uid="uid://bexpfhp20rj6g" path="res://Assets/Sprites/ANALYTICSBACKGROUND.png" id="7_ln4ss"]
 [ext_resource type="PackedScene" uid="uid://8htrreom0a65" path="res://Assets/Models/Ship/JST_Prototype ShipBackground.gltf" id="8_bmx4a"]
+[ext_resource type="AudioStream" uid="uid://djxjyq2b5ifte" path="res://Sound/wip 3 no ending cropped.wav" id="9_8ppql"]
 
 [node name="Game" type="Node3D"]
 
@@ -59,5 +60,8 @@ texture = ExtResource("7_ln4ss")
 [node name="Analytics3" type="Sprite3D" parent="Sprites"]
 transform = Transform3D(0.0847166, 0, 0.181171, 0, 0.2, 0, -0.181171, 0, 0.0847166, -2.1066, -0.28385, -1.91011)
 texture = ExtResource("7_ln4ss")
+
+[node name="Wip3NoEndingCropped" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_8ppql")
 
 [editable path="Player"]

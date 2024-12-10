@@ -2,6 +2,8 @@ extends Node3D
 
 var toggle = false
 
+@onready var panelMovingSound = $ElectronicMoveSounds
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -17,6 +19,7 @@ func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Ve
 		return
 	
 	if event.pressed == true:
+		panelMovingSound.play()
 		$AnimationPlayer.play("Button_push")
 		if toggle:
 			toggle = false
