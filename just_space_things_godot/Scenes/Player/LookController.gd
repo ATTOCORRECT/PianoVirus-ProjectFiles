@@ -53,18 +53,22 @@ func set_look_target(anchor):
 		look_target = anchor.position
 
 func _input(event):
-	swooshSound.play()
+	
 	if event.is_action_pressed("look_up"):
 		set_look_target(up_look_dictionary[current_anchor])
+		swooshSound.play()
 	
 	if event.is_action_pressed("look_left"):
 		set_look_target(left_look_dictionary[current_anchor])
+		swooshSound.play()
 	
 	if event.is_action_pressed("look_down"):
 		set_look_target(down_look_dictionary[current_anchor])
+		swooshSound.play()
 	
 	if event.is_action_pressed("look_right"):
 		set_look_target(right_look_dictionary[current_anchor])
+		swooshSound.play()
 
 func field_of_view():
 	var distance = currently_looking.distance_to(Vector3.ZERO)

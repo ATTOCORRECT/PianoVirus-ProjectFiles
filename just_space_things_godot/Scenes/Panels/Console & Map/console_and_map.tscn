@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://cuy3iisp0goct"]
+[gd_scene load_steps=15 format=3 uid="uid://cuy3iisp0goct"]
 
 [ext_resource type="PackedScene" uid="uid://o0s5h4bttqa8" path="res://Scenes/Panels/Console & Map/console.tscn" id="1_2idr0"]
 [ext_resource type="PackedScene" uid="uid://dsy03mo1qbdq3" path="res://Scenes/Panels/Console & Map/map.tscn" id="2_ioad0"]
 [ext_resource type="PackedScene" uid="uid://cm1b0io6v1ino" path="res://interactive_button.tscn" id="3_0cip7"]
 [ext_resource type="Texture2D" uid="uid://byxlx0t5bwyqm" path="res://Assets/Sprites/MAPBACKGROUND.png" id="3_ofnjb"]
 [ext_resource type="AudioStream" uid="uid://b1xcu8g3o3suj" path="res://Sound/electronic move sounds.wav" id="5_66jmx"]
+[ext_resource type="AudioStream" uid="uid://bicpld7j40rvt" path="res://Sound/screen moving.wav" id="6_hkuy5"]
 
 [sub_resource type="Animation" id="Animation_3tm2a"]
 resource_name = "Flip_Map"
@@ -234,6 +235,9 @@ libraries = {
 
 [node name="ElectronicMoveSounds" type="AudioStreamPlayer" parent="Interactive Button"]
 stream = ExtResource("5_66jmx")
+
+[node name="ScreenMoving" type="AudioStreamPlayer" parent="Interactive Button"]
+stream = ExtResource("6_hkuy5")
 
 [editable path="Map"]
 [editable path="Interactive Button"]

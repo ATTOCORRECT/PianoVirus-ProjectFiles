@@ -2,7 +2,7 @@ extends Node3D
 
 var toggle = false
 
-@onready var panelMovingSound = $ElectronicMoveSounds
+@onready var panelMovingSound = $ScreenMoving
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
