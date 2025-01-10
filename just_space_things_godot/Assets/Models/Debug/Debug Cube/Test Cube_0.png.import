@@ -1,0 +1,37 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://dcyc3yi5ed4r7"
+path="res://.godot/imported/Test Cube_0.png-a74cb2719c4156e08c72de0ff3d0dae7.ctex"
+metadata={
+"vram_texture": false
+}
+generator_parameters={
+"md5": "f329199ba1d580095aaaf6cfb9945ff8"
+}
+
+[deps]
+
+source_file="res://Assets/Models/Debug/Debug Cube/Test Cube_0.png"
+dest_files=["res://.godot/imported/Test Cube_0.png-a74cb2719c4156e08c72de0ff3d0dae7.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

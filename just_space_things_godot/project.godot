@@ -43,6 +43,12 @@ InteractiveButton="*res://interactive_button.tscn"
 
 project/assembly_name="Just_space_things_GODOT"
 
+[importer_defaults]
+
+scene={
+"nodes/root_scale": 0.5
+}
+
 [input]
 
 look_up={
