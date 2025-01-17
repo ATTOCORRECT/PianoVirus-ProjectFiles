@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bexpfhp20rj6g" path="res://Assets/Sprites/ANALYTICSBACKGROUND.png" id="7_ln4ss"]
 [ext_resource type="PackedScene" uid="uid://8htrreom0a65" path="res://Assets/Models/Ship/JST_Prototype ShipBackground.gltf" id="8_bmx4a"]
 [ext_resource type="AudioStream" uid="uid://djxjyq2b5ifte" path="res://Sound/wip 3 no ending cropped.wav" id="9_8ppql"]
-[ext_resource type="PackedScene" uid="uid://ten16csndkby" path="res://Assets/Models/Debug/Debug Cube/Test Cube.glb" id="9_e4gy0"]
+[ext_resource type="PackedScene" uid="uid://cwv12ghvqu5yn" path="res://Assets/Models/Test Models/TestModel.gltf" id="9_xmtox"]
 
 [node name="Game" type="Node3D"]
 
@@ -67,7 +67,7 @@ stream = ExtResource("9_8ppql")
 volume_db = -9.369
 autoplay = true
 
-[node name="blockbench_export" parent="." instance=ExtResource("9_e4gy0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0317, -0.5, -1.94118)
+[node name="TestModel" parent="." instance=ExtResource("9_xmtox")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.62277, -0.968742, -1.67803)
 
 [editable path="Player"]
