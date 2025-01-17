@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b1xcu8g3o3suj"
-path="res://.godot/imported/electronic move sounds.wav-d730572555ccf722eda693cc8a7ec1da.sample"
+path="res://.godot/imported/electronic move sounds.wav-efb37299e1e97c7e61e7a964e28ef06b.sample"
 
 [deps]
 
-source_file="res://Sound/electronic move sounds.wav"
-dest_files=["res://.godot/imported/electronic move sounds.wav-d730572555ccf722eda693cc8a7ec1da.sample"]
+source_file="res://Assets/Sound/electronic move sounds.wav"
+dest_files=["res://.godot/imported/electronic move sounds.wav-efb37299e1e97c7e61e7a964e28ef06b.sample"]
 
 [params]
 

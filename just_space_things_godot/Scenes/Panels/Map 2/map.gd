@@ -1,13 +1,19 @@
 extends Node3D
 
-var map_position : Vector3 = Vector3.ZERO
+var map_position = Vector3.ZERO
+var map_position_target = Vector3.ZERO
+var old_map_position_target = Vector3.ZERO
 
 var area_size = Vector3i(6, 6, 6)
 var area_row    = area_size.x
 var area_slice  = area_size.x * area_size.y
 var area_volume = area_size.x * area_size.y * area_size.z
 
+var map_node = preload("res://Scenes/Panels/Map 2/map_node.tscn")
+
 var cells = {}
+
+var step = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,26 +25,36 @@ func _process(delta):
 	
 	var speed = 2
 	if Input.is_action_pressed("look_left"):
-		map_position += Vector3.LEFT * speed * delta
-	if Input.is_action_pressed("look_right"):
 		map_position += Vector3.RIGHT * speed * delta
+	if Input.is_action_pressed("look_right"):
+		map_position += Vector3.LEFT * speed * delta
 	if Input.is_action_pressed("look_up"):
-		map_position += Vector3.FORWARD * speed * delta
+		map_position += Vector3.DOWN * speed * delta
 	if Input.is_action_pressed("look_down"):
-		map_position += Vector3.BACK * speed * delta
+		map_position += Vector3.UP * speed * delta
 	
-		
+	chase_target(delta)
 	update_cells()
 	
-	DebugDraw3D.draw_box(Vector3(-1.5,0,-1.5),Quaternion.IDENTITY,Vector3.ONE * 3, Color.RED)
+	DebugDraw3D.draw_box(Vector3(0,0,0) + position, Quaternion.IDENTITY, Vector3(3,1,2), Color.WHITE, true)
+	DebugDraw3D.draw_sphere(Vector3.ZERO,0.02,Color.WHITE)
 	pass
+
+func chase_target(delta):
+	if (map_position_target != map_position):
+		if (step < 1):
+			step += 1 * delta
+		else:
+			step = 1
+		
+		map_position = lerp(old_map_position_target, map_position_target, step)
 
 func update_cells():
 	var update_center = Vector3i(map_position)
 	
 	for i in area_volume:
 		var x =  i               % area_size.x - (area_size.x / 2)
-		var y = (i / area_row  ) % area_size.y - 1
+		var y = (i / area_row  ) % area_size.y - (area_size.z / 2)
 		var z = (i / area_slice) % area_size.z - (area_size.z / 2)
 		
 		var cell_position = Vector3i(x,y,z) + update_center
@@ -62,9 +78,7 @@ func add_cell(cell_position: Vector3i):
 	if cells.has(key):
 		return
 	
-
-	
-	var cell = Map_cell.new(cell_position)
+	var cell = Map_cell.new(cell_position, map_node)
 	add_child(cell)
 	
 	cells[key] = cell
@@ -76,3 +90,8 @@ func get_cell(cell_position: Vector3i):
 	if cells.has(key):
 		return cells.get(key)
 	return null
+
+func set_map_position_target(position_target: Vector3):
+	step = 0
+	old_map_position_target = map_position_target
+	map_position_target = position_target + map_position

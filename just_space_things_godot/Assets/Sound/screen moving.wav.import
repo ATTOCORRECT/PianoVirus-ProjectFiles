@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bicpld7j40rvt"
-path="res://.godot/imported/screen moving.wav-1beee88a758aad5fd9585aa47c8ad017.sample"
+path="res://.godot/imported/screen moving.wav-c3d44f1b1b8fdb23a80fae8bf0cfa085.sample"
 
 [deps]
 
-source_file="res://Sound/screen moving.wav"
-dest_files=["res://.godot/imported/screen moving.wav-1beee88a758aad5fd9585aa47c8ad017.sample"]
+source_file="res://Assets/Sound/screen moving.wav"
+dest_files=["res://.godot/imported/screen moving.wav-c3d44f1b1b8fdb23a80fae8bf0cfa085.sample"]
 
 [params]
 
