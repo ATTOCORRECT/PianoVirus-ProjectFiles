@@ -1,6 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://c7ou6kbn7qg8x"]
+[gd_scene load_steps=7 format=3 uid="uid://co3x8wqu1jmbh"]
 
 [ext_resource type="PackedScene" uid="uid://y712fbtjxkb3" path="res://Scenes/Panels/Map 2/map.tscn" id="1_a0s2q"]
+[ext_resource type="Script" path="res://Scenes/settings.gd" id="2_46fxp"]
+[ext_resource type="Script" path="res://trend.gd" id="3_rmms6"]
+
+[sub_resource type="Resource" id="Resource_y3loq"]
+script = ExtResource("3_rmms6")
+trend_color = Color(1, 0.447059, 0, 1)
+trend_name = "Orange"
+
+[sub_resource type="Resource" id="Resource_ac2cw"]
+script = ExtResource("3_rmms6")
+trend_color = Color(0.991305, 5.29438e-06, 0.528074, 1)
+trend_name = "Raspberry"
+
+[sub_resource type="Resource" id="Resource_8fbku"]
+script = ExtResource("3_rmms6")
+trend_color = Color(0.262745, 0.337255, 0.933333, 1)
+trend_name = "Blueberry"
 
 [node name="Game 2" type="Node3D"]
 
@@ -8,3 +25,7 @@
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.998839, 0.0178887, -0.044725, 0.0111396, 0.817536, 0.575769, 0.0468641, -0.575599, 0.816388, -0.464847, 2.28383, 2.75199)
+
+[node name="Data" type="Node" parent="."]
+script = ExtResource("2_46fxp")
+trends = Array[ExtResource("3_rmms6")]([SubResource("Resource_y3loq"), SubResource("Resource_ac2cw"), SubResource("Resource_8fbku")])

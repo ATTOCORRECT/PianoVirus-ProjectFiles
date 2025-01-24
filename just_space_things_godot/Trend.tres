@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Trend" load_steps=2 format=3 uid="uid://bv0iwcq7uvu3d"]
+
+[ext_resource type="Script" path="res://trend.gd" id="1_2124q"]
+
+[resource]
+script = ExtResource("1_2124q")
+trend_color = Color(0, 0, 0, 1)
+trend_name = ""

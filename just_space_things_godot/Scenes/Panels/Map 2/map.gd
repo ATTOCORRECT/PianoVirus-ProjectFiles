@@ -15,23 +15,10 @@ var cells = {}
 
 var step = 0
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	
-	var speed = 2
-	if Input.is_action_pressed("look_left"):
-		map_position += Vector3.RIGHT * speed * delta
-	if Input.is_action_pressed("look_right"):
-		map_position += Vector3.LEFT * speed * delta
-	if Input.is_action_pressed("look_up"):
-		map_position += Vector3.DOWN * speed * delta
-	if Input.is_action_pressed("look_down"):
-		map_position += Vector3.UP * speed * delta
 	
 	chase_target(delta)
 	update_cells()
