@@ -23,14 +23,14 @@ func _process(delta):
 	chase_target(delta)
 	update_cells()
 	
-	DebugDraw3D.draw_box(Vector3(0,0,0) + position, Quaternion.IDENTITY, Vector3(3,1,2), Color.WHITE, true)
-	DebugDraw3D.draw_sphere(Vector3.ZERO,0.02,Color.WHITE)
+	#DebugDraw3D.draw_box(Vector3(0,0,0) + position, Quaternion.IDENTITY, Vector3(3,1,2), Color.WHITE, true)
+	#DebugDraw3D.draw_sphere(Vector3.ZERO,0.02,Color.WHITE)
 	pass
 
 func chase_target(delta):
 	if (map_position_target != map_position):
 		if (step < 1):
-			step += 1 * delta
+			step += (1 - step) * delta * 6 + delta / 10
 		else:
 			step = 1
 		
@@ -65,7 +65,7 @@ func add_cell(cell_position: Vector3i):
 	if cells.has(key):
 		return
 	
-	var cell = Map_cell.new(cell_position, map_node)
+	var cell = Map_cell.new(cell_position, map_node, key)
 	add_child(cell)
 	
 	cells[key] = cell

@@ -1,11 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://q68ngocptjm8"]
 
 [ext_resource type="Script" path="res://Scenes/Panels/Map 2/map_node.gd" id="1_03cc4"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tj02c"]
-resource_local_to_scene = true
-shading_mode = 0
-albedo_color = Color(0.645897, 0.796278, 0.921934, 1)
+[ext_resource type="Texture2D" uid="uid://bdhl54t3id5mv" path="res://Assets/Sprites/Star.png" id="2_ykc3o"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_p3r7t"]
 radius = 0.11
@@ -15,9 +11,12 @@ script = ExtResource("1_03cc4")
 
 [node name="Star" type="Node3D" parent="."]
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="Star"]
-radius = 0.1
-material = SubResource("StandardMaterial3D_tj02c")
+[node name="Sprite3D" type="Sprite3D" parent="Star"]
+modulate = Color(0.571422, 0.83366, 1, 1)
+pixel_size = 0.02
+billboard = 1
+texture_filter = 0
+texture = ExtResource("2_ykc3o")
 
 [node name="Area3D" type="Area3D" parent="Star"]
 
