@@ -9,9 +9,11 @@ var area_row    = area_size.x
 var area_slice  = area_size.x * area_size.y
 var area_volume = area_size.x * area_size.y * area_size.z
 
-var map_node = preload("res://Scenes/Panels/Map 2/map_node.tscn")
+var map_node = preload("res://Scenes/Panels/Map/map_node.tscn")
 
 var cells = {}
+
+var target_star : Node3D
 
 var step = 0
 
@@ -29,8 +31,8 @@ func _process(delta):
 
 func chase_target(delta):
 	if (map_position_target != map_position):
-		if (step < 1):
-			step += (1 - step) * delta * 6 + delta / 10
+		if (step < 1): #                               v speed
+			step += (-abs(step - 0.5) + 0.5) * delta * 3 + delta / 10
 		else:
 			step = 1
 		
@@ -82,3 +84,14 @@ func set_map_position_target(position_target: Vector3):
 	step = 0
 	old_map_position_target = map_position_target
 	map_position_target = position_target + map_position
+
+func select_star(star):
+	if target_star != null:
+		target_star.deselect_star()
+	target_star = star
+
+
+func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
+	if event is InputEventMouseButton:
+		if event.is_action_released("Select") and target_star != null:
+			target_star.travel()

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://qwlne3knpejv" path="res://Assets/Models/AdScreen/Ad_screen.tscn" id="3_s0jmq"]
 [ext_resource type="Texture2D" uid="uid://v8157m3bux8e" path="res://Assets/Sprites/SPACEBACKGROUND.png" id="5_tmoeb"]
 [ext_resource type="Texture2D" uid="uid://dcnv010tfcmlw" path="res://Assets/Sprites/TREND BACKGROUND.png" id="6_md78i"]
-[ext_resource type="PackedScene" uid="uid://cuy3iisp0goct" path="res://Scenes/Panels/Console & Map/console_and_map.tscn" id="7_ixr3o"]
+[ext_resource type="PackedScene" uid="uid://cuy3iisp0goct" path="res://Scenes/Old/Console & Map/console_and_map.tscn" id="7_ixr3o"]
 [ext_resource type="Texture2D" uid="uid://bexpfhp20rj6g" path="res://Assets/Sprites/ANALYTICSBACKGROUND.png" id="7_ln4ss"]
 [ext_resource type="PackedScene" uid="uid://8htrreom0a65" path="res://Assets/Models/Ship/JST_Prototype ShipBackground.gltf" id="8_bmx4a"]
 [ext_resource type="AudioStream" uid="uid://djxjyq2b5ifte" path="res://Assets/Sound/wip 3 no ending cropped.wav" id="9_8ppql"]

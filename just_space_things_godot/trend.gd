@@ -9,6 +9,3 @@ func _init() -> void:
 
 func _ready() -> void:
 	pass 
-
-func _process(delta: float) -> void:
-	pass
