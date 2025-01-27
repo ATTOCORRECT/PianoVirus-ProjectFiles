@@ -2,7 +2,7 @@ extends Camera3D
 
 var mouse_position : Vector2
 var look_position : Vector3
-@export var look_range : float = 0.1
+@export var look_range : float = 0.05
 @export var look_speed : float = 10
 
 var zoom = false

@@ -48,6 +48,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1.5, -4)
 [node name="WarpButton" parent="Map" instance=ExtResource("2_hmhgp")]
 transform = Transform3D(1, 0, 0, 0, 0.906308, -0.422618, 0, 0.422618, 0.906308, 2, -0.3, 0.5)
 
+[node name="Cooldown" type="Timer" parent="Map/WarpButton"]
+wait_time = 2.0
+one_shot = true
+
 [node name="Camera3D" type="Camera3D" parent="."]
 environment = SubResource("Environment_llmir")
 script = ExtResource("2_iksiu")

@@ -86,12 +86,13 @@ func set_map_position_target(position_target: Vector3):
 	map_position_target = position_target + map_position
 
 func select_star(star):
-	if target_star != null:
+	if target_star != null and target_star != star:
 		target_star.deselect_star()
 	target_star = star
 
 
 func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
 	if event is InputEventMouseButton:
-		if event.is_action_released("Select") and target_star != null:
+		if event.is_action_released("Select") and target_star != null and $WarpButton/Cooldown.is_stopped():
 			target_star.travel()
+			$WarpButton/Cooldown.start()
