@@ -1,10 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://co3x8wqu1jmbh"]
+[gd_scene load_steps=17 format=3 uid="uid://co3x8wqu1jmbh"]
 
 [ext_resource type="PackedScene" uid="uid://y712fbtjxkb3" path="res://Scenes/Panels/Map/map.tscn" id="1_a0s2q"]
 [ext_resource type="Script" path="res://Scenes/Game/settings.gd" id="2_46fxp"]
 [ext_resource type="PackedScene" uid="uid://d0ui842kpc0e5" path="res://Scenes/Controlls/warp_button.tscn" id="2_hmhgp"]
 [ext_resource type="Script" path="res://Scenes/Old/Player 2/player_look.gd" id="2_iksiu"]
 [ext_resource type="Script" path="res://trend.gd" id="3_rmms6"]
+[ext_resource type="Texture2D" uid="uid://b8foaqc3dedl8" path="res://Assets/Sprites/pixel_planet.png" id="3_uw3uo"]
+[ext_resource type="Texture2D" uid="uid://bdhl54t3id5mv" path="res://Assets/Sprites/Star.png" id="4_7pla8"]
 
 [sub_resource type="Environment" id="Environment_llmir"]
 background_mode = 1
@@ -46,11 +48,51 @@ size = Vector2(30, 20)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1.5, -4)
 
 [node name="WarpButton" parent="Map" instance=ExtResource("2_hmhgp")]
-transform = Transform3D(1, 0, 0, 0, 0.906308, -0.422618, 0, 0.422618, 0.906308, 2, -0.3, 0.5)
+transform = Transform3D(0.682, 0, 0, 0, 0.618102, -0.288225, 0, 0.288225, 0.618102, 2.30891, -0.364089, 0.63744)
 
 [node name="Cooldown" type="Timer" parent="Map/WarpButton"]
 wait_time = 2.0
 one_shot = true
+
+[node name="DetailPanel" type="Node3D" parent="Map"]
+transform = Transform3D(0.999809, 0.0044625, -0.0190282, 0.00885786, 0.764393, 0.644689, 0.0174219, -0.644734, 0.764208, 2.1544, 0.209701, 0.910482)
+
+[node name="PlanetName" type="Label3D" parent="Map/DetailPanel"]
+transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0.515125, 1.04175, -1.03746)
+text = "Planet Name"
+
+[node name="PlanetDescription" type="Label3D" parent="Map/DetailPanel"]
+transform = Transform3D(1, 0, 0, -9.31323e-10, 0.906308, 0.422618, 0, -0.422618, 0.906308, -0.49715, 0.842095, -0.944459)
+text = "This is a planet description.
+This is what a second sentence 
+looks like."
+font_size = 20
+horizontal_alignment = 0
+vertical_alignment = 0
+
+[node name="Trend1" type="Label3D" parent="Map/DetailPanel"]
+transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, -0.522806, 0.108933, -0.602485)
+text = "Trend 1"
+horizontal_alignment = 0
+
+[node name="Trend2" type="Label3D" parent="Map/DetailPanel"]
+transform = Transform3D(1, 0, 0, 0, 0.906307, 0.422618, 0, -0.422618, 0.906307, 0.299092, 0.110198, -0.603074)
+text = "Trend 2"
+horizontal_alignment = 0
+
+[node name="PlanetSprite" type="Sprite3D" parent="Map/DetailPanel"]
+transform = Transform3D(0.0991576, -2.32831e-10, -1.16415e-10, 0, 0.0880273, 0.0456446, -2.32831e-10, -0.0456446, 0.0880273, -0.28742, 1.08008, -1.09426)
+texture = ExtResource("3_uw3uo")
+
+[node name="TrendSprite1" type="Sprite3D" parent="Map/DetailPanel"]
+transform = Transform3D(2.90967, -3.72529e-09, -7.45058e-09, 0, 2.58306, 1.33939, -1.49012e-08, -1.33939, 2.58306, -0.265295, 0.299506, -0.689509)
+modulate = Color(1, 0, 1, 1)
+texture = ExtResource("4_7pla8")
+
+[node name="TrendSprite2" type="Sprite3D" parent="Map/DetailPanel"]
+transform = Transform3D(2.90967, -3.72529e-09, -1.11759e-08, 0, 2.58306, 1.33939, -1.49012e-08, -1.33939, 2.58306, 0.580318, 0.311977, -0.695976)
+modulate = Color(0, 0.533333, 1, 1)
+texture = ExtResource("4_7pla8")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 environment = SubResource("Environment_llmir")
