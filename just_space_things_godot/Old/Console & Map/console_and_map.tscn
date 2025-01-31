@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://cuy3iisp0goct"]
 
-[ext_resource type="PackedScene" uid="uid://o0s5h4bttqa8" path="res://Scenes/Old/Console & Map/console.tscn" id="1_2idr0"]
-[ext_resource type="PackedScene" uid="uid://dsy03mo1qbdq3" path="res://Scenes/Old/Console & Map/map.tscn" id="2_ioad0"]
+[ext_resource type="PackedScene" uid="uid://o0s5h4bttqa8" path="res://Old/Console & Map/console.tscn" id="1_2idr0"]
+[ext_resource type="PackedScene" uid="uid://dsy03mo1qbdq3" path="res://Old/Console & Map/map.tscn" id="2_ioad0"]
 [ext_resource type="PackedScene" path="res://Scenes/Panels/Button/interactive_button.tscn" id="3_0cip7"]
 [ext_resource type="Texture2D" uid="uid://dvbj20fvyeyfp" path="res://Assets/Sprites/MAPBACKGROUND.png" id="3_ofnjb"]
 [ext_resource type="AudioStream" uid="uid://b1xcu8g3o3suj" path="res://Assets/Sound/electronic move sounds.wav" id="5_66jmx"]

@@ -37,7 +37,7 @@ look_right={
 
 [autoload]
 
-Singleton="*res://singleton.gd"
+Singleton="*res://Scripts/singleton.gd"
 
 [dotnet]
 
