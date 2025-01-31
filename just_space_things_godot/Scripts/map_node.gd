@@ -14,12 +14,12 @@ func _ready() -> void:
 	# initial setup
 	map = get_parent_node_3d().get_parent_node_3d()
 	star.visible = false
-	star.PROCESS_MODE_DISABLED
+	star.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	# get visible trend
-	var range : int = Singleton.trends.size() - 1
+	var trend_count : int = Singleton.trends.size() - 1
 	#seed(key.hash())
-	visible_trend = Singleton.trends[randi_range(0, range)]
+	visible_trend = Singleton.trends[randi_range(0, trend_count)]
 	
 	# change material color
 	color = visible_trend.color
@@ -28,7 +28,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var local_position = global_position - map.global_position
 	
 	var distance = max(abs(local_position.x) / (3/2.0), abs(local_position.y) / (1/2.0), abs(local_position.z) / (2/2.0))
@@ -40,10 +40,10 @@ func _physics_process(delta: float) -> void:
 	
 	if not (alpha <= 0 or alpha >= 1):
 		star.visible = true
-		star.PROCESS_MODE_INHERIT
+		star.process_mode = Node.PROCESS_MODE_INHERIT
 	else:
 		star.visible = false
-		star.PROCESS_MODE_DISABLED
+		star.process_mode = Node.PROCESS_MODE_DISABLED
 
 func select_star():
 	selected = true
@@ -66,7 +66,7 @@ func travel():
 		planet_data = Planet_data.new(key ,visible_trend, "this is a description for the planet")
 	Singleton.travel_to_planet(planet_data)
 	
-func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
+func _on_area_3d_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.is_action_released("Select") and selectable:
 			select_star()
