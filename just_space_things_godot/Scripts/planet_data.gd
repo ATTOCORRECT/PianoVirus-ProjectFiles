@@ -11,16 +11,13 @@ var key
 var random_id
 
 func _init(in_key : String, in_primairy_trend : Trend, in_planet_description : String) -> void:
-	
 	key = in_key
 	primairy_trend = in_primairy_trend
 	planet_description = in_planet_description
 	
-	secondary_trend = primairy_trend
-	while secondary_trend == primairy_trend:
-		#seed(key.hash())
-		secondary_trend = Singleton.trends[randi_range(0, Singleton.trends.size() - 1)]
-		pass
+	var remaining_trends : Array[Trend] = Singleton.trends.duplicate()
+	remaining_trends.erase(primairy_trend)
+	secondary_trend = remaining_trends[randi_range(0, remaining_trends.size() - 1)]
 	
 	random_id = key.hash()
 
