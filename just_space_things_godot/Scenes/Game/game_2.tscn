@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://co3x8wqu1jmbh"]
+[gd_scene load_steps=19 format=3 uid="uid://co3x8wqu1jmbh"]
 
 [ext_resource type="PackedScene" uid="uid://y712fbtjxkb3" path="res://Scenes/Panels/Map/map.tscn" id="1_a0s2q"]
 [ext_resource type="Script" path="res://Scenes/Game/settings.gd" id="2_46fxp"]
@@ -7,6 +7,14 @@
 [ext_resource type="Script" path="res://trend.gd" id="3_rmms6"]
 [ext_resource type="Texture2D" uid="uid://b8foaqc3dedl8" path="res://Assets/Sprites/pixel_planet.png" id="3_uw3uo"]
 [ext_resource type="Texture2D" uid="uid://bdhl54t3id5mv" path="res://Assets/Sprites/Star.png" id="4_7pla8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a6bgy"]
+albedo_color = Color(0, 0, 0.247059, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_33lgc"]
+albedo_color = Color(0.156287, 4.81308e-06, 0.785664, 1)
+emission_enabled = true
+emission = Color(1.92523e-07, 0, 0.911554, 1)
 
 [sub_resource type="Environment" id="Environment_llmir"]
 background_mode = 1
@@ -48,21 +56,67 @@ size = Vector2(30, 20)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1.5, -4)
 
 [node name="WarpButton" parent="Map" instance=ExtResource("2_hmhgp")]
-transform = Transform3D(0.682, 0, 0, 0, 0.618102, -0.288225, 0, 0.288225, 0.618102, 2.30891, -0.364089, 0.63744)
+transform = Transform3D(0.349892, 0, 0, 0, -0.0142184, -0.349603, 0, 0.349603, -0.0142184, 2.06741, -0.130171, 0.936069)
+
+[node name="CSGCylinder3D" parent="Map/WarpButton" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0088644, 0.217951)
+
+[node name="Area3D" parent="Map/WarpButton" index="1"]
+transform = Transform3D(1.08912, 0, 0, 0, 1.08912, -3.72529e-09, 0, 3.72529e-09, 1.08912, 0, 0.00838089, 0.206035)
 
 [node name="Cooldown" type="Timer" parent="Map/WarpButton"]
 wait_time = 2.0
 one_shot = true
 
 [node name="DetailPanel" type="Node3D" parent="Map"]
-transform = Transform3D(0.999809, 0.0044625, -0.0190282, 0.00885786, 0.764393, 0.644689, 0.0174219, -0.644734, 0.764208, 2.1544, 0.209701, 0.910482)
+transform = Transform3D(0.638194, -0.0101096, -0.00730993, 0.00565411, 0.567784, -0.29161, 0.0111207, 0.29149, 0.567765, 1.92604, 0.0941691, 1.11036)
+
+[node name="Panel" type="CSGBox3D" parent="Map/DetailPanel"]
+transform = Transform3D(1.62662, 4.19095e-09, 1.4028e-08, 5.58794e-09, 0.133139, -1.79574, 3.72529e-09, 0.249536, 0.958113, 0.232367, 0.0785975, -0.52402)
+material = SubResource("StandardMaterial3D_a6bgy")
+
+[node name="Line" type="CSGBox3D" parent="Map/DetailPanel/Panel"]
+transform = Transform3D(0.993497, 3.14321e-09, -1.3606e-09, -1.3411e-07, 0.206698, 8.3819e-09, 1.75816e-07, 1.74623e-10, 0.154522, 0.00582834, 0.43928, -0.0410447)
+size = Vector3(1, 1, 0.102539)
+material = SubResource("StandardMaterial3D_33lgc")
+
+[node name="Line3" type="CSGBox3D" parent="Map/DetailPanel/Panel"]
+transform = Transform3D(0.993497, 3.14321e-09, -1.3606e-09, -1.3411e-07, 0.206698, 8.3819e-09, 1.76748e-07, 1.74623e-10, 0.154522, 0.00285389, 0.409073, 0.273668)
+size = Vector3(1, 1, 0.102539)
+material = SubResource("StandardMaterial3D_33lgc")
+
+[node name="Line2" type="CSGBox3D" parent="Map/DetailPanel/Panel"]
+transform = Transform3D(0.00881884, 0.000156255, 0.155881, 0.0692208, 0.20434, -0.000852989, -0.352305, 0.0401525, 0.00373437, -0.0073136, 0.4251, 0.118814)
+size = Vector3(1, 1, 0.102539)
+material = SubResource("StandardMaterial3D_33lgc")
 
 [node name="PlanetName" type="Label3D" parent="Map/DetailPanel"]
-transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0.515125, 1.04175, -1.03746)
+transform = Transform3D(0.999999, -0.00100405, 0.000522058, 0.000636264, 0.880334, 0.474355, -0.000935858, -0.474355, 0.880333, 0.458449, 0.877933, -0.716391)
+modulate = Color(0, 0.624324, 0.624394, 1)
+outline_modulate = Color(0, 0.490196, 0.490196, 0.219608)
+text = "Planet Name"
+
+[node name="PlanetName_Back" type="Label3D" parent="Map/DetailPanel"]
+transform = Transform3D(1.06, -0.00125005, 0.000576859, 0.000674447, 1.09602, 0.524163, -0.000992011, -0.590571, 0.972769, 0.477632, 0.857245, -0.751212)
+modulate = Color(0, 0.623529, 0.623529, 0.0705882)
+outline_modulate = Color(0, 0.490196, 0.490196, 0.0705882)
 text = "Planet Name"
 
 [node name="PlanetDescription" type="Label3D" parent="Map/DetailPanel"]
-transform = Transform3D(1, 0, 0, -9.31323e-10, 0.906308, 0.422618, 0, -0.422618, 0.906308, -0.49715, 0.842095, -0.944459)
+transform = Transform3D(0.999999, -0.000978271, 0.00050956, 0.000620827, 0.881028, 0.473064, -0.000911723, -0.473064, 0.881028, -0.479686, 0.659344, -0.615111)
+modulate = Color(0, 0.623529, 0.623529, 1)
+outline_modulate = Color(0, 0.491312, 0.491312, 0.219608)
+text = "This is a planet description.
+This is what a second sentence 
+looks like."
+font_size = 20
+horizontal_alignment = 0
+vertical_alignment = 0
+
+[node name="PlanetDescription_Back" type="Label3D" parent="Map/DetailPanel"]
+transform = Transform3D(1.04, -0.00101741, 0.000529906, 0.000645681, 0.916269, 0.491987, -0.000948161, -0.491986, 0.916268, -0.516313, 0.64752, -0.64376)
+modulate = Color(0, 0.623529, 0.623529, 0.172549)
+outline_modulate = Color(0, 0.490196, 0.490196, 0.101961)
 text = "This is a planet description.
 This is what a second sentence 
 looks like."
@@ -71,27 +125,46 @@ horizontal_alignment = 0
 vertical_alignment = 0
 
 [node name="Trend1" type="Label3D" parent="Map/DetailPanel"]
-transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, -0.522806, 0.108933, -0.602485)
+transform = Transform3D(1, -1.92085e-09, 9.31323e-09, 9.31323e-10, 0.906308, 0.422618, -4.65661e-09, -0.422618, 0.906308, -0.481238, -0.15168, -0.233607)
+modulate = Color(0, 0.623529, 0.623529, 1)
+outline_modulate = Color(0, 0.490196, 0.490196, 0.219608)
 text = "Trend 1"
 horizontal_alignment = 0
 
 [node name="Trend2" type="Label3D" parent="Map/DetailPanel"]
-transform = Transform3D(1, 0, 0, 0, 0.906307, 0.422618, 0, -0.422618, 0.906307, 0.299092, 0.110198, -0.603074)
+transform = Transform3D(1, 4.83124e-09, 1.86265e-09, 9.31323e-10, 0.906307, 0.422618, -4.65661e-09, -0.422618, 0.906307, 0.372491, -0.15092, -0.234561)
+modulate = Color(0, 0.623529, 0.623529, 1)
+outline_modulate = Color(0, 0.490196, 0.490196, 0.219608)
 text = "Trend 2"
 horizontal_alignment = 0
 
 [node name="PlanetSprite" type="Sprite3D" parent="Map/DetailPanel"]
-transform = Transform3D(0.0991576, -2.32831e-10, -1.16415e-10, 0, 0.0880273, 0.0456446, -2.32831e-10, -0.0456446, 0.0880273, -0.28742, 1.08008, -1.09426)
+transform = Transform3D(0.0991575, -9.69976e-10, -4.65661e-10, 6.98492e-10, 0.0880273, 0.0456446, 2.32831e-10, -0.0456446, 0.0880274, -0.27036, 0.856665, -0.743999)
+texture = ExtResource("3_uw3uo")
+
+[node name="PlanetSprite2" type="Sprite3D" parent="Map/DetailPanel"]
+transform = Transform3D(0.114, -4.41105e-10, -1.39698e-09, 9.31323e-10, 0.101204, 0.0524769, 3.49246e-10, -0.0524769, 0.101204, -0.270485, 0.853409, -0.75034)
+modulate = Color(0, 0.658824, 0.658824, 0.443137)
 texture = ExtResource("3_uw3uo")
 
 [node name="TrendSprite1" type="Sprite3D" parent="Map/DetailPanel"]
-transform = Transform3D(2.90967, -3.72529e-09, -7.45058e-09, 0, 2.58306, 1.33939, -1.49012e-08, -1.33939, 2.58306, -0.265295, 0.299506, -0.689509)
+transform = Transform3D(2.90967, 4.65661e-09, 3.72529e-09, 2.79397e-08, 2.58306, 1.33939, -5.21541e-08, -1.33939, 2.58306, -0.200391, 0.0385218, -0.320898)
 modulate = Color(1, 0, 1, 1)
 texture = ExtResource("4_7pla8")
 
+[node name="TrendSprite1_Back" type="Sprite3D" parent="Map/DetailPanel"]
+transform = Transform3D(3.53, -4.61587e-08, 0, 5.21541e-08, 3.13376, 1.62494, -2.23517e-08, -1.62494, 3.13376, -0.200631, 0.0322309, -0.333151)
+modulate = Color(1, 0, 1, 0.294118)
+texture = ExtResource("4_7pla8")
+
 [node name="TrendSprite2" type="Sprite3D" parent="Map/DetailPanel"]
-transform = Transform3D(2.90967, -3.72529e-09, -1.11759e-08, 0, 2.58306, 1.33939, -1.49012e-08, -1.33939, 2.58306, 0.580318, 0.311977, -0.695976)
+transform = Transform3D(2.90967, 7.68341e-09, -7.45058e-09, 3.91155e-08, 2.58306, 1.33939, -2.23517e-08, -1.33939, 2.58306, 0.654, 0.039, -0.327)
 modulate = Color(0, 0.533333, 1, 1)
+texture = ExtResource("4_7pla8")
+
+[node name="TrendSprite2_Back" type="Sprite3D" parent="Map/DetailPanel"]
+transform = Transform3D(3.435, -5.82368e-08, 1.11759e-08, 3.35276e-08, 3.04942, 1.58121, -3.72529e-08, -1.58121, 3.04943, 0.653526, 0.0458264, -0.337263)
+modulate = Color(0, 0.533333, 1, 0.486275)
 texture = ExtResource("4_7pla8")
 
 [node name="Camera3D" type="Camera3D" parent="."]
