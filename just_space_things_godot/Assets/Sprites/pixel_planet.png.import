@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvbj20fvyeyfp"
-path.s3tc="res://.godot/imported/MAPBACKGROUND.png-2a46633a6e58f257dcb3182a9ebbd5f1.s3tc.ctex"
+uid="uid://b8foaqc3dedl8"
+path.s3tc="res://.godot/imported/pixel_planet.png-1654a977e1b6be6aad986a4e4012cfbe.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Sprites/MAPBACKGROUND.png"
-dest_files=["res://.godot/imported/MAPBACKGROUND.png-2a46633a6e58f257dcb3182a9ebbd5f1.s3tc.ctex"]
+source_file="res://Assets/Sprites/pixel_planet.png"
+dest_files=["res://.godot/imported/pixel_planet.png-1654a977e1b6be6aad986a4e4012cfbe.s3tc.ctex"]
 
 [params]
 

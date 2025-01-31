@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://uuo5fo3mqix"]
+
+[ext_resource type="PackedScene" uid="uid://6cr3iyntwfpf" path="res://Scenes/Panels/Template/interactive_screen.tscn" id="1_cuvyf"]
+[ext_resource type="PackedScene" uid="uid://bxhrc6hqim78" path="res://Scenes/Panels/DetailPanel/detail_panel.tscn" id="2_pnmgi"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Interactive Screen" parent="." instance=ExtResource("1_cuvyf")]
+
+[node name="DetailPanel" parent="Interactive Screen/Viewport" index="0" instance=ExtResource("2_pnmgi")]
+
+[node name="DetailPanel" parent="Interactive Screen/Viewport/DetailPanel" instance=ExtResource("2_pnmgi")]
+layout_mode = 1
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0036397, 0, 2.00199)
+
+[editable path="Interactive Screen"]

@@ -6,6 +6,7 @@ class_name Planet_data
 @export var tertiary_trend  : Trend
 
 @export var planet_description : String
+@export var planet_name : String = "TestPlanetName"
 
 var key
 var random_id
