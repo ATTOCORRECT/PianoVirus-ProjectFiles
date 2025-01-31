@@ -1,23 +1,23 @@
-[gd_scene load_steps=8 format=3 uid="uid://bxhrc6hqim78"]
+[gd_scene load_steps=8 format=3 uid="uid://b7rbmlcidh82i"]
 
-[ext_resource type="Texture2D" uid="uid://b8foaqc3dedl8" path="res://Assets/Sprites/pixel_planet.png" id="1_04xj0"]
-[ext_resource type="Script" path="res://Scenes/Panels/DetailPanel/detail_panel.gd" id="1_iqjk0"]
-[ext_resource type="FontFile" uid="uid://c071thysmf4wl" path="res://Assets/Fonts/terminal-grotesque.ttf" id="2_ltd5g"]
-[ext_resource type="Texture2D" uid="uid://bdhl54t3id5mv" path="res://Assets/Sprites/Star.png" id="3_vgvud"]
+[ext_resource type="Script" path="res://Scenes/Panels/DetailPanel/detail_panel.gd" id="1_m0481"]
+[ext_resource type="Texture2D" uid="uid://b8foaqc3dedl8" path="res://Assets/Sprites/pixel_planet.png" id="2_jwduf"]
+[ext_resource type="FontFile" uid="uid://c071thysmf4wl" path="res://Assets/Fonts/terminal-grotesque.ttf" id="3_bla2p"]
+[ext_resource type="Texture2D" uid="uid://bdhl54t3id5mv" path="res://Assets/Sprites/Star.png" id="4_o7enl"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4nwe5"]
-font = ExtResource("2_ltd5g")
+font = ExtResource("3_bla2p")
 font_size = 60
 
 [sub_resource type="LabelSettings" id="LabelSettings_7arbi"]
-font = ExtResource("2_ltd5g")
+font = ExtResource("3_bla2p")
 font_size = 38
 
 [sub_resource type="LabelSettings" id="LabelSettings_rbo20"]
-font = ExtResource("2_ltd5g")
+font = ExtResource("3_bla2p")
 font_size = 60
 
-[node name="DetailPanel" type="Control"]
+[node name="PlanetDetailUI" type="Control"]
 layout_mode = 3
 anchor_right = 0.556
 anchor_bottom = 1.481
@@ -25,7 +25,7 @@ offset_right = -0.512085
 offset_bottom = 0.311951
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_iqjk0")
+script = ExtResource("1_m0481")
 
 [node name="PlanetSprite" type="TextureRect" parent="."]
 layout_mode = 0
@@ -34,7 +34,7 @@ offset_top = 152.0
 offset_right = 349.0
 offset_bottom = 292.0
 scale = Vector2(1.47263, 1.47263)
-texture = ExtResource("1_04xj0")
+texture = ExtResource("2_jwduf")
 expand_mode = 1
 
 [node name="PlanetNameLabel" type="Label" parent="."]
@@ -61,22 +61,24 @@ sentence."
 label_settings = SubResource("LabelSettings_7arbi")
 
 [node name="PrimaryTrendSprite" type="TextureRect" parent="."]
+texture_filter = 1
 layout_mode = 0
 offset_left = 104.0
 offset_top = 629.0
 offset_right = 144.0
 offset_bottom = 669.0
 scale = Vector2(4.06597, 4.06597)
-texture = ExtResource("3_vgvud")
+texture = ExtResource("4_o7enl")
 
 [node name="SecondaryTrendSprite" type="TextureRect" parent="."]
+texture_filter = 1
 layout_mode = 0
 offset_left = 383.0
 offset_top = 629.0
 offset_right = 423.0
 offset_bottom = 669.0
 scale = Vector2(4.06597, 4.06597)
-texture = ExtResource("3_vgvud")
+texture = ExtResource("4_o7enl")
 
 [node name="PrimaryTrendLabel" type="Label" parent="."]
 layout_mode = 0
