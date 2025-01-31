@@ -37,8 +37,8 @@ look_right={
 
 [autoload]
 
-Singleton="*res://singleton.gd"
 InteractiveButton="*res://interactive_button.tscn"
+Singleton="*res://singleton.gd"
 
 [dotnet]
 

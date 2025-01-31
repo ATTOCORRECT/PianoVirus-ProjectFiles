@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://co3x8wqu1jmbh"]
+[gd_scene load_steps=20 format=3 uid="uid://co3x8wqu1jmbh"]
 
 [ext_resource type="PackedScene" uid="uid://y712fbtjxkb3" path="res://Scenes/Panels/Map/map.tscn" id="1_a0s2q"]
 [ext_resource type="Script" path="res://Scenes/Game/settings.gd" id="2_46fxp"]
 [ext_resource type="PackedScene" uid="uid://d0ui842kpc0e5" path="res://Scenes/Controlls/warp_button.tscn" id="2_hmhgp"]
 [ext_resource type="Script" path="res://Scenes/Old/Player 2/player_look.gd" id="2_iksiu"]
+[ext_resource type="Script" path="res://Scenes/Panels/DetailPanel/detail_panel.gd" id="3_l8uj1"]
 [ext_resource type="Script" path="res://trend.gd" id="3_rmms6"]
 [ext_resource type="Texture2D" uid="uid://b8foaqc3dedl8" path="res://Assets/Sprites/pixel_planet.png" id="3_uw3uo"]
 [ext_resource type="Texture2D" uid="uid://bdhl54t3id5mv" path="res://Assets/Sprites/Star.png" id="4_7pla8"]
@@ -69,7 +70,8 @@ wait_time = 2.0
 one_shot = true
 
 [node name="DetailPanel" type="Node3D" parent="Map"]
-transform = Transform3D(0.638194, -0.0101096, -0.00730993, 0.00565411, 0.567784, -0.29161, 0.0111207, 0.29149, 0.567765, 1.92604, 0.0941691, 1.11036)
+transform = Transform3D(0.638194, -0.0101096, -0.00730992, 0.00565411, 0.567784, -0.29161, 0.0111207, 0.29149, 0.567765, 1.92634, 0.101141, 1.10845)
+script = ExtResource("3_l8uj1")
 
 [node name="Panel" type="CSGBox3D" parent="Map/DetailPanel"]
 transform = Transform3D(1.62662, 4.19095e-09, 1.4028e-08, 5.58794e-09, 0.133139, -1.79574, 3.72529e-09, 0.249536, 0.958113, 0.232367, 0.0785975, -0.52402)
