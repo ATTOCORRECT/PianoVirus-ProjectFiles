@@ -35,16 +35,28 @@ func update_fov(delta):
 
 func update_input():
 	if Input.is_action_just_pressed("zoom_in") and not zoom: 
-		zoom = true
-		var mouse_screen_position = viewport.get_mouse_position()
-		zoom_position = project_ray_normal(mouse_screen_position)
-		mouse_position_on_zoom = mouse_screen_position
-		#viewport.warp_mouse(viewport.size / 2)
+		zoom_in()
 	
 	if Input.is_action_just_pressed("zoom_out") and zoom: 
-		zoom = false
-		zoom_position = Vector3.FORWARD
-		#viewport.warp_mouse(mouse_position_on_zoom)
+		zoom_out()
+	
+	if Input.is_action_just_pressed("zoom_toggle"):
+		if zoom:
+			zoom_out()
+		else:
+			zoom_in()
+
+func zoom_in():
+	zoom = true
+	var mouse_screen_position = viewport.get_mouse_position()
+	zoom_position = project_ray_normal(mouse_screen_position)
+	mouse_position_on_zoom = mouse_screen_position
+	#viewport.warp_mouse(viewport.size / 2)
+
+func zoom_out():
+	zoom = false
+	zoom_position = Vector3.FORWARD
+	#viewport.warp_mouse(mouse_position_on_zoom)
 
 func update_look_direction(delta):
 	mouse_position = viewport.get_mouse_position() / Vector2(viewport.size)

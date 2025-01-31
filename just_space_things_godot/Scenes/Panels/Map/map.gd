@@ -4,7 +4,7 @@ var map_position = Vector3.ZERO
 var map_position_target = Vector3.ZERO
 var old_map_position_target = Vector3.ZERO
 
-var area_size = Vector3i(6, 6, 6)
+var area_size = Vector3i(8, 8, 8)
 var area_row    = area_size.x
 var area_slice  = area_size.x * area_size.y
 var area_volume = area_size.x * area_size.y * area_size.z
@@ -83,8 +83,8 @@ func get_cell(cell_position: Vector3i):
 func set_map_position_target(position_target: Vector3):
 	step = 0
 	old_map_position_target = map_position_target
-	map_position_target = position_target + map_position
-
+	map_position_target = (position_target * 1.25) + map_position
+	#                                        ^ 1/(Map transform scale)
 func select_star(star):
 	if target_star != null and target_star != star:
 		target_star.deselect_star()
@@ -93,6 +93,6 @@ func select_star(star):
 
 func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
 	if event is InputEventMouseButton:
-		if event.is_action_released("Select") and target_star != null and $WarpButton/Cooldown.is_stopped():
+		if event.is_action_released("Select") and target_star != null and $"../WarpButton/Cooldown".is_stopped():
 			target_star.travel()
-			$WarpButton/Cooldown.start()
+			$"../WarpButton/Cooldown".start()

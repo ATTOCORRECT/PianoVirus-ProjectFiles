@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://y712fbtjxkb3" path="res://Scenes/Panels/Map/map.tscn" id="1_a0s2q"]
 [ext_resource type="Script" path="res://Scenes/Game/settings.gd" id="2_46fxp"]
 [ext_resource type="PackedScene" uid="uid://d0ui842kpc0e5" path="res://Scenes/Controlls/warp_button.tscn" id="2_hmhgp"]
-[ext_resource type="Script" path="res://Scenes/Old/Player 2/player_look.gd" id="2_iksiu"]
+[ext_resource type="Script" path="res://Scenes/Player/player_look.gd" id="3_k502d"]
 [ext_resource type="Script" path="res://trend.gd" id="3_rmms6"]
 
 [sub_resource type="Environment" id="Environment_llmir"]
@@ -42,19 +42,19 @@ size = Vector2(30, 20)
 
 [node name="Game 2" type="Node3D"]
 
-[node name="Map" parent="." instance=ExtResource("1_a0s2q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1.5, -4)
+[node name="WarpButton" parent="." instance=ExtResource("2_hmhgp")]
+transform = Transform3D(1, 0, 0, 0, 0.906308, -0.422618, 0, 0.422618, 0.906308, 0, -1.8, -3.5)
 
-[node name="WarpButton" parent="Map" instance=ExtResource("2_hmhgp")]
-transform = Transform3D(1, 0, 0, 0, 0.906308, -0.422618, 0, 0.422618, 0.906308, 2, -0.3, 0.5)
-
-[node name="Cooldown" type="Timer" parent="Map/WarpButton"]
+[node name="Cooldown" type="Timer" parent="WarpButton"]
 wait_time = 2.0
 one_shot = true
 
+[node name="Map" parent="." instance=ExtResource("1_a0s2q")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -2, -1.5, -4)
+
 [node name="Camera3D" type="Camera3D" parent="."]
 environment = SubResource("Environment_llmir")
-script = ExtResource("2_iksiu")
+script = ExtResource("3_k502d")
 
 [node name="Data" type="Node" parent="."]
 script = ExtResource("2_46fxp")
@@ -110,6 +110,6 @@ mesh = SubResource("QuadMesh_3c16f")
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, -9.5, -1)
 mesh = SubResource("QuadMesh_3c16f")
 
-[connection signal="input_event" from="Map/WarpButton/Area3D" to="Map" method="_on_area_3d_input_event"]
+[connection signal="input_event" from="WarpButton/Area3D" to="Map" method="_on_area_3d_input_event"]
 
-[editable path="Map/WarpButton"]
+[editable path="WarpButton"]

@@ -20,7 +20,7 @@ func _ready() -> void:
 	var map_node_instance = map_node.instantiate()
 	
 	#seed(key.hash())
-	map_node_instance.position = Vector3(randf() * 0.8,randf() * 0.8,randf() * 0.8)
+	map_node_instance.position = Vector3(randf() * 0.7,randf() * 0.7,randf() * 0.7)
 	add_child(map_node_instance)
 	var child : Node3D = get_child(0)
 	child.key = key
