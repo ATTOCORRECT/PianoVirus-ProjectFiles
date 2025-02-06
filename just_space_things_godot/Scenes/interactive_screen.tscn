@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://6cr3iyntwfpf"]
+[gd_scene load_steps=5 format=3 uid="uid://cv1en8wupfl5t"]
 
 [ext_resource type="Script" path="res://Scripts/interactive_screen_controller.gd" id="1_5vuk8"]
 
