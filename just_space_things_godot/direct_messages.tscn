@@ -1,0 +1,68 @@
+[gd_scene load_steps=2 format=3 uid="uid://g7f7el2gx4ia"]
+
+[ext_resource type="Texture2D" uid="uid://cswuc0o6107ge" path="res://icon.svg" id="1_ka1yx"]
+
+[node name="direct_messages" type="Control"]
+layout_mode = 3
+anchor_right = 1.271
+anchor_bottom = 3.006
+offset_right = -1044.19
+offset_bottom = -987.888
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bg_color" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
+offset_left = 20.0
+offset_top = 30.0
+offset_right = 690.0
+offset_bottom = 920.0
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="message_panel" type="PanelContainer" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 160)
+layout_mode = 2
+
+[node name="new_message" type="VSplitContainer" parent="ScrollContainer/VBoxContainer/message_panel"]
+layout_mode = 2
+split_offset = -25
+
+[node name="sender_panel" type="HSplitContainer" parent="ScrollContainer/VBoxContainer/message_panel/new_message"]
+layout_mode = 2
+size_flags_vertical = 3
+split_offset = 64
+
+[node name="PanelContainer" type="PanelContainer" parent="ScrollContainer/VBoxContainer/message_panel/new_message/sender_panel"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/message_panel/new_message/sender_panel/PanelContainer"]
+position = Vector2(2, 2)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_ka1yx")
+centered = false
+offset = Vector2(30, 0)
+
+[node name="sender" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/message_panel/new_message/sender_panel"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Sender Name"
+scroll_active = false
+
+[node name="message_body" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/message_panel/new_message"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "This is the body of the message. It will keep going and wrap around in the text box. there is a lot of text and it is too long to fit onto this box, then the rest of the message will be available through a scroll wheel."
