@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://co3x8wqu1jmbh"]
+[gd_scene load_steps=17 format=3 uid="uid://co3x8wqu1jmbh"]
 
 [ext_resource type="PackedScene" uid="uid://y712fbtjxkb3" path="res://Scenes/Panels/Map/map.tscn" id="1_a0s2q"]
 [ext_resource type="Script" path="res://Scripts/settings.gd" id="2_46fxp"]
@@ -6,24 +6,10 @@
 [ext_resource type="Script" path="res://Scripts/player_look.gd" id="2_iksiu"]
 [ext_resource type="PackedScene" uid="uid://bwq158p2pvwph" path="res://Scenes/Panels/DetailPanel/planet_detail_panel.tscn" id="3_jihco"]
 [ext_resource type="Script" path="res://Scripts/trend.gd" id="3_rmms6"]
+[ext_resource type="PackedScene" uid="uid://bsb62k76bfl8e" path="res://Scenes/Panels/TrendPanel/trend_graph_panel.tscn" id="7_uatka"]
 
 [sub_resource type="Environment" id="Environment_llmir"]
 background_mode = 1
-
-[sub_resource type="Resource" id="Resource_y3loq"]
-script = ExtResource("3_rmms6")
-color = Color(0.932736, 0.0656115, 0.69305, 1)
-name = "Pink"
-
-[sub_resource type="Resource" id="Resource_3g2ty"]
-script = ExtResource("3_rmms6")
-color = Color(0.884542, 0.797124, 0, 1)
-name = "Yellow"
-
-[sub_resource type="Resource" id="Resource_8my2k"]
-script = ExtResource("3_rmms6")
-color = Color(0.113041, 0.677904, 0.911854, 1)
-name = "Blue"
 
 [sub_resource type="QuadMesh" id="QuadMesh_7akh8"]
 resource_local_to_scene = true
@@ -40,6 +26,21 @@ size = Vector2(10, 10)
 
 [sub_resource type="QuadMesh" id="QuadMesh_3c16f"]
 size = Vector2(30, 20)
+
+[sub_resource type="Resource" id="Resource_y3loq"]
+script = ExtResource("3_rmms6")
+color = Color(0.932736, 0.0656115, 0.69305, 1)
+name = "Pink"
+
+[sub_resource type="Resource" id="Resource_3g2ty"]
+script = ExtResource("3_rmms6")
+color = Color(0.884542, 0.797124, 0, 1)
+name = "Yellow"
+
+[sub_resource type="Resource" id="Resource_8my2k"]
+script = ExtResource("3_rmms6")
+color = Color(0.113041, 0.677904, 0.911854, 1)
+name = "Blue"
 
 [node name="Game 2" type="Node3D"]
 
@@ -66,13 +67,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1.5, -4)
 environment = SubResource("Environment_llmir")
 script = ExtResource("2_iksiu")
 
-[node name="Data" type="Node" parent="."]
-script = ExtResource("2_46fxp")
-trends = Array[ExtResource("3_rmms6")]([SubResource("Resource_y3loq"), SubResource("Resource_3g2ty"), SubResource("Resource_8my2k")])
-
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, -1.6)
-omni_range = 7.0
+omni_range = 10.0
+omni_attenuation = 0.2
 
 [node name="Interior mockup" type="Node3D" parent="."]
 
@@ -119,6 +117,13 @@ mesh = SubResource("QuadMesh_3c16f")
 [node name="CSGMesh3D11" type="CSGMesh3D" parent="Interior mockup"]
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, -9.5, -1)
 mesh = SubResource("QuadMesh_3c16f")
+
+[node name="TrendGraphPanel" parent="." instance=ExtResource("7_uatka")]
+transform = Transform3D(0.53033, 0, 0.53033, 0, 0.75, 0, -0.53033, 0, 0.53033, -4, 0, -5)
+
+[node name="Data" type="Node" parent="."]
+script = ExtResource("2_46fxp")
+trends = Array[ExtResource("3_rmms6")]([SubResource("Resource_y3loq"), SubResource("Resource_3g2ty"), SubResource("Resource_8my2k")])
 
 [connection signal="input_event" from="WarpButton/Area3D" to="Map" method="_on_area_3d_input_event"]
 

@@ -83,7 +83,7 @@ func get_cell(cell_position: Vector3i):
 func set_map_position_target(position_target: Vector3):
 	step = 0
 	old_map_position_target = map_position_target
-	map_position_target = (position_target * 1.25) + map_position
+	map_position_target = (position_target * 1) + map_position
 	#                                        ^ 1/(Map transform scale)
 func select_star(star):
 	if target_star != null and target_star != star:
