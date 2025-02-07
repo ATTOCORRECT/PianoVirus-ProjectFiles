@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://htqrbvq1nhnm"]
+[gd_scene load_steps=6 format=3 uid="uid://htqrbvq1nhnm"]
 
-[ext_resource type="Script" path="res://Scenes/Minigames/timing_minigame_test.gd" id="1_bagr8"]
+[ext_resource type="Script" path="res://Scenes/Minigames/timing_minigame_test.gd" id="1_vndk6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4bdyv"]
 font_size = 50
@@ -24,6 +24,12 @@ font_color = Color(0.2, 0.682353, 0.352941, 1)
 outline_size = 20
 outline_color = Color(0.115311, 0.364845, 0.167886, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_227e3"]
+font_size = 50
+font_color = Color(0.82881, 2.71939e-06, 5.77569e-07, 1)
+outline_size = 30
+outline_color = Color(0.618933, 1.73271e-06, 3.85046e-07, 1)
+
 [node name="TimingMinigameTest" type="Control"]
 layout_mode = 3
 anchor_right = 0.833
@@ -32,7 +38,7 @@ offset_right = 0.383911
 offset_bottom = -0.223999
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_bagr8")
+script = ExtResource("1_vndk6")
 
 [node name="Timer" type="Timer" parent="."]
 editor_description = "Test timer for timing minigame"
@@ -58,5 +64,14 @@ offset_right = 624.0
 offset_bottom = 256.0
 text = "Yippee!! :D"
 label_settings = SubResource("LabelSettings_mewrb")
+
+[node name="FailLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 189.0
+offset_right = 642.0
+offset_bottom = 258.0
+text = "You failed :("
+label_settings = SubResource("LabelSettings_227e3")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
