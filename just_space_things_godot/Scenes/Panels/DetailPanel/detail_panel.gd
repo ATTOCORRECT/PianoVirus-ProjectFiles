@@ -8,7 +8,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Singleton.active_planet_data != null:
 		$PlanetNameLabel.text = Singleton.active_planet_data.planet_name
 		$PrimaryTrendLabel.text = Singleton.active_planet_data.primairy_trend.name
