@@ -19,9 +19,9 @@ func _ready() -> void:
 		
 		var new_trend_box = RichTextLabel.new()
 		
-		new_trend_box.size_flags_vertical = Control.SIZE_EXPAND
-
-		boxes.append(new_trend_box)
+		new_trend_box.size_flags_vertical = Control.SIZE_EXPAND_FILL
+		new_trend_box.bbcode_enabled = true
+		boxes.append(new_trend_box) 
 		trend_vbox.add_child(boxes[i])
 	
 	slow_process()
@@ -49,18 +49,26 @@ func step_graph():
 			var next_point = lines[i].points[j + 1].y
 			lines[i].points[j].y = next_point
 		
-		lines[i].points[9].y = graph_panel.size.y * Singleton.trends[i].value
+		lines[i].points[9].y = graph_panel.size.y - (graph_panel.size.y * Singleton.trends[i].value)
 	
 	for i in Singleton.trends.size():
 		var index = 0
 		for j in Singleton.trends.size():
-			if Singleton.trends[i].value > Singleton.trends[j].value:
+			if Singleton.trends[i].value < Singleton.trends[j].value:
 				index += 1
 		trend_vbox.move_child(boxes[i],index)
 	
 	for i in boxes.size():
 		boxes[i].clear()
-		boxes[i].append_text("test")
+		
+		boxes[i].push_color(Singleton.trends[i].color)
+		boxes[i].push_font_size(64)
+		
+		boxes[i].append_text(Singleton.trends[i].name)
+		boxes[i].newline()
+		boxes[i].append_text(str(floor(Singleton.trends[i].value * 10000)))
+		
+		boxes[i].pop_all()
 
 func step_graph_multiple_times(steps : int):
 	for i in steps:
