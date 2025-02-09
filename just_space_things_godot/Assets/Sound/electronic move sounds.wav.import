@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b1xcu8g3o3suj"
+path="res://.godot/imported/electronic move sounds.wav-efb37299e1e97c7e61e7a964e28ef06b.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/electronic move sounds.wav"
+dest_files=["res://.godot/imported/electronic move sounds.wav-efb37299e1e97c7e61e7a964e28ef06b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
