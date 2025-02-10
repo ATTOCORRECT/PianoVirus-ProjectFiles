@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://co3x8wqu1jmbh"]
+[gd_scene load_steps=20 format=3 uid="uid://co3x8wqu1jmbh"]
 
 [ext_resource type="PackedScene" uid="uid://y712fbtjxkb3" path="res://Scenes/Panels/Map/map.tscn" id="1_a0s2q"]
 [ext_resource type="Script" path="res://Scripts/settings.gd" id="2_46fxp"]
@@ -6,9 +6,9 @@
 [ext_resource type="Script" path="res://Scripts/player_look.gd" id="2_iksiu"]
 [ext_resource type="PackedScene" uid="uid://bwq158p2pvwph" path="res://Scenes/Panels/DetailPanel/planet_detail_panel.tscn" id="3_jihco"]
 [ext_resource type="Script" path="res://Scripts/trend.gd" id="3_rmms6"]
-[ext_resource type="PackedScene" path="res://Scenes/test_minigame_panel.tscn" id="7_5eao3"]
+[ext_resource type="PackedScene" uid="uid://dc1gfn1ju0trv" path="res://Scenes/test_minigame_panel.tscn" id="7_5eao3"]
 [ext_resource type="PackedScene" uid="uid://bsb62k76bfl8e" path="res://Scenes/Panels/TrendPanel/trend_graph_panel.tscn" id="7_uatka"]
-[ext_resource type="PackedScene" path="res://Scenes/test_button.tscn" id="7_wqk0g"]
+[ext_resource type="PackedScene" uid="uid://dcgey2jeydoso" path="res://Scenes/test_button.tscn" id="7_wqk0g"]
 
 [sub_resource type="Environment" id="Environment_llmir"]
 background_mode = 1
@@ -43,6 +43,9 @@ name = "Yellow"
 script = ExtResource("3_rmms6")
 color = Color(0.113041, 0.677904, 0.911854, 1)
 name = "Blue"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6vcuw"]
+albedo_color = Color(1, 0.917647, 0, 1)
 
 [node name="Game 2" type="Node3D"]
 
@@ -120,9 +123,6 @@ mesh = SubResource("QuadMesh_3c16f")
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, -9.5, -1)
 mesh = SubResource("QuadMesh_3c16f")
 
-[node name="TestButton" parent="Interior mockup" instance=ExtResource("7_wqk0g")]
-transform = Transform3D(0.283274, 0, 0, 0, 0.283274, 0, 0, 0, 0.283274, 0.206227, -0.0751558, -4.00674)
-
 [node name="TrendGraphPanel" parent="." instance=ExtResource("7_uatka")]
 transform = Transform3D(0.53033, 0, 0.53033, 0, 0.75, 0, -0.53033, 0, 0.53033, -4, 0, -5)
 
@@ -131,12 +131,18 @@ script = ExtResource("2_46fxp")
 trends = Array[ExtResource("3_rmms6")]([SubResource("Resource_y3loq"), SubResource("Resource_3g2ty"), SubResource("Resource_8my2k")])
 
 [node name="TestMinigamePanel" parent="." instance=ExtResource("7_5eao3")]
-transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1, 0.186715, 0.624113, -4.00031)
+transform = Transform3D(1.43147, 0, -0.298808, 0, 1, 0, 0.448211, 0, 0.954313, 1.30456, 0.624113, -4.00031)
+
+[node name="TestButton" parent="TestMinigamePanel" instance=ExtResource("7_wqk0g")]
+transform = Transform3D(0.466369, 0, 0, 0, 0.216542, 0, 0, 0, 0.126526, 0.013008, -0.665977, -0.00643015)
+
+[node name="CSGBox3D" parent="TestMinigamePanel/TestButton" index="0"]
+material_override = SubResource("StandardMaterial3D_6vcuw")
 
 [connection signal="input_event" from="WarpButton/Area3D" to="Map" method="_on_area_3d_input_event"]
-[connection signal="input_event" from="Interior mockup/TestButton/Area3D" to="TestMinigamePanel" method="_on_area_3d_input_event"]
-[connection signal="input_event" from="Interior mockup/TestButton/Area3D" to="TestMinigamePanel/Viewport/TimingMinigameTest" method="_on_area_3d_input_event"]
+[connection signal="input_event" from="TestMinigamePanel/TestButton/Area3D" to="TestMinigamePanel" method="_on_area_3d_input_event"]
+[connection signal="input_event" from="TestMinigamePanel/TestButton/Area3D" to="TestMinigamePanel/Viewport/TimingMinigameTest" method="_on_area_3d_input_event"]
 
 [editable path="WarpButton"]
-[editable path="Interior mockup/TestButton"]
 [editable path="TestMinigamePanel"]
+[editable path="TestMinigamePanel/TestButton"]

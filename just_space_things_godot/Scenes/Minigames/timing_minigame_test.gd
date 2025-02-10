@@ -93,33 +93,32 @@ func _on_ready_timer_timeout() -> void:
 	countdown_label.visible = true
 	countdown_timer.start()
 
+func _on_countdown_label_ready() -> void:
+		countdown_label.push_font_size(50)
+		countdown_label.append_text("3")
+		countdown_label.pop()
+
 func _on_countdown_timer_timeout() -> void:
 	countdown_value += 1
 	
 	if countdown_value == 1 :
-		countdown_label.push_font_size(50)
-		countdown_label.append_text("3")
-		countdown_label.pop_all()
-	
-	if countdown_value == 2 :
 		countdown_label.clear()
 		countdown_label.push_font_size(60)
 		countdown_label.append_text("2")
-		countdown_label.pop_all()
+		countdown_label.pop()
 	
-	if countdown_value == 3 :
+	if countdown_value == 2 :
 		countdown_label.clear()
 		countdown_label.push_font_size(70)
 		countdown_label.append_text("1")
-		countdown_label.pop_all()
+		countdown_label.pop()
 	
-	if countdown_value == 4 :
+	if countdown_value == 3 :
 		countdown_label.clear()
 		countdown_label.push_font_size(80)
 		countdown_label.append_text("GO!")
-		countdown_label.pop_all()
 	
-	if countdown_value >= 5 :
+	if countdown_value >= 4 :
 		countdown_label.visible = false
 		timer_label.visible = true
 		game_timer.start()
