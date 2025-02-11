@@ -99,7 +99,7 @@ func _on_countdown_timer_timeout() -> void:
 	if countdown_value == 3 :
 		countdown_label.clear()
 		countdown_label.push_font_size(200)
-		countdown_label.append_text("[wave amp=200.0 freq=45.0 connected=1][rainbow freq=1.0 sat=0.8 val=0.8][center]GO!")
+		countdown_label.append_text("[wave amp=125.0 freq=25.0 connected=1][rainbow freq=0.7 sat=0.8 val=0.8][center]GO!")
 	
 	if countdown_value >= 4 :
 		countdown_label.visible = false
