@@ -90,9 +90,9 @@ horizontal_alignment = 1
 
 [node name="SuccessRichLabel" type="RichTextLabel" parent="Minigame"]
 visible = false
-offset_left = 353.0
+offset_left = 288.0
 offset_top = 108.0
-offset_right = 775.0
+offset_right = 710.0
 offset_bottom = 218.0
 scale = Vector2(1.00557, 0.97157)
 bbcode_enabled = true

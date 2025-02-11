@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://co3x8wqu1jmbh"]
+[gd_scene load_steps=22 format=3 uid="uid://co3x8wqu1jmbh"]
 
 [ext_resource type="PackedScene" uid="uid://y712fbtjxkb3" path="res://Scenes/Panels/Map/map.tscn" id="1_a0s2q"]
 [ext_resource type="Script" path="res://Scripts/settings.gd" id="2_46fxp"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dc1gfn1ju0trv" path="res://Scenes/test_minigame_panel.tscn" id="7_5eao3"]
 [ext_resource type="PackedScene" uid="uid://bsb62k76bfl8e" path="res://Scenes/Panels/TrendPanel/trend_graph_panel.tscn" id="7_uatka"]
 [ext_resource type="PackedScene" uid="uid://dcgey2jeydoso" path="res://Scenes/test_button.tscn" id="7_wqk0g"]
+[ext_resource type="Texture2D" uid="uid://v8157m3bux8e" path="res://Assets/Sprites/SPACEBACKGROUND.png" id="10_wnyq7"]
 
 [sub_resource type="Environment" id="Environment_llmir"]
 background_mode = 1
@@ -47,6 +48,18 @@ name = "Blue"
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6vcuw"]
 albedo_color = Color(1, 0.917647, 0, 1)
 
+[sub_resource type="FontFile" id="FontFile_e5iw3"]
+cache/0/32/0/ascent = 0.0
+cache/0/32/0/descent = 0.0
+cache/0/32/0/underline_position = 0.0
+cache/0/32/0/underline_thickness = 0.0
+cache/0/32/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
 [node name="Game 2" type="Node3D"]
 
 [node name="PlanetDetailPanel" parent="." instance=ExtResource("3_jihco")]
@@ -56,7 +69,7 @@ transform = Transform3D(0.638316, 0, 0, 0, 0.578511, 0.269764, 0, -0.269764, 0.5
 transform = Transform3D(0.349892, 0, 0, 0, 0.31711, -0.147871, 0, 0.147871, 0.31711, 0, -1.8, -3.4)
 
 [node name="CSGCylinder3D" parent="WarpButton" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0088644, 0.217951)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0088644, 0.104508)
 
 [node name="Area3D" parent="WarpButton" index="1"]
 transform = Transform3D(1.08912, 0, 0, 0, 1.08912, -3.72529e-09, 0, 3.72529e-09, 1.08912, 0, 0.00838089, 0.206035)
@@ -96,7 +109,7 @@ transform = Transform3D(0.906308, -0.383022, 0.178606, 0, 0.422618, 0.906308, -0
 mesh = SubResource("QuadMesh_7akh8")
 
 [node name="CSGMesh3D5" type="CSGMesh3D" parent="Interior mockup"]
-transform = Transform3D(1, 0, 0, 0, 0.422618, 0.906308, 0, -0.906308, 0.422618, 2.38419e-07, -1.5, -4)
+transform = Transform3D(1, 0, 0, 0, 0.422618, 0.906308, 0, -0.906308, 0.422618, -0.00183606, -1.5, -4.00414)
 mesh = SubResource("QuadMesh_dofya")
 
 [node name="CSGMesh3D6" type="CSGMesh3D" parent="Interior mockup"]
@@ -139,10 +152,36 @@ transform = Transform3D(0.466369, 0, 0, 0, 0.216542, 0, 0, 0, 0.126526, 0.013008
 [node name="CSGBox3D" parent="TestMinigamePanel/TestButton" index="0"]
 material_override = SubResource("StandardMaterial3D_6vcuw")
 
+[node name="Choose Your Destination" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.93013, -0.826059, -4.96088)
+text = "Choose your destination"
+font = SubResource("FontFile_e5iw3")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Choose Your Destination"]
+transform = Transform3D(0.815873, 0, 0, 0, 0.204655, 0, 0, 0, 1, -0.0270692, 0.0026536, -0.0612268)
+cast_shadow = 0
+size = Vector3(2.4, 1.6, 0.1)
+
+[node name="Choose Your Destination2" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.384311, 0.923204, 0, -0.923204, 0.384311, 0.0171386, -1.91096, -3.0402)
+text = "Travel"
+font = SubResource("FontFile_e5iw3")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Choose Your Destination2"]
+transform = Transform3D(0.377824, 0, 0, 0, 0.204655, 0, 0, 0, 1, -0.0270692, 0.0026536, -0.0612268)
+cast_shadow = 0
+size = Vector3(2.4, 1.6, 0.1)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1.06268, 0, 0, 0, 1.06268, 0, 0, 0, 1.06268, 0.116824, 1.08316, -7.24799)
+texture = ExtResource("10_wnyq7")
+
 [connection signal="input_event" from="WarpButton/Area3D" to="Map" method="_on_area_3d_input_event"]
 [connection signal="input_event" from="TestMinigamePanel/TestButton/Area3D" to="TestMinigamePanel" method="_on_area_3d_input_event"]
 [connection signal="input_event" from="TestMinigamePanel/TestButton/Area3D" to="TestMinigamePanel/Viewport/TimingMinigameTest" method="_on_area_3d_input_event"]
 
 [editable path="WarpButton"]
+[editable path="TrendGraphPanel"]
+[editable path="TrendGraphPanel/Interactive Screen"]
 [editable path="TestMinigamePanel"]
 [editable path="TestMinigamePanel/TestButton"]
