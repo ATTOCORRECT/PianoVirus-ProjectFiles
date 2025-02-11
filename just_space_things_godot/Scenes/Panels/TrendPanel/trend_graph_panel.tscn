@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bsb62k76bfl8e"]
 
-[ext_resource type="PackedScene" uid="uid://6cr3iyntwfpf" path="res://Scenes/interactive_screen.tscn" id="1_ekvc4"]
+[ext_resource type="PackedScene" uid="uid://cv1en8wupfl5t" path="res://Scenes/interactive_screen.tscn" id="1_ekvc4"]
 [ext_resource type="PackedScene" uid="uid://bchxhyrwfuuup" path="res://Scenes/Panels/TrendPanel/trend_graph_ui.tscn" id="2_1vbl3"]
 
 [node name="TrendGraphPanel" type="Node3D"]

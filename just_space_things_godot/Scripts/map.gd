@@ -96,3 +96,4 @@ func _on_area_3d_input_event(_camera: Node, event: InputEvent, _event_position: 
 		if event.is_action_released("Select") and target_star != null and $"../WarpButton/Cooldown".is_stopped():
 			target_star.travel()
 			$"../WarpButton/Cooldown".start()
+			%Data.load_minigame()

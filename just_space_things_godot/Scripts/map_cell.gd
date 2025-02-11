@@ -24,7 +24,7 @@ func _ready() -> void:
 	add_child(map_node_instance)
 	var child : Node3D = get_child(0)
 	child.key = key
-	
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
