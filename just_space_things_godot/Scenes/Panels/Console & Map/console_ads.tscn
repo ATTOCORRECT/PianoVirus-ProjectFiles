@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://dh4a70pkyvo0"]
-
-[node name="Console Ads" type="Control"]
-layout_mode = 3
-anchor_right = 0.778
-anchor_bottom = 0.198
-offset_right = -0.256042
-offset_bottom = -0.304016
