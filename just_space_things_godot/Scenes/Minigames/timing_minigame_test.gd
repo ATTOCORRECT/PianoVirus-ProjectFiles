@@ -7,10 +7,12 @@ extends Control
 
 @onready var timer_label = $Minigame/TimerLabel
 @onready var success_label = $Minigame/SuccessLabel
+@onready var success_rich_label = $Minigame/SuccessRichLabel
 @onready var fail_label = $Minigame/FailLabel
 @onready var instruction_label = $VBoxContainer_Instruction/InstructionLabel
 @onready var ready_label = $VBoxContainer_Ready/ReadyLabel
 @onready var countdown_label = $VBoxContainer_Countdown/CountdownLabel
+@onready var idle_container = $VBoxContainer_Idle
 
 var game_timer_value = 0.0
 @export var target_time = 4
@@ -20,7 +22,9 @@ var game_timer_value = 0.0
 var target_reached = false
 var target_hit = false
 
-var show_instructions
+var game_start = false
+var game_over = false
+var show_instructions = false
 var show_ready = false
 var show_countdown = false
 
@@ -38,9 +42,9 @@ func _process(delta: float) -> void:
 	
 	if target_hit :
 		timer_label.label_settings.font_color = Color.LIME
-		success_label.visible = true
+		success_rich_label.visible = true
 	else :
-		success_label.visible = false
+		success_rich_label.visible = false
 	
 	
 	if game_timer_value >= target_time && game_timer_value <= target_time + 1 && !target_hit :
@@ -53,34 +57,18 @@ func _process(delta: float) -> void:
 		print ("Target Reached: " + str(target_reached))
 	
 	if game_timer_value >= max_time || game_timer_value > target_time + 1 :
+		game_over = true
 		fail_label.visible = true
 		timer_label.label_settings.font_color = Color.RED
 		game_timer.stop()
+	
 	else :
 		fail_label.visible = false
-		
-	
-
-
-func _input(event) :
-		
-	if Input.is_action_pressed("ui_accept") && target_reached :
-		target_hit = true
-		print ("Success!")
-		game_timer.stop()
 		
 
 func _on_timer_timeout() -> void:
 	game_timer_value += .1
 	timer_label.text = "Timer: " + str(roundf(game_timer_value * 10) / 10) 
-
-
-func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
-	if event is InputEventMouseButton:
-		if event.is_action_pressed("Select") && target_reached :
-			target_hit = true
-			print ("Success!")
-			game_timer.stop()
 
 
 func _on_instruction_timer_timeout() -> void:
@@ -93,33 +81,67 @@ func _on_ready_timer_timeout() -> void:
 	countdown_label.visible = true
 	countdown_timer.start()
 
-func _on_countdown_label_ready() -> void:
-		countdown_label.push_font_size(50)
-		countdown_label.append_text("3")
-		countdown_label.pop()
-
 func _on_countdown_timer_timeout() -> void:
 	countdown_value += 1
 	
 	if countdown_value == 1 :
 		countdown_label.clear()
-		countdown_label.push_font_size(60)
-		countdown_label.append_text("2")
+		countdown_label.push_font_size(120)
+		countdown_label.append_text("[center] 2")
 		countdown_label.pop()
 	
 	if countdown_value == 2 :
 		countdown_label.clear()
-		countdown_label.push_font_size(70)
-		countdown_label.append_text("1")
+		countdown_label.push_font_size(160)
+		countdown_label.append_text("[center] 1")
 		countdown_label.pop()
 	
 	if countdown_value == 3 :
 		countdown_label.clear()
-		countdown_label.push_font_size(80)
-		countdown_label.append_text("GO!")
+		countdown_label.push_font_size(200)
+		countdown_label.append_text("[wave amp=200.0 freq=45.0 connected=1][rainbow freq=1.0 sat=0.8 val=0.8][center]GO!")
 	
 	if countdown_value >= 4 :
 		countdown_label.visible = false
 		timer_label.visible = true
 		game_timer.start()
 		countdown_timer.stop()
+		countdown_value = 0
+
+func _input(event) :
+	if event.is_action_pressed("Select") && !game_start :
+		idle_container.visible = false
+		game_start = true
+		instruction_label.visible = true
+		instruction_timer.start()
+	
+	if Input.is_action_pressed("ui_accept") && target_reached && game_start:
+		target_hit = true
+		print ("Success!")
+		game_timer.stop()
+	
+
+func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
+	if event is InputEventMouseButton:
+		if event.is_action_pressed("Select") && !game_start :
+			idle_container.visible = false
+			game_start = true
+			instruction_label.visible = true
+			instruction_timer.start()
+			
+		
+		if event.is_action_pressed("Select") && target_reached && game_start :
+			target_hit = true
+			print ("Success!")
+			game_timer.stop()
+			game_over = true
+		
+		#if event.is_action_pressed("Select") && game_over :
+			#ready_label.visible = true
+			#ready_timer.start()
+			#game_over = false
+			#
+			#game_timer_value = 0
+			#timer_label.visible = false
+			#success_label.visible = false
+			#fail_label.visible = false

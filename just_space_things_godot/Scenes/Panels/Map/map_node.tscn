@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://q68ngocptjm8"]
 
 [ext_resource type="Script" path="res://Scripts/map_node.gd" id="1_03cc4"]
-[ext_resource type="Texture2D" uid="uid://bdhl54t3id5mv" path="res://Assets/Sprites/Star.png" id="2_ykc3o"]
-[ext_resource type="Texture2D" uid="uid://bnnmnhfqri3mn" path="res://Assets/Sprites/map_cursor.png" id="3_ocy0w"]
+[ext_resource type="Texture2D" uid="uid://bdhl54t3id5mv" path="res://Assets/Sprites/Map/Star.png" id="2_ykc3o"]
+[ext_resource type="Texture2D" uid="uid://bnnmnhfqri3mn" path="res://Assets/Sprites/Map/map_cursor.png" id="3_ocy0w"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_p3r7t"]
 radius = 0.11
