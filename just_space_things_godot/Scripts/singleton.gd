@@ -3,6 +3,8 @@ extends Node
 var trends : Array[Trend]
 var active_planet_data : Planet_data
 
+var minigame_controller : Node
+
 func travel_to_planet(planet_data : Planet_data):
 	active_planet_data = planet_data
 	print("-- New Planet --")
@@ -15,18 +17,3 @@ func travel_to_planet(planet_data : Planet_data):
 	print("ID")
 	print("  " + str(active_planet_data.random_id))
 	print(" ")
-
-func minigame_completed(score : int):
-	pass
-
-func minigame_failed():
-	pass
-
-
-
-
-func disable_map():
-	pass
-
-func enable_map():
-	pass

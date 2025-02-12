@@ -32,7 +32,7 @@ var countdown_value = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
+	timer_label.label_settings.font_color = Color.WHITE
 	target_time = randi_range(target_min, target_max)
 	
 	print("target time:" + str(target_time))
@@ -61,7 +61,9 @@ func _process(delta: float) -> void:
 		fail_label.visible = true
 		timer_label.label_settings.font_color = Color.RED
 		game_timer.stop()
-	
+		Singleton.minigame_controller.minigame_failed()
+		process_mode = ProcessMode.PROCESS_MODE_DISABLED
+		
 	else :
 		fail_label.visible = false
 		
@@ -108,33 +110,46 @@ func _on_countdown_timer_timeout() -> void:
 		countdown_timer.stop()
 		countdown_value = 0
 
-func _input(event) :
+#func _input(event) :
+	#if event.is_action_pressed("Select") && !game_start :
+		#idle_container.visible = false
+		#game_start = true
+		#instruction_label.visible = true
+		#instruction_timer.start()
+	#
+	#if Input.is_action_pressed("Select") && target_reached && game_start:
+		#target_hit = true
+		#print ("Success!")
+		#game_timer.stop()
+
+func on_button_event(event: InputEvent):
+	print("recieved input")
 	if event.is_action_pressed("Select") && !game_start :
 		idle_container.visible = false
 		game_start = true
 		instruction_label.visible = true
 		instruction_timer.start()
 	
-	if Input.is_action_pressed("ui_accept") && target_reached && game_start:
+	if event.is_action_pressed("Select") && target_reached && game_start :
 		target_hit = true
-		print ("Success!")
+		Singleton.minigame_controller.minigame_completed(0) # replace number with reward score
 		game_timer.stop()
-	
+		game_over = true
 
-func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
-	if event is InputEventMouseButton:
-		if event.is_action_pressed("Select") && !game_start :
-			idle_container.visible = false
-			game_start = true
-			instruction_label.visible = true
-			instruction_timer.start()
-			
-		
-		if event.is_action_pressed("Select") && target_reached && game_start :
-			target_hit = true
-			print ("Success!")
-			game_timer.stop()
-			game_over = true
+#func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
+	#if event is InputEventMouseButton:
+		#if event.is_action_pressed("Select") && !game_start :
+			#idle_container.visible = false
+			#game_start = true
+			#instruction_label.visible = true
+			#instruction_timer.start()
+			#
+		#
+		#if event.is_action_pressed("Select") && target_reached && game_start :
+			#target_hit = true
+			#print ("Success!")
+			#game_timer.stop()
+			#game_over = true
 		
 		#if event.is_action_pressed("Select") && game_over :
 			#ready_label.visible = true
