@@ -19,12 +19,12 @@ func _ready() -> void:
 	position = cell_position
 	var map_node_instance = map_node.instantiate()
 	
-	seed(key.hash())
+	seed(key.hash() + 17)
 	map_node_instance.position = Vector3(randf() * 0.7,randf() * 0.7,randf() * 0.7)
 	add_child(map_node_instance)
 	var child : Node3D = get_child(0)
 	child.key = key
-	
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

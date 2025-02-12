@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bnnmnhfqri3mn"
-path.s3tc="res://.godot/imported/map_cursor.png-58c42ab87ed25b48049c43408e7aee7f.s3tc.ctex"
+path.s3tc="res://.godot/imported/map_cursor.png-85495af30169b8960bb4751eaced67e9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Sprites/map_cursor.png"
-dest_files=["res://.godot/imported/map_cursor.png-58c42ab87ed25b48049c43408e7aee7f.s3tc.ctex"]
+source_file="res://Assets/Sprites/Map/map_cursor.png"
+dest_files=["res://.godot/imported/map_cursor.png-85495af30169b8960bb4751eaced67e9.s3tc.ctex"]
 
 [params]
 
