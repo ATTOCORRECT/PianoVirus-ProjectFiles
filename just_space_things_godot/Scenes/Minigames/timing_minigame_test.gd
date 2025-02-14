@@ -38,7 +38,7 @@ func _ready() -> void:
 	print("target time:" + str(target_time))
 	print ("Target Reached: " + str(target_reached))
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	
 	if target_hit :
 		timer_label.label_settings.font_color = Color.LIME

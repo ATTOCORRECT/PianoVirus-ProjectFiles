@@ -10,11 +10,11 @@ var zoom = false
 @export var zoom_fov : float = 30
 var zoom_look_range_factor : float = 1
 var zoom_position : Vector3
-var mouse_position_on_zoom : Vector2
 
 @onready var viewport = get_viewport()
 
-
+func _enter_tree() -> void:
+	Singleton.player = %Player
 
 func _ready() -> void:
 	fov = default_fov
@@ -50,13 +50,15 @@ func zoom_in():
 	zoom = true
 	var mouse_screen_position = viewport.get_mouse_position()
 	zoom_position = project_ray_normal(mouse_screen_position)
-	mouse_position_on_zoom = mouse_screen_position
-	#viewport.warp_mouse(viewport.size / 2)
+	zoom_fov = 30
 
 func zoom_out():
 	zoom = false
 	zoom_position = Vector3.FORWARD
-	#viewport.warp_mouse(mouse_position_on_zoom)
+
+func override_zoom(in_zoom_position : Vector3, in_fov : float):
+	zoom_position = in_zoom_position.normalized()
+	zoom_fov = in_fov
 
 func update_look_direction(delta):
 	mouse_position = viewport.get_mouse_position() / Vector2(viewport.size)

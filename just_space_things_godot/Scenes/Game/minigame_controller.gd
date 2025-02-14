@@ -23,7 +23,7 @@ func _on_button_event(_camera: Node, event: InputEvent, _event_position: Vector3
 	if active_minigame != null and event is InputEventMouseButton:
 		minigame_panel_viewport.get_child(0).on_button_event(event)
 
-func minigame_completed(score : int):
+func minigame_completed(_score : int):
 	await get_tree().create_timer(2).timeout
 	$"../WarpButton".enable_warp_button()
 	unload_minigame()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://co3x8wqu1jmbh"]
+[gd_scene load_steps=27 format=3 uid="uid://co3x8wqu1jmbh"]
 
 [ext_resource type="PackedScene" uid="uid://y712fbtjxkb3" path="res://Scenes/Panels/Map/map.tscn" id="1_a0s2q"]
 [ext_resource type="Script" path="res://Scenes/Game/minigame_controller.gd" id="1_arlly"]
@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://htqrbvq1nhnm" path="res://Scenes/Minigames/timing_minigame_test.tscn" id="3_x6pgq"]
 [ext_resource type="PackedScene" uid="uid://bsb62k76bfl8e" path="res://Scenes/Panels/TrendPanel/trend_graph_panel.tscn" id="7_uatka"]
 [ext_resource type="PackedScene" uid="uid://dcgey2jeydoso" path="res://Scenes/Panels/MinigamePanel/test_button.tscn" id="7_wqk0g"]
-[ext_resource type="Script" path="res://Scripts/minigame_panel.gd" id="8_o44qw"]
 [ext_resource type="PackedScene" uid="uid://of7bu4heyrbb" path="res://Scenes/Panels/MinigamePanel/minigame_panel.tscn" id="10_3p7rq"]
+[ext_resource type="PackedScene" uid="uid://bu5uvr44chgrf" path="res://Scenes/window_hook.tscn" id="10_nx7qh"]
 [ext_resource type="Texture2D" uid="uid://v8157m3bux8e" path="res://Assets/Sprites/SPACEBACKGROUND.png" id="10_wnyq7"]
 
 [sub_resource type="Resource" id="Resource_y3loq"]
@@ -29,11 +29,19 @@ script = ExtResource("3_rmms6")
 color = Color(0.113041, 0.677904, 0.911854, 1)
 name = "Blue"
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6vcuw"]
-albedo_color = Color(1, 0.917647, 0, 1)
-
 [sub_resource type="Environment" id="Environment_llmir"]
 background_mode = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hvrel"]
+resource_local_to_scene = true
+size = Vector3(3.96484, 1.28369, 2.14783)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t20v3"]
+resource_local_to_scene = true
+size = Vector3(2.33484, 1.49023, 0.200317)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6vcuw"]
+albedo_color = Color(1, 0.917647, 0, 1)
 
 [sub_resource type="FontFile" id="FontFile_e5iw3"]
 cache/0/32/0/ascent = 0.0
@@ -75,6 +83,11 @@ unique_name_in_owner = true
 script = ExtResource("2_46fxp")
 trends = Array[ExtResource("3_rmms6")]([SubResource("Resource_y3loq"), SubResource("Resource_3g2ty"), SubResource("Resource_8my2k")])
 
+[node name="Player" type="Camera3D" parent="."]
+unique_name_in_owner = true
+environment = SubResource("Environment_llmir")
+script = ExtResource("2_iksiu")
+
 [node name="PlanetDetailPanel" parent="." instance=ExtResource("3_jihco")]
 transform = Transform3D(0.638316, 0, 0, 0, 0.578511, 0.269764, 0, -0.269764, 0.578511, 0, -1, -3.8)
 
@@ -94,12 +107,26 @@ one_shot = true
 [node name="Map" parent="." instance=ExtResource("1_a0s2q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1.5, -4)
 
+[node name="WindowHook" parent="Map" instance=ExtResource("10_nx7qh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.587153, 0, 0)
+zoom_fov = 35
+
+[node name="CollisionShape3D" parent="Map/WindowHook/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0507966, 0.141846, -0.0744019)
+shape = SubResource("BoxShape3D_hvrel")
+
 [node name="TrendGraphPanel" parent="." instance=ExtResource("7_uatka")]
 transform = Transform3D(0.53033, 0, 0.53033, 0, 0.75, 0, -0.53033, 0, 0.53033, -4, 0, -5)
 
+[node name="WindowHook" parent="TrendGraphPanel" instance=ExtResource("10_nx7qh")]
+zoom_fov = 15
+
+[node name="CollisionShape3D" parent="TrendGraphPanel/WindowHook/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0104046, -0.0238342, -0.0635376)
+shape = SubResource("BoxShape3D_t20v3")
+
 [node name="MinigamePanel" parent="." instance=ExtResource("10_3p7rq")]
 transform = Transform3D(0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, 0.939693, 1.3, 0.6, -4)
-script = ExtResource("8_o44qw")
 
 [node name="Viewport" parent="MinigamePanel/Interactive Screen" index="2"]
 size = Vector2i(960, 640)
@@ -109,10 +136,6 @@ transform = Transform3D(0.667593, 0, -0.037807, 0, 0.216542, 0, 0.209032, 0, 0.1
 
 [node name="CSGBox3D" parent="TestButton" index="0"]
 material_override = SubResource("StandardMaterial3D_6vcuw")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-environment = SubResource("Environment_llmir")
-script = ExtResource("2_iksiu")
 
 [node name="Choose Your Destination" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.93013, -0.826059, -4.96088)
@@ -195,8 +218,10 @@ texture = ExtResource("10_wnyq7")
 [connection signal="input_event" from="TestButton/Area3D" to="MinigameController" method="_on_button_event"]
 
 [editable path="WarpButton"]
+[editable path="Map/WindowHook"]
 [editable path="TrendGraphPanel"]
 [editable path="TrendGraphPanel/Interactive Screen"]
+[editable path="TrendGraphPanel/WindowHook"]
 [editable path="MinigamePanel"]
 [editable path="MinigamePanel/Interactive Screen"]
 [editable path="TestButton"]
