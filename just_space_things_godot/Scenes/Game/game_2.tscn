@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://co3x8wqu1jmbh"]
+[gd_scene load_steps=35 format=3 uid="uid://co3x8wqu1jmbh"]
 
 [ext_resource type="PackedScene" uid="uid://y712fbtjxkb3" path="res://Scenes/Panels/Map/map.tscn" id="1_a0s2q"]
 [ext_resource type="Script" path="res://Scenes/Game/minigame_controller.gd" id="1_arlly"]
@@ -69,11 +69,15 @@ background_mode = 1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hvrel"]
 resource_local_to_scene = true
-size = Vector3(3.96484, 1.28369, 2.14783)
+size = Vector3(4.12158, 1.91333, 2.26994)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t20v3"]
 resource_local_to_scene = true
 size = Vector3(2.33484, 1.49023, 0.200317)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sexy1"]
+resource_local_to_scene = true
+size = Vector3(1.57214, 1.38464, 0.251404)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6vcuw"]
 albedo_color = Color(1, 0.917647, 0, 1)
@@ -149,11 +153,14 @@ one_shot = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1.5, -4)
 
 [node name="WindowHook" parent="Map" instance=ExtResource("10_nx7qh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.587153, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.657599, 0.211225, 0)
 zoom_fov = 35
 
+[node name="Area3D" parent="Map/WindowHook" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.205204, 0)
+
 [node name="CollisionShape3D" parent="Map/WindowHook/Area3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0507966, 0.141846, -0.0744019)
+transform = Transform3D(0.93642, -0.321254, 0.141119, 0.350729, 0.845069, -0.403543, 0.0103847, 0.42738, 0.904012, -0.0280297, 0.0281055, -0.161714)
 shape = SubResource("BoxShape3D_hvrel")
 
 [node name="TrendGraphPanel" parent="." instance=ExtResource("7_uatka")]
@@ -171,6 +178,16 @@ transform = Transform3D(0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, 0.939693, 1.
 
 [node name="Viewport" parent="MinigamePanel/Interactive Screen" index="2"]
 size = Vector2i(960, 640)
+
+[node name="WindowHook" parent="MinigamePanel" instance=ExtResource("10_nx7qh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.111711, 0)
+
+[node name="Area3D" parent="MinigamePanel/WindowHook" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0810902, 0)
+
+[node name="CollisionShape3D" parent="MinigamePanel/WindowHook/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00397229, -0.11615, 0.0143666)
+shape = SubResource("BoxShape3D_sexy1")
 
 [node name="TestButton" parent="." instance=ExtResource("7_wqk0g")]
 transform = Transform3D(0.667593, 0, -0.037807, 0, 0.216542, 0, 0.209032, 0, 0.120745, 1.3251, -0.041864, -4.00062)
@@ -275,4 +292,5 @@ texture = ExtResource("10_wnyq7")
 [editable path="TrendGraphPanel/WindowHook"]
 [editable path="MinigamePanel"]
 [editable path="MinigamePanel/Interactive Screen"]
+[editable path="MinigamePanel/WindowHook"]
 [editable path="TestButton"]
