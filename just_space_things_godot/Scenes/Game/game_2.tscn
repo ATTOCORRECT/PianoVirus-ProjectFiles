@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://co3x8wqu1jmbh"]
+[gd_scene load_steps=32 format=3 uid="uid://co3x8wqu1jmbh"]
 
 [ext_resource type="PackedScene" uid="uid://y712fbtjxkb3" path="res://Scenes/Panels/Map/map.tscn" id="1_a0s2q"]
 [ext_resource type="Script" path="res://Scenes/Game/minigame_controller.gd" id="1_arlly"]
@@ -14,20 +14,55 @@
 [ext_resource type="PackedScene" uid="uid://bu5uvr44chgrf" path="res://Scenes/window_hook.tscn" id="10_nx7qh"]
 [ext_resource type="Texture2D" uid="uid://v8157m3bux8e" path="res://Assets/Sprites/SPACEBACKGROUND.png" id="10_wnyq7"]
 
-[sub_resource type="Resource" id="Resource_y3loq"]
+[sub_resource type="Resource" id="Resource_0rod6"]
 script = ExtResource("3_rmms6")
-color = Color(0.932736, 0.0656115, 0.69305, 1)
-name = "Pink"
+color = Color(0.96, 0.3072, 0.3072, 1)
+name = "Chatting"
+
+[sub_resource type="Resource" id="Resource_ddfdv"]
+script = ExtResource("3_rmms6")
+color = Color(0.99, 0.743985, 0.2871, 1)
+name = "Music"
 
 [sub_resource type="Resource" id="Resource_3g2ty"]
 script = ExtResource("3_rmms6")
-color = Color(0.884542, 0.797124, 0, 1)
-name = "Yellow"
+color = Color(0.932, 1, 0.49, 1)
+name = "Nature"
+
+[sub_resource type="Resource" id="Resource_4mpih"]
+script = ExtResource("3_rmms6")
+color = Color(0.2494, 0.86, 0.64629, 1)
+name = "Gaming"
 
 [sub_resource type="Resource" id="Resource_8my2k"]
 script = ExtResource("3_rmms6")
-color = Color(0.113041, 0.677904, 0.911854, 1)
-name = "Blue"
+color = Color(0.38, 0.958667, 1, 1)
+name = "Politics"
+
+[sub_resource type="Resource" id="Resource_2fpb3"]
+script = ExtResource("3_rmms6")
+color = Color(0.2156, 0.57232, 0.98, 1)
+name = "Memes"
+
+[sub_resource type="Resource" id="Resource_vgo3p"]
+script = ExtResource("3_rmms6")
+color = Color(0.3663, 0.38709, 0.99, 1)
+name = "Technology"
+
+[sub_resource type="Resource" id="Resource_yc1o0"]
+script = ExtResource("3_rmms6")
+color = Color(0.734, 0.16, 1, 1)
+name = "Beauty"
+
+[sub_resource type="Resource" id="Resource_y3loq"]
+script = ExtResource("3_rmms6")
+color = Color(1, 0.35, 0.696667, 1)
+name = "Sports"
+
+[sub_resource type="Resource" id="Resource_egp12"]
+script = ExtResource("3_rmms6")
+color = Color(0.87, 0.0609, 0.344085, 1)
+name = "Movies"
 
 [sub_resource type="Environment" id="Environment_llmir"]
 background_mode = 1
@@ -81,7 +116,7 @@ minigame = ExtResource("3_x6pgq")
 [node name="Data" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("2_46fxp")
-trends = Array[ExtResource("3_rmms6")]([SubResource("Resource_y3loq"), SubResource("Resource_3g2ty"), SubResource("Resource_8my2k")])
+trends = Array[ExtResource("3_rmms6")]([SubResource("Resource_0rod6"), SubResource("Resource_ddfdv"), SubResource("Resource_3g2ty"), SubResource("Resource_4mpih"), SubResource("Resource_8my2k"), SubResource("Resource_2fpb3"), SubResource("Resource_vgo3p"), SubResource("Resource_yc1o0"), SubResource("Resource_y3loq"), SubResource("Resource_egp12")])
 
 [node name="Player" type="Camera3D" parent="."]
 unique_name_in_owner = true
@@ -90,6 +125,12 @@ script = ExtResource("2_iksiu")
 
 [node name="PlanetDetailPanel" parent="." instance=ExtResource("3_jihco")]
 transform = Transform3D(0.638316, 0, 0, 0, 0.578511, 0.269764, 0, -0.269764, 0.578511, 0, -1, -3.8)
+
+[node name="Play minigame label" type="Label3D" parent="PlanetDetailPanel"]
+transform = Transform3D(0.999993, -0.00372743, -0.000599762, 0.003728, 0.999992, 0.000944763, 0.000596238, -0.000946999, 0.999999, 0.00128851, -0.179165, 0.216542)
+visible = false
+text = "Go to 
+minigame panel"
 
 [node name="WarpButton" parent="." instance=ExtResource("2_hmhgp")]
 transform = Transform3D(0.349892, 0, 0, 0, 0.31711, -0.147871, 0, 0.147871, 0.31711, 0, -1.8, -3.4)
@@ -143,6 +184,16 @@ text = "Choose your destination"
 font = SubResource("FontFile_e5iw3")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Choose Your Destination"]
+transform = Transform3D(0.815873, 0, 0, 0, 0.204655, 0, 0, 0, 1, -0.0270692, 0.0026536, -0.0612268)
+cast_shadow = 0
+size = Vector3(2.4, 1.6, 0.1)
+
+[node name="Choose Your Destination" type="Label3D" parent="Choose Your Destination"]
+transform = Transform3D(1.70099, 0, 0, 0, 1.69702, -0.116227, 0, 0.116227, 1.69702, 0.922709, 2.96588, -0.251314)
+text = "Right click to zoom in/out"
+font = SubResource("FontFile_e5iw3")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Choose Your Destination/Choose Your Destination"]
 transform = Transform3D(0.815873, 0, 0, 0, 0.204655, 0, 0, 0, 1, -0.0270692, 0.0026536, -0.0612268)
 cast_shadow = 0
 size = Vector3(2.4, 1.6, 0.1)
