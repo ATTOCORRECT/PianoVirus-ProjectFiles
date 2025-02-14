@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cuy3iisp0goct" path="res://Old/Console & Map/console_and_map.tscn" id="7_ixr3o"]
 [ext_resource type="Texture2D" uid="uid://bexpfhp20rj6g" path="res://Assets/Sprites/ANALYTICSBACKGROUND.png" id="7_ln4ss"]
 [ext_resource type="PackedScene" uid="uid://8htrreom0a65" path="res://Assets/Models/Ship/JST_Prototype ShipBackground.gltf" id="8_bmx4a"]
-[ext_resource type="AudioStream" uid="uid://djxjyq2b5ifte" path="res://Assets/Sound/wip 3 no ending cropped.wav" id="9_8ppql"]
+[ext_resource type="AudioStream" uid="uid://djxjyq2b5ifte" path="res://Assets/Sound/Old/wip 3 no ending cropped.wav" id="9_8ppql"]
 [ext_resource type="PackedScene" uid="uid://ten16csndkby" path="res://Assets/Models/Debug/Debug Cube/Test Cube.glb" id="9_e4gy0"]
 
 [node name="Game" type="Node3D"]

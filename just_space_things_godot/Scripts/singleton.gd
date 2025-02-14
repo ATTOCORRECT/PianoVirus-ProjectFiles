@@ -5,6 +5,7 @@ var active_planet_data : Planet_data
 
 var minigame_controller : Node
 var player : Camera3D
+var audio_manager : Node
 
 func travel_to_planet(planet_data : Planet_data):
 	active_planet_data = planet_data

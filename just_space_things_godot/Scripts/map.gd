@@ -93,6 +93,7 @@ func select_star(star):
 func _on_area_3d_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.is_action_released("Select") and target_star != null and $"../WarpButton/Cooldown".is_stopped():
+			Singleton.audio_manager.play_button_takeoff_sound()
 			target_star.travel()
 			$"../WarpButton/Cooldown".start()
 			%MinigameController.load_minigame()
