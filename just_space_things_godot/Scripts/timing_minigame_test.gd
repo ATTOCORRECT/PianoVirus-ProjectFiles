@@ -15,6 +15,7 @@ extends Control
 @onready var idle_container = $VBoxContainer_Idle
 
 var game_timer_value = 0.0
+var score = 1.0
 @export var target_time = 4
 @export var target_min = 3
 @export var target_max = 8
@@ -51,6 +52,7 @@ func _process(delta: float) -> void:
 		timer_label.label_settings.font_color = Color.YELLOW
 		target_reached = true
 	
+	
 	if game_timer_value >= target_time + 1 :
 		target_reached = false
 		timer_label.label_settings.font_color = Color.WHITE
@@ -71,6 +73,10 @@ func _process(delta: float) -> void:
 func _on_timer_timeout() -> void:
 	game_timer_value += .1
 	timer_label.text = "Timer: " + str(roundf(game_timer_value * 10) / 10) 
+	print("Score: " + str(score))
+	
+	if target_reached :
+		score -= .1
 
 
 func _on_instruction_timer_timeout() -> void:
@@ -132,7 +138,7 @@ func on_button_event(event: InputEvent):
 	
 	if event.is_action_pressed("Select") && target_reached && game_start :
 		target_hit = true
-		Singleton.minigame_controller.minigame_completed(0) # replace number with reward score
+		Singleton.minigame_controller.minigame_completed(score) # replace number with reward score
 		game_timer.stop()
 		game_over = true
 
