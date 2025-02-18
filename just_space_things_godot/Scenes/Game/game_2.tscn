@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://co3x8wqu1jmbh"]
+[gd_scene load_steps=38 format=3 uid="uid://co3x8wqu1jmbh"]
 
 [ext_resource type="PackedScene" uid="uid://y712fbtjxkb3" path="res://Scenes/Panels/Map/map.tscn" id="1_a0s2q"]
 [ext_resource type="Script" path="res://Scenes/Game/minigame_controller.gd" id="1_arlly"]
@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://bwq158p2pvwph" path="res://Scenes/Panels/DetailPanel/planet_detail_panel.tscn" id="3_jihco"]
 [ext_resource type="Script" path="res://Scripts/trend.gd" id="3_rmms6"]
 [ext_resource type="PackedScene" uid="uid://htqrbvq1nhnm" path="res://Scenes/Minigames/timing_minigame_test.tscn" id="3_x6pgq"]
+[ext_resource type="Script" path="res://sender_res.gd" id="5_okk1q"]
+[ext_resource type="Resource" uid="uid://ujf16x3mpdsi" path="res://Senders/test1.tres" id="6_xuatq"]
+[ext_resource type="Resource" uid="uid://8ipyv32tbnn7" path="res://Senders/test2.tres" id="7_eeuqn"]
 [ext_resource type="PackedScene" uid="uid://bsb62k76bfl8e" path="res://Scenes/Panels/TrendPanel/trend_graph_panel.tscn" id="7_uatka"]
 [ext_resource type="PackedScene" uid="uid://dcgey2jeydoso" path="res://Scenes/Panels/MinigamePanel/test_button.tscn" id="7_wqk0g"]
 [ext_resource type="PackedScene" uid="uid://of7bu4heyrbb" path="res://Scenes/Panels/MinigamePanel/minigame_panel.tscn" id="10_3p7rq"]
@@ -121,6 +124,7 @@ minigame = ExtResource("3_x6pgq")
 unique_name_in_owner = true
 script = ExtResource("2_46fxp")
 trends = Array[ExtResource("3_rmms6")]([SubResource("Resource_0rod6"), SubResource("Resource_ddfdv"), SubResource("Resource_3g2ty"), SubResource("Resource_4mpih"), SubResource("Resource_8my2k"), SubResource("Resource_2fpb3"), SubResource("Resource_vgo3p"), SubResource("Resource_yc1o0"), SubResource("Resource_y3loq"), SubResource("Resource_egp12")])
+contacts = Array[ExtResource("5_okk1q")]([ExtResource("6_xuatq"), ExtResource("7_eeuqn")])
 
 [node name="Player" type="Camera3D" parent="."]
 unique_name_in_owner = true

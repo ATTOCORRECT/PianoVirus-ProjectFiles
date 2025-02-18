@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Sender" load_steps=2 format=3 uid="uid://ujf16x3mpdsi"]
+
+[ext_resource type="Script" path="res://sender_res.gd" id="1_adpo1"]
+
+[resource]
+script = ExtResource("1_adpo1")
+name = "Manager"
