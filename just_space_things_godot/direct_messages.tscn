@@ -1,13 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://g7f7el2gx4ia"]
+[gd_scene load_steps=7 format=3 uid="uid://g7f7el2gx4ia"]
 
 [ext_resource type="Script" path="res://Scripts/direct_messages.gd" id="1_7ewgt"]
 [ext_resource type="Script" path="res://Scripts/dm_data.gd" id="2_fbcgs"]
 [ext_resource type="Resource" uid="uid://ujf16x3mpdsi" path="res://Senders/test1.tres" id="3_lhmhl"]
+[ext_resource type="Resource" uid="uid://8ipyv32tbnn7" path="res://Senders/test2.tres" id="4_m1c3a"]
 
 [sub_resource type="Resource" id="Resource_r1om1"]
 script = ExtResource("2_fbcgs")
 sender = ExtResource("3_lhmhl")
 message = "Testing"
+
+[sub_resource type="Resource" id="Resource_0w3w7"]
+script = ExtResource("2_fbcgs")
+sender = ExtResource("4_m1c3a")
+message = "testing"
 
 [node name="direct_messages" type="Control"]
 layout_mode = 3
@@ -18,7 +24,7 @@ offset_bottom = -987.888
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7ewgt")
-Messages = Array[ExtResource("2_fbcgs")]([SubResource("Resource_r1om1")])
+Messages = Array[ExtResource("2_fbcgs")]([SubResource("Resource_r1om1"), SubResource("Resource_0w3w7")])
 
 [node name="bg_color" type="ColorRect" parent="."]
 layout_mode = 1
@@ -41,7 +47,3 @@ horizontal_scroll_mode = 0
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-
-[node name="message_panel" type="PanelContainer" parent="ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 160)
-layout_mode = 2

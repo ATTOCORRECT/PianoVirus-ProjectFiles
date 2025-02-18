@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bwq158p2pvwph" path="res://Scenes/Panels/DetailPanel/planet_detail_panel.tscn" id="3_jihco"]
 [ext_resource type="Script" path="res://Scripts/trend.gd" id="3_rmms6"]
 [ext_resource type="PackedScene" uid="uid://htqrbvq1nhnm" path="res://Scenes/Minigames/timing_minigame_test.tscn" id="3_x6pgq"]
-[ext_resource type="Script" path="res://sender_res.gd" id="5_okk1q"]
+[ext_resource type="Script" path="res://Scripts/sender_res.gd" id="5_okk1q"]
 [ext_resource type="Resource" uid="uid://ujf16x3mpdsi" path="res://Senders/test1.tres" id="6_xuatq"]
 [ext_resource type="Resource" uid="uid://8ipyv32tbnn7" path="res://Senders/test2.tres" id="7_eeuqn"]
 [ext_resource type="PackedScene" uid="uid://bsb62k76bfl8e" path="res://Scenes/Panels/TrendPanel/trend_graph_panel.tscn" id="7_uatka"]
