@@ -62,11 +62,11 @@ func step_graph():
 		boxes[i].clear()
 		
 		boxes[i].push_color(Singleton.trends[i].color)
-		boxes[i].push_font_size(64)
+		boxes[i].push_font_size(40)
 		
 		boxes[i].append_text(Singleton.trends[i].name)
-		boxes[i].newline()
-		boxes[i].append_text(str(floor(Singleton.trends[i].value * 10000)))
+		#boxes[i].newline()
+		#boxes[i].append_text(str(floor(Singleton.trends[i].value * 10000)))
 		
 		boxes[i].pop_all()
 
