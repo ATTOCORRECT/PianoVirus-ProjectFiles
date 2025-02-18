@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://co3x8wqu1jmbh"]
+[gd_scene load_steps=28 format=3 uid="uid://co3x8wqu1jmbh"]
 
 [ext_resource type="PackedScene" uid="uid://y712fbtjxkb3" path="res://Scenes/Panels/Map/map.tscn" id="1_a0s2q"]
 [ext_resource type="Script" path="res://Scenes/Game/minigame_controller.gd" id="1_arlly"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://of7bu4heyrbb" path="res://Scenes/Panels/MinigamePanel/minigame_panel.tscn" id="10_3p7rq"]
 [ext_resource type="PackedScene" uid="uid://bu5uvr44chgrf" path="res://Scenes/window_hook.tscn" id="10_nx7qh"]
 [ext_resource type="Texture2D" uid="uid://v8157m3bux8e" path="res://Assets/Sprites/SPACEBACKGROUND.png" id="10_wnyq7"]
+[ext_resource type="PackedScene" uid="uid://dfl2r6koee71t" path="res://Scenes/Panels/Engagement Panel/engagement_panel.tscn" id="13_jog3q"]
 
 [sub_resource type="Resource" id="Resource_y3loq"]
 script = ExtResource("3_rmms6")
@@ -136,6 +137,9 @@ transform = Transform3D(0.667593, 0, -0.037807, 0, 0.216542, 0, 0.209032, 0, 0.1
 
 [node name="CSGBox3D" parent="TestButton" index="0"]
 material_override = SubResource("StandardMaterial3D_6vcuw")
+
+[node name="EngagementPanel" parent="." instance=ExtResource("13_jog3q")]
+transform = Transform3D(0.561044, 0, -0.827786, 0, 1, 0, 0.827786, 0, 0.561044, 3.65138, 0, -3.80617)
 
 [node name="Choose Your Destination" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.93013, -0.826059, -4.96088)
