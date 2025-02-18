@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://co3x8wqu1jmbh"]
+[gd_scene load_steps=35 format=3 uid="uid://co3x8wqu1jmbh"]
 
 [ext_resource type="PackedScene" uid="uid://y712fbtjxkb3" path="res://Scenes/Panels/Map/map.tscn" id="1_a0s2q"]
 [ext_resource type="Script" path="res://Scenes/Game/minigame_controller.gd" id="1_arlly"]
