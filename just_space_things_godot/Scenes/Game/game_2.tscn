@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://co3x8wqu1jmbh"]
+[gd_scene load_steps=34 format=3 uid="uid://co3x8wqu1jmbh"]
 
 [ext_resource type="PackedScene" uid="uid://y712fbtjxkb3" path="res://Scenes/Panels/Map/map.tscn" id="1_a0s2q"]
 [ext_resource type="Script" path="res://Scenes/Game/minigame_controller.gd" id="1_arlly"]
@@ -10,10 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://htqrbvq1nhnm" path="res://Scenes/Minigames/timing_minigame_test.tscn" id="3_x6pgq"]
 [ext_resource type="PackedScene" uid="uid://bsb62k76bfl8e" path="res://Scenes/Panels/TrendPanel/trend_graph_panel.tscn" id="7_uatka"]
 [ext_resource type="PackedScene" uid="uid://dcgey2jeydoso" path="res://Scenes/Panels/MinigamePanel/test_button.tscn" id="7_wqk0g"]
-[ext_resource type="Script" path="res://Scripts/minigame_panel.gd" id="8_o44qw"]
 [ext_resource type="PackedScene" uid="uid://of7bu4heyrbb" path="res://Scenes/Panels/MinigamePanel/minigame_panel.tscn" id="10_3p7rq"]
 [ext_resource type="Texture2D" uid="uid://v8157m3bux8e" path="res://Assets/Sprites/SPACEBACKGROUND.png" id="10_wnyq7"]
-[ext_resource type="PackedScene" path="res://Scenes/Panels/FollowerCount/follower_count.tscn" id="14_3fxua"]
+[ext_resource type="PackedScene" uid="uid://b8qlhw4a72dcr" path="res://Scenes/Panels/FollowerCount/follower_count.tscn" id="14_3fxua"]
 [ext_resource type="PackedScene" uid="uid://dfl2r6koee71t" path="res://Scenes/Panels/Engagement Panel/engagement_panel.tscn" id="15_v5d7t"]
 [ext_resource type="Script" path="res://Scenes/Game/label_3d_TEMP.gd" id="15_vx2cm"]
 
@@ -67,11 +66,11 @@ script = ExtResource("3_rmms6")
 color = Color(0.87, 0.0609, 0.344085, 1)
 name = "Movies"
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6vcuw"]
-albedo_color = Color(1, 0.917647, 0, 1)
-
 [sub_resource type="Environment" id="Environment_llmir"]
 background_mode = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6vcuw"]
+albedo_color = Color(1, 0.917647, 0, 1)
 
 [sub_resource type="FontFile" id="FontFile_e5iw3"]
 cache/0/32/0/ascent = 0.0
@@ -113,6 +112,11 @@ unique_name_in_owner = true
 script = ExtResource("2_46fxp")
 trends = Array[ExtResource("3_rmms6")]([SubResource("Resource_0rod6"), SubResource("Resource_ddfdv"), SubResource("Resource_3g2ty"), SubResource("Resource_4mpih"), SubResource("Resource_8my2k"), SubResource("Resource_2fpb3"), SubResource("Resource_vgo3p"), SubResource("Resource_yc1o0"), SubResource("Resource_y3loq"), SubResource("Resource_egp12")])
 
+[node name="Player" type="Camera3D" parent="."]
+unique_name_in_owner = true
+environment = SubResource("Environment_llmir")
+script = ExtResource("2_iksiu")
+
 [node name="PlanetDetailPanel" parent="." instance=ExtResource("3_jihco")]
 transform = Transform3D(0.638316, 0, 0, 0, 0.578511, 0.269764, 0, -0.269764, 0.578511, 0, -1, -3.8)
 
@@ -143,7 +147,6 @@ transform = Transform3D(0.53033, 0, 0.53033, 0, 0.75, 0, -0.53033, 0, 0.53033, -
 
 [node name="MinigamePanel" parent="." instance=ExtResource("10_3p7rq")]
 transform = Transform3D(0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, 0.984808, 1.89812, 0.434262, -4.3)
-script = ExtResource("8_o44qw")
 
 [node name="Viewport" parent="MinigamePanel/Interactive Screen" index="2"]
 size = Vector2i(960, 640)
@@ -154,10 +157,6 @@ transform = Transform3D(0.698825, 0, 0.00577023, 0, 0.216542, 0, -0.0319042, 0, 
 [node name="CSGBox3D" parent="MinigamePanel/TestButton" index="0"]
 transform = Transform3D(0.999931, 0, -0.0117109, 0, 1, 0, 0.0117108, 0, 0.999931, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_6vcuw")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-environment = SubResource("Environment_llmir")
-script = ExtResource("2_iksiu")
 
 [node name="Top Window Label" type="CSGBox3D" parent="."]
 transform = Transform3D(1.38779, 0, 0, 0, 0.347304, -0.116227, 0, 0.0237864, 1.69702, -1.05347, 2.15144, -5.31579)
