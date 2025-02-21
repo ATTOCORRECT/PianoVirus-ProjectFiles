@@ -14,8 +14,10 @@
 [ext_resource type="PackedScene" uid="uid://bsb62k76bfl8e" path="res://Scenes/Panels/TrendPanel/trend_graph_panel.tscn" id="7_uatka"]
 [ext_resource type="PackedScene" uid="uid://dcgey2jeydoso" path="res://Scenes/Panels/MinigamePanel/test_button.tscn" id="7_wqk0g"]
 [ext_resource type="PackedScene" uid="uid://of7bu4heyrbb" path="res://Scenes/Panels/MinigamePanel/minigame_panel.tscn" id="10_3p7rq"]
-[ext_resource type="PackedScene" uid="uid://bu5uvr44chgrf" path="res://Scenes/window_hook.tscn" id="10_nx7qh"]
 [ext_resource type="Texture2D" uid="uid://v8157m3bux8e" path="res://Assets/Sprites/SPACEBACKGROUND.png" id="10_wnyq7"]
+[ext_resource type="PackedScene" uid="uid://b8qlhw4a72dcr" path="res://Scenes/Panels/FollowerCount/follower_count.tscn" id="14_3fxua"]
+[ext_resource type="PackedScene" uid="uid://dfl2r6koee71t" path="res://Scenes/Panels/Engagement Panel/engagement_panel.tscn" id="15_v5d7t"]
+[ext_resource type="Script" path="res://Scenes/Game/label_3d_TEMP.gd" id="15_vx2cm"]
 
 [sub_resource type="Resource" id="Resource_0rod6"]
 script = ExtResource("3_rmms6")
@@ -69,14 +71,6 @@ name = "Movies"
 
 [sub_resource type="Environment" id="Environment_llmir"]
 background_mode = 1
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_hvrel"]
-resource_local_to_scene = true
-size = Vector3(3.96484, 1.28369, 2.14783)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_t20v3"]
-resource_local_to_scene = true
-size = Vector3(2.33484, 1.49023, 0.200317)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6vcuw"]
 albedo_color = Color(1, 0.917647, 0, 1)
@@ -166,66 +160,59 @@ one_shot = true
 [node name="Map" parent="." instance=ExtResource("1_a0s2q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1.5, -4)
 
-[node name="WindowHook" parent="Map" instance=ExtResource("10_nx7qh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.587153, 0, 0)
-zoom_fov = 35
-
-[node name="CollisionShape3D" parent="Map/WindowHook/Area3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0507966, 0.141846, -0.0744019)
-shape = SubResource("BoxShape3D_hvrel")
-
 [node name="TrendGraphPanel" parent="." instance=ExtResource("7_uatka")]
 transform = Transform3D(0.53033, 0, 0.53033, 0, 0.75, 0, -0.53033, 0, 0.53033, -4, 0, -5)
 
-[node name="WindowHook" parent="TrendGraphPanel" instance=ExtResource("10_nx7qh")]
-zoom_fov = 15
-
-[node name="CollisionShape3D" parent="TrendGraphPanel/WindowHook/Area3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0104046, -0.0238342, -0.0635376)
-shape = SubResource("BoxShape3D_t20v3")
-
 [node name="MinigamePanel" parent="." instance=ExtResource("10_3p7rq")]
-transform = Transform3D(0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, 0.939693, 1.3, 0.6, -4)
+transform = Transform3D(0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, 0.984808, 1.89812, 0.434262, -4.3)
 
 [node name="Viewport" parent="MinigamePanel/Interactive Screen" index="2"]
 size = Vector2i(960, 640)
 
-[node name="TestButton" parent="." instance=ExtResource("7_wqk0g")]
-transform = Transform3D(0.667593, 0, -0.037807, 0, 0.216542, 0, 0.209032, 0, 0.120745, 1.3251, -0.041864, -4.00062)
+[node name="TestButton" parent="MinigamePanel" instance=ExtResource("7_wqk0g")]
+transform = Transform3D(0.698825, 0, 0.00577023, 0, 0.216542, 0, -0.0319042, 0, 0.126394, 0.0233742, -0.641864, -0.00916719)
 
-[node name="CSGBox3D" parent="TestButton" index="0"]
+[node name="CSGBox3D" parent="MinigamePanel/TestButton" index="0"]
+transform = Transform3D(0.999931, 0, -0.0117109, 0, 1, 0, 0.0117108, 0, 0.999931, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_6vcuw")
 
-[node name="Choose Your Destination" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.93013, -0.826059, -4.96088)
+[node name="Top Window Label" type="CSGBox3D" parent="."]
+transform = Transform3D(1.38779, 0, 0, 0, 0.347304, -0.116227, 0, 0.0237864, 1.69702, -1.05347, 2.15144, -5.31579)
 visible = false
-text = "Choose your destination"
-font = SubResource("FontFile_e5iw3")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Choose Your Destination"]
-transform = Transform3D(0.815873, 0, 0, 0, 0.204655, 0, 0, 0, 1, -0.0270692, 0.0026536, -0.0612268)
 cast_shadow = 0
 size = Vector3(2.4, 1.6, 0.1)
 
-[node name="Choose Your Destination" type="Label3D" parent="Choose Your Destination"]
-transform = Transform3D(1.70099, 0, 0, 0, 1.69702, -0.116227, 0, 0.116227, 1.69702, 0.922709, 2.96588, -0.251314)
+[node name="Right click to zoom" type="Label3D" parent="Top Window Label"]
+transform = Transform3D(1.22568, 0, 0, 0, 4.88627, 0, 0, 7.45058e-09, 1, 0.0331782, -0.0129657, 0.0612268)
+visible = false
 text = "Right click to zoom in/out"
 font = SubResource("FontFile_e5iw3")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Choose Your Destination/Choose Your Destination"]
-transform = Transform3D(0.815873, 0, 0, 0, 0.204655, 0, 0, 0, 1, -0.0270692, 0.0026536, -0.0612268)
-cast_shadow = 0
-size = Vector3(2.4, 1.6, 0.1)
-
-[node name="Choose Your Destination2" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.384311, 0.923204, 0, -0.923204, 0.384311, 0.0171386, -1.91096, -3.0402)
-text = "Travel"
+[node name="Right click to zoom2" type="Label3D" parent="Top Window Label"]
+transform = Transform3D(1.50229, 0, 0, 0, 23.8756, -2.98023e-08, 0, 5.96046e-08, 1, 0.0738441, -0.0763197, 0.122453)
+visible = false
+text = "Right click to zoom in/out"
 font = SubResource("FontFile_e5iw3")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Choose Your Destination2"]
-transform = Transform3D(0.377824, 0, 0, 0, 0.204655, 0, 0, 0, 1, -0.0270692, 0.0026536, -0.0612268)
+[node name="Above Map Label" type="CSGBox3D" parent="."]
+transform = Transform3D(0.815873, 0, 0, 0, 0.204655, 0, 0, 0, 1, -1.9572, -0.823405, -5.02211)
 cast_shadow = 0
 size = Vector3(2.4, 1.6, 0.1)
+
+[node name="Choose Your Destination" type="Label3D" parent="Above Map Label"]
+transform = Transform3D(1.22568, 0, 0, 0, 4.88627, 0, 0, 0, 1, 0.0331781, -0.0129662, 0.0612268)
+text = "Choose your destination"
+font = SubResource("FontFile_e5iw3")
+
+[node name="Travel Label" type="CSGBox3D" parent="."]
+transform = Transform3D(0.377824, 0, 0, 0, 0.0786512, 0.923204, 0, -0.188938, 0.384311, -0.0099306, -1.96646, -3.06618)
+cast_shadow = 0
+size = Vector3(2.4, 1.6, 0.1)
+
+[node name="Travel Label" type="Label3D" parent="Travel Label"]
+transform = Transform3D(2.64673, 0, 0, 0, 4.88627, -1.19209e-07, 0, 2.98023e-08, 1, 0.071645, -0.0129652, 0.0612268)
+text = "Travel"
+font = SubResource("FontFile_e5iw3")
 
 [node name="Environment" type="Node" parent="."]
 
@@ -284,14 +271,57 @@ mesh = SubResource("QuadMesh_3c16f")
 transform = Transform3D(1.06268, 0, 0, 0, 1.06268, 0, 0, 0, 1.06268, 0.116824, 1.08316, -7.24799)
 texture = ExtResource("10_wnyq7")
 
+[node name="FollowerCount" parent="." instance=ExtResource("14_3fxua")]
+transform = Transform3D(0.620544, 0, 0, 0, 0.611045, -0.108162, 0, 0.108162, 0.611045, -0.689273, 2.05782, -5.38698)
+
+[node name="Label3D" type="Label3D" parent="FollowerCount"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3161, 0.00796139, 0.0449772)
+text = "000052847"
+font_size = 120
+horizontal_alignment = 0
+script = ExtResource("15_vx2cm")
+
+[node name="FollowerCount" parent="FollowerCount" instance=ExtResource("14_3fxua")]
+transform = Transform3D(0.620544, 0, 0, 0, 0.610226, 0.112691, 0, -0.112691, 0.610226, -1.99642, -3.84744, 1.36362)
+
+[node name="Label3D" type="Label3D" parent="FollowerCount/FollowerCount"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3161, 0.00796139, 0.0449772)
+text = "000052847"
+font_size = 120
+horizontal_alignment = 0
+script = ExtResource("15_vx2cm")
+
+[node name="FollowerCount3" parent="FollowerCount" instance=ExtResource("14_3fxua")]
+transform = Transform3D(0.381535, 0, 0, 0, 0.375191, 0.0692869, 0, -0.0692869, 0.375191, 1.11148, -3.23682, 2.62737)
+
+[node name="Label3D" type="Label3D" parent="FollowerCount/FollowerCount3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3161, 0.00796139, 0.0449772)
+text = "000052847"
+font_size = 120
+horizontal_alignment = 0
+script = ExtResource("15_vx2cm")
+
+[node name="FollowerCount2" parent="FollowerCount" instance=ExtResource("14_3fxua")]
+transform = Transform3D(0.611584, 0.000779461, -0.105065, 0.0183134, 0.610237, 0.11113, 0.103459, -0.112625, 0.601404, 4.26137, -0.969671, 1.89571)
+
+[node name="Label3D" type="Label3D" parent="FollowerCount/FollowerCount2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3161, 0.00796139, 0.0449772)
+text = "000052847"
+font_size = 120
+horizontal_alignment = 0
+script = ExtResource("15_vx2cm")
+
+[node name="EngagementPanel" parent="." instance=ExtResource("15_v5d7t")]
+transform = Transform3D(0.649519, 0, -0.375, 0, 0.75, 0, 0.375, 0, 0.649519, 3.9, 0.2, -4)
+
 [connection signal="input_event" from="WarpButton/Area3D" to="Map" method="_on_area_3d_input_event"]
-[connection signal="input_event" from="TestButton/Area3D" to="MinigameController" method="_on_button_event"]
+[connection signal="input_event" from="MinigamePanel/TestButton/Area3D" to="MinigameController" method="_on_button_event"]
 
 [editable path="WarpButton"]
-[editable path="Map/WindowHook"]
 [editable path="TrendGraphPanel"]
 [editable path="TrendGraphPanel/Interactive Screen"]
-[editable path="TrendGraphPanel/WindowHook"]
 [editable path="MinigamePanel"]
 [editable path="MinigamePanel/Interactive Screen"]
-[editable path="TestButton"]
+[editable path="MinigamePanel/TestButton"]
+[editable path="FollowerCount"]
+[editable path="FollowerCount/Interactive Screen"]
