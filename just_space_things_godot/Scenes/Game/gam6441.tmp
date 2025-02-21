@@ -1,0 +1,103 @@
+[gd_scene load_steps=14 format=3 uid="uid://co3x8wqu1jmbh"]
+
+[ext_resource type="PackedScene" uid="uid://y712fbtjxkb3" path="res://Scenes/Panels/Map/map.tscn" id="1_a0s2q"]
+[ext_resource type="Script" path="res://Scenes/Game/settings.gd" id="2_46fxp"]
+[ext_resource type="Script" path="res://Scenes/Old/Player 2/player_look.gd" id="2_iksiu"]
+[ext_resource type="Script" path="res://trend.gd" id="3_rmms6"]
+
+[sub_resource type="Environment" id="Environment_llmir"]
+background_mode = 1
+
+[sub_resource type="Resource" id="Resource_y3loq"]
+script = ExtResource("3_rmms6")
+color = Color(0.932736, 0.0656115, 0.69305, 1)
+name = "Pink"
+
+[sub_resource type="Resource" id="Resource_3g2ty"]
+script = ExtResource("3_rmms6")
+color = Color(0.884542, 0.797124, 0, 1)
+name = "Yellow"
+
+[sub_resource type="Resource" id="Resource_8my2k"]
+script = ExtResource("3_rmms6")
+color = Color(0.113041, 0.677904, 0.911854, 1)
+name = "Blue"
+
+[sub_resource type="QuadMesh" id="QuadMesh_7akh8"]
+resource_local_to_scene = true
+size = Vector2(3, 2)
+
+[sub_resource type="QuadMesh" id="QuadMesh_7lau7"]
+size = Vector2(3, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_dofya"]
+size = Vector2(1, 2)
+
+[sub_resource type="QuadMesh" id="QuadMesh_vm8bu"]
+size = Vector2(10, 10)
+
+[sub_resource type="QuadMesh" id="QuadMesh_3c16f"]
+size = Vector2(30, 20)
+
+[node name="Game 2" type="Node3D"]
+
+[node name="Map" parent="." instance=ExtResource("1_a0s2q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1.5, -4)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+environment = SubResource("Environment_llmir")
+script = ExtResource("2_iksiu")
+
+[node name="Data" type="Node" parent="."]
+script = ExtResource("2_46fxp")
+trends = Array[ExtResource("3_rmms6")]([SubResource("Resource_y3loq"), SubResource("Resource_3g2ty"), SubResource("Resource_8my2k")])
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, -1.6)
+omni_range = 7.0
+
+[node name="Interior mockup" type="Node3D" parent="."]
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="Interior mockup"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2, -2, -4)
+mesh = SubResource("QuadMesh_7akh8")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="Interior mockup"]
+transform = Transform3D(1, 0, 0, 0, 0.422618, 0.906308, 0, -0.906308, 0.422618, 2, -1.5, -4)
+mesh = SubResource("QuadMesh_7akh8")
+
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="Interior mockup"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1.5, -5)
+mesh = SubResource("QuadMesh_7lau7")
+
+[node name="CSGMesh3D4" type="CSGMesh3D" parent="Interior mockup"]
+transform = Transform3D(0.906308, -0.383022, 0.178606, 0, 0.422618, 0.906308, -0.422618, -0.821394, 0.383022, -5, -1.5, -3.2)
+mesh = SubResource("QuadMesh_7akh8")
+
+[node name="CSGMesh3D5" type="CSGMesh3D" parent="Interior mockup"]
+transform = Transform3D(1, 0, 0, 0, 0.422618, 0.906308, 0, -0.906308, 0.422618, 2.38419e-07, -1.5, -4)
+mesh = SubResource("QuadMesh_dofya")
+
+[node name="CSGMesh3D6" type="CSGMesh3D" parent="Interior mockup"]
+transform = Transform3D(0.866025, 0.453154, -0.211309, 0, 0.422618, 0.906308, 0.5, -0.784886, 0.365998, 5, -1.5, -3.2)
+mesh = SubResource("QuadMesh_7akh8")
+
+[node name="CSGMesh3D7" type="CSGMesh3D" parent="Interior mockup"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0.422618, 0.906308, 1.84732e-08, -0.906308, 0.422618, -3.9616e-08, -3.5, -1.9, -4.1)
+mesh = SubResource("QuadMesh_7lau7")
+
+[node name="CSGMesh3D8" type="CSGMesh3D" parent="Interior mockup"]
+transform = Transform3D(0.810638, -0.0971323, 0.577435, 0.240599, 0.954305, -0.17724, -0.533833, 0.282608, 0.796966, -8, 0, -3)
+mesh = SubResource("QuadMesh_vm8bu")
+
+[node name="CSGMesh3D9" type="CSGMesh3D" parent="Interior mockup"]
+transform = Transform3D(0.810914, 0.0972601, -0.577025, -0.240621, 0.954287, -0.177305, 0.533403, 0.282623, 0.797248, 8, 0, -3)
+mesh = SubResource("QuadMesh_vm8bu")
+
+[node name="CSGMesh3D10" type="CSGMesh3D" parent="Interior mockup"]
+transform = Transform3D(1, 0, 0, 0, 0.258819, -0.965926, 0, 0.965926, 0.258819, 0, 5, 4.3)
+mesh = SubResource("QuadMesh_3c16f")
+
+[node name="CSGMesh3D11" type="CSGMesh3D" parent="Interior mockup"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, -9.5, -1)
+mesh = SubResource("QuadMesh_3c16f")

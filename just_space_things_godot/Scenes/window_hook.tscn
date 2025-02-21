@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bu5uvr44chgrf"]
+
+[ext_resource type="Script" path="res://Scripts/window_hook.gd" id="1_4e13f"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_34jm2"]
+resource_local_to_scene = true
+
+[node name="WindowHook" type="Node3D"]
+script = ExtResource("1_4e13f")
+
+[node name="Area3D" type="Area3D" parent="."]
+process_mode = 4
+priority = -1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_34jm2")
+
+[node name="Marker3D" type="Marker3D" parent="."]
+
+[connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]
+[connection signal="mouse_entered" from="Area3D" to="." method="_on_area_3d_mouse_entered"]
