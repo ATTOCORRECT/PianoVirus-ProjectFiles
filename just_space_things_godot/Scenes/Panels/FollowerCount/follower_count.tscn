@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8qlhw4a72dcr"]
+
+[ext_resource type="PackedScene" uid="uid://cv1en8wupfl5t" path="res://Scenes/interactive_screen.tscn" id="1_kkwxf"]
+[ext_resource type="Texture2D" uid="uid://44klvnhh7vb3" path="res://Assets/Sprites/Follower Icon.png" id="2_0458t"]
+
+[node name="FollowerCount" type="Node3D"]
+
+[node name="Interactive Screen" parent="." instance=ExtResource("1_kkwxf")]
+
+[node name="Display" parent="Interactive Screen" index="0"]
+transform = Transform3D(4.09732, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Viewport" parent="Interactive Screen" index="2"]
+size = Vector2i(960, 512)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(4.24922, 0, 0, 0, 1.14368, 0, 0, 0, 0.323667, 0, 0, -0.169073)
+
+[node name="Follower Icon" type="Sprite3D" parent="."]
+transform = Transform3D(0.215519, 0, 0, 0, 0.215519, 0, 0, 0, 0.215519, -1.66874, 0.0295372, 0.0480539)
+texture = ExtResource("2_0458t")
+
+[editable path="Interactive Screen"]
