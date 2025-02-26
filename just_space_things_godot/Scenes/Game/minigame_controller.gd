@@ -36,10 +36,15 @@ func minigame_completed(score : float):
 	await get_tree().create_timer(2).timeout
 	$"../WarpButton".enable_warp_button()
 	unload_minigame()
-	Singleton.engagement.add_velocity(score)
+	Singleton.engagement.add_velocity(score) #I was thinking that depending how good your upload was it would modify 
+	#the pitch of the success sound. However, I currently don't know what the rage of the scoring model
+	#is and at the same time I know there were plans to change it to make it more balanced
+	
+	Singleton.audio_manager.play_minigame_success_sound() #move this somewhere else when back from design week
 
 
 func minigame_failed():
 	await get_tree().create_timer(2).timeout
 	$"../WarpButton".enable_warp_button()
 	unload_minigame()
+	Singleton.audio_manager.play_minigame_fail_sound() #move this somewhere else when back from design week

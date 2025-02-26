@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://co3x8wqu1jmbh"]
+[gd_scene load_steps=39 format=3 uid="uid://co3x8wqu1jmbh"]
 
 [ext_resource type="PackedScene" uid="uid://y712fbtjxkb3" path="res://Scenes/Panels/Map/map.tscn" id="1_a0s2q"]
 [ext_resource type="Script" path="res://Scenes/Game/minigame_controller.gd" id="1_arlly"]
@@ -13,6 +13,8 @@
 [ext_resource type="AudioStream" uid="uid://by5lra87s28sg" path="res://Assets/Sound/SFX/Takeoff.wav" id="7_n5qwd"]
 [ext_resource type="PackedScene" uid="uid://bsb62k76bfl8e" path="res://Scenes/Panels/TrendPanel/trend_graph_panel.tscn" id="7_uatka"]
 [ext_resource type="PackedScene" uid="uid://dcgey2jeydoso" path="res://Scenes/Panels/MinigamePanel/test_button.tscn" id="7_wqk0g"]
+[ext_resource type="AudioStream" uid="uid://cokqgfkw2hlw4" path="res://Assets/Sound/SFX/minigame success.wav" id="8_tssjl"]
+[ext_resource type="AudioStream" uid="uid://c8p3pudmflris" path="res://Assets/Sound/SFX/minigame fail.wav" id="9_omyyn"]
 [ext_resource type="PackedScene" uid="uid://of7bu4heyrbb" path="res://Scenes/Panels/MinigamePanel/minigame_panel.tscn" id="10_3p7rq"]
 [ext_resource type="Texture2D" uid="uid://v8157m3bux8e" path="res://Assets/Sprites/SPACEBACKGROUND.png" id="10_wnyq7"]
 [ext_resource type="PackedScene" uid="uid://b8qlhw4a72dcr" path="res://Scenes/Panels/FollowerCount/follower_count.tscn" id="14_3fxua"]
@@ -121,12 +123,21 @@ script = ExtResource("5_jj1la")
 
 [node name="Global" type="AudioStreamPlayer" parent="AudioManager"]
 stream = ExtResource("6_i2pif")
+volume_db = -12.369
 autoplay = true
 
 [node name="Button" type="AudioStreamPlayer3D" parent="AudioManager"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.71733, -3.34117)
 stream = ExtResource("7_n5qwd")
-volume_db = 80.0
+volume_db = -12.0
+
+[node name="MinigameSuccess" type="AudioStreamPlayer3D" parent="AudioManager"]
+stream = ExtResource("8_tssjl")
+volume_db = 12.0
+
+[node name="MinigameFail" type="AudioStreamPlayer3D" parent="AudioManager"]
+stream = ExtResource("9_omyyn")
+volume_db = 24.381
 
 [node name="Player" type="Camera3D" parent="."]
 unique_name_in_owner = true
