@@ -7,13 +7,15 @@ extends Node
 #Label stored for alpha playtest
 @onready var play_minigame_label = $"../PlanetDetailPanel/Play minigame label" #safe to remove after alpha playtest
 
+@onready var warp_button = $"../PlanetDetailPanel/WarpButton"
+
 var active_minigame : Control
 
 func _enter_tree() -> void:
 	Singleton.minigame_controller = %MinigameController
 
 func load_minigame():
-	$"../WarpButton".disable_warp_button()
+	warp_button.disable_warp_button()
 	await get_tree().create_timer(2).timeout
 	active_minigame = minigame.instantiate()
 	minigame_panel_viewport.add_child(minigame.instantiate())
@@ -34,7 +36,7 @@ func _on_button_event(_camera: Node, event: InputEvent, _event_position: Vector3
 
 func minigame_completed(score : float):
 	await get_tree().create_timer(2).timeout
-	$"../WarpButton".enable_warp_button()
+	warp_button.enable_warp_button()
 	unload_minigame()
 	Singleton.engagement.add_velocity(score)
 

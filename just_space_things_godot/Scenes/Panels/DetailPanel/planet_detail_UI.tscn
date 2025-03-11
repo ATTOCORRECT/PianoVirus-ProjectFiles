@@ -1,117 +1,102 @@
-[gd_scene load_steps=8 format=3 uid="uid://b7rbmlcidh82i"]
+[gd_scene load_steps=4 format=3 uid="uid://b7rbmlcidh82i"]
 
 [ext_resource type="Script" path="res://Scenes/Panels/DetailPanel/detail_panel.gd" id="1_m0481"]
 [ext_resource type="Texture2D" uid="uid://b8foaqc3dedl8" path="res://Assets/Sprites/Map/pixel_planet.png" id="2_jwduf"]
 [ext_resource type="FontFile" uid="uid://c071thysmf4wl" path="res://Assets/Fonts/terminal-grotesque.ttf" id="3_bla2p"]
-[ext_resource type="Texture2D" uid="uid://bdhl54t3id5mv" path="res://Assets/Sprites/Map/Star.png" id="4_o7enl"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_4nwe5"]
-font = ExtResource("3_bla2p")
-font_size = 60
-
-[sub_resource type="LabelSettings" id="LabelSettings_7arbi"]
-font = ExtResource("3_bla2p")
-font_size = 38
-
-[sub_resource type="LabelSettings" id="LabelSettings_rbo20"]
-font = ExtResource("3_bla2p")
-font_size = 60
 
 [node name="PlanetDetailUI" type="Control"]
 layout_mode = 3
-anchor_right = 0.556
-anchor_bottom = 1.481
-offset_right = -0.512085
-offset_bottom = 0.311951
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_m0481")
 
-[node name="PlanetSprite" type="TextureRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 208.0
-offset_top = 152.0
-offset_right = 349.0
-offset_bottom = 292.0
-scale = Vector2(1.47263, 1.47263)
+offset_right = 960.0
+offset_bottom = 640.0
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="ColorRect/VBoxContainer/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/HBoxContainer/MarginContainer2/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/VBoxContainer/HBoxContainer/MarginContainer2/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_bla2p")
+bbcode_enabled = true
+text = "[font_size=96][b]Planet Name[/b][/font_size]"
+scroll_active = false
+autowrap_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+
+[node name="PlanetSprite" type="TextureRect" parent="ColorRect/VBoxContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture = ExtResource("2_jwduf")
 expand_mode = 1
+stretch_mode = 5
 
-[node name="PlanetNameLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = 104.0
-offset_top = 42.0
-offset_right = 515.0
-offset_bottom = 133.0
-text = "Planet Name"
-label_settings = SubResource("LabelSettings_4nwe5")
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
-[node name="PlanetDescriptionLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = 54.0
-offset_top = 400.0
-offset_right = 605.0
-offset_bottom = 565.0
-text = "This is a planet description. This is 
-what a second sentence looks like. If
-we want, we can even have a third 
-sentence."
-label_settings = SubResource("LabelSettings_7arbi")
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/VBoxContainer/MarginContainer"]
+layout_mode = 2
 
-[node name="PrimaryTrendSprite" type="TextureRect" parent="."]
-texture_filter = 1
-layout_mode = 0
-offset_left = 104.0
-offset_top = 629.0
-offset_right = 144.0
-offset_bottom = 669.0
-scale = Vector2(4.06597, 4.06597)
-texture = ExtResource("4_o7enl")
+[node name="PanelContainer" type="PanelContainer" parent="ColorRect/VBoxContainer/MarginContainer"]
+layout_mode = 2
 
-[node name="SecondaryTrendSprite" type="TextureRect" parent="."]
-texture_filter = 1
-layout_mode = 0
-offset_left = 383.0
-offset_top = 629.0
-offset_right = 423.0
-offset_bottom = 669.0
-scale = Vector2(4.06597, 4.06597)
-texture = ExtResource("4_o7enl")
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
-[node name="PrimaryTrendLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = 96.0
-offset_top = 842.0
-offset_right = 267.0
-offset_bottom = 903.0
-text = "Trend 1"
-label_settings = SubResource("LabelSettings_rbo20")
-horizontal_alignment = 1
-
-[node name="SecondaryTrendLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = 371.0
-offset_top = 842.0
-offset_right = 557.0
-offset_bottom = 903.0
-text = "Trend 2"
-label_settings = SubResource("LabelSettings_rbo20")
-horizontal_alignment = 1
-
-[node name="PrimaryTrendButton" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 76.0
-offset_top = 604.0
-offset_right = 116.0
-offset_bottom = 644.0
-scale = Vector2(5.40075, 8.24922)
-
-[node name="SecondaryTrendButton" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 359.0
-offset_top = 604.0
-offset_right = 399.0
-offset_bottom = 644.0
-scale = Vector2(5.40075, 8.24922)
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/VBoxContainer/MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[font_size=48][b]Planet Description[/b]
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad[/font_size]"
+scroll_active = false

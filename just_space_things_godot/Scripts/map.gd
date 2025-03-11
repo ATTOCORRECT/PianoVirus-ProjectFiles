@@ -1,5 +1,7 @@
 extends Node3D
 
+var cooldown_timer = Timer.new()
+
 var map_position = Vector3.ZERO
 var map_position_target = Vector3.ZERO
 var old_map_position_target = Vector3.ZERO
@@ -18,6 +20,7 @@ var target_star : Node3D
 var step = 0
 
 func _ready() -> void:
+	cooldown_timer.wait_time = 2
 	pass # Replace with function body.
 
 func _process(delta):
@@ -92,7 +95,7 @@ func select_star(star):
 
 func _on_area_3d_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
-		if event.is_action_released("Select") and target_star != null and $"../WarpButton/Cooldown".is_stopped():
+		if event.is_action_released("Select") and target_star != null and cooldown_timer.is_stopped():
 			target_star.travel()
-			$"../WarpButton/Cooldown".start()
+			cooldown_timer.start()
 			%MinigameController.load_minigame()

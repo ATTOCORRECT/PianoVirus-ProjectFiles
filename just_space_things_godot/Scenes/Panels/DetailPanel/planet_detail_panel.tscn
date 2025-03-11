@@ -1,24 +1,49 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwq158p2pvwph"]
+[gd_scene load_steps=5 format=3 uid="uid://bwq158p2pvwph"]
 
 [ext_resource type="PackedScene" uid="uid://cv1en8wupfl5t" path="res://Scenes/interactive_screen.tscn" id="1_lsmxt"]
 [ext_resource type="PackedScene" uid="uid://b7rbmlcidh82i" path="res://Scenes/Panels/DetailPanel/planet_detail_UI.tscn" id="2_54edm"]
+[ext_resource type="PackedScene" uid="uid://ten16csndkby" path="res://Assets/Models/Debug/Debug Cube/Test Cube.glb" id="3_68otn"]
+[ext_resource type="PackedScene" uid="uid://d0ui842kpc0e5" path="res://Scenes/Controls/warp_button.tscn" id="4_3teqm"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a6bgy"]
-albedo_color = Color(0, 0, 0.247059, 1)
+[node name="Center Console" type="Node3D"]
 
-[node name="PlanetDetailPanel" type="Node3D"]
-transform = Transform3D(0.638316, 0, 0, 0, 0.638316, 0, 0, 0, 0.638316, 0, 0, 0)
+[node name="Planet Detail" parent="." instance=ExtResource("1_lsmxt")]
+transform = Transform3D(0.9, -5.58792e-10, -9.3132e-10, 8.38188e-10, 0.6, -9.30586e-25, 8.38188e-10, -5.20414e-19, 1, 0, 0.45, 0.001)
 
-[node name="Panel" type="CSGBox3D" parent="."]
-transform = Transform3D(1.6, 0, 0, 0, -1.09278e-08, -2.35, 0, 0.25, -1.02722e-07, 0, 0, -0.15)
-material = SubResource("StandardMaterial3D_a6bgy")
+[node name="Display" parent="Planet Detail" index="0"]
+transform = Transform3D(1, -1.11022e-16, 0, -1.21168e-27, 1, 0, -1.11022e-16, 0, 1, 2.0696e-10, 0.333334, 0)
 
-[node name="Interactive Screen" parent="." instance=ExtResource("1_lsmxt")]
-transform = Transform3D(1.5, -2.09548e-09, -9.31323e-10, 1.39698e-09, 2.25, 0, 1.39698e-09, -1.95156e-18, 1, 0, 0, 0)
+[node name="CollisionShape3D" parent="Planet Detail/Area" index="0"]
+transform = Transform3D(1, -5.38524e-28, 0, -1.11022e-16, 1, -1.03398e-25, -5.55112e-17, 0, 1, 0, 0, 0)
 
-[node name="Viewport" parent="Interactive Screen" index="2"]
-size = Vector2i(640, 960)
+[node name="Viewport" parent="Planet Detail" index="2"]
+size = Vector2i(960, 640)
 
-[node name="PlanetDetailUI" parent="Interactive Screen/Viewport" index="0" instance=ExtResource("2_54edm")]
+[node name="PlanetDetailUI" parent="Planet Detail/Viewport" index="0" instance=ExtResource("2_54edm")]
 
-[editable path="Interactive Screen"]
+[node name="Interactive Screen2" parent="." instance=ExtResource("1_lsmxt")]
+transform = Transform3D(0.9, 0, 0, 0, 0.6, 0, 0, 0, 1, 0, -0.4, 0.001)
+
+[node name="Display" parent="Interactive Screen2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.96046e-08, 0)
+
+[node name="Viewport" parent="Interactive Screen2" index="2"]
+size = Vector2i(960, 640)
+
+[node name="blockbench_export" parent="." instance=ExtResource("3_68otn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0.2, -0.4)
+
+[node name="blockbench_export2" parent="." instance=ExtResource("3_68otn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, -1, -0.4)
+
+[node name="blockbench_export3" parent="." instance=ExtResource("3_68otn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.101, 0.201, -0.401)
+
+[node name="blockbench_export4" parent="." instance=ExtResource("3_68otn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.101, -0.599, -0.401)
+
+[node name="WarpButton" parent="." instance=ExtResource("4_3teqm")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.15, 0)
+
+[editable path="Planet Detail"]
+[editable path="Interactive Screen2"]

@@ -50,7 +50,7 @@ naming/script_name_casing=2
 [importer_defaults]
 
 scene={
-"nodes/root_scale": 0.5
+"nodes/root_scale": 0.625
 }
 
 [input]

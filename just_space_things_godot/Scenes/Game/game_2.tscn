@@ -1,9 +1,8 @@
-[gd_scene load_steps=34 format=3 uid="uid://co3x8wqu1jmbh"]
+[gd_scene load_steps=33 format=3 uid="uid://co3x8wqu1jmbh"]
 
 [ext_resource type="PackedScene" uid="uid://y712fbtjxkb3" path="res://Scenes/Panels/Map/map.tscn" id="1_a0s2q"]
 [ext_resource type="Script" path="res://Scenes/Game/minigame_controller.gd" id="1_arlly"]
 [ext_resource type="Script" path="res://Scripts/settings.gd" id="2_46fxp"]
-[ext_resource type="PackedScene" uid="uid://d0ui842kpc0e5" path="res://Scenes/Controls/warp_button.tscn" id="2_hmhgp"]
 [ext_resource type="Script" path="res://Scripts/player_look.gd" id="2_iksiu"]
 [ext_resource type="PackedScene" uid="uid://bwq158p2pvwph" path="res://Scenes/Panels/DetailPanel/planet_detail_panel.tscn" id="3_jihco"]
 [ext_resource type="Script" path="res://Scripts/trend.gd" id="3_rmms6"]
@@ -118,26 +117,7 @@ environment = SubResource("Environment_llmir")
 script = ExtResource("2_iksiu")
 
 [node name="PlanetDetailPanel" parent="." instance=ExtResource("3_jihco")]
-transform = Transform3D(0.638316, 0, 0, 0, 0.578511, 0.269764, 0, -0.269764, 0.578511, 0, -1, -3.8)
-
-[node name="Play minigame label" type="Label3D" parent="PlanetDetailPanel"]
-transform = Transform3D(0.999993, -0.00372743, -0.000599762, 0.003728, 0.999992, 0.000944763, 0.000596238, -0.000946999, 0.999999, 0.00128851, -0.179165, 0.216542)
-visible = false
-text = "Go to 
-minigame panel"
-
-[node name="WarpButton" parent="." instance=ExtResource("2_hmhgp")]
-transform = Transform3D(0.349892, 0, 0, 0, 0.31711, -0.147871, 0, 0.147871, 0.31711, 0, -1.8, -3.4)
-
-[node name="CSGCylinder3D" parent="WarpButton" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0088644, 0.104508)
-
-[node name="Area3D" parent="WarpButton" index="1"]
-transform = Transform3D(1.08912, 0, 0, 0, 1.08912, -3.72529e-09, 0, 3.72529e-09, 1.08912, 0, 0.00838089, 0.206035)
-
-[node name="Cooldown" type="Timer" parent="WarpButton"]
-wait_time = 2.0
-one_shot = true
+transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, -1.1, -3.4)
 
 [node name="Map" parent="." instance=ExtResource("1_a0s2q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1.5, -4)
@@ -178,22 +158,13 @@ font = SubResource("FontFile_e5iw3")
 
 [node name="Above Map Label" type="CSGBox3D" parent="."]
 transform = Transform3D(0.815873, 0, 0, 0, 0.204655, 0, 0, 0, 1, -1.9572, -0.823405, -5.02211)
+visible = false
 cast_shadow = 0
 size = Vector3(2.4, 1.6, 0.1)
 
 [node name="Choose Your Destination" type="Label3D" parent="Above Map Label"]
 transform = Transform3D(1.22568, 0, 0, 0, 4.88627, 0, 0, 0, 1, 0.0331781, -0.0129662, 0.0612268)
 text = "Choose your destination"
-font = SubResource("FontFile_e5iw3")
-
-[node name="Travel Label" type="CSGBox3D" parent="."]
-transform = Transform3D(0.377824, 0, 0, 0, 0.0786512, 0.923204, 0, -0.188938, 0.384311, -0.0099306, -1.96646, -3.06618)
-cast_shadow = 0
-size = Vector3(2.4, 1.6, 0.1)
-
-[node name="Travel Label" type="Label3D" parent="Travel Label"]
-transform = Transform3D(2.64673, 0, 0, 0, 4.88627, -1.19209e-07, 0, 2.98023e-08, 1, 0.071645, -0.0129652, 0.0612268)
-text = "Travel"
 font = SubResource("FontFile_e5iw3")
 
 [node name="Environment" type="Node" parent="."]
@@ -255,6 +226,7 @@ texture = ExtResource("10_wnyq7")
 
 [node name="FollowerCount" parent="." instance=ExtResource("14_3fxua")]
 transform = Transform3D(0.620544, 0, 0, 0, 0.611045, -0.108162, 0, 0.108162, 0.611045, -0.689273, 2.05782, -5.38698)
+visible = false
 
 [node name="Label3D" type="Label3D" parent="FollowerCount"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3161, 0.00796139, 0.0449772)
@@ -296,10 +268,13 @@ script = ExtResource("15_vx2cm")
 [node name="EngagementPanel" parent="." instance=ExtResource("15_v5d7t")]
 transform = Transform3D(0.649519, 0, -0.375, 0, 0.75, 0, 0.375, 0, 0.649519, 3.9, 0.2, -4)
 
-[connection signal="input_event" from="WarpButton/Area3D" to="Map" method="_on_area_3d_input_event"]
+[connection signal="input_event" from="PlanetDetailPanel/WarpButton/Area3D" to="Map" method="_on_area_3d_input_event"]
 [connection signal="input_event" from="MinigamePanel/TestButton/Area3D" to="MinigameController" method="_on_button_event"]
 
-[editable path="WarpButton"]
+[editable path="PlanetDetailPanel"]
+[editable path="PlanetDetailPanel/Planet Detail"]
+[editable path="PlanetDetailPanel/Interactive Screen2"]
+[editable path="PlanetDetailPanel/WarpButton"]
 [editable path="TrendGraphPanel"]
 [editable path="TrendGraphPanel/Interactive Screen"]
 [editable path="MinigamePanel"]
