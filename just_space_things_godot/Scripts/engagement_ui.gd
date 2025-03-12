@@ -75,7 +75,7 @@ func after_ready():
 		engagement_values.append(new_point.y)
 		line.add_point(new_point,i)
 
-func add_velocity(add_value : float):
+func add_velocity(add_value : float, trend_value : float):
 	print(velocity)
-	velocity += add_value * 100 * Singleton.active_planet_data.primairy_trend.value
+	velocity += add_value * 100 * trend_value
 	print(velocity)

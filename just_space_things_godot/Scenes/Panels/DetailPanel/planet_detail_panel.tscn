@@ -1,9 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwq158p2pvwph"]
+[gd_scene load_steps=9 format=3 uid="uid://bwq158p2pvwph"]
 
 [ext_resource type="PackedScene" uid="uid://cv1en8wupfl5t" path="res://Scenes/interactive_screen.tscn" id="1_lsmxt"]
 [ext_resource type="PackedScene" uid="uid://b7rbmlcidh82i" path="res://Scenes/Panels/DetailPanel/planet_detail_UI.tscn" id="2_54edm"]
-[ext_resource type="PackedScene" uid="uid://ten16csndkby" path="res://Assets/Models/Debug/Debug Cube/Test Cube.glb" id="3_68otn"]
+[ext_resource type="PackedScene" uid="uid://c40okafjj6gfy" path="res://Scenes/Panels/DetailPanel/trend_selection_ui.tscn" id="3_kb6q2"]
 [ext_resource type="PackedScene" uid="uid://d0ui842kpc0e5" path="res://Scenes/Controls/warp_button.tscn" id="4_3teqm"]
+[ext_resource type="PackedScene" uid="uid://b6gtfr75y14no" path="res://Scenes/Controls/button.tscn" id="6_6ihsc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lbwqm"]
+resource_local_to_scene = true
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i2wy1"]
+resource_local_to_scene = true
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8b5fq"]
+size = Vector3(1, 2, 1.6)
 
 [node name="Center Console" type="Node3D"]
 
@@ -21,29 +33,42 @@ size = Vector2i(960, 640)
 
 [node name="PlanetDetailUI" parent="Planet Detail/Viewport" index="0" instance=ExtResource("2_54edm")]
 
-[node name="Interactive Screen2" parent="." instance=ExtResource("1_lsmxt")]
-transform = Transform3D(0.9, 0, 0, 0, 0.6, 0, 0, 0, 1, 0, -0.4, 0.001)
-
-[node name="Display" parent="Interactive Screen2" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.96046e-08, 0)
-
-[node name="Viewport" parent="Interactive Screen2" index="2"]
-size = Vector2i(960, 640)
-
-[node name="blockbench_export" parent="." instance=ExtResource("3_68otn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0.2, -0.4)
-
-[node name="blockbench_export2" parent="." instance=ExtResource("3_68otn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, -1, -0.4)
-
-[node name="blockbench_export3" parent="." instance=ExtResource("3_68otn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.101, 0.201, -0.401)
-
-[node name="blockbench_export4" parent="." instance=ExtResource("3_68otn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.101, -0.599, -0.401)
-
 [node name="WarpButton" parent="." instance=ExtResource("4_3teqm")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.15, 0)
 
+[node name="Trend Selection" parent="." instance=ExtResource("1_lsmxt")]
+transform = Transform3D(0.9, 0, 0, 0, 0.6, 0, 0, 0, 1, 0, -0.4, 0.001)
+
+[node name="Display" parent="Trend Selection" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.96046e-08, 0)
+
+[node name="Viewport" parent="Trend Selection" index="2"]
+size = Vector2i(960, 640)
+
+[node name="Trend Selection UI" parent="Trend Selection/Viewport" index="0" node_paths=PackedStringArray("trend_primary_button", "trend_secondary_button") instance=ExtResource("3_kb6q2")]
+trend_primary_button = NodePath("../../../Button1")
+trend_secondary_button = NodePath("../../../Button2")
+
+[node name="Button1" parent="." instance=ExtResource("6_6ihsc")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.225, -0.85, 0)
+
+[node name="CSGCylinder3D" parent="Button1" index="0"]
+material = SubResource("StandardMaterial3D_lbwqm")
+
+[node name="Button2" parent="." instance=ExtResource("6_6ihsc")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.225, -0.85, 0)
+
+[node name="CSGCylinder3D" parent="Button2" index="0"]
+material = SubResource("StandardMaterial3D_i2wy1")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.8)
+mesh = SubResource("BoxMesh_8b5fq")
+
+[connection signal="input_event" from="Button1/Area3D" to="Trend Selection/Viewport/Trend Selection UI" method="_button_1_input_event"]
+[connection signal="input_event" from="Button2/Area3D" to="Trend Selection/Viewport/Trend Selection UI" method="_button_2_input_event"]
+
 [editable path="Planet Detail"]
-[editable path="Interactive Screen2"]
+[editable path="Trend Selection"]
+[editable path="Button1"]
+[editable path="Button2"]

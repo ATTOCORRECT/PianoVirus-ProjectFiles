@@ -8,6 +8,7 @@ var material : StandardMaterial3D
 var color
 var selected = false
 var selectable = true
+var spent = false
 @export var key : String
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -48,22 +49,25 @@ func _physics_process(_delta: float) -> void:
 func select_star():
 	selected = true
 	$Star/Cursor.modulate = Color(1,1,1,1)
-	map.select_star($".")
+	map.select_star(self)
+	if planet_data == null:
+		planet_data = Planet_data.new(key ,visible_trend, "this is a description for the planet")
+	Singleton.select_planet(planet_data)
 
 func deselect_star():
 	selected = false
 	$Star/Cursor.modulate = Color(1,1,1,0)
 	pass
 
-func travel():
-	# spend star
+func spend_star():
 	selectable = false
 	color = Color.GRAY
-	
+	spent = true
+
+func travel():
 	# travel
 	map.set_map_position_target(global_position - map.global_position)
-	if planet_data == null:
-		planet_data = Planet_data.new(key ,visible_trend, "this is a description for the planet")
+
 	Singleton.travel_to_planet(planet_data)
 	
 func _on_area_3d_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:

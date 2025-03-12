@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://b7rbmlcidh82i"]
+[gd_scene load_steps=5 format=3 uid="uid://b7rbmlcidh82i"]
 
-[ext_resource type="Script" path="res://Scenes/Panels/DetailPanel/detail_panel.gd" id="1_m0481"]
+[ext_resource type="Script" path="res://Scripts/detail_panel.gd" id="1_m0481"]
 [ext_resource type="Texture2D" uid="uid://b8foaqc3dedl8" path="res://Assets/Sprites/Map/pixel_planet.png" id="2_jwduf"]
 [ext_resource type="FontFile" uid="uid://c071thysmf4wl" path="res://Assets/Fonts/terminal-grotesque.ttf" id="3_bla2p"]
+[ext_resource type="Texture2D" uid="uid://bdhl54t3id5mv" path="res://Assets/Sprites/Map/Star.png" id="3_v2udl"]
 
-[node name="PlanetDetailUI" type="Control"]
+[node name="PlanetDetailUI" type="Control" node_paths=PackedStringArray("planet_name", "planet_trend", "planet_trend_sprite", "planet_description")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,6 +13,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_m0481")
+planet_name = NodePath("ColorRect/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer2/PanelContainer/MarginContainer/RichTextLabel")
+planet_trend = NodePath("ColorRect/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/MarginContainer2/PanelContainer/MarginContainer/RichTextLabel")
+planet_trend_sprite = NodePath("ColorRect/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/MarginContainer/Trend Sprite")
+planet_description = NodePath("ColorRect/VBoxContainer/MarginContainer/PanelContainer/MarginContainer/RichTextLabel")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -31,29 +36,79 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-size_flags_stretch_ratio = 3.0
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 
-[node name="PanelContainer" type="PanelContainer" parent="ColorRect/VBoxContainer/HBoxContainer/MarginContainer2"]
+[node name="PanelContainer" type="PanelContainer" parent="ColorRect/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer2"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/HBoxContainer/MarginContainer2/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer2/PanelContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/VBoxContainer/HBoxContainer/MarginContainer2/PanelContainer/MarginContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer2/PanelContainer/MarginContainer"]
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("3_bla2p")
 bbcode_enabled = true
-text = "[font_size=96][b]Planet Name[/b][/font_size]"
+text = "[font_size=88][b]Planet Name[/b][/font_size]"
+scroll_active = false
+autowrap_mode = 0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+
+[node name="Trend Sprite" type="TextureRect" parent="ColorRect/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/MarginContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("3_v2udl")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+theme_override_constants/margin_top = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="ColorRect/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/MarginContainer2"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/MarginContainer2/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2/MarginContainer2/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_bla2p")
+bbcode_enabled = true
+text = "[font_size=48][b]Trend Name
+Value[/b][/font_size]"
 scroll_active = false
 autowrap_mode = 0
 
@@ -65,6 +120,7 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 
 [node name="PlanetSprite" type="TextureRect" parent="ColorRect/VBoxContainer/HBoxContainer/MarginContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -75,14 +131,10 @@ stretch_mode = 5
 [node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 2.0
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
-
-[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/VBoxContainer/MarginContainer"]
-layout_mode = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="ColorRect/VBoxContainer/MarginContainer"]
 layout_mode = 2
