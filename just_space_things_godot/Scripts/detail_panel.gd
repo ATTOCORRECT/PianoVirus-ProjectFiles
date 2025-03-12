@@ -59,20 +59,37 @@ func update_text():
 	planet_name.append_text(text_planet_name)
 	
 	#planet trend
-	var trend_color = Singleton.Selected_planet_data.primairy_trend.color
-	planet_trend_sprite.modulate = trend_color
-	
-	planet_trend.clear()
-	planet_trend.push_font(font)
-	planet_trend.push_font_size(64)
-	planet_trend.push_color(trend_color)
-	
-	var text_trend_name = Singleton.Selected_planet_data.primairy_trend.name
-	var text_trend_val = str(floor(Singleton.Selected_planet_data.primairy_trend.value * 1000))
-	
-	planet_trend.append_text(text_trend_name)
-	planet_trend.newline()
-	planet_trend.append_text(text_trend_val)
+	if Singleton.Selected_planet_data.spent == false:
+		
+		var trend_color = Singleton.Selected_planet_data.primairy_trend.color
+		planet_trend_sprite.modulate = trend_color
+		
+		planet_trend.clear()
+		planet_trend.push_font(font)
+		planet_trend.push_font_size(64)
+		planet_trend.push_color(trend_color)
+		
+		var text_trend_name = Singleton.Selected_planet_data.primairy_trend.name
+		var text_trend_val = str(floor(Singleton.Selected_planet_data.primairy_trend.value * 1000))
+		
+		planet_trend.append_text(text_trend_name)
+		planet_trend.newline()
+		planet_trend.append_text(text_trend_val)
+	else:
+		var trend_color = Color.GRAY
+		planet_trend_sprite.modulate = trend_color
+		
+		planet_trend.clear()
+		planet_trend.push_font(font)
+		planet_trend.push_font_size(64)
+		planet_trend.push_color(trend_color)
+		
+		var text_trend_name = "Spent"
+		var text_trend_val = "0"
+		
+		planet_trend.append_text(text_trend_name)
+		planet_trend.newline()
+		planet_trend.append_text(text_trend_val)
 	
 	#planet description
 	planet_description.clear()

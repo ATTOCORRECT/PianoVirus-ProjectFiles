@@ -18,8 +18,10 @@ func select_planet(planet_data : Planet_data):
 
 func travel_to_planet(planet_data : Planet_data):
 	active_planet_data = planet_data
-	#await get_tree().create_timer(3.0).timeout
-	trend_select.update()
+	trend_select.disable_panel()
+	await get_tree().create_timer(3.0).timeout
+	if active_planet_data.spent != true:
+		trend_select.enable_panel()
 	
 	#print("-- New Planet --")
 	#print("Description")

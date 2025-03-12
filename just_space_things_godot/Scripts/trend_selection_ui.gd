@@ -19,14 +19,33 @@ func _ready() -> void:
 	trend_primary_button.set_color(Color.DIM_GRAY)
 	trend_secondary_button.set_color(Color.DIM_GRAY)
 	slow_process()
+	disable_panel()
 
 func slow_process():
 	while true:
 		await get_tree().create_timer(1.0).timeout
-		update_text()
+		if process_mode == ProcessMode.PROCESS_MODE_INHERIT:
+			update_text()
+
+func null_text():
+	# primary
+	trend_primary.clear()
+	trend_primary_sprite.modulate = Color.WHITE
+	trend_primary_selection.color = Color.BLACK
+	trend_primary_button.set_color(Color.WHITE)
+	
+	# secondary
+	trend_secondary.clear()
+	trend_secondary_sprite.modulate = Color.WHITE
+	trend_secondary_selection.color = Color.BLACK
+	trend_secondary_button.set_color(Color.WHITE)
 
 func update_text():
 	if Singleton.active_planet_data == null:
+		return
+		
+	if Singleton.active_planet_data.spent == true:
+		disable_panel()
 		return
 	
 	# primary
@@ -78,12 +97,16 @@ func update():
 	trend_secondary_sprite.modulate = secondary_color
 	trend_secondary_selection.color = Color.BLACK
 	trend_secondary_button.set_color(secondary_color)
-	
 
 func disable_panel():
-	pass
+	disable_buttons()
+	null_text()
+	process_mode = ProcessMode.PROCESS_MODE_DISABLED
 
 func enable_panel():
+	enable_buttons()
+	update()
+	process_mode = ProcessMode.PROCESS_MODE_INHERIT
 	pass
 
 func disable_buttons():

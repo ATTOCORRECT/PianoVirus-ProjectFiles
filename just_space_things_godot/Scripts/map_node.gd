@@ -63,6 +63,7 @@ func spend_star():
 	selectable = false
 	color = Color.GRAY
 	spent = true
+	Singleton.active_planet_data.spent = true
 
 func travel():
 	# travel
