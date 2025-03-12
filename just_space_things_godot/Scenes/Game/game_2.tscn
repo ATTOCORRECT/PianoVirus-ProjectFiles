@@ -283,6 +283,8 @@ script = ExtResource("15_vx2cm")
 transform = Transform3D(0.649519, 0, -0.375, 0, 0.75, 0, 0.375, 0, 0.649519, 3.9, 0.2, -4)
 
 [connection signal="input_event" from="PlanetDetailPanel/WarpButton/Area3D" to="Map" method="_on_area_3d_input_event"]
+[connection signal="input_event" from="PlanetDetailPanel/Button1/Area3D" to="PlanetDetailPanel/Trend Selection/Viewport/Trend Selection UI" method="_button_1_input_event"]
+[connection signal="input_event" from="PlanetDetailPanel/Button2/Area3D" to="PlanetDetailPanel/Trend Selection/Viewport/Trend Selection UI" method="_button_2_input_event"]
 [connection signal="input_event" from="MinigamePanel/TestButton/Area3D" to="MinigameController" method="_on_button_event"]
 
 [editable path="PlanetDetailPanel"]

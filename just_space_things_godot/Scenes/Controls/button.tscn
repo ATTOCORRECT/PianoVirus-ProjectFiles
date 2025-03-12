@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6gtfr75y14no"]
+
+[ext_resource type="Script" path="res://Scripts/button.gd" id="1_6qo5l"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bb6ff"]
+resource_local_to_scene = true
+albedo_color = Color(1, 0, 1, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_0u35k"]
+height = 0.1
+radius = 0.1
+
+[node name="Button" type="Node3D"]
+script = ExtResource("1_6qo5l")
+color = Color(1, 0, 1, 1)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+radius = 0.1
+height = 0.1
+material = SubResource("StandardMaterial3D_bb6ff")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CylinderShape3D_0u35k")

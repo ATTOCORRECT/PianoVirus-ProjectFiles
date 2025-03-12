@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6ipkj8clcr4q"
-path.s3tc="res://.godot/imported/JST_Prototype Console_0.png-08e9515af91db72b8cfd7a968998f8c7.s3tc.ctex"
+uid="uid://c8yx6fdl4vqfl"
+path="res://.godot/imported/center_console_texture.png-8789de91eb1da1b906f387b1dfd5205e.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Models/Console/JST_Prototype Console_0.png"
-dest_files=["res://.godot/imported/JST_Prototype Console_0.png-08e9515af91db72b8cfd7a968998f8c7.s3tc.ctex"]
+source_file="res://Assets/Models/Center Console/center_console_texture.png"
+dest_files=["res://.godot/imported/center_console_texture.png-8789de91eb1da1b906f387b1dfd5205e.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
