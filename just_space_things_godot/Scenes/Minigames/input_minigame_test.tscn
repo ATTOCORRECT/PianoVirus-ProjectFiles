@@ -28,7 +28,7 @@ grow_vertical = 2
 [node name="CodeLabel" type="RichTextLabel" parent="VBoxContainer"]
 layout_mode = 2
 bbcode_enabled = true
-text = "[center][font_size={80}]Correct Code"
+text = "[center][font_size={80}][color=yellow]"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
@@ -36,3 +36,9 @@ tab_size = 24
 
 [node name="UserCodeLabel" type="RichTextLabel" parent="VBoxContainer"]
 layout_mode = 2
+bbcode_enabled = true
+text = "[center][font_size={80}]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+tab_size = 24
