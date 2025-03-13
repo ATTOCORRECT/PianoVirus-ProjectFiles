@@ -16,6 +16,7 @@ func _enter_tree() -> void:
 	Singleton.trend_select = self
 
 func _ready() -> void:
+	await get_tree().process_frame
 	trend_primary_button.set_color(Color.DIM_GRAY)
 	trend_secondary_button.set_color(Color.DIM_GRAY)
 	slow_process()
@@ -30,13 +31,13 @@ func slow_process():
 func null_text():
 	# primary
 	trend_primary.clear()
-	trend_primary_sprite.modulate = Color.WHITE
+	trend_primary_sprite.modulate = Color.GRAY
 	trend_primary_selection.color = Color.BLACK
 	trend_primary_button.set_color(Color.WHITE)
 	
 	# secondary
 	trend_secondary.clear()
-	trend_secondary_sprite.modulate = Color.WHITE
+	trend_secondary_sprite.modulate = Color.GRAY
 	trend_secondary_selection.color = Color.BLACK
 	trend_secondary_button.set_color(Color.WHITE)
 
