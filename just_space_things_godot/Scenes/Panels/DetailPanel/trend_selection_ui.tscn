@@ -19,6 +19,7 @@ trend_secondary_sprite = NodePath("ColorRect/HBoxContainer/MarginContainer2/Colo
 trend_secondary_selection = NodePath("ColorRect/HBoxContainer/MarginContainer2/ColorRect")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
 offset_right = 960.0
 offset_bottom = 640.0
 color = Color(0, 0, 0, 1)

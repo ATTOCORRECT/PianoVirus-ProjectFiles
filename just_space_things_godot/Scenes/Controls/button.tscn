@@ -1,25 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6gtfr75y14no"]
+[gd_scene load_steps=6 format=3 uid="uid://b6gtfr75y14no"]
 
 [ext_resource type="Script" path="res://Scripts/button.gd" id="1_6qo5l"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bb6ff"]
-resource_local_to_scene = true
-albedo_color = Color(1, 0, 1, 1)
+[ext_resource type="ArrayMesh" uid="uid://d4dwgkclyou6h" path="res://Assets/Models/buttons/Small_button.obj" id="2_qmss7"]
+[ext_resource type="Texture2D" uid="uid://ctgoirmgbo6si" path="res://Assets/Models/buttons/console_small_button.png" id="3_dr2kg"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_0u35k"]
 height = 0.1
 radius = 0.1
 
-[node name="Button" type="Node3D"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1mot2"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("3_dr2kg")
+texture_filter = 0
+
+[node name="Button" type="Node3D" node_paths=PackedStringArray("mesh")]
 script = ExtResource("1_6qo5l")
+mesh = NodePath("MeshInstance3D")
 color = Color(1, 0, 1, 1)
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
-radius = 0.1
-height = 0.1
-material = SubResource("StandardMaterial3D_bb6ff")
-
 [node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("CylinderShape3D_0u35k")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.8, 0, 0, 0, -3.49691e-08, 0.8, 0, -0.8, -3.49691e-08, 0, 0, 0)
+mesh = ExtResource("2_qmss7")
+surface_material_override/0 = SubResource("StandardMaterial3D_1mot2")
