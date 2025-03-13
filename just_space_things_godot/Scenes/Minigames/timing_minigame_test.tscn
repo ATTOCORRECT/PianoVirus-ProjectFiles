@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://htqrbvq1nhnm"]
 
-[ext_resource type="Script" path="res://Scripts/timing_minigame_test.gd" id="1_vndk6"]
+[ext_resource type="Script" path="res://Scripts/Minigame Scripts/timing_minigame_test.gd" id="1_vndk6"]
 [ext_resource type="Texture2D" uid="uid://dfe71ijvmo58f" path="res://Assets/Sprites/plain-arrow.png" id="2_hlcsn"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4bdyv"]

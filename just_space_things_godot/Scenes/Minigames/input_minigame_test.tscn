@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://cr8uuw8ehu450"]
+[gd_scene load_steps=2 format=3 uid="uid://cr8uuw8ehu450"]
+
+[ext_resource type="Script" path="res://Scripts/Minigame Scripts/input_minigame_test.gd" id="1_fucop"]
 
 [node name="input_minigame_test" type="Control"]
 layout_mode = 3
@@ -7,3 +9,4 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_fucop")
