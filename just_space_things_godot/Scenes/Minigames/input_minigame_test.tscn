@@ -25,10 +25,19 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Instruction" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][font_size={80}]Input code:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+tab_size = 24
+
 [node name="CodeLabel" type="RichTextLabel" parent="VBoxContainer"]
 layout_mode = 2
 bbcode_enabled = true
-text = "[center][font_size={80}][color=yellow]"
+text = "[center][font_size={80}][color=yellow][b]"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
