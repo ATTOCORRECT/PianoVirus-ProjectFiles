@@ -13,6 +13,7 @@ offset_right = -482.0
 offset_bottom = -457.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_vertical = 3
 script = ExtResource("1_stm8d")
 
 [node name="message_panel" type="PanelContainer" parent="."]
@@ -25,6 +26,7 @@ layout_mode = 2
 split_offset = -25
 
 [node name="sender_panel" type="HSplitContainer" parent="message_panel/message"]
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_vertical = 3
 split_offset = 64
@@ -43,9 +45,12 @@ offset = Vector2(30, 0)
 layout_mode = 2
 size_flags_vertical = 3
 text = "Sender Name"
+fit_content = true
 scroll_active = false
 
 [node name="message_body" type="RichTextLabel" parent="message_panel/message"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "This is the body of the message. It will keep going and wrap around in the text box. there is a lot of text and it is too long to fit onto this box, then the rest of the message will be available through a scroll wheel."
+fit_content = true
+scroll_active = false

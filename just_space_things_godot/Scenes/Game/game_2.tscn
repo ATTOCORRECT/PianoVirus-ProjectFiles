@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://co3x8wqu1jmbh"]
+[gd_scene load_steps=38 format=3 uid="uid://co3x8wqu1jmbh"]
 
 [ext_resource type="PackedScene" uid="uid://y712fbtjxkb3" path="res://Scenes/Panels/Map/map.tscn" id="1_a0s2q"]
 [ext_resource type="Script" path="res://Scenes/Game/minigame_controller.gd" id="1_arlly"]
@@ -7,8 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://bwq158p2pvwph" path="res://Scenes/Panels/DetailPanel/planet_detail_panel.tscn" id="3_jihco"]
 [ext_resource type="Script" path="res://Scripts/trend.gd" id="3_rmms6"]
 [ext_resource type="PackedScene" uid="uid://htqrbvq1nhnm" path="res://Scenes/Minigames/timing_minigame_test.tscn" id="3_x6pgq"]
+[ext_resource type="Texture2D" uid="uid://c61cjm74rtecm" path="res://Assets/Models/buttons/console_big_button.png" id="7_kwlh2"]
 [ext_resource type="PackedScene" uid="uid://bsb62k76bfl8e" path="res://Scenes/Panels/TrendPanel/trend_graph_panel.tscn" id="7_uatka"]
 [ext_resource type="PackedScene" uid="uid://dcgey2jeydoso" path="res://Scenes/Panels/MinigamePanel/test_button.tscn" id="7_wqk0g"]
+[ext_resource type="Texture2D" uid="uid://ctgoirmgbo6si" path="res://Assets/Models/buttons/console_small_button.png" id="8_sqhbj"]
 [ext_resource type="PackedScene" uid="uid://of7bu4heyrbb" path="res://Scenes/Panels/MinigamePanel/minigame_panel.tscn" id="10_3p7rq"]
 [ext_resource type="Texture2D" uid="uid://v8157m3bux8e" path="res://Assets/Sprites/SPACEBACKGROUND.png" id="10_wnyq7"]
 [ext_resource type="PackedScene" uid="uid://b8qlhw4a72dcr" path="res://Scenes/Panels/FollowerCount/follower_count.tscn" id="14_3fxua"]
@@ -68,6 +70,21 @@ name = "Movies"
 [sub_resource type="Environment" id="Environment_llmir"]
 background_mode = 1
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1gr0o"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("7_kwlh2")
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gcmat"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("8_sqhbj")
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sx6i6"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("8_sqhbj")
+texture_filter = 0
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6vcuw"]
 albedo_color = Color(1, 0.917647, 0, 1)
 
@@ -118,6 +135,15 @@ script = ExtResource("2_iksiu")
 
 [node name="PlanetDetailPanel" parent="." instance=ExtResource("3_jihco")]
 transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, -1.1, -3.4)
+
+[node name="MeshInstance3D" parent="PlanetDetailPanel/WarpButton" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1gr0o")
+
+[node name="MeshInstance3D" parent="PlanetDetailPanel/Button1" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_gcmat")
+
+[node name="MeshInstance3D" parent="PlanetDetailPanel/Button2" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_sx6i6")
 
 [node name="Map" parent="." instance=ExtResource("1_a0s2q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1.5, -4)
@@ -269,8 +295,6 @@ script = ExtResource("15_vx2cm")
 transform = Transform3D(0.649519, 0, -0.375, 0, 0.75, 0, 0.375, 0, 0.649519, 3.9, 0.2, -4)
 
 [connection signal="input_event" from="PlanetDetailPanel/WarpButton/Area3D" to="Map" method="_on_area_3d_input_event"]
-[connection signal="input_event" from="PlanetDetailPanel/Button1/Area3D" to="PlanetDetailPanel/Trend Selection/Viewport/Trend Selection UI" method="_button_1_input_event"]
-[connection signal="input_event" from="PlanetDetailPanel/Button2/Area3D" to="PlanetDetailPanel/Trend Selection/Viewport/Trend Selection UI" method="_button_2_input_event"]
 [connection signal="input_event" from="MinigamePanel/TestButton/Area3D" to="MinigameController" method="_on_button_event"]
 
 [editable path="PlanetDetailPanel"]
@@ -279,6 +303,7 @@ transform = Transform3D(0.649519, 0, -0.375, 0, 0.75, 0, 0.375, 0, 0.649519, 3.9
 [editable path="PlanetDetailPanel/Trend Selection"]
 [editable path="PlanetDetailPanel/Button1"]
 [editable path="PlanetDetailPanel/Button2"]
+[editable path="PlanetDetailPanel/Model"]
 [editable path="TrendGraphPanel"]
 [editable path="TrendGraphPanel/Interactive Screen"]
 [editable path="MinigamePanel"]
