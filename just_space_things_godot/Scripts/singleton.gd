@@ -5,6 +5,8 @@ var active_planet_data : Planet_data
 var active_minigame_trend : Trend
 var Selected_planet_data : Planet_data
 
+var contacts: Array[Sender]
+
 var minigame_controller : Node
 var player : Camera3D
 var engagement : Node
