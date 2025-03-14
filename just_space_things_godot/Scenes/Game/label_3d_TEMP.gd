@@ -7,7 +7,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var num = Singleton.engagement.engagement_values[Singleton.engagement.engagement_values.size()-1]
 	$".".text = str(floor(num))
 	pass

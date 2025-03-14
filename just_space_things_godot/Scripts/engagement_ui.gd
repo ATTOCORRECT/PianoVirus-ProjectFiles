@@ -50,18 +50,18 @@ func step_graph():
 	velocity += acceleration
 	engagement_values[resolution - 1] += velocity #+ randf_range(-100,100)
 	
-	var min = engagement_values[0]
-	var max = engagement_values[0]
+	var min_engangement_value = engagement_values[0]
+	var max_engangement_value = engagement_values[0]
 	
 	for i in resolution:
-		if min < engagement_values[i]:
-			min = engagement_values[i]
+		if min_engangement_value < engagement_values[i]:
+			min_engangement_value = engagement_values[i]
 		
-		if max > engagement_values[i]:
-			max = engagement_values[i]
+		if max_engangement_value > engagement_values[i]:
+			max_engangement_value = engagement_values[i]
 	
 	for i in resolution:
-		var value = remap(engagement_values[i], min, max, 0, 1)
+		var value = remap(engagement_values[i], min_engangement_value, max_engangement_value, 0, 1)
 		line.points[i].y = value * graph_panel.size.y
 
 func step_graph_multiple_times(steps : int):
