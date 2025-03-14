@@ -6,14 +6,14 @@
 [ext_resource type="Script" path="res://Scripts/player_look.gd" id="2_iksiu"]
 [ext_resource type="PackedScene" uid="uid://bwq158p2pvwph" path="res://Scenes/Panels/DetailPanel/planet_detail_panel.tscn" id="3_jihco"]
 [ext_resource type="Script" path="res://Scripts/trend.gd" id="3_rmms6"]
-[ext_resource type="PackedScene" uid="uid://htqrbvq1nhnm" path="res://Scenes/Minigames/timing_minigame_test.tscn" id="3_x6pgq"]
+[ext_resource type="PackedScene" uid="uid://htqrbvq1nhnm" path="res://Scenes/Minigames/Timing Minigame/timing_minigame_test.tscn" id="3_x6pgq"]
 [ext_resource type="Texture2D" uid="uid://c61cjm74rtecm" path="res://Assets/Models/buttons/console_big_button.png" id="7_g6t8n"]
 [ext_resource type="PackedScene" uid="uid://bsb62k76bfl8e" path="res://Scenes/Panels/TrendPanel/trend_graph_panel.tscn" id="7_uatka"]
 [ext_resource type="PackedScene" uid="uid://dcgey2jeydoso" path="res://Scenes/Panels/MinigamePanel/test_button.tscn" id="7_wqk0g"]
 [ext_resource type="Texture2D" uid="uid://ctgoirmgbo6si" path="res://Assets/Models/buttons/console_small_button.png" id="8_e4v3j"]
 [ext_resource type="PackedScene" uid="uid://of7bu4heyrbb" path="res://Scenes/Panels/MinigamePanel/minigame_panel.tscn" id="10_3p7rq"]
 [ext_resource type="Texture2D" uid="uid://v8157m3bux8e" path="res://Assets/Sprites/SPACEBACKGROUND.png" id="10_wnyq7"]
-[ext_resource type="PackedScene" path="res://Scenes/Panels/DirectMessages/dm_panel.tscn" id="12_nuhxh"]
+[ext_resource type="PackedScene" uid="uid://cgfptpf0odq4o" path="res://Scenes/Panels/DirectMessages/dm_panel.tscn" id="12_nuhxh"]
 [ext_resource type="PackedScene" uid="uid://b8qlhw4a72dcr" path="res://Scenes/Panels/FollowerCount/follower_count.tscn" id="14_3fxua"]
 [ext_resource type="PackedScene" uid="uid://dfl2r6koee71t" path="res://Scenes/Panels/Engagement Panel/engagement_panel.tscn" id="15_v5d7t"]
 [ext_resource type="Script" path="res://Scenes/Game/label_3d_TEMP.gd" id="15_vx2cm"]
@@ -135,7 +135,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_hp3yr")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1.5, -4)
 
 [node name="TrendGraphPanel" parent="." instance=ExtResource("7_uatka")]
-transform = Transform3D(0.53033, 0, 0.53033, 0, 0.75, 0, -0.53033, 0, 0.53033, -4, 0, -5)
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -3.99476, -1.19209e-07, -4.99881)
 
 [node name="MinigamePanel" parent="." instance=ExtResource("10_3p7rq")]
 transform = Transform3D(1.26885, 0, 0, 0, 1.26885, 0, 0, 0, 1.26885, -0.0115652, 1.12822, -4.37914)
@@ -286,7 +286,7 @@ horizontal_alignment = 0
 script = ExtResource("15_vx2cm")
 
 [node name="EngagementPanel" parent="." instance=ExtResource("15_v5d7t")]
-transform = Transform3D(0.649519, 0, -0.375, 0, 0.75, 0, 0.375, 0, 0.649519, 3.22401, 0.2, -4.36327)
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 3.22401, 0.2, -4.36327)
 
 [node name="dm_panel" parent="." instance=ExtResource("12_nuhxh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.61028, -1.15752, -3.54913)

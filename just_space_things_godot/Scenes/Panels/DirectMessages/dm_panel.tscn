@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhtdt32oc6i2x"]
+[gd_scene load_steps=3 format=3 uid="uid://cgfptpf0odq4o"]
 
 [ext_resource type="PackedScene" uid="uid://cv1en8wupfl5t" path="res://Scenes/interactive_screen.tscn" id="1_60cor"]
 [ext_resource type="PackedScene" uid="uid://g7f7el2gx4ia" path="res://direct_messages.tscn" id="2_epgcd"]
@@ -14,7 +14,7 @@ transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 transform = Transform3D(1.07122, 0, 0, 0, 1.07122, 0, 0, 0, 0.205193, 0, 0, -0.107389)
 
 [node name="Viewport" parent="Interactive Screen" index="2"]
-size = Vector2i(810, 540)
+size = Vector2i(960, 640)
 
 [node name="direct_messages" parent="Interactive Screen/Viewport" index="0" instance=ExtResource("2_epgcd")]
 

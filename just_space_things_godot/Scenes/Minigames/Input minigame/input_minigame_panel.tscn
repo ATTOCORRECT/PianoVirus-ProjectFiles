@@ -1,0 +1,151 @@
+[gd_scene load_steps=14 format=3 uid="uid://xocajnphcj1j"]
+
+[ext_resource type="PackedScene" uid="uid://cv1en8wupfl5t" path="res://Scenes/interactive_screen.tscn" id="1_7tmiw"]
+[ext_resource type="PackedScene" uid="uid://ybxb6eyo5roi" path="res://Scenes/Minigames/Input minigame/input_minigame_test.tscn" id="2_wcceh"]
+[ext_resource type="PackedScene" uid="uid://b6gtfr75y14no" path="res://Scenes/Controls/button.tscn" id="3_rad2g"]
+[ext_resource type="Texture2D" uid="uid://ctgoirmgbo6si" path="res://Assets/Models/buttons/console_small_button.png" id="4_c6feq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0gqyy"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("4_c6feq")
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_henpl"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("4_c6feq")
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p3m32"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("4_c6feq")
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aullr"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("4_c6feq")
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3qcxl"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("4_c6feq")
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_637d1"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("4_c6feq")
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ke17"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("4_c6feq")
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ada08"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("4_c6feq")
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bkdes"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("4_c6feq")
+texture_filter = 0
+
+[node name="input_minigame_panel" type="Node3D"]
+
+[node name="Interactive Screen" parent="." instance=ExtResource("1_7tmiw")]
+transform = Transform3D(1.8, 0, 0, 0, 1.2, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Viewport" parent="Interactive Screen" index="2"]
+size = Vector2i(960, 640)
+
+[node name="input_minigame_test" parent="Interactive Screen/Viewport" index="0" instance=ExtResource("2_wcceh")]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.160525, 0, 0, -0.081882)
+size = Vector3(1.9, 1.3, 1)
+
+[node name="Buttons" type="Node" parent="."]
+
+[node name="Button1" parent="Buttons" instance=ExtResource("3_rad2g")]
+transform = Transform3D(1.8802, 0, 0, 0, -8.21863e-08, -1.8802, 0, 1.8802, -8.21863e-08, -0.463819, -0.855289, -0.0726509)
+
+[node name="MeshInstance3D" parent="Buttons/Button1" index="1"]
+transform = Transform3D(0.8, 0, 0, 0, -3.49691e-08, 0.8, 0, -0.8, -3.49691e-08, -0.0011785, -0.00287223, 0.00304484)
+surface_material_override/0 = SubResource("StandardMaterial3D_0gqyy")
+
+[node name="Button2" parent="Buttons" instance=ExtResource("3_rad2g")]
+transform = Transform3D(1.8802, 0, 0, 0, -8.21863e-08, -1.8802, 0, 1.8802, -8.21863e-08, -0.0191267, -0.855289, -0.0726509)
+
+[node name="MeshInstance3D" parent="Buttons/Button2" index="1"]
+transform = Transform3D(0.8, 0, 0, 0, -3.49691e-08, 0.8, 0, -0.8, -3.49691e-08, -0.0011785, -0.00287223, 0.00304484)
+surface_material_override/0 = SubResource("StandardMaterial3D_henpl")
+
+[node name="Button3" parent="Buttons" instance=ExtResource("3_rad2g")]
+transform = Transform3D(1.8802, 0, 0, 0, -8.21863e-08, -1.8802, 0, 1.8802, -8.21863e-08, 0.455506, -0.855289, -0.0726509)
+
+[node name="MeshInstance3D" parent="Buttons/Button3" index="1"]
+transform = Transform3D(0.8, 0, 0, 0, -3.49691e-08, 0.8, 0, -0.8, -3.49691e-08, -0.0011785, -0.00287223, 0.00304484)
+surface_material_override/0 = SubResource("StandardMaterial3D_p3m32")
+
+[node name="Button4" parent="Buttons" instance=ExtResource("3_rad2g")]
+transform = Transform3D(1.8802, 0, 0, 0, -8.21863e-08, -1.8802, 0, 1.8802, -8.21863e-08, -0.478831, -1.23825, -0.0726509)
+
+[node name="MeshInstance3D" parent="Buttons/Button4" index="1"]
+transform = Transform3D(0.8, 0, 0, 0, -3.49691e-08, 0.8, 0, -0.8, -3.49691e-08, -0.0011785, -0.00287223, 0.00304484)
+surface_material_override/0 = SubResource("StandardMaterial3D_aullr")
+
+[node name="Button5" parent="Buttons" instance=ExtResource("3_rad2g")]
+transform = Transform3D(1.8802, 0, 0, 0, -8.21863e-08, -1.8802, 0, 1.8802, -8.21863e-08, 0.0136198, -1.23825, -0.0726509)
+
+[node name="MeshInstance3D" parent="Buttons/Button5" index="1"]
+transform = Transform3D(0.8, 0, 0, 0, -3.49691e-08, 0.8, 0, -0.8, -3.49691e-08, -0.0011785, -0.00287223, 0.00304484)
+surface_material_override/0 = SubResource("StandardMaterial3D_3qcxl")
+
+[node name="Button6" parent="Buttons" instance=ExtResource("3_rad2g")]
+transform = Transform3D(1.8802, 0, 0, 0, -8.21863e-08, -1.8802, 0, 1.8802, -8.21863e-08, 0.495936, -1.23825, -0.0726509)
+
+[node name="MeshInstance3D" parent="Buttons/Button6" index="1"]
+transform = Transform3D(0.8, 0, 0, 0, -3.49691e-08, 0.8, 0, -0.8, -3.49691e-08, -0.0011785, -0.00287223, 0.00304484)
+surface_material_override/0 = SubResource("StandardMaterial3D_637d1")
+
+[node name="Button7" parent="Buttons" instance=ExtResource("3_rad2g")]
+transform = Transform3D(1.8802, 0, 0, 0, -8.21863e-08, -1.8802, 0, 1.8802, -8.21863e-08, -0.489802, -1.63672, -0.0726509)
+
+[node name="MeshInstance3D" parent="Buttons/Button7" index="1"]
+transform = Transform3D(0.8, 0, 0, 0, -3.49691e-08, 0.8, 0, -0.8, -3.49691e-08, -0.0011785, -0.00287223, 0.00304484)
+surface_material_override/0 = SubResource("StandardMaterial3D_0ke17")
+
+[node name="Button8" parent="Buttons" instance=ExtResource("3_rad2g")]
+transform = Transform3D(1.8802, 0, 0, 0, -8.21863e-08, -1.8802, 0, 1.8802, -8.21863e-08, 0.0130676, -1.63672, -0.0726509)
+
+[node name="MeshInstance3D" parent="Buttons/Button8" index="1"]
+transform = Transform3D(0.8, 0, 0, 0, -3.49691e-08, 0.8, 0, -0.8, -3.49691e-08, -0.0011785, -0.00287223, 0.00304478)
+surface_material_override/0 = SubResource("StandardMaterial3D_ada08")
+
+[node name="Button9" parent="Buttons" instance=ExtResource("3_rad2g")]
+transform = Transform3D(1.8802, 0, 0, 0, -8.21863e-08, -1.8802, 0, 1.8802, -8.21863e-08, 0.527928, -1.63672, -0.0726509)
+
+[node name="MeshInstance3D" parent="Buttons/Button9" index="1"]
+transform = Transform3D(0.8, 0, 0, 0, -3.49691e-08, 0.8, 0, -0.8, -3.49691e-08, -0.0011785, -0.00287223, 0.00304478)
+surface_material_override/0 = SubResource("StandardMaterial3D_bkdes")
+
+[connection signal="input_event" from="Buttons/Button1/Area3D" to="Interactive Screen/Viewport/input_minigame_test" method="_Button_1_input_event"]
+[connection signal="input_event" from="Buttons/Button2/Area3D" to="Interactive Screen/Viewport/input_minigame_test" method="_Button_2_input_event"]
+[connection signal="input_event" from="Buttons/Button3/Area3D" to="Interactive Screen/Viewport/input_minigame_test" method="_Button_3_input_event"]
+[connection signal="input_event" from="Buttons/Button4/Area3D" to="Interactive Screen/Viewport/input_minigame_test" method="_Button_4_input_event"]
+[connection signal="input_event" from="Buttons/Button5/Area3D" to="Interactive Screen/Viewport/input_minigame_test" method="_Button_5_input_event"]
+[connection signal="input_event" from="Buttons/Button6/Area3D" to="Interactive Screen/Viewport/input_minigame_test" method="_Button_6_input_event"]
+[connection signal="input_event" from="Buttons/Button7/Area3D" to="Interactive Screen/Viewport/input_minigame_test" method="_Button_7_input_event"]
+[connection signal="input_event" from="Buttons/Button8/Area3D" to="Interactive Screen/Viewport/input_minigame_test" method="_Button_8_input_event"]
+[connection signal="input_event" from="Buttons/Button9/Area3D" to="Interactive Screen/Viewport/input_minigame_test" method="_Button_9_input_event"]
+
+[editable path="Interactive Screen"]
+[editable path="Buttons/Button1"]
+[editable path="Buttons/Button2"]
+[editable path="Buttons/Button3"]
+[editable path="Buttons/Button4"]
+[editable path="Buttons/Button5"]
+[editable path="Buttons/Button6"]
+[editable path="Buttons/Button7"]
+[editable path="Buttons/Button8"]
+[editable path="Buttons/Button9"]
