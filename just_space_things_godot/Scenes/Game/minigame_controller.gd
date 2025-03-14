@@ -27,6 +27,7 @@ func _on_button_event(_camera: Node, event: InputEvent, _event_position: Vector3
 		minigame_panel_viewport.get_child(0).on_button_event(event)
 
 func minigame_completed(score : float):
+	Singleton.audio_manager.play_minigame_success_sound()
 	await get_tree().create_timer(2).timeout
 	Singleton.map.spend_current_star()
 	unload_minigame()
@@ -34,6 +35,7 @@ func minigame_completed(score : float):
 
 
 func minigame_failed():
+	Singleton.audio_manager.play_minigame_fail_sound()
 	await get_tree().create_timer(2).timeout
 	Singleton.map.spend_current_star()
 	unload_minigame()

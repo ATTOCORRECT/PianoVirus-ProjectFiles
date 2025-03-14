@@ -9,6 +9,7 @@ var contacts: Array[Sender]
 
 var minigame_controller : Node
 var player : Camera3D
+var audio_manager : Node
 var engagement : Node
 var detail : Control
 var map : Node3D
