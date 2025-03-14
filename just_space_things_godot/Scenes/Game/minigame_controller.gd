@@ -17,6 +17,8 @@ func load_minigame(trend: Trend):
 	minigame_panel_viewport.add_child(minigame.instantiate())
 
 func unload_minigame():
+	if minigame_panel_viewport.get_child_count() == 0:
+		return
 	minigame_panel_viewport.remove_child(minigame_panel_viewport.get_child(0))
 	active_minigame = null
 
