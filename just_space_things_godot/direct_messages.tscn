@@ -1,7 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://g7f7el2gx4ia"]
+[gd_scene load_steps=8 format=3 uid="uid://g7f7el2gx4ia"]
 
-[ext_resource type="Script" path="res://direct_messages.gd" id="1_7ewgt"]
-[ext_resource type="Texture2D" uid="uid://cswuc0o6107ge" path="res://icon.svg" id="1_ka1yx"]
+[ext_resource type="Script" path="res://Scripts/direct_messages.gd" id="1_7ewgt"]
+[ext_resource type="Script" path="res://Scripts/dm_data.gd" id="2_fbcgs"]
+[ext_resource type="Script" path="res://Scripts/sender_res.gd" id="3_lyt44"]
+
+[sub_resource type="Resource" id="Resource_u85op"]
+script = ExtResource("3_lyt44")
+name = "Manager"
+
+[sub_resource type="Resource" id="Resource_01h6g"]
+script = ExtResource("2_fbcgs")
+sender = SubResource("Resource_u85op")
+message = "Hey, hey, hey, rockstar! Welcome to the Star Fleet! You are now amongst the ranks of the trendiest, coolest, most influential Jolt Streamers in the Nea Arxi system! We’ve talked on WarpChat before, but I haven’t had the chance to formally introduce myself. I’m Your Manager. Talent agent, confidant, and entertainment connoisseur.  I’ve got a bit of legal stuff to go over with you, explaining the basics of your contract, yada yada. Bit of a snooze fest but that's show biz, baby. So long story short, we pay for your pod, food, clothes, hookers, water bill – everything. In exchange, you grow your engagement as much as possible. There’s a lot of number crunching under the hood, but your engagement basically represents how much value you bring to the Star Fleet. Right now, your engagement is hovering around 10k, which is the usual starting point for our talent. We’re gonna give you a bit of a grace period to get sorted, but going forward, if your engagement drops below that 10k your contract will be terminated. That’s about it. If something comes up, I’ll let you know. Give me a ring if you need anything. And... yeah! Get those numbers up! Chat later, champ! "
+
+[sub_resource type="Resource" id="Resource_orqg2"]
+script = ExtResource("3_lyt44")
+name = "test"
+
+[sub_resource type="Resource" id="Resource_iaf0p"]
+script = ExtResource("2_fbcgs")
+sender = SubResource("Resource_orqg2")
+message = "testing 1 2 3"
 
 [node name="direct_messages" type="Control"]
 layout_mode = 3
@@ -12,8 +31,7 @@ offset_bottom = -987.888
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7ewgt")
-sender = "debug"
-message = "debug"
+Messages = Array[ExtResource("2_fbcgs")]([SubResource("Resource_01h6g"), SubResource("Resource_iaf0p")])
 
 [node name="bg_color" type="ColorRect" parent="."]
 layout_mode = 1
@@ -36,37 +54,3 @@ horizontal_scroll_mode = 0
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-
-[node name="message_panel" type="PanelContainer" parent="ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 160)
-layout_mode = 2
-
-[node name="new_message" type="VSplitContainer" parent="ScrollContainer/VBoxContainer/message_panel"]
-layout_mode = 2
-split_offset = -25
-
-[node name="sender_panel" type="HSplitContainer" parent="ScrollContainer/VBoxContainer/message_panel/new_message"]
-layout_mode = 2
-size_flags_vertical = 3
-split_offset = 64
-
-[node name="PanelContainer" type="PanelContainer" parent="ScrollContainer/VBoxContainer/message_panel/new_message/sender_panel"]
-layout_mode = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/message_panel/new_message/sender_panel/PanelContainer"]
-position = Vector2(2, 2)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_ka1yx")
-centered = false
-offset = Vector2(30, 0)
-
-[node name="sender" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/message_panel/new_message/sender_panel"]
-layout_mode = 2
-size_flags_vertical = 3
-text = "Sender Name"
-scroll_active = false
-
-[node name="message_body" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/message_panel/new_message"]
-layout_mode = 2
-size_flags_vertical = 3
-text = "This is the body of the message. It will keep going and wrap around in the text box. there is a lot of text and it is too long to fit onto this box, then the rest of the message will be available through a scroll wheel."
