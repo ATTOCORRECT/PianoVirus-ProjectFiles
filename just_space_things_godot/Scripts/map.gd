@@ -1,5 +1,7 @@
 extends Node3D
 
+var cooldown_timer = false
+
 var map_position = Vector3.ZERO
 var map_position_target = Vector3.ZERO
 var old_map_position_target = Vector3.ZERO
@@ -9,6 +11,8 @@ var area_row    = area_size.x
 var area_slice  = area_size.x * area_size.y
 var area_volume = area_size.x * area_size.y * area_size.z
 
+@onready var warp_button = $"../PlanetDetailPanel/WarpButton"
+
 var map_node = preload("res://Scenes/Panels/Map/map_node.tscn")
 
 var cells = {}
@@ -16,6 +20,9 @@ var cells = {}
 var target_star : Node3D
 
 var step = 0
+
+func _enter_tree() -> void:
+	Singleton.map = self
 
 func _ready() -> void:
 	pass # Replace with function body.
@@ -90,9 +97,19 @@ func select_star(star):
 		target_star.deselect_star()
 	target_star = star
 
+func spend_current_star():
+	target_star.spend_star()
+
 func _on_area_3d_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
-		if event.is_action_released("Select") and target_star != null and $"../WarpButton/Cooldown".is_stopped():
+		if event.is_action_released("Select") and target_star != null and cooldown_timer == false:
+			cooldown_timer = true
 			target_star.travel()
-			$"../WarpButton/Cooldown".start()
-			%MinigameController.load_minigame()
+			warp_button.disable_warp_button()
+			Singleton.minigame_controller.unload_minigame()
+			Singleton.trend_select.disable_buttons()
+			await get_tree().create_timer(3.0).timeout
+			cooldown_timer = false
+			warp_button.enable_warp_button()
+			if target_star.spent == false:
+				Singleton.trend_select.enable_buttons()

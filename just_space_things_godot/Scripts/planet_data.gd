@@ -8,6 +8,10 @@ class_name Planet_data
 @export var planet_description : String
 @export var planet_name : String = "TestPlanetName"
 
+@export var isScripted : bool
+
+var spent = false
+
 var key
 var random_id
 

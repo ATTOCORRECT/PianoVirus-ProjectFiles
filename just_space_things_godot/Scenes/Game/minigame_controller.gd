@@ -4,42 +4,38 @@ extends Node
 
 @onready var minigame_panel_viewport = $"../MinigamePanel/Interactive Screen/Viewport"
 
-#Label stored for alpha playtest
-@onready var play_minigame_label = $"../PlanetDetailPanel/Play minigame label" #safe to remove after alpha playtest
-
 var active_minigame : Control
+var active_trend : Trend
 
 func _enter_tree() -> void:
 	Singleton.minigame_controller = %MinigameController
 
-func load_minigame():
-	$"../WarpButton".disable_warp_button()
+func load_minigame(trend: Trend):
+	active_trend = trend
 	await get_tree().create_timer(2).timeout
 	active_minigame = minigame.instantiate()
 	minigame_panel_viewport.add_child(minigame.instantiate())
-	
-	# Alpha playtest Label Code.
-	play_minigame_label.visible = true #safe to remove after alpha playtest
 
 func unload_minigame():
+	if minigame_panel_viewport.get_child_count() == 0:
+		return
 	minigame_panel_viewport.remove_child(minigame_panel_viewport.get_child(0))
 	active_minigame = null
-	
-	# Alpha playtest Label Code.
-	play_minigame_label.visible = false #safe to remove after alpha playtest
 
 func _on_button_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
 	if active_minigame != null and event is InputEventMouseButton:
 		minigame_panel_viewport.get_child(0).on_button_event(event)
 
-func minigame_completed(_score : int):
+func minigame_completed(score : float):
+	Singleton.audio_manager.play_minigame_success_sound()
 	await get_tree().create_timer(2).timeout
-	$"../WarpButton".enable_warp_button()
+	Singleton.map.spend_current_star()
 	unload_minigame()
-	pass
+	Singleton.engagement.add_velocity(score, active_trend.value)
+
 
 func minigame_failed():
+	Singleton.audio_manager.play_minigame_fail_sound()
 	await get_tree().create_timer(2).timeout
-	$"../WarpButton".enable_warp_button()
+	Singleton.map.spend_current_star()
 	unload_minigame()
-	pass

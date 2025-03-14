@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cajbifroff1ub"
+path="res://.godot/imported/Big_button.obj-3b6a235e28a23af8d695a7011b570a88.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Big_button.obj-3b6a235e28a23af8d695a7011b570a88.mesh"]
+
+source_file="res://Assets/Models/buttons/Big_button.obj"
+dest_files=["res://.godot/imported/Big_button.obj-3b6a235e28a23af8d695a7011b570a88.mesh", "res://.godot/imported/Big_button.obj-3b6a235e28a23af8d695a7011b570a88.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
