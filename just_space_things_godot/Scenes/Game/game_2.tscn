@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://co3x8wqu1jmbh"]
+[gd_scene load_steps=36 format=3 uid="uid://co3x8wqu1jmbh"]
 
 [ext_resource type="PackedScene" uid="uid://y712fbtjxkb3" path="res://Scenes/Panels/Map/map.tscn" id="1_a0s2q"]
 [ext_resource type="Script" path="res://Scenes/Game/minigame_controller.gd" id="1_arlly"]
@@ -38,25 +38,10 @@ script = ExtResource("3_rmms6")
 color = Color(0.2494, 0.86, 0.64629, 1)
 name = "Gaming"
 
-[sub_resource type="Resource" id="Resource_8my2k"]
-script = ExtResource("3_rmms6")
-color = Color(0.38, 0.958667, 1, 1)
-name = "Politics"
-
-[sub_resource type="Resource" id="Resource_2fpb3"]
-script = ExtResource("3_rmms6")
-color = Color(0.2156, 0.57232, 0.98, 1)
-name = "Memes"
-
 [sub_resource type="Resource" id="Resource_vgo3p"]
 script = ExtResource("3_rmms6")
 color = Color(0.3663, 0.38709, 0.99, 1)
 name = "Technology"
-
-[sub_resource type="Resource" id="Resource_yc1o0"]
-script = ExtResource("3_rmms6")
-color = Color(0.734, 0.16, 1, 1)
-name = "Beauty"
 
 [sub_resource type="Resource" id="Resource_y3loq"]
 script = ExtResource("3_rmms6")
@@ -127,7 +112,7 @@ minigame = ExtResource("3_x6pgq")
 [node name="Data" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("2_46fxp")
-trends = Array[ExtResource("3_rmms6")]([SubResource("Resource_0rod6"), SubResource("Resource_ddfdv"), SubResource("Resource_3g2ty"), SubResource("Resource_4mpih"), SubResource("Resource_8my2k"), SubResource("Resource_2fpb3"), SubResource("Resource_vgo3p"), SubResource("Resource_yc1o0"), SubResource("Resource_y3loq"), SubResource("Resource_egp12")])
+trends = Array[ExtResource("3_rmms6")]([SubResource("Resource_0rod6"), SubResource("Resource_ddfdv"), SubResource("Resource_3g2ty"), SubResource("Resource_4mpih"), SubResource("Resource_vgo3p"), SubResource("Resource_y3loq"), SubResource("Resource_egp12")])
 
 [node name="Player" type="Camera3D" parent="."]
 unique_name_in_owner = true
@@ -153,7 +138,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1.5, -4)
 transform = Transform3D(0.53033, 0, 0.53033, 0, 0.75, 0, -0.53033, 0, 0.53033, -4, 0, -5)
 
 [node name="MinigamePanel" parent="." instance=ExtResource("10_3p7rq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.737, -4.165)
+transform = Transform3D(1.26885, 0, 0, 0, 1.26885, 0, 0, 0, 1.26885, -0.0115652, 1.12822, -4.37914)
 
 [node name="Viewport" parent="MinigamePanel/Interactive Screen" index="2"]
 size = Vector2i(960, 640)
@@ -253,17 +238,25 @@ texture = ExtResource("10_wnyq7")
 
 [node name="FollowerCount" parent="." instance=ExtResource("14_3fxua")]
 transform = Transform3D(0.620544, 0, 0, 0, 0.611045, -0.108162, 0, 0.108162, 0.611045, -0.689273, 2.05782, -5.38698)
-visible = false
+
+[node name="Interactive Screen" parent="FollowerCount" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 2.98023e-08, 0, -2.98023e-08, 1, -2.77367, 0, 0)
+
+[node name="CSGBox3D" parent="FollowerCount" index="1"]
+transform = Transform3D(4.24922, 0, 0, 0, 1.14368, 1.11759e-08, 0, -4.47035e-08, 0.323667, -2.77367, -1.19209e-07, -0.169072)
+
+[node name="Follower Icon" parent="FollowerCount" index="2"]
+transform = Transform3D(0.215519, 0, 0, 0, 0.215519, 3.72529e-09, 0, -3.72529e-09, 0.215519, -4.44241, 0.0295373, 0.0480556)
 
 [node name="Label3D" type="Label3D" parent="FollowerCount"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3161, 0.00796139, 0.0449772)
+transform = Transform3D(1, 0, 0, 0, 1, 8.9407e-08, 0, -8.9407e-08, 1, -4.07278, 0.00841975, 0.0475712)
 text = "000052847"
 font_size = 120
 horizontal_alignment = 0
 script = ExtResource("15_vx2cm")
 
 [node name="FollowerCount" parent="FollowerCount" instance=ExtResource("14_3fxua")]
-transform = Transform3D(0.620544, 0, 0, 0, 0.610226, 0.112691, 0, -0.112691, 0.610226, -1.99642, -3.84744, 1.36362)
+transform = Transform3D(0.620544, 0, 0, 0, 0.610226, 0.112691, 0, -0.112691, 0.610226, -2.53444, -3.84363, 1.35978)
 
 [node name="Label3D" type="Label3D" parent="FollowerCount/FollowerCount"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3161, 0.00796139, 0.0449772)
@@ -273,7 +266,7 @@ horizontal_alignment = 0
 script = ExtResource("15_vx2cm")
 
 [node name="FollowerCount3" parent="FollowerCount" instance=ExtResource("14_3fxua")]
-transform = Transform3D(0.381535, 0, 0, 0, 0.375191, 0.0692869, 0, -0.0692869, 0.375191, 1.11148, -3.23682, 2.62737)
+transform = Transform3D(0.381535, 0, 0, 0, 0.375191, 0.0692869, 0, -0.0692869, 0.375191, 1.11148, -2.92893, 3.10355)
 
 [node name="Label3D" type="Label3D" parent="FollowerCount/FollowerCount3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3161, 0.00796139, 0.0449772)
@@ -283,7 +276,7 @@ horizontal_alignment = 0
 script = ExtResource("15_vx2cm")
 
 [node name="FollowerCount2" parent="FollowerCount" instance=ExtResource("14_3fxua")]
-transform = Transform3D(0.611584, 0.000779461, -0.105065, 0.0183134, 0.610237, 0.11113, 0.103459, -0.112625, 0.601404, 4.26137, -0.969671, 1.89571)
+transform = Transform3D(0.536315, 0.00222222, -0.312148, 0.0545144, 0.610325, 0.0980096, 0.307358, -0.112127, 0.527289, 6.34, -1.35993, 1.87998)
 
 [node name="Label3D" type="Label3D" parent="FollowerCount/FollowerCount2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3161, 0.00796139, 0.0449772)
@@ -293,7 +286,7 @@ horizontal_alignment = 0
 script = ExtResource("15_vx2cm")
 
 [node name="EngagementPanel" parent="." instance=ExtResource("15_v5d7t")]
-transform = Transform3D(0.649519, 0, -0.375, 0, 0.75, 0, 0.375, 0, 0.649519, 3.9, 0.2, -4)
+transform = Transform3D(0.649519, 0, -0.375, 0, 0.75, 0, 0.375, 0, 0.649519, 3.22401, 0.2, -4.36327)
 
 [node name="dm_panel" parent="." instance=ExtResource("12_nuhxh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.61028, -1.15752, -3.54913)
