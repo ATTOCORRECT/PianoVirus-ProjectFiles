@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://cyjn4qhxlu5xy"]
+[gd_scene load_steps=41 format=3 uid="uid://cyjn4qhxlu5xy"]
 
 [ext_resource type="Script" path="res://Scenes/Game/minigame_controller.gd" id="1_217hu"]
 [ext_resource type="PackedScene" uid="uid://htqrbvq1nhnm" path="res://Scenes/Minigames/timing_minigame_test.tscn" id="2_sqeur"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://Scripts/player_look.gd" id="10_1j0bh"]
 [ext_resource type="PackedScene" uid="uid://bwq158p2pvwph" path="res://Scenes/Panels/DetailPanel/planet_detail_panel.tscn" id="11_tv24t"]
 [ext_resource type="PackedScene" uid="uid://d0ui842kpc0e5" path="res://Scenes/Controls/warp_button.tscn" id="12_gt1y6"]
+[ext_resource type="Texture2D" uid="uid://c61cjm74rtecm" path="res://Assets/Models/buttons/console_big_button.png" id="13_l1e0p"]
 [ext_resource type="PackedScene" uid="uid://y712fbtjxkb3" path="res://Scenes/Panels/Map/map.tscn" id="13_qn3qy"]
 [ext_resource type="PackedScene" uid="uid://bsb62k76bfl8e" path="res://Scenes/Panels/TrendPanel/trend_graph_panel.tscn" id="14_0y1s7"]
 [ext_resource type="PackedScene" uid="uid://of7bu4heyrbb" path="res://Scenes/Panels/MinigamePanel/minigame_panel.tscn" id="15_alkl4"]
@@ -73,6 +74,11 @@ name = "Movies"
 
 [sub_resource type="Environment" id="Environment_llmir"]
 background_mode = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_psgcs"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("13_l1e0p")
+texture_filter = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6vcuw"]
 albedo_color = Color(1, 0.917647, 0, 1)
@@ -158,11 +164,11 @@ minigame panel"
 [node name="WarpButton" parent="." instance=ExtResource("12_gt1y6")]
 transform = Transform3D(0.349892, 0, 0, 0, 0.31711, -0.147871, 0, 0.147871, 0.31711, 0, -1.8, -3.4)
 
-[node name="CSGCylinder3D" parent="WarpButton" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0088644, 0.104508)
-
-[node name="Area3D" parent="WarpButton" index="1"]
+[node name="Area3D" parent="WarpButton" index="0"]
 transform = Transform3D(1.08912, 0, 0, 0, 1.08912, -3.72529e-09, 0, 3.72529e-09, 1.08912, 0, 0.00838089, 0.206035)
+
+[node name="MeshInstance3D" parent="WarpButton" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_psgcs")
 
 [node name="Cooldown" type="Timer" parent="WarpButton"]
 wait_time = 2.0
