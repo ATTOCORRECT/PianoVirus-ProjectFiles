@@ -3,21 +3,22 @@
 [ext_resource type="PackedScene" uid="uid://y712fbtjxkb3" path="res://Scenes/Panels/Map/map.tscn" id="1_a0s2q"]
 [ext_resource type="Script" path="res://Scenes/Game/minigame_controller.gd" id="1_arlly"]
 [ext_resource type="Script" path="res://Scripts/settings.gd" id="2_46fxp"]
-[ext_resource type="PackedScene" uid="uid://d0ui842kpc0e5" path="res://Scenes/Controls/warp_button.tscn" id="2_hmhgp"]
 [ext_resource type="Script" path="res://Scripts/player_look.gd" id="2_iksiu"]
 [ext_resource type="PackedScene" uid="uid://bwq158p2pvwph" path="res://Scenes/Panels/DetailPanel/planet_detail_panel.tscn" id="3_jihco"]
 [ext_resource type="Script" path="res://Scripts/trend.gd" id="3_rmms6"]
 [ext_resource type="PackedScene" uid="uid://htqrbvq1nhnm" path="res://Scenes/Minigames/timing_minigame_test.tscn" id="3_x6pgq"]
-[ext_resource type="Script" path="res://Scripts/audio_manager.gd" id="5_jj1la"]
-[ext_resource type="AudioStream" uid="uid://btpsfts2xspq2" path="res://Assets/Sound/Music/song draft 5.wav" id="6_i2pif"]
-[ext_resource type="AudioStream" uid="uid://by5lra87s28sg" path="res://Assets/Sound/SFX/Takeoff.wav" id="7_n5qwd"]
+[ext_resource type="Script" path="res://Scripts/audio_manager.gd" id="5_yg1gs"]
+[ext_resource type="AudioStream" uid="uid://btpsfts2xspq2" path="res://Assets/Sound/Music/song draft 5.wav" id="6_vefod"]
+[ext_resource type="Texture2D" uid="uid://c61cjm74rtecm" path="res://Assets/Models/buttons/console_big_button.png" id="7_g6t8n"]
+[ext_resource type="AudioStream" uid="uid://by5lra87s28sg" path="res://Assets/Sound/SFX/Takeoff.wav" id="7_qpmp5"]
 [ext_resource type="PackedScene" uid="uid://bsb62k76bfl8e" path="res://Scenes/Panels/TrendPanel/trend_graph_panel.tscn" id="7_uatka"]
 [ext_resource type="PackedScene" uid="uid://dcgey2jeydoso" path="res://Scenes/Panels/MinigamePanel/test_button.tscn" id="7_wqk0g"]
-[ext_resource type="AudioStream" uid="uid://cokqgfkw2hlw4" path="res://Assets/Sound/SFX/minigame success.wav" id="8_tssjl"]
-[ext_resource type="AudioStream" uid="uid://c8p3pudmflris" path="res://Assets/Sound/SFX/minigame fail.wav" id="9_omyyn"]
+[ext_resource type="AudioStream" uid="uid://cokqgfkw2hlw4" path="res://Assets/Sound/SFX/minigame success.wav" id="8_1t854"]
+[ext_resource type="Texture2D" uid="uid://ctgoirmgbo6si" path="res://Assets/Models/buttons/console_small_button.png" id="8_e4v3j"]
+[ext_resource type="AudioStream" uid="uid://c8p3pudmflris" path="res://Assets/Sound/SFX/minigame fail.wav" id="9_fgyp2"]
 [ext_resource type="PackedScene" uid="uid://of7bu4heyrbb" path="res://Scenes/Panels/MinigamePanel/minigame_panel.tscn" id="10_3p7rq"]
 [ext_resource type="Texture2D" uid="uid://v8157m3bux8e" path="res://Assets/Sprites/SPACEBACKGROUND.png" id="10_wnyq7"]
-[ext_resource type="Texture2D" uid="uid://c61cjm74rtecm" path="res://Assets/Models/buttons/console_big_button.png" id="13_h78nb"]
+[ext_resource type="PackedScene" uid="uid://dhtdt32oc6i2x" path="res://Scenes/Panels/DirectMessages/dm_panel.tscn" id="12_nuhxh"]
 [ext_resource type="PackedScene" uid="uid://b8qlhw4a72dcr" path="res://Scenes/Panels/FollowerCount/follower_count.tscn" id="14_3fxua"]
 [ext_resource type="PackedScene" uid="uid://dfl2r6koee71t" path="res://Scenes/Panels/Engagement Panel/engagement_panel.tscn" id="15_v5d7t"]
 [ext_resource type="Script" path="res://Scenes/Game/label_3d_TEMP.gd" id="15_vx2cm"]
@@ -42,25 +43,10 @@ script = ExtResource("3_rmms6")
 color = Color(0.2494, 0.86, 0.64629, 1)
 name = "Gaming"
 
-[sub_resource type="Resource" id="Resource_8my2k"]
-script = ExtResource("3_rmms6")
-color = Color(0.38, 0.958667, 1, 1)
-name = "Politics"
-
-[sub_resource type="Resource" id="Resource_2fpb3"]
-script = ExtResource("3_rmms6")
-color = Color(0.2156, 0.57232, 0.98, 1)
-name = "Memes"
-
 [sub_resource type="Resource" id="Resource_vgo3p"]
 script = ExtResource("3_rmms6")
 color = Color(0.3663, 0.38709, 0.99, 1)
 name = "Technology"
-
-[sub_resource type="Resource" id="Resource_yc1o0"]
-script = ExtResource("3_rmms6")
-color = Color(0.734, 0.16, 1, 1)
-name = "Beauty"
 
 [sub_resource type="Resource" id="Resource_y3loq"]
 script = ExtResource("3_rmms6")
@@ -75,9 +61,19 @@ name = "Movies"
 [sub_resource type="Environment" id="Environment_llmir"]
 background_mode = 1
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x8si5"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qa3c5"]
 resource_local_to_scene = true
-albedo_texture = ExtResource("13_h78nb")
+albedo_texture = ExtResource("7_g6t8n")
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b4eex"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("8_e4v3j")
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hp3yr"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("8_e4v3j")
 texture_filter = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6vcuw"]
@@ -121,28 +117,28 @@ minigame = ExtResource("3_x6pgq")
 [node name="Data" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("2_46fxp")
-trends = Array[ExtResource("3_rmms6")]([SubResource("Resource_0rod6"), SubResource("Resource_ddfdv"), SubResource("Resource_3g2ty"), SubResource("Resource_4mpih"), SubResource("Resource_8my2k"), SubResource("Resource_2fpb3"), SubResource("Resource_vgo3p"), SubResource("Resource_yc1o0"), SubResource("Resource_y3loq"), SubResource("Resource_egp12")])
+trends = Array[ExtResource("3_rmms6")]([SubResource("Resource_0rod6"), SubResource("Resource_ddfdv"), SubResource("Resource_3g2ty"), SubResource("Resource_4mpih"), SubResource("Resource_vgo3p"), SubResource("Resource_y3loq"), SubResource("Resource_egp12")])
 
 [node name="AudioManager" type="Node" parent="."]
 unique_name_in_owner = true
-script = ExtResource("5_jj1la")
+script = ExtResource("5_yg1gs")
 
 [node name="Global" type="AudioStreamPlayer" parent="AudioManager"]
-stream = ExtResource("6_i2pif")
+stream = ExtResource("6_vefod")
 volume_db = -12.369
 autoplay = true
 
 [node name="Button" type="AudioStreamPlayer3D" parent="AudioManager"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25658, -1.71733, -4.55342)
-stream = ExtResource("7_n5qwd")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.28916, -1.71733, -4.56006)
+stream = ExtResource("7_qpmp5")
 volume_db = -12.0
 
 [node name="MinigameSuccess" type="AudioStreamPlayer3D" parent="AudioManager"]
-stream = ExtResource("8_tssjl")
+stream = ExtResource("8_1t854")
 volume_db = 12.0
 
 [node name="MinigameFail" type="AudioStreamPlayer3D" parent="AudioManager"]
-stream = ExtResource("9_omyyn")
+stream = ExtResource("9_fgyp2")
 volume_db = 24.381
 
 [node name="Player" type="Camera3D" parent="."]
@@ -153,27 +149,16 @@ script = ExtResource("2_iksiu")
 [node name="AudioListener3D" type="AudioListener3D" parent="Player"]
 
 [node name="PlanetDetailPanel" parent="." instance=ExtResource("3_jihco")]
-transform = Transform3D(0.638316, 0, 0, 0, 0.578511, 0.269764, 0, -0.269764, 0.578511, 0, -1, -3.8)
+transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, -1.1, -3.4)
 
-[node name="Play minigame label" type="Label3D" parent="PlanetDetailPanel"]
-transform = Transform3D(0.999993, -0.00372743, -0.000599762, 0.003728, 0.999992, 0.000944763, 0.000596238, -0.000946999, 0.999999, 0.00128851, -0.179165, 0.216542)
-visible = false
-text = "Go to 
-minigame panel"
+[node name="MeshInstance3D" parent="PlanetDetailPanel/WarpButton" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_qa3c5")
 
-[node name="WarpButton" parent="." instance=ExtResource("2_hmhgp")]
-transform = Transform3D(0.349892, 0, 0, 0, 0.31711, -0.147871, 0, 0.147871, 0.31711, 0, -1.8, -3.4)
-color = Color(0, 0, 0, 1)
+[node name="MeshInstance3D" parent="PlanetDetailPanel/Button1" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_b4eex")
 
-[node name="Area3D" parent="WarpButton" index="0"]
-transform = Transform3D(1.08912, 0, 0, 0, 1.08912, -3.72529e-09, 0, 3.72529e-09, 1.08912, 0, 0.00838089, 0.206035)
-
-[node name="MeshInstance3D" parent="WarpButton" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_x8si5")
-
-[node name="Cooldown" type="Timer" parent="WarpButton"]
-wait_time = 2.0
-one_shot = true
+[node name="MeshInstance3D" parent="PlanetDetailPanel/Button2" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_hp3yr")
 
 [node name="Map" parent="." instance=ExtResource("1_a0s2q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1.5, -4)
@@ -182,7 +167,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1.5, -4)
 transform = Transform3D(0.53033, 0, 0.53033, 0, 0.75, 0, -0.53033, 0, 0.53033, -4, 0, -5)
 
 [node name="MinigamePanel" parent="." instance=ExtResource("10_3p7rq")]
-transform = Transform3D(0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, 0.984808, 1.89812, 0.434262, -4.3)
+transform = Transform3D(1.26885, 0, 0, 0, 1.26885, 0, 0, 0, 1.26885, -0.0115652, 1.12822, -4.37914)
 
 [node name="Viewport" parent="MinigamePanel/Interactive Screen" index="2"]
 size = Vector2i(960, 640)
@@ -214,22 +199,13 @@ font = SubResource("FontFile_e5iw3")
 
 [node name="Above Map Label" type="CSGBox3D" parent="."]
 transform = Transform3D(0.815873, 0, 0, 0, 0.204655, 0, 0, 0, 1, -1.9572, -0.823405, -5.02211)
+visible = false
 cast_shadow = 0
 size = Vector3(2.4, 1.6, 0.1)
 
 [node name="Choose Your Destination" type="Label3D" parent="Above Map Label"]
 transform = Transform3D(1.22568, 0, 0, 0, 4.88627, 0, 0, 0, 1, 0.0331781, -0.0129662, 0.0612268)
 text = "Choose your destination"
-font = SubResource("FontFile_e5iw3")
-
-[node name="Travel Label" type="CSGBox3D" parent="."]
-transform = Transform3D(0.377824, 0, 0, 0, 0.0786512, 0.923204, 0, -0.188938, 0.384311, -0.0099306, -1.96646, -3.06618)
-cast_shadow = 0
-size = Vector3(2.4, 1.6, 0.1)
-
-[node name="Travel Label" type="Label3D" parent="Travel Label"]
-transform = Transform3D(2.64673, 0, 0, 0, 4.88627, -1.19209e-07, 0, 2.98023e-08, 1, 0.071645, -0.0129652, 0.0612268)
-text = "Travel"
 font = SubResource("FontFile_e5iw3")
 
 [node name="Environment" type="Node" parent="."]
@@ -282,7 +258,7 @@ transform = Transform3D(1, 0, 0, 0, 0.258819, -0.965926, 0, 0.965926, 0.258819, 
 mesh = SubResource("QuadMesh_3c16f")
 
 [node name="CSGMesh3D11" type="CSGMesh3D" parent="Environment/Interior mockup"]
-transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, -9.5, -1)
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0.0211306, -9.5, -0.991356)
 mesh = SubResource("QuadMesh_3c16f")
 
 [node name="Sprite3D" type="Sprite3D" parent="Environment"]
@@ -292,15 +268,24 @@ texture = ExtResource("10_wnyq7")
 [node name="FollowerCount" parent="." instance=ExtResource("14_3fxua")]
 transform = Transform3D(0.620544, 0, 0, 0, 0.611045, -0.108162, 0, 0.108162, 0.611045, -0.689273, 2.05782, -5.38698)
 
+[node name="Interactive Screen" parent="FollowerCount" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 2.98023e-08, 0, -2.98023e-08, 1, -2.77367, 0, 0)
+
+[node name="CSGBox3D" parent="FollowerCount" index="1"]
+transform = Transform3D(4.24922, 0, 0, 0, 1.14368, 1.11759e-08, 0, -4.47035e-08, 0.323667, -2.77367, -1.19209e-07, -0.169072)
+
+[node name="Follower Icon" parent="FollowerCount" index="2"]
+transform = Transform3D(0.215519, 0, 0, 0, 0.215519, 3.72529e-09, 0, -3.72529e-09, 0.215519, -4.44241, 0.0295373, 0.0480556)
+
 [node name="Label3D" type="Label3D" parent="FollowerCount"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3161, 0.00796139, 0.0449772)
+transform = Transform3D(1, 0, 0, 0, 1, 8.9407e-08, 0, -8.9407e-08, 1, -4.07278, 0.00841975, 0.0475712)
 text = "000052847"
 font_size = 120
 horizontal_alignment = 0
 script = ExtResource("15_vx2cm")
 
 [node name="FollowerCount" parent="FollowerCount" instance=ExtResource("14_3fxua")]
-transform = Transform3D(0.620544, 0, 0, 0, 0.610226, 0.112691, 0, -0.112691, 0.610226, -1.99642, -3.84744, 1.36362)
+transform = Transform3D(0.620544, 0, 0, 0, 0.610226, 0.112691, 0, -0.112691, 0.610226, -2.53444, -3.84363, 1.35978)
 
 [node name="Label3D" type="Label3D" parent="FollowerCount/FollowerCount"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3161, 0.00796139, 0.0449772)
@@ -310,7 +295,7 @@ horizontal_alignment = 0
 script = ExtResource("15_vx2cm")
 
 [node name="FollowerCount3" parent="FollowerCount" instance=ExtResource("14_3fxua")]
-transform = Transform3D(0.381535, 0, 0, 0, 0.375191, 0.0692869, 0, -0.0692869, 0.375191, 1.11148, -3.23682, 2.62737)
+transform = Transform3D(0.381535, 0, 0, 0, 0.375191, 0.0692869, 0, -0.0692869, 0.375191, 1.11148, -2.92893, 3.10355)
 
 [node name="Label3D" type="Label3D" parent="FollowerCount/FollowerCount3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3161, 0.00796139, 0.0449772)
@@ -320,7 +305,7 @@ horizontal_alignment = 0
 script = ExtResource("15_vx2cm")
 
 [node name="FollowerCount2" parent="FollowerCount" instance=ExtResource("14_3fxua")]
-transform = Transform3D(0.611584, 0.000779461, -0.105065, 0.0183134, 0.610237, 0.11113, 0.103459, -0.112625, 0.601404, 4.26137, -0.969671, 1.89571)
+transform = Transform3D(0.536315, 0.00222222, -0.312148, 0.0545144, 0.610325, 0.0980096, 0.307358, -0.112127, 0.527289, 6.34, -1.35993, 1.87998)
 
 [node name="Label3D" type="Label3D" parent="FollowerCount/FollowerCount2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3161, 0.00796139, 0.0449772)
@@ -330,12 +315,21 @@ horizontal_alignment = 0
 script = ExtResource("15_vx2cm")
 
 [node name="EngagementPanel" parent="." instance=ExtResource("15_v5d7t")]
-transform = Transform3D(0.649519, 0, -0.375, 0, 0.75, 0, 0.375, 0, 0.649519, 3.9, 0.2, -4)
+transform = Transform3D(0.649519, 0, -0.375, 0, 0.75, 0, 0.375, 0, 0.649519, 3.22401, 0.2, -4.36327)
 
-[connection signal="input_event" from="WarpButton/Area3D" to="Map" method="_on_area_3d_input_event"]
+[node name="dm_panel" parent="." instance=ExtResource("12_nuhxh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.61028, -1.15752, -3.54913)
+
+[connection signal="input_event" from="PlanetDetailPanel/WarpButton/Area3D" to="Map" method="_on_area_3d_input_event"]
 [connection signal="input_event" from="MinigamePanel/TestButton/Area3D" to="MinigameController" method="_on_button_event"]
 
-[editable path="WarpButton"]
+[editable path="PlanetDetailPanel"]
+[editable path="PlanetDetailPanel/Planet Detail"]
+[editable path="PlanetDetailPanel/WarpButton"]
+[editable path="PlanetDetailPanel/Trend Selection"]
+[editable path="PlanetDetailPanel/Button1"]
+[editable path="PlanetDetailPanel/Button2"]
+[editable path="PlanetDetailPanel/Model"]
 [editable path="TrendGraphPanel"]
 [editable path="TrendGraphPanel/Interactive Screen"]
 [editable path="MinigamePanel"]
