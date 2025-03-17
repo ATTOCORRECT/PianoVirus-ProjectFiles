@@ -124,7 +124,7 @@ script = ExtResource("5_yg1gs")
 
 [node name="Global" type="AudioStreamPlayer" parent="AudioManager"]
 stream = ExtResource("6_vefod")
-volume_db = -80.0
+volume_db = -12.369
 autoplay = true
 
 [node name="Button" type="AudioStreamPlayer3D" parent="AudioManager"]
