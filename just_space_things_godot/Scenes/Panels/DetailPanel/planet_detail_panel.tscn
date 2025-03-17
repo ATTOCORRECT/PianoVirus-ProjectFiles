@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bwq158p2pvwph"]
+[gd_scene load_steps=10 format=3 uid="uid://bwq158p2pvwph"]
 
 [ext_resource type="PackedScene" uid="uid://cv1en8wupfl5t" path="res://Scenes/interactive_screen.tscn" id="1_lsmxt"]
 [ext_resource type="PackedScene" uid="uid://b7rbmlcidh82i" path="res://Scenes/Panels/DetailPanel/planet_detail_UI.tscn" id="2_54edm"]
@@ -6,6 +6,17 @@
 [ext_resource type="PackedScene" uid="uid://d0ui842kpc0e5" path="res://Scenes/Controls/warp_button.tscn" id="4_3teqm"]
 [ext_resource type="PackedScene" uid="uid://b6gtfr75y14no" path="res://Scenes/Controls/button.tscn" id="6_6ihsc"]
 [ext_resource type="PackedScene" uid="uid://p2wcga331qxe" path="res://Assets/Models/Center Console/Center Console.glb" id="6_8rwso"]
+[ext_resource type="Texture2D" uid="uid://ctgoirmgbo6si" path="res://Assets/Models/buttons/console_small_button.png" id="6_uyoe0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l8p28"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("6_uyoe0")
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r1gn5"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("6_uyoe0")
+texture_filter = 0
 
 [node name="Center Console" type="Node3D"]
 
@@ -42,8 +53,14 @@ trend_secondary_button = NodePath("../../../Button2")
 [node name="Button1" parent="." instance=ExtResource("6_6ihsc")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.225, -0.85, -0.05)
 
+[node name="MeshInstance3D" parent="Button1" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_l8p28")
+
 [node name="Button2" parent="." instance=ExtResource("6_6ihsc")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.225, -0.85, -0.05)
+
+[node name="MeshInstance3D" parent="Button2" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_r1gn5")
 
 [node name="Model" parent="." instance=ExtResource("6_8rwso")]
 
