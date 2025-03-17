@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://bon7ufnivwuap"]
+
+[ext_resource type="Script" path="res://Scripts/audio_manager.gd" id="1_kwq2n"]
+[ext_resource type="AudioStream" uid="uid://btpsfts2xspq2" path="res://Assets/Sound/Music/song draft 5.wav" id="2_8hq01"]
+[ext_resource type="AudioStream" uid="uid://by5lra87s28sg" path="res://Assets/Sound/SFX/Takeoff.wav" id="3_oxs5u"]
+[ext_resource type="AudioStream" uid="uid://cokqgfkw2hlw4" path="res://Assets/Sound/SFX/minigame success.wav" id="4_e5uhf"]
+[ext_resource type="AudioStream" uid="uid://c8p3pudmflris" path="res://Assets/Sound/SFX/minigame fail.wav" id="5_p5yg2"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_kwq2n")
+
+[node name="Global" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_8hq01")
+volume_db = -12.369
+autoplay = true
+
+[node name="Button" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.28916, -1.71733, -4.56006)
+stream = ExtResource("3_oxs5u")
+volume_db = -12.0
+
+[node name="MinigameSuccess" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_e5uhf")
+volume_db = 12.0
+
+[node name="MinigameFail" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_p5yg2")
+volume_db = 24.381
+
+[node name="GenericSpeaker" type="AudioStreamPlayer3D" parent="."]
+max_polyphony = 5

@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://co3x8wqu1jmbh"]
+[gd_scene load_steps=38 format=3 uid="uid://co3x8wqu1jmbh"]
 
 [ext_resource type="PackedScene" uid="uid://y712fbtjxkb3" path="res://Scenes/Panels/Map/map.tscn" id="1_a0s2q"]
 [ext_resource type="Script" path="res://Scenes/Game/minigame_controller.gd" id="1_arlly"]
@@ -6,16 +6,12 @@
 [ext_resource type="Script" path="res://Scripts/player_look.gd" id="2_iksiu"]
 [ext_resource type="PackedScene" uid="uid://bwq158p2pvwph" path="res://Scenes/Panels/DetailPanel/planet_detail_panel.tscn" id="3_jihco"]
 [ext_resource type="Script" path="res://Scripts/trend.gd" id="3_rmms6"]
-[ext_resource type="PackedScene" uid="uid://htqrbvq1nhnm" path="res://Scenes/Minigames/timing_minigame_test.tscn" id="3_x6pgq"]
-[ext_resource type="Script" path="res://Scripts/audio_manager.gd" id="5_yg1gs"]
-[ext_resource type="AudioStream" uid="uid://btpsfts2xspq2" path="res://Assets/Sound/Music/song draft 5.wav" id="6_vefod"]
+[ext_resource type="PackedScene" uid="uid://htqrbvq1nhnm" path="res://Scenes/Minigames/Timing Minigame/timing_minigame_test.tscn" id="3_x6pgq"]
+[ext_resource type="PackedScene" uid="uid://bon7ufnivwuap" path="res://Scenes/audio_manager.tscn" id="5_8wp2a"]
 [ext_resource type="Texture2D" uid="uid://c61cjm74rtecm" path="res://Assets/Models/buttons/console_big_button.png" id="7_g6t8n"]
-[ext_resource type="AudioStream" uid="uid://by5lra87s28sg" path="res://Assets/Sound/SFX/Takeoff.wav" id="7_qpmp5"]
 [ext_resource type="PackedScene" uid="uid://bsb62k76bfl8e" path="res://Scenes/Panels/TrendPanel/trend_graph_panel.tscn" id="7_uatka"]
 [ext_resource type="PackedScene" uid="uid://dcgey2jeydoso" path="res://Scenes/Panels/MinigamePanel/test_button.tscn" id="7_wqk0g"]
-[ext_resource type="AudioStream" uid="uid://cokqgfkw2hlw4" path="res://Assets/Sound/SFX/minigame success.wav" id="8_1t854"]
 [ext_resource type="Texture2D" uid="uid://ctgoirmgbo6si" path="res://Assets/Models/buttons/console_small_button.png" id="8_e4v3j"]
-[ext_resource type="AudioStream" uid="uid://c8p3pudmflris" path="res://Assets/Sound/SFX/minigame fail.wav" id="9_fgyp2"]
 [ext_resource type="PackedScene" uid="uid://of7bu4heyrbb" path="res://Scenes/Panels/MinigamePanel/minigame_panel.tscn" id="10_3p7rq"]
 [ext_resource type="Texture2D" uid="uid://v8157m3bux8e" path="res://Assets/Sprites/SPACEBACKGROUND.png" id="10_wnyq7"]
 [ext_resource type="PackedScene" uid="uid://cl1oc80j2h8t" path="res://Scenes/Panels/DirectMessages/dm_panel.tscn" id="12_nuhxh"]
@@ -118,27 +114,11 @@ unique_name_in_owner = true
 script = ExtResource("2_46fxp")
 trends = Array[ExtResource("3_rmms6")]([SubResource("Resource_0rod6"), SubResource("Resource_ddfdv"), SubResource("Resource_3g2ty"), SubResource("Resource_4mpih"), SubResource("Resource_vgo3p"), SubResource("Resource_y3loq"), SubResource("Resource_egp12")])
 
-[node name="AudioManager" type="Node" parent="."]
+[node name="AudioManager" parent="." instance=ExtResource("5_8wp2a")]
 unique_name_in_owner = true
-script = ExtResource("5_yg1gs")
 
-[node name="Global" type="AudioStreamPlayer" parent="AudioManager"]
-stream = ExtResource("6_vefod")
-volume_db = -12.369
-autoplay = true
-
-[node name="Button" type="AudioStreamPlayer3D" parent="AudioManager"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.28916, -1.71733, -4.56006)
-stream = ExtResource("7_qpmp5")
-volume_db = -12.0
-
-[node name="MinigameSuccess" type="AudioStreamPlayer3D" parent="AudioManager"]
-stream = ExtResource("8_1t854")
-volume_db = 12.0
-
-[node name="MinigameFail" type="AudioStreamPlayer3D" parent="AudioManager"]
-stream = ExtResource("9_fgyp2")
-volume_db = 24.381
+[node name="Global" parent="AudioManager" index="0"]
+volume_db = -80.0
 
 [node name="Player" type="Camera3D" parent="."]
 unique_name_in_owner = true
@@ -312,6 +292,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.61028, -1.15752, -3.54913)
 [connection signal="input_event" from="PlanetDetailPanel/WarpButton/Area3D" to="Map" method="_on_area_3d_input_event"]
 [connection signal="input_event" from="MinigamePanel/TestButton/Area3D" to="MinigameController" method="_on_button_event"]
 
+[editable path="AudioManager"]
 [editable path="PlanetDetailPanel"]
 [editable path="PlanetDetailPanel/Planet Detail"]
 [editable path="PlanetDetailPanel/WarpButton"]

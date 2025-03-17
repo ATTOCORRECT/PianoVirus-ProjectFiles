@@ -31,6 +31,8 @@ var show_countdown = false
 
 var countdown_value = 0
 
+@onready var button_sfx = preload("res://Assets/Sound/SFX/ButtonClick_temp.mp3")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	timer_label.label_settings.font_color = Color.WHITE
@@ -131,6 +133,7 @@ func _on_countdown_timer_timeout() -> void:
 func on_button_event(event: InputEvent):
 	print("recieved input")
 	if event.is_action_pressed("Select") && !game_start :
+		Singleton.audio_manager.play_new_sfx(button_sfx)
 		idle_container.visible = false
 		game_start = true
 		instruction_label.visible = true
@@ -138,6 +141,7 @@ func on_button_event(event: InputEvent):
 	
 	if event.is_action_pressed("Select") && target_reached && game_start :
 		target_hit = true
+		Singleton.audio_manager.play_new_sfx(button_sfx)
 		Singleton.minigame_controller.minigame_completed(score) # replace number with reward score
 		game_timer.stop()
 		game_over = true

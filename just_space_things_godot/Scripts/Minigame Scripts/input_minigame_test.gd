@@ -9,6 +9,7 @@ var code_complete = false
 @onready var code_label = $VBoxContainer/CodeLabel
 @onready var userCode_label = $VBoxContainer/UserCodeLabel
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
