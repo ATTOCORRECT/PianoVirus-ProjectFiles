@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://co3x8wqu1jmbh"]
+[gd_scene load_steps=43 format=3 uid="uid://co3x8wqu1jmbh"]
 
 [ext_resource type="PackedScene" uid="uid://y712fbtjxkb3" path="res://Scenes/Panels/Map/map.tscn" id="1_a0s2q"]
 [ext_resource type="Script" path="res://Scenes/Game/minigame_controller.gd" id="1_arlly"]
@@ -24,6 +24,8 @@
 [ext_resource type="PackedScene" uid="uid://dfl2r6koee71t" path="res://Scenes/Panels/Engagement Panel/engagement_panel.tscn" id="15_v5d7t"]
 [ext_resource type="Script" path="res://Scenes/Game/label_3d_TEMP.gd" id="15_vx2cm"]
 [ext_resource type="PackedScene" uid="uid://b76d2niwraray" path="res://Assets/Models/Console/console.glb" id="19_1nssx"]
+[ext_resource type="PackedScene" uid="uid://c2jsmrlnsia25" path="res://Assets/Models/Console/console_corner.glb" id="20_cogfx"]
+[ext_resource type="PackedScene" uid="uid://dfw26nh8vrc34" path="res://Assets/Models/Console/console_corner_flipped.glb" id="21_e1n7o"]
 
 [sub_resource type="Resource" id="Resource_0rod6"]
 script = ExtResource("3_rmms6")
@@ -93,10 +95,6 @@ cache/0/16/0/underline_position = 0.0
 cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
 
-[sub_resource type="QuadMesh" id="QuadMesh_7akh8"]
-resource_local_to_scene = true
-size = Vector2(3, 2)
-
 [sub_resource type="QuadMesh" id="QuadMesh_dofya"]
 size = Vector2(1, 2)
 
@@ -125,7 +123,6 @@ script = ExtResource("5_yg1gs")
 [node name="Global" type="AudioStreamPlayer" parent="AudioManager"]
 stream = ExtResource("6_vefod")
 volume_db = -12.369
-autoplay = true
 
 [node name="Button" type="AudioStreamPlayer3D" parent="AudioManager"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.28916, -1.71733, -4.56006)
@@ -220,19 +217,14 @@ omni_attenuation = 0.2
 [node name="Right Console" parent="Environment" instance=ExtResource("19_1nssx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -2, -4)
 
-[node name="Interior mockup" type="Node3D" parent="Environment"]
+[node name="Right_Corner" parent="Environment" instance=ExtResource("20_cogfx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -2, -4)
 
-[node name="CSGMesh3D4" type="CSGMesh3D" parent="Environment/Interior mockup"]
-transform = Transform3D(0.906308, -0.383022, 0.178606, 0, 0.422618, 0.906308, -0.422618, -0.821394, 0.383022, -5, -1.5, -3.2)
-mesh = SubResource("QuadMesh_7akh8")
+[node name="Interior mockup" type="Node3D" parent="Environment"]
 
 [node name="CSGMesh3D5" type="CSGMesh3D" parent="Environment/Interior mockup"]
 transform = Transform3D(1, 0, 0, 0, 0.422618, 0.906308, 0, -0.906308, 0.422618, -0.00183606, -1.5, -4.00414)
 mesh = SubResource("QuadMesh_dofya")
-
-[node name="CSGMesh3D6" type="CSGMesh3D" parent="Environment/Interior mockup"]
-transform = Transform3D(0.866025, 0.453154, -0.211309, 0, 0.422618, 0.906308, 0.5, -0.784886, 0.365998, 5, -1.5, -3.2)
-mesh = SubResource("QuadMesh_7akh8")
 
 [node name="CSGMesh3D8" type="CSGMesh3D" parent="Environment/Interior mockup"]
 transform = Transform3D(0.810638, -0.0971323, 0.577435, 0.240599, 0.954305, -0.17724, -0.533833, 0.282608, 0.796966, -8, 0, -3)
@@ -249,6 +241,9 @@ mesh = SubResource("QuadMesh_3c16f")
 [node name="CSGMesh3D11" type="CSGMesh3D" parent="Environment/Interior mockup"]
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0.0211306, -9.5, -0.991356)
 mesh = SubResource("QuadMesh_3c16f")
+
+[node name="blockbench_export" parent="Environment/Interior mockup" instance=ExtResource("21_e1n7o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -2, -4)
 
 [node name="Sprite3D" type="Sprite3D" parent="Environment"]
 transform = Transform3D(1.06268, 0, 0, 0, 1.06268, 0, 0, 0, 1.06268, 0.116824, 1.08316, -7.24799)
@@ -307,9 +302,11 @@ script = ExtResource("15_vx2cm")
 transform = Transform3D(0.649519, 0, -0.375, 0, 0.75, 0, 0.375, 0, 0.649519, 3.22401, 0.2, -4.36327)
 
 [node name="dm_panel" parent="." instance=ExtResource("12_nuhxh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.61028, -1.15752, -3.54913)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.01028, -1.15752, -3.54913)
 
 [connection signal="input_event" from="PlanetDetailPanel/WarpButton/Area3D" to="Map" method="_on_area_3d_input_event"]
+[connection signal="input_event" from="PlanetDetailPanel/Button1/Area3D" to="PlanetDetailPanel/Trend Selection/Viewport/Trend Selection UI" method="_button_1_input_event"]
+[connection signal="input_event" from="PlanetDetailPanel/Button2/Area3D" to="PlanetDetailPanel/Trend Selection/Viewport/Trend Selection UI" method="_button_2_input_event"]
 [connection signal="input_event" from="MinigamePanel/TestButton/Area3D" to="MinigameController" method="_on_button_event"]
 
 [editable path="PlanetDetailPanel"]

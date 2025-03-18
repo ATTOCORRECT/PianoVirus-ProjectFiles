@@ -22,8 +22,7 @@ func _ready() -> void:
 	graph_panel.add_child(line)
 	
 	line.default_color = Color.HOT_PINK
-	
-	
+
 	slow_process()
 	
 	await get_tree().process_frame
@@ -48,6 +47,7 @@ func step_graph():
 		engagement_values[i] = next_value
 	
 	velocity += acceleration
+	
 	engagement_values[resolution - 1] += velocity #+ randf_range(-100,100)
 	
 	var min_engangement_value = engagement_values[0]

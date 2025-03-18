@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bsb62k76bfl8e"]
+[gd_scene load_steps=4 format=3 uid="uid://bsb62k76bfl8e"]
 
 [ext_resource type="PackedScene" uid="uid://cv1en8wupfl5t" path="res://Scenes/interactive_screen.tscn" id="1_ekvc4"]
 [ext_resource type="PackedScene" uid="uid://bchxhyrwfuuup" path="res://Scenes/Panels/TrendPanel/trend_graph_ui.tscn" id="2_1vbl3"]
+[ext_resource type="PackedScene" uid="uid://bnm1reh5lryne" path="res://Assets/Models/Monitors/Monitor_45x30.glb" id="3_h1b5j"]
 
 [node name="TrendGraphPanel" type="Node3D"]
 
@@ -13,8 +14,7 @@ size = Vector2i(960, 640)
 
 [node name="TrendGraphUI" parent="Interactive Screen/Viewport" index="0" instance=ExtResource("2_1vbl3")]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.06)
-size = Vector3(2.4, 1.6, 0.1)
+[node name="blockbench_export" parent="." instance=ExtResource("3_h1b5j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.001)
 
 [editable path="Interactive Screen"]
