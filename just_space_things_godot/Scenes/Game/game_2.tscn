@@ -221,7 +221,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, -1.6)
 omni_range = 10.0
 omni_attenuation = 0.2
 
-[node name="Right Console_Prototype" parent="Environment" instance=ExtResource("19_1nssx")]
+[node name="Right Console Prototype" parent="Environment" instance=ExtResource("19_1nssx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -2, -4)
 visible = false
 
@@ -259,7 +259,7 @@ mesh = SubResource("QuadMesh_3c16f")
 transform = Transform3D(1.06268, 0, 0, 0, 1.06268, 0, 0, 0, 1.06268, 0.116824, 1.08316, -7.24799)
 texture = ExtResource("10_wnyq7")
 
-[node name="Right Console_Textured" parent="Environment" instance=ExtResource("22_1kacn")]
+[node name="Right Console Textured" parent="Environment" instance=ExtResource("22_1kacn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -2, -4)
 
 [node name="FollowerCount" parent="." instance=ExtResource("14_3fxua")]
