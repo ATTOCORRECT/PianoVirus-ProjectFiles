@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://co3x8wqu1jmbh"]
+[gd_scene load_steps=44 format=3 uid="uid://co3x8wqu1jmbh"]
 
 [ext_resource type="PackedScene" uid="uid://y712fbtjxkb3" path="res://Scenes/Panels/Map/map.tscn" id="1_a0s2q"]
 [ext_resource type="Script" path="res://Scenes/Game/minigame_controller.gd" id="1_arlly"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://dfl2r6koee71t" path="res://Scenes/Panels/Engagement Panel/engagement_panel.tscn" id="15_v5d7t"]
 [ext_resource type="Script" path="res://Scenes/Game/label_3d_TEMP.gd" id="15_vx2cm"]
 [ext_resource type="PackedScene" uid="uid://b76d2niwraray" path="res://Assets/Models/Console/console.glb" id="19_1nssx"]
+[ext_resource type="PackedScene" uid="uid://dh7qk1a3hmofm" path="res://Assets/Models/Console/TexturedConsole.glb" id="22_1kacn"]
 
 [sub_resource type="Resource" id="Resource_0rod6"]
 script = ExtResource("3_rmms6")
@@ -220,8 +221,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, -1.6)
 omni_range = 10.0
 omni_attenuation = 0.2
 
-[node name="Right Console" parent="Environment" instance=ExtResource("19_1nssx")]
+[node name="Right Console_Prototype" parent="Environment" instance=ExtResource("19_1nssx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -2, -4)
+visible = false
 
 [node name="Interior mockup" type="Node3D" parent="Environment"]
 
@@ -256,6 +258,9 @@ mesh = SubResource("QuadMesh_3c16f")
 [node name="Sprite3D" type="Sprite3D" parent="Environment"]
 transform = Transform3D(1.06268, 0, 0, 0, 1.06268, 0, 0, 0, 1.06268, 0.116824, 1.08316, -7.24799)
 texture = ExtResource("10_wnyq7")
+
+[node name="Right Console_Textured" parent="Environment" instance=ExtResource("22_1kacn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -2, -4)
 
 [node name="FollowerCount" parent="." instance=ExtResource("14_3fxua")]
 transform = Transform3D(0.620544, 0, 0, 0, 0.611045, -0.108162, 0, 0.108162, 0.611045, -0.689273, 2.05782, -5.38698)
