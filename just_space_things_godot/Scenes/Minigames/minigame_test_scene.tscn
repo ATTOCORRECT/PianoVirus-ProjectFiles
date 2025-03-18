@@ -123,16 +123,6 @@ unique_name_in_owner = true
 script = ExtResource("9_3ceej")
 minigame = Array[Resource]([ExtResource("10_ik3sw"), ExtResource("11_cdfye")])
 
-[connection signal="input_event" from="input_minigame_panel/Buttons/Button1/Area3D" to="input_minigame_panel/Interactive Screen/Viewport/input_minigame_test" method="_Button_1_input_event"]
-[connection signal="input_event" from="input_minigame_panel/Buttons/Button2/Area3D" to="input_minigame_panel/Interactive Screen/Viewport/input_minigame_test" method="_Button_2_input_event"]
-[connection signal="input_event" from="input_minigame_panel/Buttons/Button3/Area3D" to="input_minigame_panel/Interactive Screen/Viewport/input_minigame_test" method="_Button_3_input_event"]
-[connection signal="input_event" from="input_minigame_panel/Buttons/Button4/Area3D" to="input_minigame_panel/Interactive Screen/Viewport/input_minigame_test" method="_Button_4_input_event"]
-[connection signal="input_event" from="input_minigame_panel/Buttons/Button5/Area3D" to="input_minigame_panel/Interactive Screen/Viewport/input_minigame_test" method="_Button_5_input_event"]
-[connection signal="input_event" from="input_minigame_panel/Buttons/Button6/Area3D" to="input_minigame_panel/Interactive Screen/Viewport/input_minigame_test" method="_Button_6_input_event"]
-[connection signal="input_event" from="input_minigame_panel/Buttons/Button7/Area3D" to="input_minigame_panel/Interactive Screen/Viewport/input_minigame_test" method="_Button_7_input_event"]
-[connection signal="input_event" from="input_minigame_panel/Buttons/Button8/Area3D" to="input_minigame_panel/Interactive Screen/Viewport/input_minigame_test" method="_Button_8_input_event"]
-[connection signal="input_event" from="input_minigame_panel/Buttons/Button9/Area3D" to="input_minigame_panel/Interactive Screen/Viewport/input_minigame_test" method="_Button_9_input_event"]
-
 [editable path="input_minigame_panel"]
 [editable path="input_minigame_panel/Interactive Screen"]
 [editable path="input_minigame_panel/Buttons/Button1"]
