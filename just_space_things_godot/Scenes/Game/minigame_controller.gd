@@ -1,6 +1,6 @@
 extends Node
 
-@export var minigame : Resource
+@export var minigame : Array[Resource]
 
 @onready var minigame_panel_viewport = $"../MinigamePanel/Interactive Screen/Viewport"
 
@@ -12,9 +12,11 @@ func _enter_tree() -> void:
 
 func load_minigame(trend: Trend):
 	active_trend = trend
+	var current_minigame = int(randf_range(0, minigame.size()))
 	await get_tree().create_timer(2).timeout
-	active_minigame = minigame.instantiate()
-	minigame_panel_viewport.add_child(minigame.instantiate())
+	active_minigame = minigame[current_minigame].instantiate()
+	minigame_panel_viewport.add_child(minigame[current_minigame].instantiate())
+	print("Current Minigame Index: " + str(current_minigame))
 
 func unload_minigame():
 	if minigame_panel_viewport.get_child_count() == 0:

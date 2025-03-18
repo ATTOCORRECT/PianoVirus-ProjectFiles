@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://beaiq0sn0t5kx"]
+
+[ext_resource type="PackedScene" uid="uid://xocajnphcj1j" path="res://Scenes/Minigames/Input minigame/input_minigame_panel.tscn" id="1_hfmax"]
+
+[node name="MinigameTestScene" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.26811)
+
+[node name="input_minigame_panel" parent="." instance=ExtResource("1_hfmax")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.127892, 0, -0.627576)

@@ -1,6 +1,7 @@
 extends Node
 
 @onready var global_speaker = $Global
+@onready var generic_speaker = $GenericSpeaker
 @onready var button_speaker = $Button
 @onready var minigamesuccess_speaker = $MinigameSuccess
 @onready var minigamefail_speaker = $MinigameFail
@@ -21,3 +22,7 @@ func play_minigame_success_sound():
 
 func play_minigame_fail_sound():
 	minigamefail_speaker.play()
+
+func play_new_sfx(sfx):
+	generic_speaker.stream = sfx
+	generic_speaker.play()

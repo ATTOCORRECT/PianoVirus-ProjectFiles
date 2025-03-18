@@ -3,11 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://y712fbtjxkb3" path="res://Scenes/Panels/Map/map.tscn" id="1_a0s2q"]
 [ext_resource type="Script" path="res://Scenes/Game/minigame_controller.gd" id="1_arlly"]
 [ext_resource type="Script" path="res://Scripts/settings.gd" id="2_46fxp"]
-[ext_resource type="PackedScene" uid="uid://htqrbvq1nhnm" path="res://Scenes/Minigames/Timing Minigame/timing_minigame_test.tscn" id="2_bnebx"]
 [ext_resource type="Script" path="res://Scripts/player_look.gd" id="2_iksiu"]
-[ext_resource type="PackedScene" uid="uid://ybxb6eyo5roi" path="res://Scenes/Minigames/Input minigame/input_minigame_test.tscn" id="2_uwtsc"]
 [ext_resource type="PackedScene" uid="uid://bwq158p2pvwph" path="res://Scenes/Panels/DetailPanel/planet_detail_panel.tscn" id="3_jihco"]
 [ext_resource type="Script" path="res://Scripts/trend.gd" id="3_rmms6"]
+[ext_resource type="PackedScene" uid="uid://htqrbvq1nhnm" path="res://Scenes/Minigames/timing_minigame_test.tscn" id="3_x6pgq"]
 [ext_resource type="Script" path="res://Scripts/audio_manager.gd" id="5_yg1gs"]
 [ext_resource type="AudioStream" uid="uid://btpsfts2xspq2" path="res://Assets/Sound/Music/song draft 5.wav" id="6_vefod"]
 [ext_resource type="Texture2D" uid="uid://c61cjm74rtecm" path="res://Assets/Models/buttons/console_big_button.png" id="7_g6t8n"]
@@ -21,10 +20,9 @@
 [ext_resource type="Texture2D" uid="uid://v8157m3bux8e" path="res://Assets/Sprites/SPACEBACKGROUND.png" id="10_wnyq7"]
 [ext_resource type="PackedScene" uid="uid://cl1oc80j2h8t" path="res://Scenes/Panels/DirectMessages/dm_panel.tscn" id="12_nuhxh"]
 [ext_resource type="PackedScene" uid="uid://b8qlhw4a72dcr" path="res://Scenes/Panels/FollowerCount/follower_count.tscn" id="14_3fxua"]
-[ext_resource type="PackedScene" uid="uid://dm8sbepqrqqf" path="res://Assets/Models/Map Housing/map_housing.glb" id="15_d3e6a"]
 [ext_resource type="PackedScene" uid="uid://dfl2r6koee71t" path="res://Scenes/Panels/Engagement Panel/engagement_panel.tscn" id="15_v5d7t"]
 [ext_resource type="Script" path="res://Scenes/Game/label_3d_TEMP.gd" id="15_vx2cm"]
-[ext_resource type="PackedScene" uid="uid://b76d2niwraray" path="res://Assets/Models/Console/console.glb" id="19_1nssx"]
+[ext_resource type="PackedScene" uid="uid://b6gtfr75y14no" path="res://Scenes/Controls/button.tscn" id="23_ni22m"]
 
 [sub_resource type="Resource" id="Resource_0rod6"]
 script = ExtResource("3_rmms6")
@@ -98,6 +96,9 @@ cache/0/16/0/scale = 1.0
 resource_local_to_scene = true
 size = Vector2(3, 2)
 
+[sub_resource type="QuadMesh" id="QuadMesh_7lau7"]
+size = Vector2(3, 1)
+
 [sub_resource type="QuadMesh" id="QuadMesh_dofya"]
 size = Vector2(1, 2)
 
@@ -107,12 +108,16 @@ size = Vector2(10, 10)
 [sub_resource type="QuadMesh" id="QuadMesh_3c16f"]
 size = Vector2(30, 20)
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_phfqk"]
+height = 0.1
+radius = 0.1
+
 [node name="Game 2" type="Node3D"]
 
 [node name="MinigameController" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("1_arlly")
-minigame = Array[Resource]([ExtResource("2_bnebx"), ExtResource("2_uwtsc")])
+minigame = ExtResource("3_x6pgq")
 
 [node name="Data" type="Node" parent="."]
 unique_name_in_owner = true
@@ -141,8 +146,6 @@ volume_db = 12.0
 stream = ExtResource("9_fgyp2")
 volume_db = 24.381
 
-[node name="GenericSpeaker" type="AudioStreamPlayer3D" parent="AudioManager"]
-
 [node name="Player" type="Camera3D" parent="."]
 unique_name_in_owner = true
 environment = SubResource("Environment_llmir")
@@ -164,9 +167,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_hp3yr")
 
 [node name="Map" parent="." instance=ExtResource("1_a0s2q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1.5, -4)
-
-[node name="blockbench_export" parent="Map" instance=ExtResource("15_d3e6a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 
 [node name="TrendGraphPanel" parent="." instance=ExtResource("7_uatka")]
 transform = Transform3D(0.53033, 0, 0.53033, 0, 0.75, 0, -0.53033, 0, 0.53033, -4, 0, -5)
@@ -220,10 +220,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, -1.6)
 omni_range = 10.0
 omni_attenuation = 0.2
 
-[node name="Right Console" parent="Environment" instance=ExtResource("19_1nssx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -2, -4)
-
 [node name="Interior mockup" type="Node3D" parent="Environment"]
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="Environment/Interior mockup"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2, -2, -4)
+mesh = SubResource("QuadMesh_7akh8")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="Environment/Interior mockup"]
+transform = Transform3D(1, 0, 0, 0, 0.422618, 0.906308, 0, -0.906308, 0.422618, 2, -1.5, -4)
+mesh = SubResource("QuadMesh_7akh8")
+
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="Environment/Interior mockup"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1.5, -5)
+mesh = SubResource("QuadMesh_7lau7")
 
 [node name="CSGMesh3D4" type="CSGMesh3D" parent="Environment/Interior mockup"]
 transform = Transform3D(0.906308, -0.383022, 0.178606, 0, 0.422618, 0.906308, -0.422618, -0.821394, 0.383022, -5, -1.5, -3.2)
@@ -236,6 +245,10 @@ mesh = SubResource("QuadMesh_dofya")
 [node name="CSGMesh3D6" type="CSGMesh3D" parent="Environment/Interior mockup"]
 transform = Transform3D(0.866025, 0.453154, -0.211309, 0, 0.422618, 0.906308, 0.5, -0.784886, 0.365998, 5, -1.5, -3.2)
 mesh = SubResource("QuadMesh_7akh8")
+
+[node name="CSGMesh3D7" type="CSGMesh3D" parent="Environment/Interior mockup"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0.422618, 0.906308, 1.84732e-08, -0.906308, 0.422618, -3.9616e-08, -3.5, -1.9, -4.1)
+mesh = SubResource("QuadMesh_7lau7")
 
 [node name="CSGMesh3D8" type="CSGMesh3D" parent="Environment/Interior mockup"]
 transform = Transform3D(0.810638, -0.0971323, 0.577435, 0.240599, 0.954305, -0.17724, -0.533833, 0.282608, 0.796966, -8, 0, -3)
@@ -312,8 +325,18 @@ transform = Transform3D(0.649519, 0, -0.375, 0, 0.75, 0, 0.375, 0, 0.649519, 3.2
 [node name="dm_panel" parent="." instance=ExtResource("12_nuhxh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.61028, -1.15752, -3.54913)
 
+[node name="temp_message_button" parent="dm_panel" instance=ExtResource("23_ni22m")]
+transform = Transform3D(1, 0, 0, 0, 0.897428, -0.441161, 0, 0.441161, 0.897428, 0.0597222, -0.650669, 0.160874)
+
+[node name="Area3D2" type="Area3D" parent="dm_panel/temp_message_button"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="dm_panel/temp_message_button/Area3D2"]
+shape = SubResource("CylinderShape3D_phfqk")
+
 [connection signal="input_event" from="PlanetDetailPanel/WarpButton/Area3D" to="Map" method="_on_area_3d_input_event"]
 [connection signal="input_event" from="MinigamePanel/TestButton/Area3D" to="MinigameController" method="_on_button_event"]
+[connection signal="input_event" from="dm_panel/temp_message_button/Area3D2" to="dm_panel" method="_on_area_3d_input_event"]
 
 [editable path="PlanetDetailPanel"]
 [editable path="PlanetDetailPanel/Planet Detail"]

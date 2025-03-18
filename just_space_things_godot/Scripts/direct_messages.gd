@@ -8,8 +8,7 @@ var dm_node = preload("res://Scenes/Panels/DirectMessages/new_message.tscn")
 	
 func _ready():
 	message_loader = $ScrollContainer/VBoxContainer
-	new_message()
-	new_message()
+	
 	
 func new_message():
 	var message = Messages[event_index]
@@ -20,3 +19,8 @@ func new_message():
 	message_loader.add_child(dm_node_instance)
 
 	
+
+
+func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
+	if event.is_action_pressed("Select"):
+		new_message()

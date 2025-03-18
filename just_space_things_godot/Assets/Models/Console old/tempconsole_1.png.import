@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://n6e8trxvu7uw"
-path="res://.godot/imported/tempconsole_1.png-a976a5d0c98373a82d250ed5d34535a5.ctex"
+path="res://.godot/imported/tempconsole_1.png-b13bd6f8ea57093e63dd77994339da48.ctex"
 metadata={
 "vram_texture": false
 }
@@ -13,8 +13,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Models/Console/tempconsole_1.png"
-dest_files=["res://.godot/imported/tempconsole_1.png-a976a5d0c98373a82d250ed5d34535a5.ctex"]
+source_file="res://Assets/Models/Console old/tempconsole_1.png"
+dest_files=["res://.godot/imported/tempconsole_1.png-b13bd6f8ea57093e63dd77994339da48.ctex"]
 
 [params]
 

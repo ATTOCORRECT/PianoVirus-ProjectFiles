@@ -3,20 +3,20 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bj60uguffyypa"
-path="res://.godot/imported/JST_Prototype Console.gltf-564b73522b40f60c41f0cf0f7d3e5f98.scn"
+uid="uid://b6yhe7yrw1xii"
+path="res://.godot/imported/tempconsole.gltf-d13b138e20634c8ee041813d35244922.scn"
 
 [deps]
 
-source_file="res://Assets/Models/Console/JST_Prototype Console.gltf"
-dest_files=["res://.godot/imported/JST_Prototype Console.gltf-564b73522b40f60c41f0cf0f7d3e5f98.scn"]
+source_file="res://Assets/Models/Console old/tempconsole.gltf"
+dest_files=["res://.godot/imported/tempconsole.gltf-d13b138e20634c8ee041813d35244922.scn"]
 
 [params]
 
 nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
-nodes/root_scale=1.0
+nodes/root_scale=0.8
 nodes/import_as_skeleton_bones=false
 meshes/ensure_tangents=true
 meshes/generate_lods=true

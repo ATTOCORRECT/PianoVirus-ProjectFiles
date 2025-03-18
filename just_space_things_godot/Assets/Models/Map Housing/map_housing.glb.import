@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b6yhe7yrw1xii"
-path="res://.godot/imported/tempconsole.gltf-d2d152cbd8de1fac1410b50911a5d6a9.scn"
+uid="uid://dm8sbepqrqqf"
+path="res://.godot/imported/map_housing.glb-d388d2f36b4df90ec790c2a6e65d1fcc.scn"
 
 [deps]
 
-source_file="res://Assets/Models/Console/tempconsole.gltf"
-dest_files=["res://.godot/imported/tempconsole.gltf-d2d152cbd8de1fac1410b50911a5d6a9.scn"]
+source_file="res://Assets/Models/Map Housing/map_housing.glb"
+dest_files=["res://.godot/imported/map_housing.glb-d388d2f36b4df90ec790c2a6e65d1fcc.scn"]
 
 [params]
 
