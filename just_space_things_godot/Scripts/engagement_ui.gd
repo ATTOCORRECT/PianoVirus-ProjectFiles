@@ -12,8 +12,8 @@ var engagement_values : Array[float]
 
 var run_after_ready = true
 
-var acceleration = -1
-var velocity = 100
+var acceleration = -0.005
+var velocity = 1.2
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Singleton.engagement = $"."
@@ -28,7 +28,7 @@ func _ready() -> void:
 	
 	await get_tree().process_frame
 	after_ready()
-	step_graph_multiple_times(resolution)
+	#step_graph_multiple_times(resolution)
 
 
 
@@ -48,7 +48,10 @@ func step_graph():
 		engagement_values[i] = next_value
 	
 	velocity += acceleration
-	engagement_values[resolution - 1] += velocity #+ randf_range(-100,100)
+	velocity = clamp(velocity, 0.8, 1.4)
+	engagement_values[resolution - 1] *= velocity
+	print(velocity)
+	#+ randf_range(-100,100)
 	
 	var min_engangement_value = engagement_values[0]
 	var max_engangement_value = engagement_values[0]
@@ -71,11 +74,13 @@ func step_graph_multiple_times(steps : int):
 func after_ready():
 	run_after_ready = false
 	for i in resolution:
-		var new_point = Vector2(graph_panel.size.x / (resolution - 1) * i, 0)
+		var new_point = Vector2(graph_panel.size.x / (resolution - 1) * i, 1)
 		engagement_values.append(new_point.y)
 		line.add_point(new_point,i)
 
 func add_velocity(add_value : float, trend_value : float):
 	print(velocity)
-	velocity += add_value * 100 * trend_value
-	print(velocity)
+	velocity += (add_value * trend_value) / 4
+	print("valocity = ", add_value * trend_value)
+	print("minigame value = ", add_value)
+	print("trend value = ", trend_value)
