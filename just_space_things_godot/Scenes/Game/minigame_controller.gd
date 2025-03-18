@@ -2,9 +2,10 @@ extends Node
 
 @export var minigame : Array[Resource]
 
+@onready var minigame_panel = $"../MinigamePanel"
 @onready var minigame_panel_viewport = $"../MinigamePanel/Interactive Screen/Viewport"
 
-var active_minigame : Control
+var active_minigame : Node3D
 var active_trend : Trend
 
 func _enter_tree() -> void:
@@ -15,13 +16,15 @@ func load_minigame(trend: Trend):
 	var current_minigame = int(randf_range(0, minigame.size()))
 	await get_tree().create_timer(2).timeout
 	active_minigame = minigame[current_minigame].instantiate()
-	minigame_panel_viewport.add_child(minigame[current_minigame].instantiate())
+	minigame_panel.add_child(minigame[current_minigame].instantiate())
+	#minigame_panel_viewport.add_child(minigame[current_minigame].instantiate())
 	print("Current Minigame Index: " + str(current_minigame))
 
 func unload_minigame():
 	if minigame_panel_viewport.get_child_count() == 0:
 		return
-	minigame_panel_viewport.remove_child(minigame_panel_viewport.get_child(0))
+	minigame_panel.remove_child(minigame_panel_viewport.get_child(0))
+	#minigame_panel_viewport.remove_child(minigame_panel_viewport.get_child(0))
 	active_minigame = null
 
 func _on_button_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
