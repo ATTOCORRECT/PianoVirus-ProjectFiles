@@ -127,6 +127,15 @@ func _on_countdown_timer_timeout() -> void:
 		#print ("Success!")
 		#game_timer.stop()
 
+func _game_failed() :
+	game_over = true
+	fail_label.visible = true
+	timer_label.label_settings.font_color = Color.RED
+	game_timer.stop()
+	Singleton.minigame_controller.minigame_failed()
+	process_mode = ProcessMode.PROCESS_MODE_DISABLED
+	timer_counting = false
+
 func on_button_event(event: InputEvent):
 	print("recieved input")
 	if event.is_action_pressed("Select") && !game_start :
@@ -145,39 +154,26 @@ func on_button_event(event: InputEvent):
 		timer_counting = false
 		
 	if event.is_action_pressed("Select") && !target_reached && game_start && timer_counting:
+		Singleton.audio_manager.play_new_sfx(button_sfx)
 		_game_failed()
+
+
+func _on_timing_button_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
+	print("recieved input")
+	if event.is_action_pressed("Select") && !game_start :
+		Singleton.audio_manager.play_new_sfx(button_sfx)
+		idle_container.visible = false
+		game_start = true
+		instruction_label.visible = true
+		instruction_timer.start()
 	
-
-#func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
-	#if event is InputEventMouseButton:
-		#if event.is_action_pressed("Select") && !game_start :
-			#idle_container.visible = false
-			#game_start = true
-			#instruction_label.visible = true
-			#instruction_timer.start()
-			#
-		#
-		#if event.is_action_pressed("Select") && target_reached && game_start :
-			#target_hit = true
-			#print ("Success!")
-			#game_timer.stop()
-			#game_over = true
+	if event.is_action_pressed("Select") && target_reached && game_start :
+		target_hit = true
+		Singleton.audio_manager.play_new_sfx(button_sfx)
+		Singleton.minigame_controller.minigame_completed(score) # replace number with reward score
+		game_timer.stop()
+		game_over = true
+		timer_counting = false
 		
-		#if event.is_action_pressed("Select") && game_over :
-			#ready_label.visible = true
-			#ready_timer.start()
-			#game_over = false
-			#
-			#game_timer_value = 0
-			#timer_label.visible = false
-			#success_label.visible = false
-			#fail_label.visible = false
-
-func _game_failed() :
-	game_over = true
-	fail_label.visible = true
-	timer_label.label_settings.font_color = Color.RED
-	game_timer.stop()
-	Singleton.minigame_controller.minigame_failed()
-	process_mode = ProcessMode.PROCESS_MODE_DISABLED
-	timer_counting = false
+	if event.is_action_pressed("Select") && !target_reached && game_start && timer_counting:
+		_game_failed()

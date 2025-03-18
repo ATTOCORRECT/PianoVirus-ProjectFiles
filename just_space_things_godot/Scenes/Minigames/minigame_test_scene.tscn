@@ -1,6 +1,61 @@
-[gd_scene load_steps=2 format=3 uid="uid://beaiq0sn0t5kx"]
+[gd_scene load_steps=21 format=3 uid="uid://beaiq0sn0t5kx"]
 
 [ext_resource type="PackedScene" uid="uid://xocajnphcj1j" path="res://Scenes/Minigames/Input minigame/input_minigame_panel.tscn" id="1_hfmax"]
+[ext_resource type="Texture2D" uid="uid://ctgoirmgbo6si" path="res://Assets/Models/buttons/console_small_button.png" id="2_mxesd"]
+[ext_resource type="PackedScene" uid="uid://bhmo1axtpn5x7" path="res://Scenes/Minigames/Timing Minigame/timing_minigame_panel.tscn" id="3_ge064"]
+[ext_resource type="Script" path="res://Scripts/audio_manager.gd" id="4_uegbe"]
+[ext_resource type="AudioStream" uid="uid://btpsfts2xspq2" path="res://Assets/Sound/Music/song draft 5.wav" id="5_6n8ur"]
+[ext_resource type="AudioStream" uid="uid://by5lra87s28sg" path="res://Assets/Sound/SFX/Takeoff.wav" id="6_xd80d"]
+[ext_resource type="AudioStream" uid="uid://cokqgfkw2hlw4" path="res://Assets/Sound/SFX/minigame success.wav" id="7_wan71"]
+[ext_resource type="AudioStream" uid="uid://c8p3pudmflris" path="res://Assets/Sound/SFX/minigame fail.wav" id="8_fta2q"]
+[ext_resource type="Script" path="res://Scenes/Game/minigame_controller.gd" id="9_3ceej"]
+[ext_resource type="PackedScene" uid="uid://htqrbvq1nhnm" path="res://Scenes/Minigames/Timing Minigame/timing_minigame_test.tscn" id="10_ik3sw"]
+[ext_resource type="PackedScene" uid="uid://ybxb6eyo5roi" path="res://Scenes/Minigames/Input minigame/input_minigame_test.tscn" id="11_cdfye"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_akjru"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("2_mxesd")
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0poh4"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("2_mxesd")
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iy2hr"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("2_mxesd")
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0h7sa"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("2_mxesd")
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t5ewv"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("2_mxesd")
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_byrmk"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("2_mxesd")
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_peuwj"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("2_mxesd")
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5df0m"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("2_mxesd")
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oouwx"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("2_mxesd")
+texture_filter = 0
 
 [node name="MinigameTestScene" type="Node3D"]
 
@@ -9,3 +64,83 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.26811)
 
 [node name="input_minigame_panel" parent="." instance=ExtResource("1_hfmax")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.127892, 0, -0.627576)
+
+[node name="MeshInstance3D" parent="input_minigame_panel/Buttons/Button1" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_akjru")
+
+[node name="MeshInstance3D" parent="input_minigame_panel/Buttons/Button2" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_0poh4")
+
+[node name="MeshInstance3D" parent="input_minigame_panel/Buttons/Button3" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_iy2hr")
+
+[node name="MeshInstance3D" parent="input_minigame_panel/Buttons/Button4" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_0h7sa")
+
+[node name="MeshInstance3D" parent="input_minigame_panel/Buttons/Button5" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_t5ewv")
+
+[node name="MeshInstance3D" parent="input_minigame_panel/Buttons/Button6" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_byrmk")
+
+[node name="MeshInstance3D" parent="input_minigame_panel/Buttons/Button7" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_peuwj")
+
+[node name="MeshInstance3D" parent="input_minigame_panel/Buttons/Button8" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_5df0m")
+
+[node name="MeshInstance3D" parent="input_minigame_panel/Buttons/Button9" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_oouwx")
+
+[node name="timing_minigame_panel" parent="." instance=ExtResource("3_ge064")]
+visible = false
+
+[node name="AudioManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("4_uegbe")
+
+[node name="Global" type="AudioStreamPlayer" parent="AudioManager"]
+stream = ExtResource("5_6n8ur")
+volume_db = -12.369
+
+[node name="Button" type="AudioStreamPlayer3D" parent="AudioManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.28916, -1.71733, -4.56006)
+stream = ExtResource("6_xd80d")
+volume_db = -12.0
+
+[node name="MinigameSuccess" type="AudioStreamPlayer3D" parent="AudioManager"]
+stream = ExtResource("7_wan71")
+volume_db = 12.0
+
+[node name="MinigameFail" type="AudioStreamPlayer3D" parent="AudioManager"]
+stream = ExtResource("8_fta2q")
+volume_db = 24.381
+
+[node name="GenericSpeaker" type="AudioStreamPlayer3D" parent="AudioManager"]
+
+[node name="MinigameController" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("9_3ceej")
+minigame = Array[Resource]([ExtResource("10_ik3sw"), ExtResource("11_cdfye")])
+
+[connection signal="input_event" from="input_minigame_panel/Buttons/Button1/Area3D" to="input_minigame_panel/Interactive Screen/Viewport/input_minigame_test" method="_Button_1_input_event"]
+[connection signal="input_event" from="input_minigame_panel/Buttons/Button2/Area3D" to="input_minigame_panel/Interactive Screen/Viewport/input_minigame_test" method="_Button_2_input_event"]
+[connection signal="input_event" from="input_minigame_panel/Buttons/Button3/Area3D" to="input_minigame_panel/Interactive Screen/Viewport/input_minigame_test" method="_Button_3_input_event"]
+[connection signal="input_event" from="input_minigame_panel/Buttons/Button4/Area3D" to="input_minigame_panel/Interactive Screen/Viewport/input_minigame_test" method="_Button_4_input_event"]
+[connection signal="input_event" from="input_minigame_panel/Buttons/Button5/Area3D" to="input_minigame_panel/Interactive Screen/Viewport/input_minigame_test" method="_Button_5_input_event"]
+[connection signal="input_event" from="input_minigame_panel/Buttons/Button6/Area3D" to="input_minigame_panel/Interactive Screen/Viewport/input_minigame_test" method="_Button_6_input_event"]
+[connection signal="input_event" from="input_minigame_panel/Buttons/Button7/Area3D" to="input_minigame_panel/Interactive Screen/Viewport/input_minigame_test" method="_Button_7_input_event"]
+[connection signal="input_event" from="input_minigame_panel/Buttons/Button8/Area3D" to="input_minigame_panel/Interactive Screen/Viewport/input_minigame_test" method="_Button_8_input_event"]
+[connection signal="input_event" from="input_minigame_panel/Buttons/Button9/Area3D" to="input_minigame_panel/Interactive Screen/Viewport/input_minigame_test" method="_Button_9_input_event"]
+
+[editable path="input_minigame_panel"]
+[editable path="input_minigame_panel/Interactive Screen"]
+[editable path="input_minigame_panel/Buttons/Button1"]
+[editable path="input_minigame_panel/Buttons/Button2"]
+[editable path="input_minigame_panel/Buttons/Button3"]
+[editable path="input_minigame_panel/Buttons/Button4"]
+[editable path="input_minigame_panel/Buttons/Button5"]
+[editable path="input_minigame_panel/Buttons/Button6"]
+[editable path="input_minigame_panel/Buttons/Button7"]
+[editable path="input_minigame_panel/Buttons/Button8"]
+[editable path="input_minigame_panel/Buttons/Button9"]
