@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://co3x8wqu1jmbh"]
+[gd_scene load_steps=44 format=3 uid="uid://co3x8wqu1jmbh"]
 
 [ext_resource type="PackedScene" uid="uid://y712fbtjxkb3" path="res://Scenes/Panels/Map/map.tscn" id="1_a0s2q"]
 [ext_resource type="Script" path="res://Scenes/Game/minigame_controller.gd" id="1_arlly"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://dm8sbepqrqqf" path="res://Assets/Models/Map Housing/map_housing.glb" id="15_d3e6a"]
 [ext_resource type="PackedScene" uid="uid://dfl2r6koee71t" path="res://Scenes/Panels/Engagement Panel/engagement_panel.tscn" id="15_v5d7t"]
 [ext_resource type="Script" path="res://Scenes/Game/label_3d_TEMP.gd" id="15_vx2cm"]
+[ext_resource type="PackedScene" uid="uid://4q6ffdbifmiq" path="res://Assets/Models/Center Console/center_cover.glb" id="16_c2ibo"]
 [ext_resource type="PackedScene" uid="uid://b76d2niwraray" path="res://Assets/Models/Console/console.glb" id="19_1nssx"]
 [ext_resource type="PackedScene" uid="uid://c2jsmrlnsia25" path="res://Assets/Models/Console/console_corner.glb" id="20_cogfx"]
 [ext_resource type="PackedScene" uid="uid://dfw26nh8vrc34" path="res://Assets/Models/Console/console_corner_flipped.glb" id="21_e1n7o"]
@@ -161,6 +162,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1.5, -4)
 
 [node name="blockbench_export" parent="Map" instance=ExtResource("15_d3e6a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
+[node name="blockbench_export2" parent="Map" instance=ExtResource("16_c2ibo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, 1)
 
 [node name="TrendGraphPanel" parent="." instance=ExtResource("7_uatka")]
 transform = Transform3D(0.53033, 0, 0.53033, 0, 0.75, 0, -0.53033, 0, 0.53033, -4, 0, -5)
