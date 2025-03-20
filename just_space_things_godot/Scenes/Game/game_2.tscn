@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://co3x8wqu1jmbh"]
+[gd_scene load_steps=46 format=3 uid="uid://co3x8wqu1jmbh"]
 
 [ext_resource type="PackedScene" uid="uid://y712fbtjxkb3" path="res://Scenes/Panels/Map/map.tscn" id="1_a0s2q"]
 [ext_resource type="Script" path="res://Scenes/Game/minigame_controller.gd" id="1_arlly"]
@@ -25,7 +25,9 @@
 [ext_resource type="PackedScene" uid="uid://dfl2r6koee71t" path="res://Scenes/Panels/Engagement Panel/engagement_panel.tscn" id="15_v5d7t"]
 [ext_resource type="Script" path="res://Scenes/Game/label_3d_TEMP.gd" id="15_vx2cm"]
 [ext_resource type="PackedScene" uid="uid://b76d2niwraray" path="res://Assets/Models/Console/console.glb" id="19_1nssx"]
+[ext_resource type="PackedScene" uid="uid://byccle8gc4pcl" path="res://Assets/Models/Ship/PrototypeRoof.gltf" id="21_3koeg"]
 [ext_resource type="PackedScene" uid="uid://dh7qk1a3hmofm" path="res://Assets/Models/Console/TexturedConsole.glb" id="22_1kacn"]
+[ext_resource type="PackedScene" uid="uid://0d1cmg8lb5on" path="res://Assets/Models/Ship/PrototypeWall.gltf" id="22_avogt"]
 
 [sub_resource type="Resource" id="Resource_0rod6"]
 script = ExtResource("3_rmms6")
@@ -240,20 +242,36 @@ transform = Transform3D(0.866025, 0.453154, -0.211309, 0, 0.422618, 0.906308, 0.
 mesh = SubResource("QuadMesh_7akh8")
 
 [node name="CSGMesh3D8" type="CSGMesh3D" parent="Environment/Interior mockup"]
-transform = Transform3D(0.810638, -0.0971323, 0.577435, 0.240599, 0.954305, -0.17724, -0.533833, 0.282608, 0.796966, -8, 0, -3)
+transform = Transform3D(0.810638, -0.0971324, 0.577435, 0.240599, 0.954305, -0.17724, -0.533833, 0.282608, 0.796966, -8, 0, -2.8386)
+visible = false
 mesh = SubResource("QuadMesh_vm8bu")
 
 [node name="CSGMesh3D9" type="CSGMesh3D" parent="Environment/Interior mockup"]
-transform = Transform3D(0.810914, 0.0972601, -0.577025, -0.240621, 0.954287, -0.177305, 0.533403, 0.282623, 0.797248, 8, 0, -3)
+transform = Transform3D(0.810914, 0.0972601, -0.577025, -0.240621, 0.954287, -0.177305, 0.533403, 0.282623, 0.797248, 8, 0, -2.8386)
+visible = false
 mesh = SubResource("QuadMesh_vm8bu")
 
 [node name="CSGMesh3D10" type="CSGMesh3D" parent="Environment/Interior mockup"]
 transform = Transform3D(1, 0, 0, 0, 0.258819, -0.965926, 0, 0.965926, 0.258819, 0, 5, 4.3)
+visible = false
 mesh = SubResource("QuadMesh_3c16f")
 
 [node name="CSGMesh3D11" type="CSGMesh3D" parent="Environment/Interior mockup"]
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0.0211306, -9.5, -0.991356)
+visible = false
 mesh = SubResource("QuadMesh_3c16f")
+
+[node name="PrototypeShipRoof" parent="Environment/Interior mockup" instance=ExtResource("21_3koeg")]
+transform = Transform3D(1, 0, 0, 0, 0.258819, -0.965926, 0, 0.965926, 0.258819, 0, 2.88153, -4.8083)
+
+[node name="PrototypeShipWall" parent="Environment/Interior mockup" instance=ExtResource("22_avogt")]
+transform = Transform3D(1.10565, -0.125643, 0.645743, 0.328159, 1.23441, -0.198207, -0.728109, 0.365559, 0.891244, -8, -4.8395, -4.37096)
+
+[node name="PrototypeShipWall2" parent="Environment/Interior mockup" instance=ExtResource("22_avogt")]
+transform = Transform3D(1.10603, 0.125808, -0.645285, -0.32819, 1.23439, -0.198279, 0.727523, 0.365578, 0.89156, 8, -4.84, -4.371)
+
+[node name="PrototypeShipRoof2" parent="Environment/Interior mockup" instance=ExtResource("21_3koeg")]
+transform = Transform3D(1, 0, 0, 0, -0.866025, -0.5, 0, 0.5, -0.866025, 0, -1.47579, -6.21504)
 
 [node name="Sprite3D" type="Sprite3D" parent="Environment"]
 transform = Transform3D(1.06268, 0, 0, 0, 1.06268, 0, 0, 0, 1.06268, 0.116824, 1.08316, -7.24799)
