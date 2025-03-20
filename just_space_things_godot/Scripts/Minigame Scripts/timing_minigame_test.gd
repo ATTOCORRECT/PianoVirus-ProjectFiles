@@ -28,8 +28,11 @@ var game_over = false
 var show_instructions = false
 var show_ready = false
 var show_countdown = false
+var timer_counting = false
 
 var countdown_value = 0
+
+@onready var button_sfx = preload("res://Assets/Sound/SFX/ButtonClick_temp.mp3")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -59,12 +62,7 @@ func _process(_delta: float) -> void:
 		print ("Target Reached: " + str(target_reached))
 	
 	if game_timer_value >= max_time || game_timer_value > target_time + 1 :
-		game_over = true
-		fail_label.visible = true
-		timer_label.label_settings.font_color = Color.RED
-		game_timer.stop()
-		Singleton.minigame_controller.minigame_failed()
-		process_mode = ProcessMode.PROCESS_MODE_DISABLED
+		_game_failed()
 		
 	else :
 		fail_label.visible = false
@@ -112,6 +110,7 @@ func _on_countdown_timer_timeout() -> void:
 	if countdown_value >= 4 :
 		countdown_label.visible = false
 		timer_label.visible = true
+		timer_counting = true
 		game_timer.start()
 		countdown_timer.stop()
 		countdown_value = 0
@@ -131,6 +130,7 @@ func _on_countdown_timer_timeout() -> void:
 func on_button_event(event: InputEvent):
 	print("recieved input")
 	if event.is_action_pressed("Select") && !game_start :
+		Singleton.audio_manager.play_new_sfx(button_sfx)
 		idle_container.visible = false
 		game_start = true
 		instruction_label.visible = true
@@ -138,9 +138,15 @@ func on_button_event(event: InputEvent):
 	
 	if event.is_action_pressed("Select") && target_reached && game_start :
 		target_hit = true
+		Singleton.audio_manager.play_new_sfx(button_sfx)
 		Singleton.minigame_controller.minigame_completed(score) # replace number with reward score
 		game_timer.stop()
 		game_over = true
+		timer_counting = false
+		
+	if event.is_action_pressed("Select") && !target_reached && game_start && timer_counting:
+		_game_failed()
+	
 
 #func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
 	#if event is InputEventMouseButton:
@@ -166,3 +172,12 @@ func on_button_event(event: InputEvent):
 			#timer_label.visible = false
 			#success_label.visible = false
 			#fail_label.visible = false
+
+func _game_failed() :
+	game_over = true
+	fail_label.visible = true
+	timer_label.label_settings.font_color = Color.RED
+	game_timer.stop()
+	Singleton.minigame_controller.minigame_failed()
+	process_mode = ProcessMode.PROCESS_MODE_DISABLED
+	timer_counting = false
