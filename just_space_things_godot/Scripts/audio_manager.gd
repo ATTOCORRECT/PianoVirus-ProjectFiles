@@ -8,6 +8,8 @@ extends Node
 
 func _enter_tree() -> void:
 	Singleton.audio_manager = %AudioManager
+	
+	#if music is not playing then restart it
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
