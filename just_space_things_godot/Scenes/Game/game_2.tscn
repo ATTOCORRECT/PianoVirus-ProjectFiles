@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bwq158p2pvwph" path="res://Scenes/Panels/DetailPanel/planet_detail_panel.tscn" id="3_jihco"]
 [ext_resource type="Script" path="res://Scripts/trend.gd" id="3_rmms6"]
 [ext_resource type="Script" path="res://Scripts/audio_manager.gd" id="5_yg1gs"]
-[ext_resource type="AudioStream" uid="uid://btpsfts2xspq2" path="res://Assets/Sound/Music/song draft 5.wav" id="6_vefod"]
+[ext_resource type="AudioStream" uid="uid://bysgpcdqw1lkw" path="res://Assets/Sound/Music/song draft 9.wav" id="7_5u1ih"]
 [ext_resource type="Texture2D" uid="uid://c61cjm74rtecm" path="res://Assets/Models/buttons/console_big_button.png" id="7_g6t8n"]
 [ext_resource type="AudioStream" uid="uid://by5lra87s28sg" path="res://Assets/Sound/SFX/Takeoff.wav" id="7_qpmp5"]
 [ext_resource type="PackedScene" uid="uid://bsb62k76bfl8e" path="res://Scenes/Panels/TrendPanel/trend_graph_panel.tscn" id="7_uatka"]
@@ -124,7 +124,7 @@ unique_name_in_owner = true
 script = ExtResource("5_yg1gs")
 
 [node name="Global" type="AudioStreamPlayer" parent="AudioManager"]
-stream = ExtResource("6_vefod")
+stream = ExtResource("7_5u1ih")
 volume_db = -12.369
 autoplay = true
 
