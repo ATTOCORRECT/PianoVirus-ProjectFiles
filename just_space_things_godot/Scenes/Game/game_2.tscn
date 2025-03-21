@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://co3x8wqu1jmbh"]
+[gd_scene load_steps=46 format=3 uid="uid://co3x8wqu1jmbh"]
 
 [ext_resource type="PackedScene" uid="uid://y712fbtjxkb3" path="res://Scenes/Panels/Map/map.tscn" id="1_a0s2q"]
 [ext_resource type="Script" path="res://Scenes/Game/minigame_controller.gd" id="1_arlly"]
@@ -19,6 +19,7 @@
 [ext_resource type="AudioStream" uid="uid://c8p3pudmflris" path="res://Assets/Sound/SFX/minigame fail.wav" id="9_fgyp2"]
 [ext_resource type="PackedScene" uid="uid://of7bu4heyrbb" path="res://Scenes/Panels/MinigamePanel/minigame_panel.tscn" id="10_3p7rq"]
 [ext_resource type="Texture2D" uid="uid://v8157m3bux8e" path="res://Assets/Sprites/SPACEBACKGROUND.png" id="10_wnyq7"]
+[ext_resource type="AudioStream" uid="uid://b634acexltyft" path="res://Assets/Sound/SFX/high pitched beep.wav" id="11_i3805"]
 [ext_resource type="PackedScene" uid="uid://cl1oc80j2h8t" path="res://Scenes/Panels/DirectMessages/dm_panel.tscn" id="12_nuhxh"]
 [ext_resource type="PackedScene" uid="uid://b8qlhw4a72dcr" path="res://Scenes/Panels/FollowerCount/follower_count.tscn" id="14_3fxua"]
 [ext_resource type="PackedScene" uid="uid://dm8sbepqrqqf" path="res://Assets/Models/Map Housing/map_housing.glb" id="15_d3e6a"]
@@ -133,14 +134,20 @@ stream = ExtResource("7_qpmp5")
 volume_db = -12.0
 
 [node name="MinigameSuccess" type="AudioStreamPlayer3D" parent="AudioManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -4)
 stream = ExtResource("8_1t854")
 volume_db = 12.0
 
 [node name="MinigameFail" type="AudioStreamPlayer3D" parent="AudioManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -4)
 stream = ExtResource("9_fgyp2")
 volume_db = 24.381
 
 [node name="GenericSpeaker" type="AudioStreamPlayer3D" parent="AudioManager"]
+
+[node name="TrendSelect" type="AudioStreamPlayer3D" parent="AudioManager"]
+stream = ExtResource("11_i3805")
+volume_db = 80.0
 
 [node name="Player" type="Camera3D" parent="."]
 unique_name_in_owner = true
