@@ -15,6 +15,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vj0f8")
 graph_panel = NodePath("ColorRect/HBoxContainer/MarginContainerR/PanelContainer/MarginContainer/GraphPanel")
+upper_threshold = 500.0
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
