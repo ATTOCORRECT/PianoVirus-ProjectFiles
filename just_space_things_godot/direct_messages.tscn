@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://g7f7el2gx4ia"]
+[gd_scene load_steps=12 format=3 uid="uid://g7f7el2gx4ia"]
 
 [ext_resource type="Script" path="res://Scripts/direct_messages.gd" id="1_7ewgt"]
 [ext_resource type="Script" path="res://Scripts/dm_data.gd" id="2_fbcgs"]
@@ -11,7 +11,7 @@ name = "Manager"
 [sub_resource type="Resource" id="Resource_01h6g"]
 script = ExtResource("2_fbcgs")
 sender = SubResource("Resource_u85op")
-message = "Hey, hey, hey, rockstar! Welcome to the Star Fleet! You are now amongst the ranks of the trendiest, coolest, most influential Jolt Streamers in the Nea Arxi system! We’ve talked on WarpChat before, but I haven’t had the chance to formally introduce myself. I’m Your Manager. Talent agent, confidant, and entertainment connoisseur.  I’ve got a bit of legal stuff to go over with you, explaining the basics of your contract, yada yada. Bit of a snooze fest but that's show biz, baby. So long story short, we pay for your pod, food, clothes, hookers, water bill – everything. In exchange, you grow your engagement as much as possible. There’s a lot of number crunching under the hood, but your engagement basically represents how much value you bring to the Star Fleet. Right now, your engagement is hovering around 10k, which is the usual starting point for our talent. We’re gonna give you a bit of a grace period to get sorted, but going forward, if your engagement drops below that 10k your contract will be terminated. That’s about it. If something comes up, I’ll let you know. Give me a ring if you need anything. And... yeah! Get those numbers up! Chat later, champ! "
+message = "[font_size={32}]Welcome to the Star Fleet! To start your content journey with us, choose a planet to travel to on the map."
 
 [sub_resource type="Resource" id="Resource_orqg2"]
 script = ExtResource("3_lyt44")
@@ -20,18 +20,36 @@ name = "test"
 [sub_resource type="Resource" id="Resource_iaf0p"]
 script = ExtResource("2_fbcgs")
 sender = SubResource("Resource_orqg2")
-message = "testing 1 2 3"
+message = "t[font_size={32}]Once you're sure that's where you want to go, click the red button to travel there!"
+
+[sub_resource type="Resource" id="Resource_l2rft"]
+script = ExtResource("3_lyt44")
+name = "Manager"
+
+[sub_resource type="Resource" id="Resource_pi4kc"]
+script = ExtResource("2_fbcgs")
+sender = SubResource("Resource_l2rft")
+message = "[font_size={32}]Each planet has 2 trends you can make a post about. Once you've chosen a trend, complete the task to make the post."
+
+[sub_resource type="Resource" id="Resource_tfch6"]
+script = ExtResource("3_lyt44")
+name = "Manager"
+
+[sub_resource type="Resource" id="Resource_aqard"]
+script = ExtResource("2_fbcgs")
+sender = SubResource("Resource_tfch6")
+message = "[font_size={32}]You've earned Engagement from your post! Keep growing your Engagement to make the most out of your role in the Star Fleet!"
 
 [node name="direct_messages" type="Control"]
 layout_mode = 3
 anchor_right = 1.271
 anchor_bottom = 3.006
-offset_right = -1044.19
+offset_right = -313.192
 offset_bottom = -987.888
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7ewgt")
-Messages = Array[ExtResource("2_fbcgs")]([SubResource("Resource_01h6g"), SubResource("Resource_iaf0p")])
+Messages = Array[ExtResource("2_fbcgs")]([SubResource("Resource_01h6g"), SubResource("Resource_iaf0p"), SubResource("Resource_pi4kc"), SubResource("Resource_aqard")])
 
 [node name="bg_color" type="ColorRect" parent="."]
 layout_mode = 1
@@ -46,11 +64,13 @@ grow_vertical = 2
 layout_mode = 2
 offset_left = 20.0
 offset_top = 30.0
-offset_right = 690.0
-offset_bottom = 920.0
+offset_right = 952.0
+offset_bottom = 641.0
+follow_focus = true
 horizontal_scroll_mode = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
+size_flags_vertical = 2
+alignment = 2

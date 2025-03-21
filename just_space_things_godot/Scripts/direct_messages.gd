@@ -18,6 +18,7 @@ func new_message():
 		var dm_node_instance = dm_node.instantiate()
 		dm_node_instance.construct(message)
 		message_loader.add_child(dm_node_instance)
+		message_loader.move_child(message_loader.get_child(-1), 0)
 	else:
 		pass
 
