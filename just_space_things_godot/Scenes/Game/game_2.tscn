@@ -301,7 +301,7 @@ script = ExtResource("15_vx2cm")
 transform = Transform3D(0.649519, 0, -0.375, 0, 0.75, 0, 0.375, 0, 0.649519, 3.22401, 0.2, -4.36327)
 
 [node name="dm_panel" parent="." instance=ExtResource("12_nuhxh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.61028, -1.15752, -3.54913)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 1.70588, -0.8152, -3.54913)
 
 [node name="blockbench_export" parent="." instance=ExtResource("26_ai0mr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5, -3)

@@ -45,7 +45,9 @@ offset = Vector2(30, 0)
 [node name="sender" type="RichTextLabel" parent="message_panel/message/sender_panel"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Sender Name"
+bbcode_enabled = true
+text = "
+[font_size={24}]Sender Name"
 fit_content = true
 scroll_active = false
 
