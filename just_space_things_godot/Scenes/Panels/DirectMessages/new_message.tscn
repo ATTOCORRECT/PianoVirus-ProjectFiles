@@ -4,21 +4,22 @@
 [ext_resource type="Texture2D" uid="uid://cswuc0o6107ge" path="res://icon.svg" id="2_6mfjt"]
 
 [node name="new_message" type="Control"]
-custom_minimum_size = Vector2(670, 190)
+custom_minimum_size = Vector2(670, 210)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -482.0
+offset_right = -229.0
 offset_bottom = -457.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_stm8d")
 
 [node name="message_panel" type="PanelContainer" parent="."]
 layout_mode = 0
-offset_right = 670.0
+offset_right = 906.0
 offset_bottom = 190.0
 
 [node name="message" type="VSplitContainer" parent="message_panel"]
@@ -51,6 +52,7 @@ scroll_active = false
 [node name="message_body" type="RichTextLabel" parent="message_panel/message"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "This is the body of the message. It will keep going and wrap around in the text box. there is a lot of text and it is too long to fit onto this box, then the rest of the message will be available through a scroll wheel."
+bbcode_enabled = true
+text = "[font_size={32}]You've earned Engagement from your post! Keep growing your Engagement to make the most out of your role in the Star Fleet!"
 fit_content = true
 scroll_active = false
