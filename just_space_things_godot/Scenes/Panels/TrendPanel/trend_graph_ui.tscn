@@ -76,6 +76,7 @@ z_index = 2
 layout_mode = 2
 
 [node name="TrendwindowTexture" type="Sprite2D" parent="ColorRect/HBoxContainer/MarginContainerL"]
+visible = false
 position = Vector2(-208, 360.5)
 scale = Vector2(1.40762, 1.12344)
 texture = ExtResource("3_m1rwv")
