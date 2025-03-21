@@ -1,7 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://b8qlhw4a72dcr"]
+[gd_scene load_steps=6 format=3 uid="uid://b8qlhw4a72dcr"]
 
 [ext_resource type="PackedScene" uid="uid://cv1en8wupfl5t" path="res://Scenes/interactive_screen.tscn" id="1_kkwxf"]
 [ext_resource type="Texture2D" uid="uid://44klvnhh7vb3" path="res://Assets/Sprites/Follower Icon.png" id="2_0458t"]
+[ext_resource type="Texture2D" uid="uid://b7yvd0bxe8da1" path="res://Assets/Textures/trendwindow_texture.png" id="2_l2s7h"]
+[ext_resource type="PackedScene" uid="uid://dnykkjrek1n5v" path="res://Assets/Models/Screens/screenmodel.gltf" id="3_hdqo7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mi2ry"]
+albedo_texture = ExtResource("2_l2s7h")
 
 [node name="FollowerCount" type="Node3D"]
 
@@ -9,6 +14,7 @@
 
 [node name="Display" parent="Interactive Screen" index="0"]
 transform = Transform3D(4.09732, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_mi2ry")
 
 [node name="Viewport" parent="Interactive Screen" index="2"]
 size = Vector2i(960, 512)
@@ -19,5 +25,8 @@ transform = Transform3D(4.24922, 0, 0, 0, 1.14368, 0, 0, 0, 0.323667, 0, 0, -0.1
 [node name="Follower Icon" type="Sprite3D" parent="."]
 transform = Transform3D(0.215519, 0, 0, 0, 0.215519, 0, 0, 0, 0.215519, -1.66874, 0.0295372, 0.0480539)
 texture = ExtResource("2_0458t")
+
+[node name="blockbench_export" parent="." instance=ExtResource("3_hdqo7")]
+transform = Transform3D(-5.336, 0, -6.47772e-08, 0, 1.42, 0, 8.05714e-07, 0, -0.429, 1.857, -0.563, -0.0239812)
 
 [editable path="Interactive Screen"]
