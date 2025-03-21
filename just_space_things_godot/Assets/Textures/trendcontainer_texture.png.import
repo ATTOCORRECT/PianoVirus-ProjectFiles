@@ -2,19 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbleudg2bpsbo"
-path="res://.godot/imported/PrototypeRoof_0.png-2e46e5efec1aef029281729a51c2830c.ctex"
+uid="uid://dwlofceu1b24p"
+path="res://.godot/imported/trendcontainer_texture.png-5dd3fb9e09422d26a01025df407e4827.ctex"
 metadata={
 "vram_texture": false
-}
-generator_parameters={
-"md5": "033c1c4a00d81af9a13e5efaff3420ea"
 }
 
 [deps]
 
-source_file="res://Assets/Models/Ship/PrototypeRoof_0.png"
-dest_files=["res://.godot/imported/PrototypeRoof_0.png-2e46e5efec1aef029281729a51c2830c.ctex"]
+source_file="res://Assets/Textures/trendcontainer_texture.png"
+dest_files=["res://.godot/imported/trendcontainer_texture.png-5dd3fb9e09422d26a01025df407e4827.ctex"]
 
 [params]
 

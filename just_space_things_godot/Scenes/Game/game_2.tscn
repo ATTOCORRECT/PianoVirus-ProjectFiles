@@ -269,7 +269,7 @@ transform = Transform3D(1.10565, -0.125643, 0.645743, 0.328159, 1.23441, -0.1982
 transform = Transform3D(1.10603, 0.125808, -0.645285, -0.32819, 1.23439, -0.198279, 0.727523, 0.365578, 0.89156, 8, -4.84, -4.371)
 
 [node name="PrototypeShipFloor" parent="Environment/Interior mockup" instance=ExtResource("23_hyk1f")]
-transform = Transform3D(1, 0, 0, 0, -0.866025, -0.5, 0, 0.5, -0.866025, 0, -1.47579, -6.21504)
+transform = Transform3D(1, 0, 0, 0, -0.866025, -0.5, 0, 0.5, -0.866025, 0, -1.47579, -6.13419)
 
 [node name="blockbench_export" parent="Environment/Interior mockup" instance=ExtResource("21_3koeg")]
 transform = Transform3D(1, 0, 0, 0, 0.133195, -0.825523, 0, 0.497092, 0.221198, 0, 2.88153, -4.97222)

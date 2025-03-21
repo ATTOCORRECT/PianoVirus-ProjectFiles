@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bchxhyrwfuuup"]
+[gd_scene load_steps=5 format=3 uid="uid://bchxhyrwfuuup"]
 
 [ext_resource type="Script" path="res://Scripts/trend_graph_ui.gd" id="1_xyipn"]
+[ext_resource type="Texture2D" uid="uid://dwlofceu1b24p" path="res://Assets/Textures/trendcontainer_texture.png" id="2_hbdh4"]
+[ext_resource type="Texture2D" uid="uid://b7yvd0bxe8da1" path="res://Assets/Textures/trendwindow_texture.png" id="3_m1rwv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s54f1"]
 bg_color = Color(0, 0, 0, 0)
@@ -39,7 +41,14 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
+[node name="TrendcontainerTexture" type="Sprite2D" parent="ColorRect/HBoxContainer/MarginContainerR"]
+z_index = 1
+position = Vector2(341, 321.5)
+scale = Vector2(0.967742, 0.973437)
+texture = ExtResource("2_hbdh4")
+
 [node name="PanelContainer" type="PanelContainer" parent="ColorRect/HBoxContainer/MarginContainerR"]
+z_index = 2
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="ColorRect/HBoxContainer/MarginContainerR/PanelContainer"]
@@ -50,6 +59,7 @@ theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
 [node name="GraphPanel" type="Panel" parent="ColorRect/HBoxContainer/MarginContainerR/PanelContainer/MarginContainer"]
+z_index = 2
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_s54f1")
 
@@ -62,4 +72,10 @@ theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/HBoxContainer/MarginContainerL"]
+z_index = 2
 layout_mode = 2
+
+[node name="TrendwindowTexture" type="Sprite2D" parent="ColorRect/HBoxContainer/MarginContainerL"]
+position = Vector2(-208, 360.5)
+scale = Vector2(1.40762, 1.12344)
+texture = ExtResource("3_m1rwv")
