@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://co3x8wqu1jmbh"]
+[gd_scene load_steps=43 format=3 uid="uid://co3x8wqu1jmbh"]
 
 [ext_resource type="PackedScene" uid="uid://y712fbtjxkb3" path="res://Scenes/Panels/Map/map.tscn" id="1_a0s2q"]
 [ext_resource type="Script" path="res://Scenes/Game/minigame_controller.gd" id="1_arlly"]
@@ -23,6 +23,10 @@
 [ext_resource type="PackedScene" uid="uid://dfl2r6koee71t" path="res://Scenes/Panels/Engagement Panel/engagement_panel.tscn" id="15_v5d7t"]
 [ext_resource type="Script" path="res://Scenes/Game/label_3d_TEMP.gd" id="15_vx2cm"]
 [ext_resource type="PackedScene" uid="uid://b76d2niwraray" path="res://Assets/Models/Console/console.glb" id="19_1nssx"]
+[ext_resource type="Material" uid="uid://cc3dgmf83661p" path="res://Assets/Models/Debug/base_material.tres" id="19_aaicx"]
+[ext_resource type="PackedScene" uid="uid://4q6ffdbifmiq" path="res://Assets/Models/Center Console/center_cover.glb" id="19_kqdby"]
+[ext_resource type="PackedScene" uid="uid://c2jsmrlnsia25" path="res://Assets/Models/Console/console_corner.glb" id="26_2k6bk"]
+[ext_resource type="PackedScene" uid="uid://dfw26nh8vrc34" path="res://Assets/Models/Console/console_corner_flipped.glb" id="27_i3u00"]
 
 [sub_resource type="Resource" id="Resource_0rod6"]
 script = ExtResource("3_rmms6")
@@ -88,10 +92,6 @@ cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
 cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
-
-[sub_resource type="QuadMesh" id="QuadMesh_7akh8"]
-resource_local_to_scene = true
-size = Vector2(3, 2)
 
 [sub_resource type="QuadMesh" id="QuadMesh_dofya"]
 size = Vector2(1, 2)
@@ -163,7 +163,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1.5, -4)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 
 [node name="TrendGraphPanel" parent="." instance=ExtResource("7_uatka")]
-transform = Transform3D(0.53033, 0, 0.53033, 0, 0.75, 0, -0.53033, 0, 0.53033, -4, 0, -5)
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -4, 0, -5)
 
 [node name="MinigamePanel" parent="." instance=ExtResource("10_3p7rq")]
 transform = Transform3D(1.26885, 0, 0, 0, 1.26885, 0, 0, 0, 1.26885, -0.0115652, 1.12822, -4.37914)
@@ -212,33 +212,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -2, -4)
 
 [node name="Interior mockup" type="Node3D" parent="Environment"]
 
-[node name="CSGMesh3D4" type="CSGMesh3D" parent="Environment/Interior mockup"]
-transform = Transform3D(0.906308, -0.383022, 0.178606, 0, 0.422618, 0.906308, -0.422618, -0.821394, 0.383022, -5, -1.5, -3.2)
-mesh = SubResource("QuadMesh_7akh8")
-
 [node name="CSGMesh3D5" type="CSGMesh3D" parent="Environment/Interior mockup"]
 transform = Transform3D(1, 0, 0, 0, 0.422618, 0.906308, 0, -0.906308, 0.422618, -0.00183606, -1.5, -4.00414)
 mesh = SubResource("QuadMesh_dofya")
 
-[node name="CSGMesh3D6" type="CSGMesh3D" parent="Environment/Interior mockup"]
-transform = Transform3D(0.866025, 0.453154, -0.211309, 0, 0.422618, 0.906308, 0.5, -0.784886, 0.365998, 5, -1.5, -3.2)
-mesh = SubResource("QuadMesh_7akh8")
-
 [node name="CSGMesh3D8" type="CSGMesh3D" parent="Environment/Interior mockup"]
 transform = Transform3D(0.810638, -0.0971323, 0.577435, 0.240599, 0.954305, -0.17724, -0.533833, 0.282608, 0.796966, -8, 0, -3)
+material_override = ExtResource("19_aaicx")
 mesh = SubResource("QuadMesh_vm8bu")
 
 [node name="CSGMesh3D9" type="CSGMesh3D" parent="Environment/Interior mockup"]
 transform = Transform3D(0.810914, 0.0972601, -0.577025, -0.240621, 0.954287, -0.177305, 0.533403, 0.282623, 0.797248, 8, 0, -3)
+material_override = ExtResource("19_aaicx")
 mesh = SubResource("QuadMesh_vm8bu")
 
 [node name="CSGMesh3D10" type="CSGMesh3D" parent="Environment/Interior mockup"]
 transform = Transform3D(1, 0, 0, 0, 0.258819, -0.965926, 0, 0.965926, 0.258819, 0, 5, 4.3)
+material_override = ExtResource("19_aaicx")
 mesh = SubResource("QuadMesh_3c16f")
+material = ExtResource("19_aaicx")
 
 [node name="CSGMesh3D11" type="CSGMesh3D" parent="Environment/Interior mockup"]
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0.0211306, -9.5, -0.991356)
+material_override = ExtResource("19_aaicx")
 mesh = SubResource("QuadMesh_3c16f")
+
+[node name="blockbench_export" parent="Environment/Interior mockup" instance=ExtResource("19_kqdby")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5, -3)
 
 [node name="Sprite3D" type="Sprite3D" parent="Environment"]
 transform = Transform3D(1.06268, 0, 0, 0, 1.06268, 0, 0, 0, 1.06268, 0.116824, 1.08316, -7.24799)
@@ -255,6 +255,9 @@ transform = Transform3D(4.24922, 0, 0, 0, 1.14368, 1.11759e-08, 0, -4.47035e-08,
 
 [node name="Follower Icon" parent="FollowerCount" index="2"]
 transform = Transform3D(0.215519, 0, 0, 0, 0.215519, 3.72529e-09, 0, -3.72529e-09, 0.215519, -4.44241, 0.0295373, 0.0480556)
+
+[node name="blockbench_export" parent="FollowerCount" index="3"]
+transform = Transform3D(-5.336, 0, -6.47772e-08, 1.42109e-14, 1.42, -1.49012e-08, 8.05714e-07, -2.98023e-08, -0.429, -0.918713, -0.563, -0.0239801)
 
 [node name="Label3D" type="Label3D" parent="FollowerCount"]
 transform = Transform3D(1, 0, 0, 0, 1, 8.9407e-08, 0, -8.9407e-08, 1, -4.07278, 0.00841975, 0.0475712)
@@ -294,10 +297,16 @@ horizontal_alignment = 0
 script = ExtResource("15_vx2cm")
 
 [node name="EngagementPanel" parent="." instance=ExtResource("15_v5d7t")]
-transform = Transform3D(0.649519, 0, -0.375, 0, 0.75, 0, 0.375, 0, 0.649519, 3.22401, 0.2, -4.36327)
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 3.22401, 0.2, -4.36327)
 
 [node name="dm_panel" parent="." instance=ExtResource("12_nuhxh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.61028, -1.15752, -3.54913)
+
+[node name="blockbench_export" parent="." instance=ExtResource("26_2k6bk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -2, -4)
+
+[node name="blockbench_export2" parent="." instance=ExtResource("27_i3u00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -2, -4)
 
 [connection signal="input_event" from="PlanetDetailPanel/WarpButton/Area3D" to="Map" method="_on_area_3d_input_event"]
 
