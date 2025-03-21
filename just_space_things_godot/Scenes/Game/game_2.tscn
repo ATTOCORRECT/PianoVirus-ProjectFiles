@@ -262,9 +262,6 @@ transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0.0211306,
 visible = false
 mesh = SubResource("QuadMesh_3c16f")
 
-[node name="PrototypeShipRoof" parent="Environment/Interior mockup" instance=ExtResource("21_3koeg")]
-transform = Transform3D(1, 0, 0, 0, 0.258819, -0.965926, 0, 0.965926, 0.258819, 0, 2.88153, -4.8083)
-
 [node name="PrototypeShipWall" parent="Environment/Interior mockup" instance=ExtResource("22_avogt")]
 transform = Transform3D(1.10565, -0.125643, 0.645743, 0.328159, 1.23441, -0.198207, -0.728109, 0.365559, 0.891244, -8, -4.8395, -4.37096)
 
@@ -273,6 +270,9 @@ transform = Transform3D(1.10603, 0.125808, -0.645285, -0.32819, 1.23439, -0.1982
 
 [node name="PrototypeShipFloor" parent="Environment/Interior mockup" instance=ExtResource("23_hyk1f")]
 transform = Transform3D(1, 0, 0, 0, -0.866025, -0.5, 0, 0.5, -0.866025, 0, -1.47579, -6.21504)
+
+[node name="blockbench_export" parent="Environment/Interior mockup" instance=ExtResource("21_3koeg")]
+transform = Transform3D(1, 0, 0, 0, 0.258819, -0.965926, 0, 0.965926, 0.258819, 0, 2.88153, -4.8083)
 
 [node name="Sprite3D" type="Sprite3D" parent="Environment"]
 transform = Transform3D(1.06268, 0, 0, 0, 1.06268, 0, 0, 0, 1.06268, 0.116824, 1.08316, -7.24799)
