@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhmo1axtpn5x7"]
+
+[ext_resource type="PackedScene" uid="uid://cv1en8wupfl5t" path="res://Scenes/interactive_screen.tscn" id="1_i8346"]
+[ext_resource type="PackedScene" uid="uid://htqrbvq1nhnm" path="res://Scenes/Minigames/Timing Minigame/timing_minigame_test.tscn" id="2_axeky"]
+[ext_resource type="PackedScene" uid="uid://dcgey2jeydoso" path="res://Scenes/Panels/MinigamePanel/test_button.tscn" id="3_gpokg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q5wwq"]
+albedo_color = Color(1, 0.917647, 0, 1)
+
+[node name="timing_minigame_panel" type="Node3D"]
+
+[node name="Interactive Screen" parent="." instance=ExtResource("1_i8346")]
+transform = Transform3D(1.8, 0, 0, 0, 1.2, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Viewport" parent="Interactive Screen" index="2"]
+size = Vector2i(960, 640)
+
+[node name="TimingMinigameTest" parent="Interactive Screen/Viewport" index="0" instance=ExtResource("2_axeky")]
+
+[node name="TimingButton" parent="." instance=ExtResource("3_gpokg")]
+transform = Transform3D(1.36314, 0, 0, 0, 0.216542, 0, 0, 0, 0.126526, 0.0233742, -0.808754, -0.00916719)
+
+[node name="CSGBox3D" parent="TimingButton" index="0"]
+transform = Transform3D(0.999931, 0, -0.0117109, 0, 1, 0, 0.0117108, 0, 0.999931, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_q5wwq")
+
+[connection signal="input_event" from="TimingButton/Area3D" to="Interactive Screen/Viewport/TimingMinigameTest" method="_on_timing_button_input_event"]
+
+[editable path="Interactive Screen"]
+[editable path="TimingButton"]

@@ -6,14 +6,19 @@ extends Control
 
 var resolution = 100
 
+var next_engagement_value = 1
+
 var line : Line2D
 var engagement_values : Array[float]
 #var boxes : Array[RichTextLabel]
 
 var run_after_ready = true
 
-var acceleration = -1
-var velocity = 100
+var acceleration = -0.0025
+var velocity = 1
+
+var first_minigame = false
+var velocity_indicator = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Singleton.engagement = $"."
@@ -22,7 +27,8 @@ func _ready() -> void:
 	graph_panel.add_child(line)
 	
 	line.default_color = Color.HOT_PINK
-
+	
+	
 	slow_process()
 	
 	await get_tree().process_frame
@@ -46,9 +52,23 @@ func step_graph():
 		var next_value = engagement_values[i + 1]
 		engagement_values[i] = next_value
 	
-	velocity += acceleration
+	#progression logic
+	if first_minigame:
+		velocity += acceleration
+		velocity = clamp(velocity, 0.9, 1.1)
+		next_engagement_value *= velocity + randf_range(-0.01, 0.01)
+		next_engagement_value = max(next_engagement_value, 1)
 	
-	engagement_values[resolution - 1] += velocity #+ randf_range(-100,100)
+	
+	
+	
+	
+	
+	print(velocity)
+	#+ randf_range(-100,100)
+	
+	# drawing 
+	engagement_values[resolution - 1] = next_engagement_value
 	
 	var min_engangement_value = engagement_values[0]
 	var max_engangement_value = engagement_values[0]
@@ -71,11 +91,13 @@ func step_graph_multiple_times(steps : int):
 func after_ready():
 	run_after_ready = false
 	for i in resolution:
-		var new_point = Vector2(graph_panel.size.x / (resolution - 1) * i, 0)
+		var new_point = Vector2(graph_panel.size.x / (resolution - 1) * i, 1)
 		engagement_values.append(new_point.y)
 		line.add_point(new_point,i)
 
 func add_velocity(add_value : float, trend_value : float):
 	print(velocity)
-	velocity += add_value * 100 * trend_value
-	print(velocity)
+	
+	velocity += (add_value * trend_value ) - 0.1
+	first_minigame = true
+	print("amount added = ", (add_value * trend_value ) - 0.1)
