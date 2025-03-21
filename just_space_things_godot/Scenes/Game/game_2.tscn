@@ -272,7 +272,7 @@ transform = Transform3D(1.10603, 0.125808, -0.645285, -0.32819, 1.23439, -0.1982
 transform = Transform3D(1, 0, 0, 0, -0.866025, -0.5, 0, 0.5, -0.866025, 0, -1.47579, -6.21504)
 
 [node name="blockbench_export" parent="Environment/Interior mockup" instance=ExtResource("21_3koeg")]
-transform = Transform3D(1, 0, 0, 0, 0.258819, -0.965926, 0, 0.965926, 0.258819, 0, 2.88153, -4.8083)
+transform = Transform3D(1, 0, 0, 0, 0.133195, -0.825523, 0, 0.497092, 0.221198, 0, 2.88153, -5.33028)
 
 [node name="Sprite3D" type="Sprite3D" parent="Environment"]
 transform = Transform3D(1.06268, 0, 0, 0, 1.06268, 0, 0, 0, 1.06268, 0.116824, 1.08316, -7.24799)
