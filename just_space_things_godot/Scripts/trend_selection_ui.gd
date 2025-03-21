@@ -124,8 +124,8 @@ func _button_1_input_event(_camera: Node, event: InputEvent, _event_position: Ve
 		Singleton.minigame_controller.load_minigame(Singleton.active_planet_data.primairy_trend)
 		trend_primary_selection.color = Singleton.active_planet_data.primairy_trend.color
 		#play trend select sound
-		Singleton.audio_manager.play_trend_select_sound()
-		print("Julian Test Debug: trend selected sound")
+		Singleton.audio_manager.play_trend_select_one_sound()
+		print("Julian Test Debug: trend selected sound 1")
 
 func _button_2_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
 	if event.is_action("Select"):
@@ -133,5 +133,5 @@ func _button_2_input_event(_camera: Node, event: InputEvent, _event_position: Ve
 		Singleton.minigame_controller.load_minigame(Singleton.active_planet_data.secondary_trend)
 		trend_secondary_selection.color = Singleton.active_planet_data.secondary_trend.color
 		#play trend select sound
-		Singleton.audio_manager.play_trend_select_sound()
-		print("Julian Test Debug: trend selected sound")
+		Singleton.audio_manager.play_trend_select_two_sound()
+		print("Julian Test Debug: trend selected sound 2")
