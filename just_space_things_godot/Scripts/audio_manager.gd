@@ -5,9 +5,12 @@ extends Node
 @onready var button_speaker = $Button
 @onready var minigamesuccess_speaker = $MinigameSuccess
 @onready var minigamefail_speaker = $MinigameFail
+@onready var trend_select_speaker = $TrendSelect
 
 func _enter_tree() -> void:
 	Singleton.audio_manager = %AudioManager
+	
+	#if music is not playing then restart it
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,6 +25,9 @@ func play_minigame_success_sound():
 
 func play_minigame_fail_sound():
 	minigamefail_speaker.play()
+
+func play_trend_select_sound():
+	trend_select_speaker.play()
 
 func play_new_sfx(sfx):
 	generic_speaker.stream = sfx

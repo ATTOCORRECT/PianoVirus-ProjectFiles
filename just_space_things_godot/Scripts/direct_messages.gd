@@ -11,14 +11,16 @@ func _ready():
 	
 	
 func new_message():
-	var message = Messages[event_index]
-	event_index += 1
+	if (event_index < Messages.size()):
+		var message = Messages[event_index]
+		event_index += 1
 	
-	var dm_node_instance = dm_node.instantiate()
-	dm_node_instance.construct(message)
-	message_loader.add_child(dm_node_instance)
-
-	
+		var dm_node_instance = dm_node.instantiate()
+		dm_node_instance.construct(message)
+		message_loader.add_child(dm_node_instance)
+		message_loader.move_child(message_loader.get_child(-1), 0)
+	else:
+		pass
 
 
 func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:

@@ -1,10 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://cl1oc80j2h8t"]
+[gd_scene load_steps=9 format=3 uid="uid://cl1oc80j2h8t"]
 
 [ext_resource type="PackedScene" uid="uid://cv1en8wupfl5t" path="res://Scenes/interactive_screen.tscn" id="1_60cor"]
 [ext_resource type="Script" path="res://Scripts/Direct Messages/dm_panel.gd" id="1_tcmo4"]
 [ext_resource type="PackedScene" uid="uid://g7f7el2gx4ia" path="res://direct_messages.tscn" id="2_epgcd"]
+[ext_resource type="Texture2D" uid="uid://b7yvd0bxe8da1" path="res://Assets/Textures/trendwindow_texture.png" id="3_p0pfb"]
 [ext_resource type="PackedScene" uid="uid://b6gtfr75y14no" path="res://Scenes/Controls/button.tscn" id="4_8x7vq"]
 [ext_resource type="Texture2D" uid="uid://ctgoirmgbo6si" path="res://Assets/Models/buttons/console_small_button.png" id="5_2kq8d"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_otv2j"]
+albedo_texture = ExtResource("3_p0pfb")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h0uc0"]
 resource_local_to_scene = true
@@ -15,15 +19,13 @@ texture_filter = 0
 script = ExtResource("1_tcmo4")
 
 [node name="Interactive Screen" parent="." instance=ExtResource("1_60cor")]
-
-[node name="Display" parent="Interactive Screen" index="0"]
 transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Interactive Screen/Display" index="0"]
-transform = Transform3D(1.07122, 0, 0, 0, 1.07122, 0, 0, 0, 0.205193, 0, 0, -0.107389)
+[node name="Display" parent="Interactive Screen" index="0"]
+material_override = SubResource("StandardMaterial3D_otv2j")
 
 [node name="Viewport" parent="Interactive Screen" index="2"]
-size = Vector2i(810, 540)
+size = Vector2i(960, 640)
 
 [node name="direct_messages" parent="Interactive Screen/Viewport" index="0" instance=ExtResource("2_epgcd")]
 
