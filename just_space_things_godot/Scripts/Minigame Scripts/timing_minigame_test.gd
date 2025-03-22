@@ -39,8 +39,8 @@ func _ready() -> void:
 	timer_label.label_settings.font_color = Color.WHITE
 	target_time = randi_range(target_min, target_max)
 	
-	print("target time:" + str(target_time))
-	print ("Target Reached: " + str(target_reached))
+	#print("target time:" + str(target_time))
+	#print ("Target Reached: " + str(target_reached))
 
 func _process(_delta: float) -> void:
 	
@@ -59,7 +59,7 @@ func _process(_delta: float) -> void:
 	if game_timer_value >= target_time + 1 :
 		target_reached = false
 		timer_label.label_settings.font_color = Color.WHITE
-		print ("Target Reached: " + str(target_reached))
+		#print ("Target Reached: " + str(target_reached))
 	
 	if game_timer_value >= max_time || game_timer_value > target_time + 1 :
 		_game_failed()
@@ -71,7 +71,7 @@ func _process(_delta: float) -> void:
 func _on_timer_timeout() -> void:
 	game_timer_value += .1
 	timer_label.text = "Timer: " + str(roundf(game_timer_value * 10) / 10) 
-	print("Score: " + str(score))
+	#print("Score: " + str(score))
 	
 	if target_reached :
 		score -= .1
@@ -137,7 +137,7 @@ func _game_failed() :
 	timer_counting = false
 
 func on_button_event(event: InputEvent):
-	print("recieved input")
+	#print("recieved input")
 	if event.is_action_pressed("Select") && !game_start :
 		Singleton.audio_manager.play_new_sfx(button_sfx)
 		idle_container.visible = false
@@ -159,7 +159,7 @@ func on_button_event(event: InputEvent):
 
 
 func _on_timing_button_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
-	print("recieved input")
+	#print("recieved input")
 	if event.is_action_pressed("Select") && !game_start :
 		Singleton.audio_manager.play_new_sfx(button_sfx)
 		idle_container.visible = false

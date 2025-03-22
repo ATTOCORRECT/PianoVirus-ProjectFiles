@@ -58,16 +58,23 @@ func step_graph():
 		velocity = clamp(velocity, 0.9, 1.1)
 		next_engagement_value *= velocity + randf_range(-0.01, 0.01)
 		next_engagement_value = max(next_engagement_value, 1)
+		if velocity > 1:
+			next_engagement_value = next_engagement_value + 1
+		else:
+			next_engagement_value = next_engagement_value - 1
+	
+	if next_engagement_value >= 100000:
+		print("YOU WIN YAY")
 	
 	
 	
 	
-	
-	
-	print(velocity)
+	#print(velocity)
 	#+ randf_range(-100,100)
 	
 	# drawing 
+	
+		
 	engagement_values[resolution - 1] = next_engagement_value
 	
 	var min_engangement_value = engagement_values[0]
@@ -96,8 +103,10 @@ func after_ready():
 		line.add_point(new_point,i)
 
 func add_velocity(add_value : float, trend_value : float):
-	print(velocity)
+	#print(velocity)
 	
 	velocity += (add_value * trend_value ) - 0.1
 	first_minigame = true
-	print("amount added = ", (add_value * trend_value ) - 0.1)
+	print(" Minigame Score ", add_value)
+	print(" Trend Score ", trend_value)
+	#print("amount added = ", (add_value * trend_value ) - 0.1)

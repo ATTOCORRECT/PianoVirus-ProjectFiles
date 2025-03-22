@@ -16,7 +16,7 @@ func load_minigame(trend: Trend):
 	await get_tree().create_timer(2).timeout
 	active_minigame = minigame[current_minigame].instantiate()
 	minigame_panel.add_child(minigame[current_minigame].instantiate())
-	print("Current Minigame Index: " + str(current_minigame))
+	#print("Current Minigame Index: " + str(current_minigame))
 
 func unload_minigame():
 	if minigame_panel.get_child_count() == 0:

@@ -10,7 +10,7 @@ func _ready() -> void:
 func disable_warp_button():
 	#visible = false
 	Singleton.audio_manager.play_button_takeoff_sound()
-	print("the big thing")
+	#print("the big thing")
 	material.albedo_color = Color(color.r * 0.5, color.g * 0.5, color.b * 0.5)
 	process_mode = ProcessMode.PROCESS_MODE_DISABLED
 	pass
