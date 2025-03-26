@@ -14,7 +14,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vj0f8")
-graph_panel = NodePath("ColorRect/HBoxContainer/MarginContainerR/PanelContainer/MarginContainer/GraphPanel")
+graph_panel = NodePath("ColorRect/VBoxContainer/MarginContainerR/PanelContainer/MarginContainer/GraphPanel")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -22,7 +22,7 @@ offset_right = 960.0
 offset_bottom = 640.0
 color = Color(0, 0, 0, 1)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -30,40 +30,39 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainerR" type="MarginContainer" parent="ColorRect/HBoxContainer"]
+[node name="MarginContainerL" type="MarginContainer" parent="ColorRect/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="MarginContainerR" type="MarginContainer" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 size_flags_stretch_ratio = 2.5
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="PanelContainer" type="PanelContainer" parent="ColorRect/HBoxContainer/MarginContainerR"]
+[node name="PanelContainer" type="PanelContainer" parent="ColorRect/VBoxContainer/MarginContainerR"]
 z_index = 1
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect/HBoxContainer/MarginContainerR/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer/MarginContainerR/PanelContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="GraphPanel" type="Panel" parent="ColorRect/HBoxContainer/MarginContainerR/PanelContainer/MarginContainer"]
+[node name="GraphPanel" type="Panel" parent="ColorRect/VBoxContainer/MarginContainerR/PanelContainer/MarginContainer"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_g2ptl")
-
-[node name="MarginContainerL" type="MarginContainer" parent="ColorRect/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/HBoxContainer/MarginContainerL"]
-layout_mode = 2
 
 [node name="TrendwindowTexture" type="Sprite2D" parent="."]
 position = Vector2(480, 360.5)

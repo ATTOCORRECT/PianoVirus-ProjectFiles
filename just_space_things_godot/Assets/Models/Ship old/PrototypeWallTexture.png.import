@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rkv0cgfr1mod"
-path="res://.godot/imported/PrototypeRoofTexture_2.png-4ca6cdf51a0a2f76ac013cdb99f7a1dc.ctex"
+uid="uid://iln5cb0obgyj"
+path="res://.godot/imported/PrototypeWallTexture.png-85738383d319317885a63b64030c5d00.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Models/Ship/PrototypeRoofTexture_2.png"
-dest_files=["res://.godot/imported/PrototypeRoofTexture_2.png-4ca6cdf51a0a2f76ac013cdb99f7a1dc.ctex"]
+source_file="res://Assets/Models/Ship old/PrototypeWallTexture.png"
+dest_files=["res://.godot/imported/PrototypeWallTexture.png-85738383d319317885a63b64030c5d00.ctex"]
 
 [params]
 

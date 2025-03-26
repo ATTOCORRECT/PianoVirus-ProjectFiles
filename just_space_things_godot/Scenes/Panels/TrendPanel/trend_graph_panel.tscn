@@ -2,23 +2,18 @@
 
 [ext_resource type="PackedScene" uid="uid://cv1en8wupfl5t" path="res://Scenes/interactive_screen.tscn" id="1_ekvc4"]
 [ext_resource type="PackedScene" uid="uid://bchxhyrwfuuup" path="res://Scenes/Panels/TrendPanel/trend_graph_ui.tscn" id="2_1vbl3"]
-[ext_resource type="PackedScene" uid="uid://dnykkjrek1n5v" path="res://Assets/Models/Screens/screenmodel.gltf" id="3_n4l1f"]
+[ext_resource type="PackedScene" uid="uid://bcxunkqxafm62" path="res://Assets/Models/Monitors/monitor_30x20.glb" id="3_hqbou"]
 
 [node name="TrendGraphPanel" type="Node3D"]
 
 [node name="Interactive Screen" parent="." instance=ExtResource("1_ekvc4")]
-transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.001)
 
 [node name="Viewport" parent="Interactive Screen" index="2"]
 size = Vector2i(960, 640)
 
 [node name="TrendGraphUI" parent="Interactive Screen/Viewport" index="0" instance=ExtResource("2_1vbl3")]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.06)
-size = Vector3(1.6, 1.1, 0.1)
-
-[node name="blockbench_export" parent="." instance=ExtResource("3_n4l1f")]
-transform = Transform3D(-2.015, 0, -1.94785e-08, 0, 1.4, 0, 3.04257e-07, 0, -0.129, 0.711206, -0.563, -0.0148609)
+[node name="blockbench_export" parent="." instance=ExtResource("3_hqbou")]
 
 [editable path="Interactive Screen"]

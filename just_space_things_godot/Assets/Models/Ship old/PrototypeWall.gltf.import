@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://0d1cmg8lb5on"
-path="res://.godot/imported/PrototypeWall.gltf-07b4226ec8543d55957446acd08d729c.scn"
+path="res://.godot/imported/PrototypeWall.gltf-ffa6a45afd40a3133ee4664ba6d4349f.scn"
 
 [deps]
 
-source_file="res://Assets/Models/Ship/PrototypeWall.gltf"
-dest_files=["res://.godot/imported/PrototypeWall.gltf-07b4226ec8543d55957446acd08d729c.scn"]
+source_file="res://Assets/Models/Ship old/PrototypeWall.gltf"
+dest_files=["res://.godot/imported/PrototypeWall.gltf-ffa6a45afd40a3133ee4664ba6d4349f.scn"]
 
 [params]
 

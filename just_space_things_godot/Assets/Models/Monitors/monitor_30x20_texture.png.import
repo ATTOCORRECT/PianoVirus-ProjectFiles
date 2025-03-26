@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cau6jdl5aiags"
-path="res://.godot/imported/PrototypeFloorTexture.png-092ddb0376b22c559e94c0ffa6a16cc1.ctex"
+uid="uid://bco35lmmg4sf6"
+path="res://.godot/imported/monitor_30x20_texture.png-43e872d195e246171d69cd80089f8d5e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Models/Ship/PrototypeFloorTexture.png"
-dest_files=["res://.godot/imported/PrototypeFloorTexture.png-092ddb0376b22c559e94c0ffa6a16cc1.ctex"]
+source_file="res://Assets/Models/Monitors/monitor_30x20_texture.png"
+dest_files=["res://.godot/imported/monitor_30x20_texture.png-43e872d195e246171d69cd80089f8d5e.ctex"]
 
 [params]
 

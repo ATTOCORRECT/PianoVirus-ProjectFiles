@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://byccle8gc4pcl"
-path="res://.godot/imported/PrototypeRoof.gltf-aa41991c670a11af16f27113b6c7dc60.scn"
+uid="uid://dy78uo5twypni"
+path="res://.godot/imported/ship.glb-a2e538eb019b3663b61e4bf97d4df1bf.scn"
 
 [deps]
 
-source_file="res://Assets/Models/Ship/PrototypeRoof.gltf"
-dest_files=["res://.godot/imported/PrototypeRoof.gltf-aa41991c670a11af16f27113b6c7dc60.scn"]
+source_file="res://Assets/Models/Ship/ship.glb"
+dest_files=["res://.godot/imported/ship.glb-a2e538eb019b3663b61e4bf97d4df1bf.scn"]
 
 [params]
 

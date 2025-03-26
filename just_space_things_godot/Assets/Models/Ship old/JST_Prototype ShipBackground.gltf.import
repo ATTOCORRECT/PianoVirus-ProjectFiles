@@ -3,20 +3,20 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c2elfixsxy6d7"
-path="res://.godot/imported/PrototypeFloor.gltf-ead2c5a6ade4f1f407b28847c8f4fa2f.scn"
+uid="uid://8htrreom0a65"
+path="res://.godot/imported/JST_Prototype ShipBackground.gltf-05ea71bf26587fa6f595e45dbb1fe702.scn"
 
 [deps]
 
-source_file="res://Assets/Models/Ship/PrototypeFloor.gltf"
-dest_files=["res://.godot/imported/PrototypeFloor.gltf-ead2c5a6ade4f1f407b28847c8f4fa2f.scn"]
+source_file="res://Assets/Models/Ship old/JST_Prototype ShipBackground.gltf"
+dest_files=["res://.godot/imported/JST_Prototype ShipBackground.gltf-05ea71bf26587fa6f595e45dbb1fe702.scn"]
 
 [params]
 
 nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
-nodes/root_scale=0.8
+nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
 meshes/ensure_tangents=true
 meshes/generate_lods=true

@@ -2,25 +2,24 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxl33mxvtapg5"
-path.bptc="res://.godot/imported/JST_Prototype ShipBackground_0.png-6a0c2562e63ab8fb1a8f3d29ec7f4ab3.bptc.ctex"
+uid="uid://bbleudg2bpsbo"
+path="res://.godot/imported/PrototypeRoof_0.png-8bfb1d2f5214cd892cda790a42bad2eb.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
-"md5": "c8323f77895aa5f041ed3817f55bc4d7"
+"md5": "033c1c4a00d81af9a13e5efaff3420ea"
 }
 
 [deps]
 
-source_file="res://Assets/Models/Ship/JST_Prototype ShipBackground_0.png"
-dest_files=["res://.godot/imported/JST_Prototype ShipBackground_0.png-6a0c2562e63ab8fb1a8f3d29ec7f4ab3.bptc.ctex"]
+source_file="res://Assets/Models/Ship old/PrototypeRoof_0.png"
+dest_files=["res://.godot/imported/PrototypeRoof_0.png-8bfb1d2f5214cd892cda790a42bad2eb.ctex"]
 
 [params]
 
-compress/mode=2
-compress/high_quality=true
+compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
