@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bchxhyrwfuuup"]
+[gd_scene load_steps=4 format=3 uid="uid://bchxhyrwfuuup"]
 
 [ext_resource type="Script" path="res://Scripts/trend_graph_ui.gd" id="1_xyipn"]
-[ext_resource type="Texture2D" uid="uid://dwlofceu1b24p" path="res://Assets/Textures/trendcontainer_texture.png" id="2_hbdh4"]
 [ext_resource type="Texture2D" uid="uid://b7yvd0bxe8da1" path="res://Assets/Textures/trendwindow_texture.png" id="3_m1rwv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s54f1"]
@@ -15,16 +14,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xyipn")
-graph_panel = NodePath("ColorRect/HBoxContainer/MarginContainerR/PanelContainer/MarginContainer/GraphPanel")
-trend_vbox = NodePath("ColorRect/HBoxContainer/MarginContainerL/VBoxContainer")
+graph_panel = NodePath("TextureRect/HBoxContainer/MarginContainerR/PanelContainer/MarginContainer/GraphPanel")
+trend_vbox = NodePath("TextureRect/HBoxContainer/MarginContainerL/MarginContainer/VBoxContainer")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(960, 640)
 layout_mode = 0
-offset_right = 960.0
-offset_bottom = 640.0
-color = Color(0, 0, 0, 1)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_m1rwv")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect"]
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -32,7 +32,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainerR" type="MarginContainer" parent="ColorRect/HBoxContainer"]
+[node name="MarginContainerR" type="MarginContainer" parent="TextureRect/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.5
@@ -41,41 +41,39 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="TrendcontainerTexture" type="Sprite2D" parent="ColorRect/HBoxContainer/MarginContainerR"]
-z_index = 1
-position = Vector2(341, 321.5)
-scale = Vector2(0.967742, 0.973437)
-texture = ExtResource("2_hbdh4")
-
-[node name="PanelContainer" type="PanelContainer" parent="ColorRect/HBoxContainer/MarginContainerR"]
+[node name="PanelContainer" type="PanelContainer" parent="TextureRect/HBoxContainer/MarginContainerR"]
 z_index = 2
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect/HBoxContainer/MarginContainerR/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/HBoxContainer/MarginContainerR/PanelContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="GraphPanel" type="Panel" parent="ColorRect/HBoxContainer/MarginContainerR/PanelContainer/MarginContainer"]
+[node name="GraphPanel" type="Panel" parent="TextureRect/HBoxContainer/MarginContainerR/PanelContainer/MarginContainer"]
 z_index = 2
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_s54f1")
 
-[node name="MarginContainerL" type="MarginContainer" parent="ColorRect/HBoxContainer"]
+[node name="MarginContainerL" type="MarginContainer" parent="TextureRect/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/HBoxContainer/MarginContainerL"]
+layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/HBoxContainer/MarginContainerL"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/HBoxContainer/MarginContainerL/MarginContainer"]
 z_index = 2
 layout_mode = 2
 
-[node name="TrendwindowTexture" type="Sprite2D" parent="ColorRect/HBoxContainer/MarginContainerL"]
-position = Vector2(-208, 360.5)
-scale = Vector2(1.40762, 1.12344)
-texture = ExtResource("3_m1rwv")
+[node name="PanelContainer" type="PanelContainer" parent="TextureRect/HBoxContainer/MarginContainerL"]
+layout_mode = 2
