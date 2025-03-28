@@ -16,12 +16,14 @@ func load_minigame(trend: Trend):
 	await get_tree().create_timer(2).timeout
 	active_minigame = minigame[current_minigame].instantiate()
 	minigame_panel.add_child(minigame[current_minigame].instantiate())
-	print("Current Minigame Index: " + str(current_minigame))
+	#print("Current Minigame Index: " + str(current_minigame))
+	Singleton.audio_manager.switch_music(true)
 
 func unload_minigame():
 	if minigame_panel.get_child_count() == 0:
 		return
 	minigame_panel.remove_child(minigame_panel.get_child(0))
+	Singleton.audio_manager.switch_music(false)
 	active_minigame = null
 
 #func _on_button_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
@@ -30,6 +32,7 @@ func unload_minigame():
 
 func minigame_completed(score : float):
 	Singleton.audio_manager.play_minigame_success_sound()
+	print("Sound played: minigame success")
 	await get_tree().create_timer(2).timeout
 	Singleton.map.spend_current_star()
 	unload_minigame()
@@ -38,6 +41,7 @@ func minigame_completed(score : float):
 
 func minigame_failed():
 	Singleton.audio_manager.play_minigame_fail_sound()
+	print("Sound played: minigame fail")
 	await get_tree().create_timer(2).timeout
 	Singleton.map.spend_current_star()
 	unload_minigame()
