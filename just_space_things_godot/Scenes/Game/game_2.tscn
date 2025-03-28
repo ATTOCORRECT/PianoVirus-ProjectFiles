@@ -16,7 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://ctgoirmgbo6si" path="res://Assets/Models/buttons/console_small_button.png" id="8_e4v3j"]
 [ext_resource type="AudioStream" uid="uid://c8p3pudmflris" path="res://Assets/Sound/SFX/minigame fail.wav" id="9_fgyp2"]
 [ext_resource type="PackedScene" uid="uid://of7bu4heyrbb" path="res://Scenes/Panels/MinigamePanel/minigame_panel.tscn" id="10_3p7rq"]
-[ext_resource type="Texture2D" uid="uid://v8157m3bux8e" path="res://Assets/Sprites/SPACEBACKGROUND.png" id="10_wnyq7"]
 [ext_resource type="PackedScene" uid="uid://cl1oc80j2h8t" path="res://Scenes/Panels/DirectMessages/dm_panel.tscn" id="12_nuhxh"]
 [ext_resource type="PackedScene" uid="uid://b8qlhw4a72dcr" path="res://Scenes/Panels/FollowerCount/follower_count.tscn" id="14_3fxua"]
 [ext_resource type="PackedScene" uid="uid://dm8sbepqrqqf" path="res://Assets/Models/Map Housing/map_housing.glb" id="15_d3e6a"]
@@ -25,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://b76d2niwraray" path="res://Assets/Models/Console/console.glb" id="19_1nssx"]
 [ext_resource type="Material" uid="uid://cc3dgmf83661p" path="res://Assets/Models/Debug/base_material.tres" id="19_aaicx"]
 [ext_resource type="PackedScene" uid="uid://4q6ffdbifmiq" path="res://Assets/Models/Center Console/center_cover.glb" id="19_kqdby"]
+[ext_resource type="Texture2D" uid="uid://dt3gpkdh73mii" path="res://SPACEBACKGROUND2.png" id="21_7fkqr"]
 [ext_resource type="PackedScene" uid="uid://c2jsmrlnsia25" path="res://Assets/Models/Console/console_corner.glb" id="26_2k6bk"]
 [ext_resource type="PackedScene" uid="uid://dfw26nh8vrc34" path="res://Assets/Models/Console/console_corner_flipped.glb" id="27_i3u00"]
 
@@ -242,7 +242,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5, -3)
 
 [node name="Sprite3D" type="Sprite3D" parent="Environment"]
 transform = Transform3D(1.06268, 0, 0, 0, 1.06268, 0, 0, 0, 1.06268, 0.116824, 1.08316, -7.24799)
-texture = ExtResource("10_wnyq7")
+texture = ExtResource("21_7fkqr")
 
 [node name="FollowerCount" parent="." instance=ExtResource("14_3fxua")]
 transform = Transform3D(0.620544, 0, 0, 0, 0.611045, -0.108162, 0, 0.108162, 0.611045, -0.689273, 2.05782, -5.38698)
