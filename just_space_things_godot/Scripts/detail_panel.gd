@@ -3,9 +3,9 @@ extends Control
 @export var planet_name : RichTextLabel
 @export var planet_trend : RichTextLabel
 @export var planet_trend_sprite : TextureRect
-@export var planet_description : RichTextLabel
 
 var font = load("res://Assets/Fonts/terminal-grotesque.ttf")
+var null_sprite = load("res://Assets/Textures/Trend icons/nullicon.png")
 
 func _enter_tree() -> void:
 	Singleton.detail = self
@@ -32,19 +32,15 @@ func null_text():
 	#planet trend
 	planet_trend.clear()
 	planet_trend.push_font(font)
-	planet_trend.push_font_size(64)
+	planet_trend.push_font_size(96)
 	
 	var text_trend_name = "No Selection"
 	planet_trend.append_text(text_trend_name)
 	
-	#planet description
-	planet_description.clear()
-	planet_description.push_font(font)
-	planet_description.push_font_size(64)
-	
-	var text_description = "No Selection"
-	planet_description.append_text(text_description)
-	
+	var trend_color = Color.GRAY
+	planet_trend_sprite.modulate = trend_color
+	planet_trend_sprite.texture = null_sprite
+
 func update_text():
 	if Singleton.Selected_planet_data == null:
 		null_text()
@@ -63,44 +59,37 @@ func update_text():
 		
 		var trend_color = Singleton.Selected_planet_data.primairy_trend.color
 		planet_trend_sprite.modulate = trend_color
+		planet_trend_sprite.texture = Singleton.Selected_planet_data.primairy_trend.icon
 		
 		planet_trend.clear()
 		planet_trend.push_font(font)
-		planet_trend.push_font_size(64)
+		planet_trend.push_font_size(96)
 		planet_trend.push_color(trend_color)
 		
 		var text_trend_name = Singleton.Selected_planet_data.primairy_trend.name
 		var text_trend_val = str(floor(Singleton.Selected_planet_data.primairy_trend.value * 1000))
 		
+		planet_trend.append_text("Detected Trend:")
+		planet_trend.newline()
 		planet_trend.append_text(text_trend_name)
 		planet_trend.newline()
 		planet_trend.append_text(text_trend_val)
 	else:
 		var trend_color = Color.GRAY
 		planet_trend_sprite.modulate = trend_color
+		planet_trend_sprite.texture = null_sprite
 		
 		planet_trend.clear()
 		planet_trend.push_font(font)
-		planet_trend.push_font_size(64)
+		planet_trend.push_font_size(96)
 		planet_trend.push_color(trend_color)
 		
-		var text_trend_name = "Spent"
+		var text_trend_name = "None"
 		var text_trend_val = "0"
 		
+		planet_trend.append_text("Detected Trend:")
+		planet_trend.newline()
 		planet_trend.append_text(text_trend_name)
 		planet_trend.newline()
 		planet_trend.append_text(text_trend_val)
 	
-	#planet description
-	planet_description.clear()
-	planet_description.push_font(font)
-	planet_description.push_font_size(64)
-	
-	
-	planet_description.append_text("Planet Description:")
-	planet_description.newline()
-	
-	#planet_description.pop()
-	
-	var text_description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut"
-	planet_description.append_text(text_description)

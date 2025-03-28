@@ -9,7 +9,7 @@ extends Control
 @export var trend_secondary_selection : ColorRect
 @export var trend_secondary_button : Node3D
 
-
+var null_sprite = load("res://Assets/Textures/Trend icons/nullicon.png")
 var font = load("res://Assets/Fonts/terminal-grotesque.ttf")
 
 func _enter_tree() -> void:
@@ -31,13 +31,15 @@ func slow_process():
 func null_text():
 	# primary
 	trend_primary.clear()
-	trend_primary_sprite.modulate = Color.GRAY
+	trend_primary_sprite.modulate = Color.DIM_GRAY
+	trend_primary_sprite.texture = null_sprite
 	trend_primary_selection.color = Color.BLACK
 	trend_primary_button.set_color(Color.WHITE)
 	
 	# secondary
 	trend_secondary.clear()
-	trend_secondary_sprite.modulate = Color.GRAY
+	trend_secondary_sprite.modulate = Color.DIM_GRAY
+	trend_secondary_sprite.texture = null_sprite
 	trend_secondary_selection.color = Color.BLACK
 	trend_secondary_button.set_color(Color.WHITE)
 
@@ -89,6 +91,7 @@ func update():
 	var primary_color = Singleton.active_planet_data.primairy_trend.color
 	
 	trend_primary_sprite.modulate = primary_color
+	trend_primary_sprite.texture = Singleton.active_planet_data.primairy_trend.icon
 	trend_primary_selection.color = Color.BLACK
 	trend_primary_button.set_color(primary_color)
 	
@@ -96,6 +99,7 @@ func update():
 	var secondary_color = Singleton.active_planet_data.secondary_trend.color
 	
 	trend_secondary_sprite.modulate = secondary_color
+	trend_secondary_sprite.texture = Singleton.active_planet_data.secondary_trend.icon
 	trend_secondary_selection.color = Color.BLACK
 	trend_secondary_button.set_color(secondary_color)
 
