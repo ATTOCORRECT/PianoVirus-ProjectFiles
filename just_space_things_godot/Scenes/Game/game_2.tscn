@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://co3x8wqu1jmbh"]
+[gd_scene load_steps=41 format=3 uid="uid://co3x8wqu1jmbh"]
 
 [ext_resource type="PackedScene" uid="uid://y712fbtjxkb3" path="res://Scenes/Panels/Map/map.tscn" id="1_a0s2q"]
 [ext_resource type="Script" path="res://Scenes/Game/minigame_controller.gd" id="1_arlly"]
@@ -8,8 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://bwq158p2pvwph" path="res://Scenes/Panels/DetailPanel/planet_detail_panel.tscn" id="3_jihco"]
 [ext_resource type="Script" path="res://Scripts/trend.gd" id="3_rmms6"]
 [ext_resource type="Script" path="res://Scripts/audio_manager.gd" id="5_yg1gs"]
-[ext_resource type="AudioStream" uid="uid://btpsfts2xspq2" path="res://Assets/Sound/Music/song draft 5.wav" id="6_vefod"]
+[ext_resource type="AudioStream" uid="uid://bysgpcdqw1lkw" path="res://Assets/Sound/Music/song draft 9.wav" id="6_qfyyw"]
 [ext_resource type="Texture2D" uid="uid://c61cjm74rtecm" path="res://Assets/Models/buttons/console_big_button.png" id="7_g6t8n"]
+[ext_resource type="AudioStream" uid="uid://d6qek8us5q8o" path="res://Assets/Sound/Music/minigame draft 2.wav" id="7_jsvj4"]
 [ext_resource type="AudioStream" uid="uid://by5lra87s28sg" path="res://Assets/Sound/SFX/Takeoff.wav" id="7_qpmp5"]
 [ext_resource type="PackedScene" uid="uid://bsb62k76bfl8e" path="res://Scenes/Panels/TrendPanel/trend_graph_panel.tscn" id="7_uatka"]
 [ext_resource type="AudioStream" uid="uid://cokqgfkw2hlw4" path="res://Assets/Sound/SFX/minigame success.wav" id="8_1t854"]
@@ -110,8 +111,14 @@ unique_name_in_owner = true
 script = ExtResource("5_yg1gs")
 
 [node name="Global" type="AudioStreamPlayer" parent="AudioManager"]
-stream = ExtResource("6_vefod")
-volume_db = -12.369
+stream = ExtResource("6_qfyyw")
+volume_db = -12.0
+autoplay = true
+
+[node name="Minigame" type="AudioStreamPlayer" parent="AudioManager"]
+stream = ExtResource("7_jsvj4")
+volume_db = -12.0
+autoplay = true
 
 [node name="Button" type="AudioStreamPlayer3D" parent="AudioManager"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.28916, -1.71733, -4.56006)
@@ -120,23 +127,23 @@ volume_db = -12.0
 
 [node name="MinigameSuccess" type="AudioStreamPlayer3D" parent="AudioManager"]
 stream = ExtResource("8_1t854")
-volume_db = 12.0
 
 [node name="MinigameFail" type="AudioStreamPlayer3D" parent="AudioManager"]
 stream = ExtResource("9_fgyp2")
-volume_db = 24.381
+volume_db = 40.237
 
 [node name="GenericSpeaker" type="AudioStreamPlayer3D" parent="AudioManager"]
+volume_db = -15.856
 
 [node name="TrendSelectOne" type="AudioStreamPlayer3D" parent="AudioManager"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.212569, -2.04113, -2.99688)
 stream = ExtResource("10_ma6im")
-volume_db = -12.0
+volume_db = -5.0
 
 [node name="TrendSelectTwo" type="AudioStreamPlayer3D" parent="AudioManager"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.233177, -2.01147, -2.95732)
 stream = ExtResource("10_ma6im")
-volume_db = -12.0
+volume_db = -5.0
 
 [node name="Player" type="Camera3D" parent="."]
 unique_name_in_owner = true

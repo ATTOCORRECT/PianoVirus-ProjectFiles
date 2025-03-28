@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d6qek8us5q8o"
+path="res://.godot/imported/minigame draft 2.wav-a1de8c37b519e4732dc3573b80352437.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/Music/minigame draft 2.wav"
+dest_files=["res://.godot/imported/minigame draft 2.wav-a1de8c37b519e4732dc3573b80352437.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
