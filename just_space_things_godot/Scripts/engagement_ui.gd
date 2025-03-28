@@ -2,7 +2,7 @@ extends Control
 
 @export var graph_panel : Panel
 
-@export var trend_vbox : VBoxContainer
+@export var follower_count_label : RichTextLabel
 
 var resolution = 100
 
@@ -72,6 +72,7 @@ func step_graph():
 	#print(velocity)
 	#+ randf_range(-100,100)
 	
+	update_follower_count_label()
 	# drawing 
 	
 		
@@ -90,6 +91,11 @@ func step_graph():
 	for i in resolution:
 		var value = remap(engagement_values[i], min_engangement_value, max_engangement_value, 0, 1)
 		line.points[i].y = value * graph_panel.size.y
+
+func update_follower_count_label():
+	
+	pass
+
 
 func step_graph_multiple_times(steps : int):
 	for i in steps:
