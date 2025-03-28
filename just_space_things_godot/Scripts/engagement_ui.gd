@@ -3,6 +3,7 @@ extends Control
 @export var graph_panel : Panel
 
 @export var follower_count_label : RichTextLabel
+var font = load("res://Assets/Fonts/terminal-grotesque.ttf")
 
 var resolution = 100
 
@@ -93,8 +94,11 @@ func step_graph():
 		line.points[i].y = value * graph_panel.size.y
 
 func update_follower_count_label():
-	
-	pass
+	follower_count_label.clear()
+	follower_count_label.push_font(font)
+	follower_count_label.push_font_size(128)
+
+	follower_count_label.append_text("[right]" + str(floor(next_engagement_value) - 1) + "[/right]")
 
 
 func step_graph_multiple_times(steps : int):

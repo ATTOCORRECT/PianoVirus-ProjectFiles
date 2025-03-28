@@ -245,6 +245,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -6)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -6)
 
 [connection signal="input_event" from="PlanetDetailPanel/WarpButton/Area3D" to="Map" method="_on_area_3d_input_event"]
+[connection signal="input_event" from="PlanetDetailPanel/Button1/Area3D" to="PlanetDetailPanel/Trend Selection/Viewport/Trend Selection UI" method="_button_1_input_event"]
+[connection signal="input_event" from="PlanetDetailPanel/Button2/Area3D" to="PlanetDetailPanel/Trend Selection/Viewport/Trend Selection UI" method="_button_2_input_event"]
 
 [editable path="PlanetDetailPanel"]
 [editable path="PlanetDetailPanel/Planet Detail"]
