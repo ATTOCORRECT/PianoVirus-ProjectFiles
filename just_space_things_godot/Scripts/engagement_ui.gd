@@ -7,7 +7,7 @@ var font = load("res://Assets/Fonts/terminal-grotesque.ttf")
 
 var resolution = 100
 
-var next_engagement_value = 1
+var next_engagement_value = 0
 
 var line : Line2D
 var engagement_values : Array[float]
@@ -98,7 +98,7 @@ func update_follower_count_label():
 	follower_count_label.push_font(font)
 	follower_count_label.push_font_size(128)
 
-	follower_count_label.append_text("[right]" + str(floor(next_engagement_value) - 1) + "[/right]")
+	follower_count_label.append_text("[right]" + str(floor(next_engagement_value)) + "[/right]")
 
 
 func step_graph_multiple_times(steps : int):
@@ -108,7 +108,7 @@ func step_graph_multiple_times(steps : int):
 func after_ready():
 	run_after_ready = false
 	for i in resolution:
-		var new_point = Vector2(graph_panel.size.x / (resolution - 1) * i, 1)
+		var new_point = Vector2(graph_panel.size.x / (resolution - 1) * i, 0)
 		engagement_values.append(new_point.y)
 		line.add_point(new_point,i)
 
