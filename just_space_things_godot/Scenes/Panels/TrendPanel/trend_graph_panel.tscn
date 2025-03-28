@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cv1en8wupfl5t" path="res://Scenes/interactive_screen.tscn" id="1_ekvc4"]
 [ext_resource type="PackedScene" uid="uid://bchxhyrwfuuup" path="res://Scenes/Panels/TrendPanel/trend_graph_ui.tscn" id="2_1vbl3"]
-[ext_resource type="PackedScene" uid="uid://bcxunkqxafm62" path="res://Assets/Models/Monitors/monitor_30x20.glb" id="3_hqbou"]
+[ext_resource type="PackedScene" uid="uid://dusei38l8vl3i" path="res://Assets/Models/Monitors/monitor_30x20.glb" id="3_hqbou"]
 
 [node name="TrendGraphPanel" type="Node3D"]
 
