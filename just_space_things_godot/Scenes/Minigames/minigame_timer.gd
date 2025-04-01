@@ -22,7 +22,16 @@ func _draw() -> void:
 	var width = min * 0.5
 	var radius = min - width/2 - 10
 	var start_angle = deg_to_rad(-90)
-	var end_angle = deg_to_rad(1 - (timer.time_left / wait_time) * 360) + start_angle
+	var time_left = (timer.time_left / wait_time)
+	var end_angle = deg_to_rad(1 - time_left * 360) + start_angle
+	var color
+	
+	if time_left < 0.2:
+		color = Color.ORANGE_RED
+	elif time_left < 0.5:
+		color = Color.GOLDENROD
+	else:
+		color = Color.YELLOW_GREEN
 	
 	#draw_line(center, center + Vector2(1,1), Color.RED, 20)
-	draw_arc(center, radius, start_angle, end_angle, 64, Color.RED, width, false)
+	draw_arc(center, radius, start_angle, end_angle, 64, color, width, false)

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b7yvd0bxe8da1" path="res://Assets/Textures/trendwindow_texture.png" id="1_ec0ny"]
 [ext_resource type="PackedScene" uid="uid://bn4rvbdftew4a" path="res://Scenes/Minigames/minigame_timer.tscn" id="3_xvvxp"]
 
-[node name="Input Minigame UI" type="Control"]
+[node name="Input Minigame UI" type="Control" node_paths=PackedStringArray("answer_text", "input_text")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,6 +12,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cwqkm")
+answer_text = NodePath("TextureRect/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer/PanelContainer/MarginContainer/RichTextLabel")
+input_text = NodePath("TextureRect/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer2/PanelContainer/MarginContainer/RichTextLabel")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(960, 640)
@@ -31,7 +33,7 @@ grow_vertical = 2
 [node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 2.0
+size_flags_stretch_ratio = 3.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -41,6 +43,7 @@ size_flags_stretch_ratio = 3.0
 [node name="MarginContainer" type="MarginContainer" parent="TextureRect/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
@@ -48,15 +51,38 @@ theme_override_constants/margin_right = 10
 [node name="PanelContainer" type="PanelContainer" parent="TextureRect/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+text = "Copy num"
+
 [node name="MarginContainer2" type="MarginContainer" parent="TextureRect/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 
 [node name="PanelContainer" type="PanelContainer" parent="TextureRect/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer2"]
 layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer2/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer2/PanelContainer/MarginContainer"]
+layout_mode = 2
+text = "Input num"
 
 [node name="MarginContainer3" type="MarginContainer" parent="TextureRect/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -70,7 +96,7 @@ layout_mode = 2
 [node name="MarginContainer3" type="MarginContainer" parent="TextureRect/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 3.0
+size_flags_stretch_ratio = 4.0
 theme_override_constants/margin_left = 256
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 256
@@ -146,3 +172,10 @@ text = "9"
 
 [connection signal="button_down" from="TextureRect/VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/GridContainer/Button1" to="." method="_on_button_1_button_down"]
 [connection signal="button_down" from="TextureRect/VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/GridContainer/Button2" to="." method="_on_button_2_button_down"]
+[connection signal="button_down" from="TextureRect/VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/GridContainer/Button3" to="." method="_on_button_3_button_down"]
+[connection signal="button_down" from="TextureRect/VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/GridContainer/Button4" to="." method="_on_button_4_button_down"]
+[connection signal="button_down" from="TextureRect/VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/GridContainer/Button5" to="." method="_on_button_5_button_down"]
+[connection signal="button_down" from="TextureRect/VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/GridContainer/Button6" to="." method="_on_button_6_button_down"]
+[connection signal="button_down" from="TextureRect/VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/GridContainer/Button7" to="." method="_on_button_7_button_down"]
+[connection signal="button_down" from="TextureRect/VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/GridContainer/Button8" to="." method="_on_button_8_button_down"]
+[connection signal="button_down" from="TextureRect/VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/GridContainer/Button9" to="." method="_on_button_9_button_down"]
