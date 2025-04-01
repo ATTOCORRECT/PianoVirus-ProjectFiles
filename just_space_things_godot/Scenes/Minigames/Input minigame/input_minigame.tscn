@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnk5hfy0d6gxh"]
+
+[ext_resource type="PackedScene" uid="uid://cv1en8wupfl5t" path="res://Scenes/interactive_screen.tscn" id="1_vhchf"]
+[ext_resource type="PackedScene" uid="uid://dmy2key2rbi5w" path="res://Scenes/Minigames/Input minigame/input_minigame_ui.tscn" id="2_ox3d1"]
+
+[node name="Input Minigame" type="Node3D"]
+
+[node name="Interactive Screen" parent="." instance=ExtResource("1_vhchf")]
+transform = Transform3D(2.25, 0, 0, 0, 1.5, 0, 0, 0, 0.75, 0, 0, 0)
+
+[node name="Viewport" parent="Interactive Screen" index="2"]
+size = Vector2i(960, 640)
+
+[node name="Input Minigame UI" parent="Interactive Screen/Viewport" index="0" instance=ExtResource("2_ox3d1")]
+
+[editable path="Interactive Screen"]

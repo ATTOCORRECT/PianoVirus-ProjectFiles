@@ -1,0 +1,148 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmy2key2rbi5w"]
+
+[ext_resource type="Script" path="res://Scenes/Minigames/Input minigame/input_minigame_ui.gd" id="1_cwqkm"]
+[ext_resource type="Texture2D" uid="uid://b7yvd0bxe8da1" path="res://Assets/Textures/trendwindow_texture.png" id="1_ec0ny"]
+[ext_resource type="PackedScene" uid="uid://bn4rvbdftew4a" path="res://Scenes/Minigames/minigame_timer.tscn" id="3_xvvxp"]
+
+[node name="Input Minigame UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cwqkm")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(960, 640)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_ec0ny")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="TextureRect/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="TextureRect/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="TextureRect/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="TextureRect/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+
+[node name="Minigame Timer" parent="TextureRect/VBoxContainer/HBoxContainer/MarginContainer3" instance=ExtResource("3_xvvxp")]
+layout_mode = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="TextureRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+theme_override_constants/margin_left = 256
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 256
+theme_override_constants/margin_bottom = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="TextureRect/VBoxContainer/MarginContainer3"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/VBoxContainer/MarginContainer3/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="GridContainer" type="GridContainer" parent="TextureRect/VBoxContainer/MarginContainer3/PanelContainer/MarginContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="Button1" type="Button" parent="TextureRect/VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "1"
+
+[node name="Button2" type="Button" parent="TextureRect/VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "2"
+
+[node name="Button3" type="Button" parent="TextureRect/VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "3"
+
+[node name="Button4" type="Button" parent="TextureRect/VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "4"
+
+[node name="Button5" type="Button" parent="TextureRect/VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "5"
+
+[node name="Button6" type="Button" parent="TextureRect/VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "6"
+
+[node name="Button7" type="Button" parent="TextureRect/VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "7"
+
+[node name="Button8" type="Button" parent="TextureRect/VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "8"
+
+[node name="Button9" type="Button" parent="TextureRect/VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "9"
+
+[connection signal="button_down" from="TextureRect/VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/GridContainer/Button1" to="." method="_on_button_1_button_down"]
+[connection signal="button_down" from="TextureRect/VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/GridContainer/Button2" to="." method="_on_button_2_button_down"]
