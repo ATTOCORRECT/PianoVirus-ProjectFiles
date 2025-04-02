@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cnk5hfy0d6gxh"]
+[gd_scene load_steps=4 format=3 uid="uid://cnk5hfy0d6gxh"]
 
 [ext_resource type="PackedScene" uid="uid://cv1en8wupfl5t" path="res://Scenes/interactive_screen.tscn" id="1_vhchf"]
 [ext_resource type="PackedScene" uid="uid://dmy2key2rbi5w" path="res://Scenes/Minigames/Input minigame/input_minigame_ui.tscn" id="2_ox3d1"]
+[ext_resource type="PackedScene" uid="uid://bnm1reh5lryne" path="res://Assets/Models/Monitors/Monitor_45x30.glb" id="3_t2a7u"]
 
 [node name="Input Minigame" type="Node3D"]
 
@@ -12,5 +13,8 @@ transform = Transform3D(2.25, 0, 0, 0, 1.5, 0, 0, 0, 0.75, 0, 0, 0)
 size = Vector2i(960, 640)
 
 [node name="Input Minigame UI" parent="Interactive Screen/Viewport" index="0" instance=ExtResource("2_ox3d1")]
+
+[node name="blockbench_export" parent="." instance=ExtResource("3_t2a7u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.001)
 
 [editable path="Interactive Screen"]

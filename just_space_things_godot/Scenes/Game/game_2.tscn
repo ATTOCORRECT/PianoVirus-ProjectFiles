@@ -372,8 +372,6 @@ material_override = ExtResource("19_aaicx")
 polygon = PackedVector2Array(0, 0, 4, 0, 7, 3, 7, 8, 4, 8, -4, 8, -7, 8, -7, 3, -4.06801, 0.0925572)
 
 [connection signal="input_event" from="PlanetDetailPanel/WarpButton/Area3D" to="Map" method="_on_area_3d_input_event"]
-[connection signal="input_event" from="PlanetDetailPanel/Button1/Area3D" to="PlanetDetailPanel/Trend Selection/Viewport/Trend Selection UI" method="_button_1_input_event"]
-[connection signal="input_event" from="PlanetDetailPanel/Button2/Area3D" to="PlanetDetailPanel/Trend Selection/Viewport/Trend Selection UI" method="_button_2_input_event"]
 
 [editable path="PlanetDetailPanel"]
 [editable path="PlanetDetailPanel/Planet Detail"]

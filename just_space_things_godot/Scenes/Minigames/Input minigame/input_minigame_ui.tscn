@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b7yvd0bxe8da1" path="res://Assets/Textures/trendwindow_texture.png" id="1_ec0ny"]
 [ext_resource type="PackedScene" uid="uid://bn4rvbdftew4a" path="res://Scenes/Minigames/minigame_timer.tscn" id="3_xvvxp"]
 
-[node name="Input Minigame UI" type="Control" node_paths=PackedStringArray("answer_text", "input_text")]
+[node name="Input Minigame UI" type="Control" node_paths=PackedStringArray("answer_text", "input_text", "minigame_timer")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,6 +14,7 @@ grow_vertical = 2
 script = ExtResource("1_cwqkm")
 answer_text = NodePath("TextureRect/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer/PanelContainer/MarginContainer/RichTextLabel")
 input_text = NodePath("TextureRect/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer2/PanelContainer/MarginContainer/RichTextLabel")
+minigame_timer = NodePath("TextureRect/VBoxContainer/HBoxContainer/MarginContainer3/Minigame Timer")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(960, 640)

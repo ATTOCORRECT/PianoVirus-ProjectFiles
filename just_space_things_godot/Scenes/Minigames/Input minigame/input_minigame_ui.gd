@@ -6,6 +6,7 @@ var code_length = 10
 
 @export var answer_text : RichTextLabel
 @export var input_text : RichTextLabel
+@export var minigame_timer : Control
 
 var font = load("res://Assets/Fonts/terminal-grotesque.ttf")
 
@@ -51,7 +52,9 @@ func reset_length():
 
 func check_answer():
 	if answer_code == guess_code:
-		Singleton.minigame_controller.minigame_completed(1)
+		var score = minigame_timer.get_remaining_time_01()
+		minigame_timer.success()
+		Singleton.minigame_controller.minigame_completed(score)
 
 func array_as_string(array : Array[int]) -> String:
 	var out_string : String
