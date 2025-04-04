@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://Scripts/detail_panel.gd" id="1_m0481"]
 [ext_resource type="Texture2D" uid="uid://b7yvd0bxe8da1" path="res://Assets/Textures/trendwindow_texture.png" id="2_37rfw"]
-[ext_resource type="Texture2D" uid="uid://b8foaqc3dedl8" path="res://Assets/Sprites/Map/pixel_planet.png" id="2_jwduf"]
 [ext_resource type="FontFile" uid="uid://c071thysmf4wl" path="res://Assets/Fonts/terminal-grotesque.ttf" id="3_bla2p"]
 [ext_resource type="Texture2D" uid="uid://bdhl54t3id5mv" path="res://Assets/Sprites/Map/Star.png" id="3_v2udl"]
+[ext_resource type="PackedScene" uid="uid://bsqri602ohhwt" path="res://Scenes/planet_display_ui.tscn" id="4_y8gfb"]
 
-[node name="PlanetDetailUI" type="Control" node_paths=PackedStringArray("planet_name", "planet_trend", "planet_trend_sprite")]
+[node name="PlanetDetailUI" type="Control" node_paths=PackedStringArray("planet_name", "planet_trend", "planet_trend_sprite", "planet_display_ui")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,6 +17,7 @@ script = ExtResource("1_m0481")
 planet_name = NodePath("TextureRect/VBoxContainer/HBoxContainer/MarginContainer2/PanelContainer/MarginContainer/RichTextLabel")
 planet_trend = NodePath("TextureRect/VBoxContainer/HBoxContainer2/MarginContainer2/PanelContainer/MarginContainer/RichTextLabel")
 planet_trend_sprite = NodePath("TextureRect/VBoxContainer/HBoxContainer2/MarginContainer/Trend Sprite")
+planet_display_ui = NodePath("TextureRect/VBoxContainer/HBoxContainer/MarginContainer/Planet Display")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(960, 640)
@@ -72,14 +73,8 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 5
 
-[node name="PlanetSprite" type="TextureRect" parent="TextureRect/VBoxContainer/HBoxContainer/MarginContainer"]
-texture_filter = 1
+[node name="Planet Display" parent="TextureRect/VBoxContainer/HBoxContainer/MarginContainer" instance=ExtResource("4_y8gfb")]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture = ExtResource("2_jwduf")
-expand_mode = 1
-stretch_mode = 5
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="TextureRect/VBoxContainer"]
 layout_mode = 2

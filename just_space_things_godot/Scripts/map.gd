@@ -18,6 +18,7 @@ var map_node = preload("res://Scenes/Panels/Map/map_node.tscn")
 var cells = {}
 
 var target_star : Node3D
+var current_star : Node3D
 
 var step = 0
 
@@ -93,12 +94,21 @@ func set_map_position_target(position_target: Vector3):
 	map_position_target = (position_target * 1) + map_position
 	#                                        ^ 1/(Map transform scale)
 func select_star(star):
-	if target_star != null and target_star != star:
+	if target_star != star and target_star != null:
 		target_star.deselect_star()
+		warp_button.enable_warp_button()
+	
+	if star == current_star:
+		warp_button.disable_warp_button()
+	
 	target_star = star
 
+
+func set_current_star(star):
+	current_star = star
+
 func spend_current_star():
-	target_star.spend_star()
+	current_star.spend_star()
 
 func _on_area_3d_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
@@ -108,8 +118,15 @@ func _on_area_3d_input_event(_camera: Node, event: InputEvent, _event_position: 
 			warp_button.disable_warp_button()
 			Singleton.minigame_controller.unload_minigame()
 			Singleton.trend_select.disable_buttons()
+			
+			Singleton.audio_manager.play_button_takeoff_sound()
+			print("sound played: Takeoff sound")
+			
+			Singleton.planet_display.clear_planet_textures()
+			
 			await get_tree().create_timer(3.0).timeout
 			cooldown_timer = false
-			warp_button.enable_warp_button()
 			if target_star.spent == false:
 				Singleton.trend_select.enable_buttons()
+			
+			Singleton.planet_display.update_planet_textures(Singleton.active_planet_data.planet_asset)

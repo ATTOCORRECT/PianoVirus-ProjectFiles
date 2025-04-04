@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://bs37fvksqyyuw"]
+
+[ext_resource type="Script" path="res://Scenes/planet_display_3d.gd" id="1_8gth5"]
+
+[node name="Planet Display 3D" type="Node3D" node_paths=PackedStringArray("planet_base_texture", "planet_surface_texture", "planet_space_texture")]
+script = ExtResource("1_8gth5")
+planet_base_texture = NodePath("Planet Base")
+planet_surface_texture = NodePath("Planet Surface")
+planet_space_texture = NodePath("Planet Space")
+
+[node name="Planet Base" type="Sprite3D" parent="."]
+texture_filter = 0
+
+[node name="Planet Surface" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.001)
+texture_filter = 0
+
+[node name="Planet Space" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.002)
+texture_filter = 0

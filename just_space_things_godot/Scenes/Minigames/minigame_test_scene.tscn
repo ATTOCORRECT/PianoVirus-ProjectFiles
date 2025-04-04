@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://beaiq0sn0t5kx"]
 
-[ext_resource type="PackedScene" uid="uid://xocajnphcj1j" path="res://Scenes/Minigames/Input minigame/input_minigame_panel.tscn" id="1_hfmax"]
+[ext_resource type="PackedScene" path="res://Scenes/Minigames/Input minigame/input_minigame_panel.tscn" id="1_hfmax"]
 [ext_resource type="Texture2D" uid="uid://ctgoirmgbo6si" path="res://Assets/Models/buttons/console_small_button.png" id="2_mxesd"]
 [ext_resource type="PackedScene" uid="uid://bhmo1axtpn5x7" path="res://Scenes/Minigames/Timing Minigame/timing_minigame_panel.tscn" id="3_ge064"]
 [ext_resource type="Script" path="res://Scripts/audio_manager.gd" id="4_uegbe"]
@@ -8,9 +8,9 @@
 [ext_resource type="AudioStream" uid="uid://by5lra87s28sg" path="res://Assets/Sound/SFX/Takeoff.wav" id="6_xd80d"]
 [ext_resource type="AudioStream" uid="uid://cokqgfkw2hlw4" path="res://Assets/Sound/SFX/minigame success.wav" id="7_wan71"]
 [ext_resource type="AudioStream" uid="uid://c8p3pudmflris" path="res://Assets/Sound/SFX/minigame fail.wav" id="8_fta2q"]
-[ext_resource type="Script" path="res://Scenes/Game/minigame_controller.gd" id="9_3ceej"]
+[ext_resource type="Script" path="res://Scripts/minigame_controller.gd" id="9_3ceej"]
 [ext_resource type="PackedScene" uid="uid://htqrbvq1nhnm" path="res://Scenes/Minigames/Timing Minigame/timing_minigame_test.tscn" id="10_ik3sw"]
-[ext_resource type="PackedScene" uid="uid://ybxb6eyo5roi" path="res://Scenes/Minigames/Input minigame/input_minigame_test.tscn" id="11_cdfye"]
+[ext_resource type="PackedScene" path="res://Scenes/Minigames/Input minigame/input_minigame_test.tscn" id="11_cdfye"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_akjru"]
 resource_local_to_scene = true
