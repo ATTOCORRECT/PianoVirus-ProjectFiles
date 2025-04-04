@@ -2,7 +2,9 @@ extends Node3D
 
 @onready var messageScreen = $"Interactive Screen/Viewport/direct_messages"
 var dm_screen = preload ("res://direct_messages.tscn")
-@onready var timer = $dm_panel/Timer
+@onready var timer = $messageTimer
+var messageIndex = 0
+@export var TimeBetweenMessages : Array[int]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,5 +12,7 @@ func _ready() -> void:
 
 func _on_timer_timeout() -> void:
 		messageScreen.new_message()
-		#timer.start(-1)
+		if (messageIndex<TimeBetweenMessages.size()):
+			timer.start(TimeBetweenMessages[messageIndex])
+			messageIndex += 1
 	

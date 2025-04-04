@@ -23,7 +23,7 @@ pfp = ExtResource("3_mlwet")
 [sub_resource type="Resource" id="Resource_iaf0p"]
 script = ExtResource("2_fbcgs")
 sender = SubResource("Resource_orqg2")
-message = "t[font_size={32}]Once you're sure that's where you want to go, click the red button to travel there!"
+message = "[font_size={32}]Once you're sure that's where you want to go, click the red button to travel there!"
 
 [sub_resource type="Resource" id="Resource_l2rft"]
 script = ExtResource("3_lyt44")
@@ -43,7 +43,7 @@ pfp = ExtResource("3_mlwet")
 [sub_resource type="Resource" id="Resource_aqard"]
 script = ExtResource("2_fbcgs")
 sender = SubResource("Resource_tfch6")
-message = "[font_size={32}]You've earned Engagement from your post! Keep growing your Engagement to make the most out of your role in the Star Fleet!"
+message = "[font_size={32}] You're performance at Star Fleet is dependant on your Engagement Score. Perform well on your posts to keep those numbers climbing."
 
 [node name="direct_messages" type="Control"]
 layout_mode = 3
