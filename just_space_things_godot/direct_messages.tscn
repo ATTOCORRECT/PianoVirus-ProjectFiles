@@ -1,12 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://g7f7el2gx4ia"]
+[gd_scene load_steps=13 format=3 uid="uid://g7f7el2gx4ia"]
 
 [ext_resource type="Script" path="res://Scripts/direct_messages.gd" id="1_7ewgt"]
 [ext_resource type="Script" path="res://Scripts/dm_data.gd" id="2_fbcgs"]
 [ext_resource type="Script" path="res://Scripts/sender_res.gd" id="3_lyt44"]
+[ext_resource type="Texture2D" uid="uid://creyxhkts34ix" path="res://Assets/Sprites/pfps/manager_profileicon.png" id="3_mlwet"]
 
 [sub_resource type="Resource" id="Resource_u85op"]
 script = ExtResource("3_lyt44")
 name = "Manager"
+pfp = ExtResource("3_mlwet")
 
 [sub_resource type="Resource" id="Resource_01h6g"]
 script = ExtResource("2_fbcgs")
@@ -15,7 +17,8 @@ message = "[font_size={32}]Welcome to the Star Fleet! To start your content jour
 
 [sub_resource type="Resource" id="Resource_orqg2"]
 script = ExtResource("3_lyt44")
-name = "test"
+name = "Manager"
+pfp = ExtResource("3_mlwet")
 
 [sub_resource type="Resource" id="Resource_iaf0p"]
 script = ExtResource("2_fbcgs")
@@ -25,6 +28,7 @@ message = "t[font_size={32}]Once you're sure that's where you want to go, click 
 [sub_resource type="Resource" id="Resource_l2rft"]
 script = ExtResource("3_lyt44")
 name = "Manager"
+pfp = ExtResource("3_mlwet")
 
 [sub_resource type="Resource" id="Resource_pi4kc"]
 script = ExtResource("2_fbcgs")
@@ -34,6 +38,7 @@ message = "[font_size={32}]Each planet has 2 trends you can make a post about. O
 [sub_resource type="Resource" id="Resource_tfch6"]
 script = ExtResource("3_lyt44")
 name = "Manager"
+pfp = ExtResource("3_mlwet")
 
 [sub_resource type="Resource" id="Resource_aqard"]
 script = ExtResource("2_fbcgs")
