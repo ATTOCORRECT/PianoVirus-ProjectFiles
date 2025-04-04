@@ -68,9 +68,9 @@ func spend_star():
 func travel():
 	# travel
 	map.set_map_position_target(global_position - map.global_position)
-
+	map.set_current_star(self)
 	Singleton.travel_to_planet(planet_data)
-	
+
 func _on_area_3d_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.is_action_released("Select"):

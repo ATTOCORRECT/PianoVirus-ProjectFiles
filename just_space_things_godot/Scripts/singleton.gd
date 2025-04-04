@@ -14,6 +14,8 @@ var engagement : Node
 var detail : Control
 var map : Node3D
 var trend_select : Control
+var planet_assets : PlanetAssets
+var planet_display : Node3D
 
 func select_planet(planet_data : Planet_data):
 	Selected_planet_data = planet_data

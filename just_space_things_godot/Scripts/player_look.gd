@@ -50,6 +50,7 @@ func zoom_in():
 	zoom = true
 	var mouse_screen_position = viewport.get_mouse_position()
 	zoom_position = project_ray_normal(mouse_screen_position)
+	clamp_zoom()
 	zoom_fov = 30
 
 func zoom_out():
@@ -58,6 +59,7 @@ func zoom_out():
 
 func override_zoom(in_zoom_position : Vector3, in_fov : float):
 	zoom_position = in_zoom_position.normalized()
+	clamp_zoom()
 	zoom_fov = in_fov
 
 func update_look_direction(delta):
@@ -68,3 +70,7 @@ func update_look_direction(delta):
 			0), 
 		look_speed * delta)
 	rotation = look_position
+	
+func clamp_zoom():
+	zoom_position = Vector3(clamp(zoom_position.x, deg_to_rad(-30), deg_to_rad(30)), 
+							clamp(zoom_position.y, deg_to_rad(-20), deg_to_rad(20)), 0)

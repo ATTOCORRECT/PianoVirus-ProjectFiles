@@ -1,71 +1,101 @@
-[gd_scene load_steps=44 format=3 uid="uid://co3x8wqu1jmbh"]
+[gd_scene load_steps=60 format=3 uid="uid://co3x8wqu1jmbh"]
 
 [ext_resource type="PackedScene" uid="uid://y712fbtjxkb3" path="res://Scenes/Panels/Map/map.tscn" id="1_a0s2q"]
-[ext_resource type="Script" path="res://Scenes/Game/minigame_controller.gd" id="1_arlly"]
+[ext_resource type="Script" path="res://Scripts/minigame_controller.gd" id="1_arlly"]
 [ext_resource type="Script" path="res://Scripts/settings.gd" id="2_46fxp"]
 [ext_resource type="Script" path="res://Scripts/player_look.gd" id="2_iksiu"]
-[ext_resource type="PackedScene" uid="uid://xocajnphcj1j" path="res://Scenes/Minigames/Input minigame/input_minigame_panel.tscn" id="3_akkrw"]
+[ext_resource type="PackedScene" uid="uid://cnk5hfy0d6gxh" path="res://Scenes/Minigames/Input minigame/input_minigame.tscn" id="2_y00iq"]
 [ext_resource type="PackedScene" uid="uid://bwq158p2pvwph" path="res://Scenes/Panels/DetailPanel/planet_detail_panel.tscn" id="3_jihco"]
-[ext_resource type="Script" path="res://Scripts/trend.gd" id="3_rmms6"]
+[ext_resource type="Script" path="res://Scripts/Data Classes/trend.gd" id="3_rmms6"]
+[ext_resource type="Texture2D" uid="uid://7wxx3k7kfttf" path="res://Assets/Textures/Trend icons/icon_sprites4.png" id="5_k0avo"]
 [ext_resource type="Script" path="res://Scripts/audio_manager.gd" id="5_yg1gs"]
-[ext_resource type="AudioStream" uid="uid://btpsfts2xspq2" path="res://Assets/Sound/Music/song draft 5.wav" id="6_vefod"]
+[ext_resource type="Texture2D" uid="uid://bytiwcqa6ahta" path="res://Assets/Textures/Trend icons/icon_sprites3.png" id="6_5nl3h"]
+[ext_resource type="AudioStream" uid="uid://bysgpcdqw1lkw" path="res://Assets/Sound/Music/song draft 9.wav" id="6_qfyyw"]
 [ext_resource type="Texture2D" uid="uid://c61cjm74rtecm" path="res://Assets/Models/buttons/console_big_button.png" id="7_g6t8n"]
+[ext_resource type="AudioStream" uid="uid://d6qek8us5q8o" path="res://Assets/Sound/Music/minigame draft 2.wav" id="7_jsvj4"]
+[ext_resource type="Texture2D" uid="uid://dduj6w66ns2ws" path="res://Assets/Textures/Trend icons/icon_sprites2.png" id="7_me6gd"]
 [ext_resource type="AudioStream" uid="uid://by5lra87s28sg" path="res://Assets/Sound/SFX/Takeoff.wav" id="7_qpmp5"]
 [ext_resource type="PackedScene" uid="uid://bsb62k76bfl8e" path="res://Scenes/Panels/TrendPanel/trend_graph_panel.tscn" id="7_uatka"]
+[ext_resource type="Texture2D" uid="uid://bfxl853n2bbkp" path="res://Assets/Textures/Trend icons/icon_sprites5.png" id="8_1brw8"]
 [ext_resource type="AudioStream" uid="uid://cokqgfkw2hlw4" path="res://Assets/Sound/SFX/minigame success.wav" id="8_1t854"]
 [ext_resource type="Texture2D" uid="uid://ctgoirmgbo6si" path="res://Assets/Models/buttons/console_small_button.png" id="8_e4v3j"]
 [ext_resource type="AudioStream" uid="uid://c8p3pudmflris" path="res://Assets/Sound/SFX/minigame fail.wav" id="9_fgyp2"]
-[ext_resource type="PackedScene" uid="uid://of7bu4heyrbb" path="res://Scenes/Panels/MinigamePanel/minigame_panel.tscn" id="10_3p7rq"]
+[ext_resource type="Texture2D" uid="uid://dhobbjaom8q13" path="res://Assets/Textures/Trend icons/icon_sprites7.png" id="9_gyfyg"]
 [ext_resource type="AudioStream" uid="uid://b634acexltyft" path="res://Assets/Sound/SFX/high pitched beep.wav" id="10_ma6im"]
-[ext_resource type="Texture2D" uid="uid://v8157m3bux8e" path="res://Assets/Sprites/SPACEBACKGROUND.png" id="10_wnyq7"]
+[ext_resource type="Texture2D" uid="uid://dxw7y627nmo2b" path="res://Assets/Textures/Trend icons/icon_sprites1.png" id="10_riyjj"]
+[ext_resource type="Texture2D" uid="uid://bds7yfcb22wrl" path="res://Assets/Textures/Trend icons/icon_sprites6.png" id="11_vxvie"]
+[ext_resource type="Texture2D" uid="uid://jo50d5ofy80m" path="res://Assets/Sprites/Planets/PLANET.png" id="12_8xntv"]
 [ext_resource type="PackedScene" uid="uid://cl1oc80j2h8t" path="res://Scenes/Panels/DirectMessages/dm_panel.tscn" id="12_nuhxh"]
-[ext_resource type="PackedScene" uid="uid://b8qlhw4a72dcr" path="res://Scenes/Panels/FollowerCount/follower_count.tscn" id="14_3fxua"]
+[ext_resource type="Script" path="res://Scripts/Data Classes/planet_assets.gd" id="13_y7fks"]
+[ext_resource type="Texture2D" uid="uid://bevi22486yurg" path="res://Assets/Sprites/Planets/Nothing.png" id="14_sqnv4"]
 [ext_resource type="PackedScene" uid="uid://dm8sbepqrqqf" path="res://Assets/Models/Map Housing/map_housing.glb" id="15_d3e6a"]
 [ext_resource type="PackedScene" uid="uid://dfl2r6koee71t" path="res://Scenes/Panels/Engagement Panel/engagement_panel.tscn" id="15_v5d7t"]
-[ext_resource type="Script" path="res://Scenes/Game/label_3d_TEMP.gd" id="15_vx2cm"]
 [ext_resource type="PackedScene" uid="uid://b76d2niwraray" path="res://Assets/Models/Console/console.glb" id="19_1nssx"]
+[ext_resource type="Texture2D" uid="uid://b22wh8rbysxq0" path="res://Assets/Sprites/Planets/Surface layer/PATTERN1.png" id="19_a15h7"]
 [ext_resource type="Material" uid="uid://cc3dgmf83661p" path="res://Assets/Models/Debug/base_material.tres" id="19_aaicx"]
 [ext_resource type="PackedScene" uid="uid://4q6ffdbifmiq" path="res://Assets/Models/Center Console/center_cover.glb" id="19_kqdby"]
+[ext_resource type="Texture2D" uid="uid://bk2wd0kqfy1lm" path="res://Assets/Sprites/Planets/Surface layer/PATTERN2.png" id="20_pye7m"]
+[ext_resource type="Texture2D" uid="uid://cnkxvmx1jglpj" path="res://Assets/Sprites/Planets/Surface layer/PATTERN3.png" id="21_pp85b"]
+[ext_resource type="Texture2D" uid="uid://b4xppunk4820" path="res://Assets/Sprites/Planets/Surface layer/PATTERN4.png" id="22_up6a1"]
+[ext_resource type="Texture2D" uid="uid://c8jgf337v1asl" path="res://Assets/Sprites/Planets/Surface layer/PATTERN5.png" id="23_vchbp"]
+[ext_resource type="Texture2D" uid="uid://dn2xk54al4pxb" path="res://Assets/Sprites/Planets/Surface layer/PATTERN6.png" id="24_cvn0h"]
+[ext_resource type="PackedScene" uid="uid://dy78uo5twypni" path="res://Assets/Models/Ship/ship.glb" id="25_x4phh"]
 [ext_resource type="PackedScene" uid="uid://c2jsmrlnsia25" path="res://Assets/Models/Console/console_corner.glb" id="26_2k6bk"]
+[ext_resource type="PackedScene" uid="uid://cj7lt7h1eln8u" path="res://Assets/Models/Ship/ship_flipped.glb" id="26_bjhni"]
 [ext_resource type="PackedScene" uid="uid://dfw26nh8vrc34" path="res://Assets/Models/Console/console_corner_flipped.glb" id="27_i3u00"]
+[ext_resource type="PackedScene" uid="uid://bs37fvksqyyuw" path="res://Scenes/planet_display_3d.tscn" id="40_kcvc0"]
 
 [sub_resource type="Resource" id="Resource_0rod6"]
 script = ExtResource("3_rmms6")
-color = Color(0.96, 0.3072, 0.3072, 1)
+color = Color(0.983247, 0.434194, 1, 1)
 name = "Chatting"
+icon = ExtResource("5_k0avo")
 
 [sub_resource type="Resource" id="Resource_ddfdv"]
 script = ExtResource("3_rmms6")
-color = Color(0.99, 0.743985, 0.2871, 1)
+color = Color(0.586698, 0.675375, 1, 1)
 name = "Music"
+icon = ExtResource("6_5nl3h")
 
 [sub_resource type="Resource" id="Resource_3g2ty"]
 script = ExtResource("3_rmms6")
-color = Color(0.932, 1, 0.49, 1)
+color = Color(0.698878, 0.735727, 1.15514e-06, 1)
 name = "Nature"
+icon = ExtResource("7_me6gd")
 
 [sub_resource type="Resource" id="Resource_4mpih"]
 script = ExtResource("3_rmms6")
-color = Color(0.2494, 0.86, 0.64629, 1)
+color = Color(4.81307e-07, 0.815405, 0.610997, 1)
 name = "Gaming"
+icon = ExtResource("8_1brw8")
 
 [sub_resource type="Resource" id="Resource_vgo3p"]
 script = ExtResource("3_rmms6")
-color = Color(0.3663, 0.38709, 0.99, 1)
+color = Color(0, 0.769482, 0.941955, 1)
 name = "Technology"
+icon = ExtResource("9_gyfyg")
 
 [sub_resource type="Resource" id="Resource_y3loq"]
 script = ExtResource("3_rmms6")
-color = Color(1, 0.35, 0.696667, 1)
+color = Color(1, 0.586579, 0.216533, 1)
 name = "Sports"
+icon = ExtResource("10_riyjj")
 
 [sub_resource type="Resource" id="Resource_egp12"]
 script = ExtResource("3_rmms6")
-color = Color(0.87, 0.0609, 0.344085, 1)
+color = Color(1, 0.530439, 0.59765, 1)
 name = "Movies"
+icon = ExtResource("11_vxvie")
+
+[sub_resource type="Resource" id="Resource_1s442"]
+script = ExtResource("13_y7fks")
+base = ExtResource("12_8xntv")
+surface_layers = Array[Texture2D]([ExtResource("14_sqnv4"), ExtResource("19_a15h7"), ExtResource("20_pye7m"), ExtResource("21_pp85b"), ExtResource("22_up6a1"), ExtResource("23_vchbp"), ExtResource("24_cvn0h")])
+space_layers = Array[Texture2D]([ExtResource("14_sqnv4")])
 
 [sub_resource type="Environment" id="Environment_llmir"]
 background_mode = 1
+background_color = Color(0.10386, 0.0531388, 0.171863, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qa3c5"]
 resource_local_to_scene = true
@@ -82,46 +112,177 @@ resource_local_to_scene = true
 albedo_texture = ExtResource("8_e4v3j")
 texture_filter = 0
 
-[sub_resource type="FontFile" id="FontFile_e5iw3"]
-cache/0/32/0/ascent = 0.0
-cache/0/32/0/descent = 0.0
-cache/0/32/0/underline_position = 0.0
-cache/0/32/0/underline_thickness = 0.0
-cache/0/32/0/scale = 1.0
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
+[sub_resource type="Animation" id="Animation_jcwoh"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.8, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-2.4, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:rotation:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.261799, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:rotation:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:rotation:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
 
-[sub_resource type="QuadMesh" id="QuadMesh_dofya"]
-size = Vector2(1, 2)
+[sub_resource type="Animation" id="Animation_jetes"]
+resource_name = "animate_minigame_panel"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2, 0),
+"points": PackedFloat32Array(0.8, -0.25, 0, 0.133333, -0.00774598, 0.77091, -0.110967, 0.0896858, 0.2, -0.161644, 3.5, -0.166667, 1.1673, 0.25, 0),
+"times": PackedFloat32Array(0, 0.333333, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2, 0),
+"points": PackedFloat32Array(-2.4, -0.25, 0, 0.0666667, -0.0107768, -2.40064, -0.111026, 0.01733, 0.233333, -0.0364208, -1.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.333333, 1)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:rotation:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.261799, -0.25, 0, 0.7, -0.153245, 1.5708, -0.133333, -1.09486, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:rotation:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:rotation:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
 
-[sub_resource type="QuadMesh" id="QuadMesh_vm8bu"]
-size = Vector2(10, 10)
-
-[sub_resource type="QuadMesh" id="QuadMesh_3c16f"]
-size = Vector2(30, 20)
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jef2d"]
+_data = {
+"RESET": SubResource("Animation_jcwoh"),
+"animate_minigame_panel": SubResource("Animation_jetes")
+}
 
 [node name="Game 2" type="Node3D"]
 
-[node name="MinigameController" type="Node" parent="."]
+[node name="MinigameController" type="Node" parent="." node_paths=PackedStringArray("minigame_panel_animator")]
 unique_name_in_owner = true
 script = ExtResource("1_arlly")
-minigame = Array[Resource]([ExtResource("3_akkrw")])
+minigame = Array[Resource]([ExtResource("2_y00iq")])
+minigame_panel_animator = NodePath("../AnimationPlayer")
 
 [node name="Data" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("2_46fxp")
 trends = Array[ExtResource("3_rmms6")]([SubResource("Resource_0rod6"), SubResource("Resource_ddfdv"), SubResource("Resource_3g2ty"), SubResource("Resource_4mpih"), SubResource("Resource_vgo3p"), SubResource("Resource_y3loq"), SubResource("Resource_egp12")])
+planet_assets = SubResource("Resource_1s442")
 
 [node name="AudioManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("5_yg1gs")
 
 [node name="Global" type="AudioStreamPlayer" parent="AudioManager"]
-stream = ExtResource("6_vefod")
-volume_db = -12.369
+stream = ExtResource("6_qfyyw")
+volume_db = -12.0
+autoplay = true
+
+[node name="Minigame" type="AudioStreamPlayer" parent="AudioManager"]
+stream = ExtResource("7_jsvj4")
+volume_db = -12.0
+autoplay = true
 
 [node name="Button" type="AudioStreamPlayer3D" parent="AudioManager"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.28916, -1.71733, -4.56006)
@@ -130,23 +291,23 @@ volume_db = -12.0
 
 [node name="MinigameSuccess" type="AudioStreamPlayer3D" parent="AudioManager"]
 stream = ExtResource("8_1t854")
-volume_db = 12.0
 
 [node name="MinigameFail" type="AudioStreamPlayer3D" parent="AudioManager"]
 stream = ExtResource("9_fgyp2")
-volume_db = 24.381
+volume_db = 40.237
 
 [node name="GenericSpeaker" type="AudioStreamPlayer3D" parent="AudioManager"]
+volume_db = -15.856
 
 [node name="TrendSelectOne" type="AudioStreamPlayer3D" parent="AudioManager"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.212569, -2.04113, -2.99688)
 stream = ExtResource("10_ma6im")
-volume_db = -12.0
+volume_db = -5.0
 
 [node name="TrendSelectTwo" type="AudioStreamPlayer3D" parent="AudioManager"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.233177, -2.01147, -2.95732)
 stream = ExtResource("10_ma6im")
-volume_db = -12.0
+volume_db = -5.0
 
 [node name="Player" type="Camera3D" parent="."]
 unique_name_in_owner = true
@@ -174,42 +335,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1.5, -4)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 
 [node name="TrendGraphPanel" parent="." instance=ExtResource("7_uatka")]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -4, 0, -5)
+transform = Transform3D(0.866026, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866026, -4, 0, -4.5)
 
-[node name="MinigamePanel" parent="." instance=ExtResource("10_3p7rq")]
-transform = Transform3D(1.26885, 0, 0, 0, 1.26885, 0, 0, 0, 1.26885, -0.0115652, 1.12822, -4.37914)
+[node name="EngagementPanel" parent="." instance=ExtResource("15_v5d7t")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 4, -0.05, -4.5)
 
-[node name="Interactive Screen" parent="MinigamePanel" index="0"]
-visible = false
+[node name="dm_panel" parent="." instance=ExtResource("12_nuhxh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -1, -3.7)
 
-[node name="Top Window Label" type="CSGBox3D" parent="."]
-transform = Transform3D(1.38779, 0, 0, 0, 0.347304, -0.116227, 0, 0.0237864, 1.69702, -1.05347, 2.15144, -5.31579)
-visible = false
-cast_shadow = 0
-size = Vector3(2.4, 1.6, 0.1)
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../MinigameMarker")
+libraries = {
+"": SubResource("AnimationLibrary_jef2d")
+}
 
-[node name="Right click to zoom" type="Label3D" parent="Top Window Label"]
-transform = Transform3D(1.22568, 0, 0, 0, 4.88627, 0, 0, 7.45058e-09, 1, 0.0331782, -0.0129657, 0.0612268)
-visible = false
-text = "Right click to zoom in/out"
-font = SubResource("FontFile_e5iw3")
-
-[node name="Right click to zoom2" type="Label3D" parent="Top Window Label"]
-transform = Transform3D(1.50229, 0, 0, 0, 23.8756, -2.98023e-08, 0, 5.96046e-08, 1, 0.0738441, -0.0763197, 0.122453)
-visible = false
-text = "Right click to zoom in/out"
-font = SubResource("FontFile_e5iw3")
-
-[node name="Above Map Label" type="CSGBox3D" parent="."]
-transform = Transform3D(0.815873, 0, 0, 0, 0.204655, 0, 0, 0, 1, -1.9572, -0.823405, -5.02211)
-visible = false
-cast_shadow = 0
-size = Vector3(2.4, 1.6, 0.1)
-
-[node name="Choose Your Destination" type="Label3D" parent="Above Map Label"]
-transform = Transform3D(1.22568, 0, 0, 0, 4.88627, 0, 0, 0, 1, 0.0331781, -0.0129662, 0.0612268)
-text = "Choose your destination"
-font = SubResource("FontFile_e5iw3")
+[node name="MinigameMarker" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0.8, -2.4)
 
 [node name="Environment" type="Node" parent="."]
 
@@ -221,103 +362,35 @@ omni_attenuation = 0.2
 [node name="Right Console" parent="Environment" instance=ExtResource("19_1nssx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -2, -4)
 
-[node name="Interior mockup" type="Node3D" parent="Environment"]
-
-[node name="CSGMesh3D5" type="CSGMesh3D" parent="Environment/Interior mockup"]
-transform = Transform3D(1, 0, 0, 0, 0.422618, 0.906308, 0, -0.906308, 0.422618, -0.00183606, -1.5, -4.00414)
-mesh = SubResource("QuadMesh_dofya")
-
-[node name="CSGMesh3D8" type="CSGMesh3D" parent="Environment/Interior mockup"]
-transform = Transform3D(0.810638, -0.0971323, 0.577435, 0.240599, 0.954305, -0.17724, -0.533833, 0.282608, 0.796966, -8, 0, -3)
-material_override = ExtResource("19_aaicx")
-mesh = SubResource("QuadMesh_vm8bu")
-
-[node name="CSGMesh3D9" type="CSGMesh3D" parent="Environment/Interior mockup"]
-transform = Transform3D(0.810914, 0.0972601, -0.577025, -0.240621, 0.954287, -0.177305, 0.533403, 0.282623, 0.797248, 8, 0, -3)
-material_override = ExtResource("19_aaicx")
-mesh = SubResource("QuadMesh_vm8bu")
-
-[node name="CSGMesh3D10" type="CSGMesh3D" parent="Environment/Interior mockup"]
-transform = Transform3D(1, 0, 0, 0, 0.258819, -0.965926, 0, 0.965926, 0.258819, 0, 5, 4.3)
-material_override = ExtResource("19_aaicx")
-mesh = SubResource("QuadMesh_3c16f")
-material = ExtResource("19_aaicx")
-
-[node name="CSGMesh3D11" type="CSGMesh3D" parent="Environment/Interior mockup"]
-transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0.0211306, -9.5, -0.991356)
-material_override = ExtResource("19_aaicx")
-mesh = SubResource("QuadMesh_3c16f")
-
-[node name="blockbench_export" parent="Environment/Interior mockup" instance=ExtResource("19_kqdby")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5, -3)
-
-[node name="Sprite3D" type="Sprite3D" parent="Environment"]
-transform = Transform3D(1.06268, 0, 0, 0, 1.06268, 0, 0, 0, 1.06268, 0.116824, 1.08316, -7.24799)
-texture = ExtResource("10_wnyq7")
-
-[node name="FollowerCount" parent="." instance=ExtResource("14_3fxua")]
-transform = Transform3D(0.620544, 0, 0, 0, 0.611045, -0.108162, 0, 0.108162, 0.611045, -0.689273, 2.05782, -5.38698)
-
-[node name="Interactive Screen" parent="FollowerCount" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 2.98023e-08, 0, -2.98023e-08, 1, -2.77367, 0, 0)
-
-[node name="CSGBox3D" parent="FollowerCount" index="1"]
-transform = Transform3D(4.24922, 0, 0, 0, 1.14368, 1.11759e-08, 0, -4.47035e-08, 0.323667, -2.77367, -1.19209e-07, -0.169072)
-
-[node name="Follower Icon" parent="FollowerCount" index="2"]
-transform = Transform3D(0.215519, 0, 0, 0, 0.215519, 3.72529e-09, 0, -3.72529e-09, 0.215519, -4.44241, 0.0295373, 0.0480556)
-
-[node name="blockbench_export" parent="FollowerCount" index="3"]
-transform = Transform3D(-5.336, 0, -6.47772e-08, 1.42109e-14, 1.42, -1.49012e-08, 8.05714e-07, -2.98023e-08, -0.429, -0.918713, -0.563, -0.0239801)
-
-[node name="Label3D" type="Label3D" parent="FollowerCount"]
-transform = Transform3D(1, 0, 0, 0, 1, 8.9407e-08, 0, -8.9407e-08, 1, -4.07278, 0.00841975, 0.0475712)
-text = "000052847"
-font_size = 120
-horizontal_alignment = 0
-script = ExtResource("15_vx2cm")
-
-[node name="FollowerCount" parent="FollowerCount" instance=ExtResource("14_3fxua")]
-transform = Transform3D(0.620544, 0, 0, 0, 0.610226, 0.112691, 0, -0.112691, 0.610226, -2.53444, -3.84363, 1.35978)
-
-[node name="Label3D" type="Label3D" parent="FollowerCount/FollowerCount"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3161, 0.00796139, 0.0449772)
-text = "000052847"
-font_size = 120
-horizontal_alignment = 0
-script = ExtResource("15_vx2cm")
-
-[node name="FollowerCount3" parent="FollowerCount" instance=ExtResource("14_3fxua")]
-transform = Transform3D(0.381535, 0, 0, 0, 0.375191, 0.0692869, 0, -0.0692869, 0.375191, 1.11148, -2.92893, 3.10355)
-
-[node name="Label3D" type="Label3D" parent="FollowerCount/FollowerCount3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3161, 0.00796139, 0.0449772)
-text = "000052847"
-font_size = 120
-horizontal_alignment = 0
-script = ExtResource("15_vx2cm")
-
-[node name="FollowerCount2" parent="FollowerCount" instance=ExtResource("14_3fxua")]
-transform = Transform3D(0.536315, 0.00222222, -0.312148, 0.0545144, 0.610325, 0.0980096, 0.307358, -0.112127, 0.527289, 6.34, -1.35993, 1.87998)
-
-[node name="Label3D" type="Label3D" parent="FollowerCount/FollowerCount2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3161, 0.00796139, 0.0449772)
-text = "000052847"
-font_size = 120
-horizontal_alignment = 0
-script = ExtResource("15_vx2cm")
-
-[node name="EngagementPanel" parent="." instance=ExtResource("15_v5d7t")]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 3.22401, 0.2, -4.36327)
-
-[node name="dm_panel" parent="." instance=ExtResource("12_nuhxh")]
-transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 1.70588, -0.8152, -3.54913)
-
-[node name="blockbench_export" parent="." instance=ExtResource("26_2k6bk")]
+[node name="Right Corner" parent="Environment" instance=ExtResource("26_2k6bk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -2, -4)
 
-[node name="blockbench_export2" parent="." instance=ExtResource("27_i3u00")]
+[node name="Left Corner" parent="Environment" instance=ExtResource("27_i3u00")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -2, -4)
+
+[node name="Center Cover" parent="Environment" instance=ExtResource("19_kqdby")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5, -3)
+
+[node name="Ship Right" parent="Environment" instance=ExtResource("25_x4phh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -6)
+
+[node name="Ship Left" parent="Environment" instance=ExtResource("26_bjhni")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -6)
+
+[node name="Interior mockup" type="Node3D" parent="Environment"]
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Environment/Interior mockup"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -4, -3)
+material_override = ExtResource("19_aaicx")
+polygon = PackedVector2Array(0, 0, 5, 0, 8, 3, 8, 8, 4, 8, -4, 8, -8, 8, -8, 3, -5, 0)
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="Environment/Interior mockup"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 3, -4)
+material_override = ExtResource("19_aaicx")
+polygon = PackedVector2Array(0, 0, 4, 0, 7, 3, 7, 8, 4, 8, -4, 8, -7, 8, -7, 3, -4.06801, 0.0925572)
+
+[node name="Planet Display 3D" parent="." instance=ExtResource("40_kcvc0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -13)
 
 [connection signal="input_event" from="PlanetDetailPanel/WarpButton/Area3D" to="Map" method="_on_area_3d_input_event"]
 
@@ -330,7 +403,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -2, -4)
 [editable path="PlanetDetailPanel/Model"]
 [editable path="TrendGraphPanel"]
 [editable path="TrendGraphPanel/Interactive Screen"]
-[editable path="MinigamePanel"]
-[editable path="MinigamePanel/Interactive Screen"]
-[editable path="FollowerCount"]
-[editable path="FollowerCount/Interactive Screen"]

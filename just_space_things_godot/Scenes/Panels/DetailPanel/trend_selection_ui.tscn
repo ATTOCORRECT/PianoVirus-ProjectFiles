@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c40okafjj6gfy"]
+[gd_scene load_steps=4 format=3 uid="uid://c40okafjj6gfy"]
 
 [ext_resource type="Script" path="res://Scripts/trend_selection_ui.gd" id="1_bb1lc"]
 [ext_resource type="Texture2D" uid="uid://bdhl54t3id5mv" path="res://Assets/Sprites/Map/Star.png" id="1_sgsgk"]
+[ext_resource type="Texture2D" uid="uid://b7yvd0bxe8da1" path="res://Assets/Textures/trendwindow_texture.png" id="2_vs88o"]
 
 [node name="Trend Selection UI" type="Control" node_paths=PackedStringArray("trend_primary", "trend_primary_sprite", "trend_primary_selection", "trend_secondary", "trend_secondary_sprite", "trend_secondary_selection")]
 layout_mode = 3
@@ -11,20 +12,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bb1lc")
-trend_primary = NodePath("ColorRect/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/RichTextLabel")
-trend_primary_sprite = NodePath("ColorRect/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/TextureRect")
-trend_primary_selection = NodePath("ColorRect/HBoxContainer/MarginContainer/ColorRect")
-trend_secondary = NodePath("ColorRect/HBoxContainer/MarginContainer2/ColorRect/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/RichTextLabel")
-trend_secondary_sprite = NodePath("ColorRect/HBoxContainer/MarginContainer2/ColorRect/MarginContainer/VBoxContainer/MarginContainer/TextureRect")
-trend_secondary_selection = NodePath("ColorRect/HBoxContainer/MarginContainer2/ColorRect")
+trend_primary = NodePath("TextureRect/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/RichTextLabel")
+trend_primary_sprite = NodePath("TextureRect/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer/TextureRect")
+trend_primary_selection = NodePath("TextureRect/HBoxContainer/MarginContainer/ColorRect")
+trend_secondary = NodePath("TextureRect/HBoxContainer/MarginContainer2/ColorRect/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/RichTextLabel")
+trend_secondary_sprite = NodePath("TextureRect/HBoxContainer/MarginContainer2/ColorRect/MarginContainer/VBoxContainer/MarginContainer/TextureRect")
+trend_secondary_selection = NodePath("TextureRect/HBoxContainer/MarginContainer2/ColorRect")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(960, 640)
 layout_mode = 0
-offset_right = 960.0
-offset_bottom = 640.0
-color = Color(0, 0, 0, 1)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_vs88o")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect"]
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -32,7 +34,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 10
@@ -40,11 +42,11 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 10
 
-[node name="ColorRect" type="ColorRect" parent="ColorRect/HBoxContainer/MarginContainer"]
+[node name="ColorRect" type="ColorRect" parent="TextureRect/HBoxContainer/MarginContainer"]
 layout_mode = 2
 color = Color(0, 0, 0, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect/HBoxContainer/MarginContainer/ColorRect"]
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/HBoxContainer/MarginContainer/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -56,13 +58,13 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="PanelContainer" type="PanelContainer" parent="ColorRect/HBoxContainer/MarginContainer/ColorRect/MarginContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="TextureRect/HBoxContainer/MarginContainer/ColorRect/MarginContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/HBoxContainer/MarginContainer/ColorRect/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/HBoxContainer/MarginContainer/ColorRect/MarginContainer"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
@@ -71,7 +73,7 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="TextureRect" type="TextureRect" parent="ColorRect/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="TextureRect/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer/MarginContainer"]
 texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
@@ -79,21 +81,21 @@ texture = ExtResource("1_sgsgk")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="PanelContainer" type="PanelContainer" parent="ColorRect/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="TextureRect/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer/PanelContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer/PanelContainer/MarginContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/HBoxContainer/MarginContainer/ColorRect/MarginContainer/VBoxContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/HBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="TextureRect/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 5
@@ -101,11 +103,11 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="ColorRect" type="ColorRect" parent="ColorRect/HBoxContainer/MarginContainer2"]
+[node name="ColorRect" type="ColorRect" parent="TextureRect/HBoxContainer/MarginContainer2"]
 layout_mode = 2
 color = Color(0, 0, 0, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect/HBoxContainer/MarginContainer2/ColorRect"]
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/HBoxContainer/MarginContainer2/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -117,13 +119,13 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="PanelContainer" type="PanelContainer" parent="ColorRect/HBoxContainer/MarginContainer2/ColorRect/MarginContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="TextureRect/HBoxContainer/MarginContainer2/ColorRect/MarginContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/HBoxContainer/MarginContainer2/ColorRect/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/HBoxContainer/MarginContainer2/ColorRect/MarginContainer"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect/HBoxContainer/MarginContainer2/ColorRect/MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/HBoxContainer/MarginContainer2/ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
@@ -132,7 +134,7 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="TextureRect" type="TextureRect" parent="ColorRect/HBoxContainer/MarginContainer2/ColorRect/MarginContainer/VBoxContainer/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="TextureRect/HBoxContainer/MarginContainer2/ColorRect/MarginContainer/VBoxContainer/MarginContainer"]
 texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
@@ -140,16 +142,16 @@ texture = ExtResource("1_sgsgk")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="PanelContainer" type="PanelContainer" parent="ColorRect/HBoxContainer/MarginContainer2/ColorRect/MarginContainer/VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="TextureRect/HBoxContainer/MarginContainer2/ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect/HBoxContainer/MarginContainer2/ColorRect/MarginContainer/VBoxContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/HBoxContainer/MarginContainer2/ColorRect/MarginContainer/VBoxContainer/PanelContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/HBoxContainer/MarginContainer2/ColorRect/MarginContainer/VBoxContainer/PanelContainer/MarginContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/HBoxContainer/MarginContainer2/ColorRect/MarginContainer/VBoxContainer/PanelContainer/MarginContainer"]
 layout_mode = 2

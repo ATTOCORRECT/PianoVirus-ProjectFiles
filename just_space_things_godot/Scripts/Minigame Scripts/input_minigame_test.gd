@@ -27,7 +27,7 @@ func _ready():
 	userCode_label.append_text(str(user_code))
 	timer_label.text = (str(score * 10) + "s")
 	
-	print("Correct Code: " + str(correct_code))
+	#print("Correct Code: " + str(correct_code))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -51,8 +51,8 @@ func _update_user_code():
 
 
 func _check_user_code():
-	print ("Code Position: " + (str(code_position)))
-	print ("User Code: " + str(user_code))
+	#print ("Code Position: " + (str(code_position)))
+	#print ("User Code: " + str(user_code))
 	
 	if user_code == correct_code:
 		userCode_label.clear()
@@ -70,7 +70,7 @@ func _check_user_code():
 
 func _on_timer_timeout() -> void:
 	if score >= 0:
-		print("Score: " + str(score))
+		#print("Score: " + str(score))
 		score -= .1
 		timer_label.text = (str(score * 10) + "s")
 

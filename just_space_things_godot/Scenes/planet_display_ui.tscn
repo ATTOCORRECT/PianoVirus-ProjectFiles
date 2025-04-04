@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsqri602ohhwt"]
+
+[ext_resource type="Script" path="res://Scenes/planet_display_ui.gd" id="1_sd0iq"]
+
+[node name="Planet Display" type="PanelContainer" node_paths=PackedStringArray("planet_base_texture", "planet_surface_texture", "planet_space_texture")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 160.0
+offset_top = 100.0
+offset_right = -484.0
+offset_bottom = -224.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_sd0iq")
+planet_base_texture = NodePath("Planet Base")
+planet_surface_texture = NodePath("Planet Surface")
+planet_space_texture = NodePath("Planet Space")
+
+[node name="Planet Base" type="TextureRect" parent="."]
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Planet Surface" type="TextureRect" parent="."]
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Planet Space" type="TextureRect" parent="."]
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
