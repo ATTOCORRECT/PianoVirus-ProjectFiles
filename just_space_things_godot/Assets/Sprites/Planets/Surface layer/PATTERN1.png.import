@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vi54cogh8if0"
-path="res://.godot/imported/Test Stripes.png-b5d5a26262bc7f980cc073db4c3698c6.ctex"
+uid="uid://b22wh8rbysxq0"
+path="res://.godot/imported/PATTERN1.png-921bb2d32871d804891e574b582a527a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Planets/Surface Layer/Test Stripes.png"
-dest_files=["res://.godot/imported/Test Stripes.png-b5d5a26262bc7f980cc073db4c3698c6.ctex"]
+source_file="res://Assets/Sprites/Planets/Surface layer/PATTERN1.png"
+dest_files=["res://.godot/imported/PATTERN1.png-921bb2d32871d804891e574b582a527a.ctex"]
 
 [params]
 

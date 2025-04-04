@@ -9,7 +9,7 @@ var code_length = 10
 @export var minigame_timer : Control
 
 var font = load("res://Assets/Fonts/terminal-grotesque.ttf")
-
+var font_2 = load("res://Assets/Fonts/JustSpaceThings_Draft1-Regular.ttf")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	generate_code()
@@ -24,16 +24,19 @@ func generate_code():
 func update_answer_text():
 	answer_text.clear()
 	answer_text.push_font(font)
-	answer_text.push_font_size(64)
+	answer_text.push_font_size(56)
 	
 	answer_text.append_text("Verify")
 	answer_text.newline()
+	
+	answer_text.push_font(font_2)
+	
 	answer_text.append_text(array_as_string(answer_code))
 	
 func update_input_text():
 	input_text.clear()
-	input_text.push_font(font)
-	input_text.push_font_size(64)
+	input_text.push_font(font_2)
+	input_text.push_font_size(56)
 	
 	if guess_code.size() >= code_length:
 		input_text.append_text(array_as_string(guess_code))

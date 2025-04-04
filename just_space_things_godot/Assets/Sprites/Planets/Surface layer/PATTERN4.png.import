@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0tahrg82xpsv"
-path="res://.godot/imported/Test Islands.png-0b0e8a2b41ce3906926c708ef0528ba7.ctex"
+uid="uid://b4xppunk4820"
+path="res://.godot/imported/PATTERN4.png-b01f57b112095b972a0404c06682916b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Planets/Surface Layer/Test Islands.png"
-dest_files=["res://.godot/imported/Test Islands.png-0b0e8a2b41ce3906926c708ef0528ba7.ctex"]
+source_file="res://Assets/Sprites/Planets/Surface layer/PATTERN4.png"
+dest_files=["res://.godot/imported/PATTERN4.png-b01f57b112095b972a0404c06682916b.ctex"]
 
 [params]
 
