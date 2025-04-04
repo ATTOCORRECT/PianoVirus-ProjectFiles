@@ -57,4 +57,5 @@ layout_mode = 2
 size_flags_vertical = 3
 bbcode_enabled = true
 text = "[font_size={32}]You've earned Engagement from your post! Keep growing your Engagement to make the most out of your role in the Star Fleet!"
+fit_content = true
 scroll_active = false
