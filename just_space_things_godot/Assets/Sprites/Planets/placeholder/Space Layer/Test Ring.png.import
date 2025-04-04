@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0tahrg82xpsv"
-path="res://.godot/imported/Test Islands.png-0b0e8a2b41ce3906926c708ef0528ba7.ctex"
+uid="uid://c213f1ugmphef"
+path="res://.godot/imported/Test Ring.png-8e5e34be0f3f19a12ba632ea7e9c9c90.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Planets/Surface Layer/Test Islands.png"
-dest_files=["res://.godot/imported/Test Islands.png-0b0e8a2b41ce3906926c708ef0528ba7.ctex"]
+source_file="res://Assets/Sprites/Planets/placeholder/Space Layer/Test Ring.png"
+dest_files=["res://.godot/imported/Test Ring.png-8e5e34be0f3f19a12ba632ea7e9c9c90.ctex"]
 
 [params]
 

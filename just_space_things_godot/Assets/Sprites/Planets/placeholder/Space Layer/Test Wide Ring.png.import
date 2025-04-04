@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jo50d5ofy80m"
-path="res://.godot/imported/PLANET.png-1c27b72bc9867e17c09dc6bbb7949d0f.ctex"
+uid="uid://cifcjuyqberp2"
+path="res://.godot/imported/Test Wide Ring.png-8674738f720d0b6d28232cc86191a7ee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Planets/PLANET.png"
-dest_files=["res://.godot/imported/PLANET.png-1c27b72bc9867e17c09dc6bbb7949d0f.ctex"]
+source_file="res://Assets/Sprites/Planets/placeholder/Space Layer/Test Wide Ring.png"
+dest_files=["res://.godot/imported/Test Wide Ring.png-8674738f720d0b6d28232cc86191a7ee.ctex"]
 
 [params]
 

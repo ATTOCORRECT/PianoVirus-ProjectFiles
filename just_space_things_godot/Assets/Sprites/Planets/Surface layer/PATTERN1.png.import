@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://25kunbke2c8m"
-path="res://.godot/imported/Test Moon.png-b024962739112f1b15372b6ebb543ba6.ctex"
+uid="uid://b22wh8rbysxq0"
+path="res://.godot/imported/PATTERN1.png-921bb2d32871d804891e574b582a527a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Planets/Space Layer/Test Moon.png"
-dest_files=["res://.godot/imported/Test Moon.png-b024962739112f1b15372b6ebb543ba6.ctex"]
+source_file="res://Assets/Sprites/Planets/Surface layer/PATTERN1.png"
+dest_files=["res://.godot/imported/PATTERN1.png-921bb2d32871d804891e574b582a527a.ctex"]
 
 [params]
 

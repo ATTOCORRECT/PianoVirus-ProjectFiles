@@ -62,6 +62,8 @@ theme_override_constants/margin_bottom = 10
 [node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
 text = "Copy num"
+scroll_active = false
+autowrap_mode = 0
 
 [node name="MarginContainer2" type="MarginContainer" parent="TextureRect/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -84,6 +86,8 @@ theme_override_constants/margin_bottom = 10
 [node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer2/PanelContainer/MarginContainer"]
 layout_mode = 2
 text = "Input num"
+scroll_active = false
+autowrap_mode = 0
 
 [node name="MarginContainer3" type="MarginContainer" parent="TextureRect/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -121,55 +125,154 @@ columns = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "1"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/GridContainer/Button1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[center][font_size=128][font=res://Assets/Fonts/JustSpaceThings_Draft1-Regular.ttf]1[/font][/font_size][/center]"
+scroll_active = false
 
 [node name="Button2" type="Button" parent="TextureRect/VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "2"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/GridContainer/Button2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[center][font_size=128][font=res://Assets/Fonts/JustSpaceThings_Draft1-Regular.ttf]2[/font][/font_size][/center]"
+scroll_active = false
 
 [node name="Button3" type="Button" parent="TextureRect/VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "3"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/GridContainer/Button3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[center][font_size=128][font=res://Assets/Fonts/JustSpaceThings_Draft1-Regular.ttf]3[/font][/font_size][/center]"
+scroll_active = false
 
 [node name="Button4" type="Button" parent="TextureRect/VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "4"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/GridContainer/Button4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[center][font_size=128][font=res://Assets/Fonts/JustSpaceThings_Draft1-Regular.ttf]4[/font][/font_size][/center]"
+scroll_active = false
 
 [node name="Button5" type="Button" parent="TextureRect/VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "5"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/GridContainer/Button5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[center][font_size=128][font=res://Assets/Fonts/JustSpaceThings_Draft1-Regular.ttf]5[/font][/font_size][/center]"
+scroll_active = false
 
 [node name="Button6" type="Button" parent="TextureRect/VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "6"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/GridContainer/Button6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[center][font_size=128][font=res://Assets/Fonts/JustSpaceThings_Draft1-Regular.ttf]6[/font][/font_size][/center]"
+scroll_active = false
 
 [node name="Button7" type="Button" parent="TextureRect/VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "7"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/GridContainer/Button7"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[center][font_size=128][font=res://Assets/Fonts/JustSpaceThings_Draft1-Regular.ttf]7[/font][/font_size][/center]"
+scroll_active = false
 
 [node name="Button8" type="Button" parent="TextureRect/VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "8"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/GridContainer/Button8"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[center][font_size=128][font=res://Assets/Fonts/JustSpaceThings_Draft1-Regular.ttf]8[/font][/font_size][/center]"
+scroll_active = false
 
 [node name="Button9" type="Button" parent="TextureRect/VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "9"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/GridContainer/Button9"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[center][font_size=128][font=res://Assets/Fonts/JustSpaceThings_Draft1-Regular.ttf]9[/font][/font_size][/center]"
+scroll_active = false
 
 [connection signal="button_down" from="TextureRect/VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/GridContainer/Button1" to="." method="_on_button_1_button_down"]
 [connection signal="button_down" from="TextureRect/VBoxContainer/MarginContainer3/PanelContainer/MarginContainer/GridContainer/Button2" to="." method="_on_button_2_button_down"]
