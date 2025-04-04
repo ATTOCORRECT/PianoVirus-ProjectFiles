@@ -390,7 +390,7 @@ material_override = ExtResource("19_aaicx")
 polygon = PackedVector2Array(0, 0, 4, 0, 7, 3, 7, 8, 4, 8, -4, 8, -7, 8, -7, 3, -4.06801, 0.0925572)
 
 [node name="Marker3D" type="Marker3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 10, -100)
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 2, -100)
 
 [node name="Planet Display 3D" parent="Marker3D" instance=ExtResource("40_kcvc0")]
 
