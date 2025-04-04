@@ -18,7 +18,7 @@ var run_after_ready = true
 var acceleration = -0.0025
 var velocity = 1
 
-var first_minigame = false
+var first_minigame = true
 var velocity_indicator = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -55,8 +55,17 @@ func step_graph():
 	
 	#progression logic
 	if first_minigame:
+		velocity = 1
+		#velocity = clamp(velocity, 0.95, 1.1)
+		#next_engagement_value *= velocity + randf_range(-0.01, 0.01)
+		#next_engagement_value = max(next_engagement_value, 1)
+		#if velocity > 1:
+			#next_engagement_value = next_engagement_value + 1
+		#else:
+			#next_engagement_value = next_engagement_value - 1
+	if !first_minigame:
 		velocity += acceleration
-		velocity = clamp(velocity, 0.9, 1.1)
+		velocity = clamp(velocity, 0.95, 1.1)
 		next_engagement_value *= velocity + randf_range(-0.01, 0.01)
 		next_engagement_value = max(next_engagement_value, 1)
 		if velocity > 1:
@@ -70,7 +79,7 @@ func step_graph():
 	
 	
 	
-	#print(velocity)
+	print(velocity)
 	#+ randf_range(-100,100)
 	
 	update_follower_count_label()
@@ -114,9 +123,16 @@ func after_ready():
 
 func add_velocity(add_value : float, trend_value : float):
 	#print(velocity)
-	
-	velocity += (add_value * trend_value ) - 0.1
-	first_minigame = true
-	print(" Minigame Score ", add_value)
-	print(" Trend Score ", trend_value)
-	#print("amount added = ", (add_value * trend_value ) - 0.1)
+	if(first_minigame):
+		velocity = 1.1
+		first_minigame = false
+	elif(!first_minigame):
+		velocity += (add_value * trend_value ) - 0.1
+		
+		print(" Minigame Score ", add_value)
+		print(" Trend Score ", trend_value)
+		print("amount added = ", (add_value * trend_value ) - 0.1)
+		
+func lose():
+	velocity = 1
+	print("you lost the minigame")
