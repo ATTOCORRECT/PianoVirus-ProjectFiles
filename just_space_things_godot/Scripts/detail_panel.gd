@@ -3,6 +3,7 @@ extends Control
 @export var planet_name : RichTextLabel
 @export var planet_trend : RichTextLabel
 @export var planet_trend_sprite : TextureRect
+@export var planet_display_ui : Control
 
 var font = load("res://Assets/Fonts/terminal-grotesque.ttf")
 var null_sprite = load("res://Assets/Textures/Trend icons/nullicon.png")
@@ -53,6 +54,8 @@ func update_text():
 	
 	var text_planet_name = str(Singleton.Selected_planet_data.random_id) # change for later
 	planet_name.append_text(text_planet_name)
+	
+	planet_display_ui.update_planet_textures(Singleton.Selected_planet_data.planet_asset)
 	
 	#planet trend
 	if Singleton.Selected_planet_data.spent == false:

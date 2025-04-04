@@ -10,6 +10,8 @@ class_name Planet_data
 
 @export var isScripted : bool
 
+var planet_asset : PlanetAsset
+
 var spent = false
 
 var key
@@ -23,6 +25,8 @@ func _init(in_key : String, in_primairy_trend : Trend, in_planet_description : S
 	var remaining_trends : Array[Trend] = Singleton.trends.duplicate()
 	remaining_trends.erase(primairy_trend)
 	secondary_trend = remaining_trends[randi_range(0, remaining_trends.size() - 1)]
+	
+	planet_asset = PlanetAsset.new()
 	
 	random_id = key.hash()
 

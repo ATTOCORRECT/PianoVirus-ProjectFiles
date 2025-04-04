@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://co3x8wqu1jmbh"]
+[gd_scene load_steps=61 format=3 uid="uid://co3x8wqu1jmbh"]
 
 [ext_resource type="PackedScene" uid="uid://y712fbtjxkb3" path="res://Scenes/Panels/Map/map.tscn" id="1_a0s2q"]
 [ext_resource type="Script" path="res://Scripts/minigame_controller.gd" id="1_arlly"]
@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/player_look.gd" id="2_iksiu"]
 [ext_resource type="PackedScene" uid="uid://cnk5hfy0d6gxh" path="res://Scenes/Minigames/Input minigame/input_minigame.tscn" id="2_y00iq"]
 [ext_resource type="PackedScene" uid="uid://bwq158p2pvwph" path="res://Scenes/Panels/DetailPanel/planet_detail_panel.tscn" id="3_jihco"]
-[ext_resource type="Script" path="res://Scripts/trend.gd" id="3_rmms6"]
+[ext_resource type="Script" path="res://Scripts/Data Classes/trend.gd" id="3_rmms6"]
 [ext_resource type="Texture2D" uid="uid://7wxx3k7kfttf" path="res://Assets/Textures/Trend icons/icon_sprites4.png" id="5_k0avo"]
 [ext_resource type="Script" path="res://Scripts/audio_manager.gd" id="5_yg1gs"]
 [ext_resource type="Texture2D" uid="uid://bytiwcqa6ahta" path="res://Assets/Textures/Trend icons/icon_sprites3.png" id="6_5nl3h"]
@@ -24,16 +24,27 @@
 [ext_resource type="AudioStream" uid="uid://b634acexltyft" path="res://Assets/Sound/SFX/high pitched beep.wav" id="10_ma6im"]
 [ext_resource type="Texture2D" uid="uid://dxw7y627nmo2b" path="res://Assets/Textures/Trend icons/icon_sprites1.png" id="10_riyjj"]
 [ext_resource type="Texture2D" uid="uid://bds7yfcb22wrl" path="res://Assets/Textures/Trend icons/icon_sprites6.png" id="11_vxvie"]
+[ext_resource type="Texture2D" uid="uid://dy4pilj121dbn" path="res://Assets/Sprites/Planets/Test Base.png" id="12_jfotc"]
 [ext_resource type="PackedScene" uid="uid://cl1oc80j2h8t" path="res://Scenes/Panels/DirectMessages/dm_panel.tscn" id="12_nuhxh"]
+[ext_resource type="Script" path="res://Scripts/Data Classes/planet_assets.gd" id="13_y7fks"]
+[ext_resource type="Texture2D" uid="uid://c213f1ugmphef" path="res://Assets/Sprites/Planets/Space Layer/Test Ring.png" id="14_eo5dw"]
+[ext_resource type="Texture2D" uid="uid://bevi22486yurg" path="res://Assets/Sprites/Planets/Nothing.png" id="15_chgs3"]
 [ext_resource type="PackedScene" uid="uid://dm8sbepqrqqf" path="res://Assets/Models/Map Housing/map_housing.glb" id="15_d3e6a"]
 [ext_resource type="PackedScene" uid="uid://dfl2r6koee71t" path="res://Scenes/Panels/Engagement Panel/engagement_panel.tscn" id="15_v5d7t"]
+[ext_resource type="Texture2D" uid="uid://da84rob0m88oq" path="res://Assets/Sprites/Planets/Surface Layer/Test Continents.png" id="15_vx2wu"]
+[ext_resource type="Texture2D" uid="uid://cifcjuyqberp2" path="res://Assets/Sprites/Planets/Space Layer/Test Wide Ring.png" id="16_njebx"]
+[ext_resource type="Texture2D" uid="uid://25kunbke2c8m" path="res://Assets/Sprites/Planets/Space Layer/Test Moon.png" id="17_jtkjo"]
+[ext_resource type="Texture2D" uid="uid://tryweehalerh" path="res://Assets/Sprites/Planets/Space Layer/Test 2 Moons.png" id="18_a0ban"]
 [ext_resource type="PackedScene" uid="uid://b76d2niwraray" path="res://Assets/Models/Console/console.glb" id="19_1nssx"]
 [ext_resource type="Material" uid="uid://cc3dgmf83661p" path="res://Assets/Models/Debug/base_material.tres" id="19_aaicx"]
 [ext_resource type="PackedScene" uid="uid://4q6ffdbifmiq" path="res://Assets/Models/Center Console/center_cover.glb" id="19_kqdby"]
+[ext_resource type="Texture2D" uid="uid://0tahrg82xpsv" path="res://Assets/Sprites/Planets/Surface Layer/Test Islands.png" id="20_lakcn"]
+[ext_resource type="Texture2D" uid="uid://vi54cogh8if0" path="res://Assets/Sprites/Planets/Surface Layer/Test Stripes.png" id="21_m2y3b"]
 [ext_resource type="PackedScene" uid="uid://dy78uo5twypni" path="res://Assets/Models/Ship/ship.glb" id="25_x4phh"]
 [ext_resource type="PackedScene" uid="uid://c2jsmrlnsia25" path="res://Assets/Models/Console/console_corner.glb" id="26_2k6bk"]
 [ext_resource type="PackedScene" uid="uid://cj7lt7h1eln8u" path="res://Assets/Models/Ship/ship_flipped.glb" id="26_bjhni"]
 [ext_resource type="PackedScene" uid="uid://dfw26nh8vrc34" path="res://Assets/Models/Console/console_corner_flipped.glb" id="27_i3u00"]
+[ext_resource type="PackedScene" uid="uid://bs37fvksqyyuw" path="res://Scenes/planet_display_3d.tscn" id="40_kcvc0"]
 
 [sub_resource type="Resource" id="Resource_0rod6"]
 script = ExtResource("3_rmms6")
@@ -77,8 +88,15 @@ color = Color(1, 0.530439, 0.59765, 1)
 name = "Movies"
 icon = ExtResource("11_vxvie")
 
+[sub_resource type="Resource" id="Resource_1s442"]
+script = ExtResource("13_y7fks")
+base = ExtResource("12_jfotc")
+surface_layers = Array[Texture2D]([ExtResource("15_chgs3"), ExtResource("15_vx2wu"), ExtResource("20_lakcn"), ExtResource("21_m2y3b")])
+space_layers = Array[Texture2D]([ExtResource("15_chgs3"), ExtResource("14_eo5dw"), ExtResource("16_njebx"), ExtResource("17_jtkjo"), ExtResource("18_a0ban")])
+
 [sub_resource type="Environment" id="Environment_llmir"]
 background_mode = 1
+background_color = Color(0.10386, 0.0531388, 0.171863, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qa3c5"]
 resource_local_to_scene = true
@@ -251,6 +269,7 @@ minigame_panel_animator = NodePath("../AnimationPlayer")
 unique_name_in_owner = true
 script = ExtResource("2_46fxp")
 trends = Array[ExtResource("3_rmms6")]([SubResource("Resource_0rod6"), SubResource("Resource_ddfdv"), SubResource("Resource_3g2ty"), SubResource("Resource_4mpih"), SubResource("Resource_vgo3p"), SubResource("Resource_y3loq"), SubResource("Resource_egp12")])
+planet_assets = SubResource("Resource_1s442")
 
 [node name="AudioManager" type="Node" parent="."]
 unique_name_in_owner = true
@@ -370,6 +389,9 @@ polygon = PackedVector2Array(0, 0, 5, 0, 8, 3, 8, 8, 4, 8, -4, 8, -8, 8, -8, 3, 
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 3, -4)
 material_override = ExtResource("19_aaicx")
 polygon = PackedVector2Array(0, 0, 4, 0, 7, 3, 7, 8, 4, 8, -4, 8, -7, 8, -7, 3, -4.06801, 0.0925572)
+
+[node name="Planet Display 3D" parent="." instance=ExtResource("40_kcvc0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -13)
 
 [connection signal="input_event" from="PlanetDetailPanel/WarpButton/Area3D" to="Map" method="_on_area_3d_input_event"]
 

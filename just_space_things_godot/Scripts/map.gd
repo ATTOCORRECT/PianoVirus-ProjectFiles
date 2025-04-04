@@ -122,7 +122,11 @@ func _on_area_3d_input_event(_camera: Node, event: InputEvent, _event_position: 
 			Singleton.audio_manager.play_button_takeoff_sound()
 			print("sound played: Takeoff sound")
 			
+			Singleton.planet_display.clear_planet_textures()
+			
 			await get_tree().create_timer(3.0).timeout
 			cooldown_timer = false
 			if target_star.spent == false:
 				Singleton.trend_select.enable_buttons()
+			
+			Singleton.planet_display.update_planet_textures(Singleton.active_planet_data.planet_asset)
