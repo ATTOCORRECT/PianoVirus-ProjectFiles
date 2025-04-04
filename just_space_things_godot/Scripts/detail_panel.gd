@@ -6,6 +6,7 @@ extends Control
 @export var planet_display_ui : Control
 
 var font = load("res://Assets/Fonts/terminal-grotesque.ttf")
+var font_2 = load("res://Assets/Fonts/JustSpaceThings_Draft1-Regular.ttf")
 var null_sprite = load("res://Assets/Textures/Trend icons/nullicon.png")
 
 func _enter_tree() -> void:
@@ -49,8 +50,8 @@ func update_text():
 	
 	#planet name
 	planet_name.clear()
-	planet_name.push_font(font)
-	planet_name.push_font_size(112)
+	planet_name.push_font(font_2)
+	planet_name.push_font_size(128)
 	
 	var text_planet_name = str(Singleton.Selected_planet_data.random_id) # change for later
 	planet_name.append_text(text_planet_name)

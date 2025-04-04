@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dplusmxm5deno"
-path="res://.godot/imported/monitor_30x20_texture.png-43e872d195e246171d69cd80089f8d5e.ctex"
+uid="uid://bk2wd0kqfy1lm"
+path="res://.godot/imported/PATTERN2.png-df6bc04b57b6f478b715b66891ffcbe6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Models/Monitors/monitor_30x20_texture.png"
-dest_files=["res://.godot/imported/monitor_30x20_texture.png-43e872d195e246171d69cd80089f8d5e.ctex"]
+source_file="res://Assets/Sprites/Planets/Surface layer/PATTERN2.png"
+dest_files=["res://.godot/imported/PATTERN2.png-df6bc04b57b6f478b715b66891ffcbe6.ctex"]
 
 [params]
 

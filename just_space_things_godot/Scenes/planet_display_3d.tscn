@@ -14,7 +14,9 @@ texture_filter = 0
 [node name="Planet Surface" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.001)
 texture_filter = 0
+render_priority = 1
 
 [node name="Planet Space" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.002)
 texture_filter = 0
+render_priority = 2

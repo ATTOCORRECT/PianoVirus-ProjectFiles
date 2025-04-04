@@ -8,7 +8,7 @@ enum TimerState {
 var timer_state = TimerState.RUN
 
 var timer = Timer.new()
-var wait_time = 15
+var wait_time = 20
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	timer.wait_time = wait_time
