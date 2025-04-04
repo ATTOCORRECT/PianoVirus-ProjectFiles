@@ -10,9 +10,8 @@ var messageIndex = 0
 func _ready() -> void:
 	pass
 
-func _on_timer_timeout() -> void:
-		messageScreen.new_message()
-		if (messageIndex<TimeBetweenMessages.size()):
-			timer.start(TimeBetweenMessages[messageIndex])
-			messageIndex += 1
-	
+func _on_message_timer_timeout() -> void:
+	messageScreen.new_message()
+	if (messageIndex<TimeBetweenMessages.size()):
+		timer.start(TimeBetweenMessages[messageIndex])
+		messageIndex += 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://co3x8wqu1jmbh"]
+[gd_scene load_steps=61 format=3 uid="uid://co3x8wqu1jmbh"]
 
 [ext_resource type="PackedScene" uid="uid://y712fbtjxkb3" path="res://Scenes/Panels/Map/map.tscn" id="1_a0s2q"]
 [ext_resource type="Script" path="res://Scripts/minigame_controller.gd" id="1_arlly"]
@@ -108,6 +108,11 @@ albedo_texture = ExtResource("8_e4v3j")
 texture_filter = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hp3yr"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("8_e4v3j")
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ghl4j"]
 resource_local_to_scene = true
 albedo_texture = ExtResource("8_e4v3j")
 texture_filter = 0
@@ -343,6 +348,12 @@ transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 4, -0.05, 
 [node name="dm_panel" parent="." instance=ExtResource("12_nuhxh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -1, -3.7)
 
+[node name="MeshInstance3D" parent="dm_panel/Button" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ghl4j")
+
+[node name="messageTimer" parent="dm_panel" index="3"]
+autostart = true
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../MinigameMarker")
 libraries = {
@@ -395,8 +406,7 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 10, -100)
 [node name="Planet Display 3D" parent="Marker3D" instance=ExtResource("40_kcvc0")]
 
 [connection signal="input_event" from="PlanetDetailPanel/WarpButton/Area3D" to="Map" method="_on_area_3d_input_event"]
-[connection signal="input_event" from="PlanetDetailPanel/Button1/Area3D" to="PlanetDetailPanel/Trend Selection/Viewport/Trend Selection UI" method="_button_1_input_event"]
-[connection signal="input_event" from="PlanetDetailPanel/Button2/Area3D" to="PlanetDetailPanel/Trend Selection/Viewport/Trend Selection UI" method="_button_2_input_event"]
+[connection signal="input_event" from="dm_panel/Button/Area3D" to="dm_panel/Interactive Screen/Viewport/direct_messages" method="_on_area_3d_input_event"]
 
 [editable path="PlanetDetailPanel"]
 [editable path="PlanetDetailPanel/Planet Detail"]
@@ -407,3 +417,7 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 10, -100)
 [editable path="PlanetDetailPanel/Model"]
 [editable path="TrendGraphPanel"]
 [editable path="TrendGraphPanel/Interactive Screen"]
+[editable path="dm_panel"]
+[editable path="dm_panel/Interactive Screen"]
+[editable path="dm_panel/Interactive Screen/Viewport/direct_messages"]
+[editable path="dm_panel/Button"]
