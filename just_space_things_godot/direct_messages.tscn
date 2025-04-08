@@ -1,44 +1,80 @@
-[gd_scene load_steps=12 format=3 uid="uid://g7f7el2gx4ia"]
+[gd_scene load_steps=20 format=3 uid="uid://g7f7el2gx4ia"]
 
 [ext_resource type="Script" path="res://Scripts/direct_messages.gd" id="1_7ewgt"]
 [ext_resource type="Script" path="res://Scripts/dm_data.gd" id="2_fbcgs"]
 [ext_resource type="Script" path="res://Scripts/sender_res.gd" id="3_lyt44"]
+[ext_resource type="Texture2D" uid="uid://creyxhkts34ix" path="res://Assets/Sprites/pfps/manager_profileicon.png" id="3_mlwet"]
+[ext_resource type="Texture2D" uid="uid://05y6i8e5fnfl" path="res://Assets/Sprites/pfps/pastelgirl_profileicon.png" id="5_xdkgh"]
 
 [sub_resource type="Resource" id="Resource_u85op"]
 script = ExtResource("3_lyt44")
 name = "Manager"
+pfp = ExtResource("3_mlwet")
 
 [sub_resource type="Resource" id="Resource_01h6g"]
 script = ExtResource("2_fbcgs")
 sender = SubResource("Resource_u85op")
-message = "[font_size={32}]Welcome to the Star Fleet! To start your content journey with us, choose a planet to travel to on the map."
+message = "[font_size={32}] Welcome to the Star Fleet! We are delighted to have you join us as one of our new galactic content producers!"
+
+[sub_resource type="Resource" id="Resource_761gc"]
+script = ExtResource("3_lyt44")
+name = "Manager"
+pfp = ExtResource("3_mlwet")
+
+[sub_resource type="Resource" id="Resource_j0oru"]
+script = ExtResource("2_fbcgs")
+sender = SubResource("Resource_761gc")
+message = "[font_size={32}] There's no time to wait, choose a planet from the map on the left to get started."
 
 [sub_resource type="Resource" id="Resource_orqg2"]
 script = ExtResource("3_lyt44")
-name = "test"
+name = "Manager"
+pfp = ExtResource("3_mlwet")
 
 [sub_resource type="Resource" id="Resource_iaf0p"]
 script = ExtResource("2_fbcgs")
 sender = SubResource("Resource_orqg2")
-message = "t[font_size={32}]Once you're sure that's where you want to go, click the red button to travel there!"
+message = "[font_size={32}] Perfect, now push that big red button to travel there."
 
 [sub_resource type="Resource" id="Resource_l2rft"]
 script = ExtResource("3_lyt44")
 name = "Manager"
+pfp = ExtResource("3_mlwet")
 
 [sub_resource type="Resource" id="Resource_pi4kc"]
 script = ExtResource("2_fbcgs")
 sender = SubResource("Resource_l2rft")
-message = "[font_size={32}]Each planet has 2 trends you can make a post about. Once you've chosen a trend, complete the task to make the post."
+message = "[font_size={32}]Each planet has different things that are trending. Make sure you're choosing trends that maximize your Engagement."
 
-[sub_resource type="Resource" id="Resource_tfch6"]
+[sub_resource type="Resource" id="Resource_chw4f"]
 script = ExtResource("3_lyt44")
 name = "Manager"
+pfp = ExtResource("3_mlwet")
 
-[sub_resource type="Resource" id="Resource_aqard"]
+[sub_resource type="Resource" id="Resource_77i0o"]
 script = ExtResource("2_fbcgs")
-sender = SubResource("Resource_tfch6")
-message = "[font_size={32}]You've earned Engagement from your post! Keep growing your Engagement to make the most out of your role in the Star Fleet!"
+sender = SubResource("Resource_chw4f")
+message = "[font_size={32}] Here in the Star Fleet, Engagemnt is money. We're keeping you afloat out there in the cosmos, so make sure you hold up your end of the bargain, too. Ciao!"
+
+[sub_resource type="Resource" id="Resource_mcoiq"]
+script = ExtResource("3_lyt44")
+name = "Lillie"
+pfp = ExtResource("5_xdkgh")
+
+[sub_resource type="Resource" id="Resource_y8lhq"]
+script = ExtResource("2_fbcgs")
+sender = SubResource("Resource_mcoiq")
+message = "[font_size={32}] Hiya, newbie! I'm Lillie, one of your \"costars\". Even though I'm soooo popular right now, I still like to take time to help out smaller creators <3"
+
+[sub_resource type="Resource" id="Resource_k2cj6"]
+script = ExtResource("3_lyt44")
+name = "Lillie"
+pfp = ExtResource("5_xdkgh")
+
+[sub_resource type="Resource" id="Resource_k8e4y"]
+script = ExtResource("2_fbcgs")
+sender = SubResource("Resource_k2cj6")
+message = "[font_size={32}] Here's a little hint that sleezeball probably didn't tell you: that chart of weird lines on the left is the trend graph. It lets you see which trends are performing well, and which ones just aren't worth your time."
 
 [node name="direct_messages" type="Control"]
 layout_mode = 3
@@ -49,7 +85,7 @@ offset_bottom = -987.888
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7ewgt")
-Messages = Array[ExtResource("2_fbcgs")]([SubResource("Resource_01h6g"), SubResource("Resource_iaf0p"), SubResource("Resource_pi4kc"), SubResource("Resource_aqard")])
+Messages = Array[ExtResource("2_fbcgs")]([SubResource("Resource_01h6g"), SubResource("Resource_j0oru"), SubResource("Resource_iaf0p"), SubResource("Resource_pi4kc"), SubResource("Resource_77i0o"), SubResource("Resource_y8lhq"), SubResource("Resource_k8e4y")])
 
 [node name="bg_color" type="ColorRect" parent="."]
 layout_mode = 1

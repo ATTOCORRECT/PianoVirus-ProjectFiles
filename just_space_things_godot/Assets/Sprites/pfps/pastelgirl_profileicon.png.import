@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dplusmxm5deno"
-path="res://.godot/imported/monitor_30x20_texture.png-43e872d195e246171d69cd80089f8d5e.ctex"
+uid="uid://05y6i8e5fnfl"
+path="res://.godot/imported/pastelgirl_profileicon.png-86e06e210890a46b1ce0cf83cc87e062.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Models/Monitors/monitor_30x20_texture.png"
-dest_files=["res://.godot/imported/monitor_30x20_texture.png-43e872d195e246171d69cd80089f8d5e.ctex"]
+source_file="res://Assets/Sprites/pfps/pastelgirl_profileicon.png"
+dest_files=["res://.godot/imported/pastelgirl_profileicon.png-86e06e210890a46b1ce0cf83cc87e062.ctex"]
 
 [params]
 

@@ -26,3 +26,6 @@ func update_planet_textures(planet_asset : PlanetAsset):
 	planet_space_texture.texture  = planet_asset.space_layer
 	planet_space_texture.modulate = planet_asset.space_layer_color
 	planet_space_texture.rotation_degrees = Vector3(0,0, -planet_asset.space_layer_rotation)
+	
+	position = Vector3(randf_range(-7,7), randf_range(-3,3), 0)
+	scale = randf_range(1,6) * Vector3.ONE

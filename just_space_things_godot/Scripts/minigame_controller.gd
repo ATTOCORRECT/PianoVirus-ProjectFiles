@@ -52,3 +52,4 @@ func minigame_failed():
 	await get_tree().create_timer(1).timeout
 	Singleton.map.spend_current_star()
 	unload_minigame()
+	Singleton.engagement.lose()

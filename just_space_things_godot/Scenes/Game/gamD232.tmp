@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://co3x8wqu1jmbh"]
+[gd_scene load_steps=60 format=3 uid="uid://co3x8wqu1jmbh"]
 
 [ext_resource type="PackedScene" uid="uid://y712fbtjxkb3" path="res://Scenes/Panels/Map/map.tscn" id="1_a0s2q"]
 [ext_resource type="Script" path="res://Scripts/minigame_controller.gd" id="1_arlly"]
@@ -24,22 +24,21 @@
 [ext_resource type="AudioStream" uid="uid://b634acexltyft" path="res://Assets/Sound/SFX/high pitched beep.wav" id="10_ma6im"]
 [ext_resource type="Texture2D" uid="uid://dxw7y627nmo2b" path="res://Assets/Textures/Trend icons/icon_sprites1.png" id="10_riyjj"]
 [ext_resource type="Texture2D" uid="uid://bds7yfcb22wrl" path="res://Assets/Textures/Trend icons/icon_sprites6.png" id="11_vxvie"]
-[ext_resource type="Texture2D" path="res://Assets/Sprites/Planets/Test Base.png" id="12_jfotc"]
+[ext_resource type="Texture2D" uid="uid://jo50d5ofy80m" path="res://Assets/Sprites/Planets/PLANET.png" id="12_8xntv"]
 [ext_resource type="PackedScene" uid="uid://cl1oc80j2h8t" path="res://Scenes/Panels/DirectMessages/dm_panel.tscn" id="12_nuhxh"]
 [ext_resource type="Script" path="res://Scripts/Data Classes/planet_assets.gd" id="13_y7fks"]
-[ext_resource type="Texture2D" path="res://Assets/Sprites/Planets/Space Layer/Test Ring.png" id="14_eo5dw"]
-[ext_resource type="Texture2D" uid="uid://bevi22486yurg" path="res://Assets/Sprites/Planets/Nothing.png" id="15_chgs3"]
+[ext_resource type="Texture2D" uid="uid://bevi22486yurg" path="res://Assets/Sprites/Planets/Nothing.png" id="14_sqnv4"]
 [ext_resource type="PackedScene" uid="uid://dm8sbepqrqqf" path="res://Assets/Models/Map Housing/map_housing.glb" id="15_d3e6a"]
 [ext_resource type="PackedScene" uid="uid://dfl2r6koee71t" path="res://Scenes/Panels/Engagement Panel/engagement_panel.tscn" id="15_v5d7t"]
-[ext_resource type="Texture2D" path="res://Assets/Sprites/Planets/Surface Layer/Test Continents.png" id="15_vx2wu"]
-[ext_resource type="Texture2D" path="res://Assets/Sprites/Planets/Space Layer/Test Wide Ring.png" id="16_njebx"]
-[ext_resource type="Texture2D" path="res://Assets/Sprites/Planets/Space Layer/Test Moon.png" id="17_jtkjo"]
-[ext_resource type="Texture2D" path="res://Assets/Sprites/Planets/Space Layer/Test 2 Moons.png" id="18_a0ban"]
 [ext_resource type="PackedScene" uid="uid://b76d2niwraray" path="res://Assets/Models/Console/console.glb" id="19_1nssx"]
+[ext_resource type="Texture2D" uid="uid://b22wh8rbysxq0" path="res://Assets/Sprites/Planets/Surface layer/PATTERN1.png" id="19_a15h7"]
 [ext_resource type="Material" uid="uid://cc3dgmf83661p" path="res://Assets/Models/Debug/base_material.tres" id="19_aaicx"]
 [ext_resource type="PackedScene" uid="uid://4q6ffdbifmiq" path="res://Assets/Models/Center Console/center_cover.glb" id="19_kqdby"]
-[ext_resource type="Texture2D" path="res://Assets/Sprites/Planets/Surface Layer/Test Islands.png" id="20_lakcn"]
-[ext_resource type="Texture2D" path="res://Assets/Sprites/Planets/Surface Layer/Test Stripes.png" id="21_m2y3b"]
+[ext_resource type="Texture2D" uid="uid://bk2wd0kqfy1lm" path="res://Assets/Sprites/Planets/Surface layer/PATTERN2.png" id="20_pye7m"]
+[ext_resource type="Texture2D" uid="uid://cnkxvmx1jglpj" path="res://Assets/Sprites/Planets/Surface layer/PATTERN3.png" id="21_pp85b"]
+[ext_resource type="Texture2D" uid="uid://b4xppunk4820" path="res://Assets/Sprites/Planets/Surface layer/PATTERN4.png" id="22_up6a1"]
+[ext_resource type="Texture2D" uid="uid://c8jgf337v1asl" path="res://Assets/Sprites/Planets/Surface layer/PATTERN5.png" id="23_vchbp"]
+[ext_resource type="Texture2D" uid="uid://dn2xk54al4pxb" path="res://Assets/Sprites/Planets/Surface layer/PATTERN6.png" id="24_cvn0h"]
 [ext_resource type="PackedScene" uid="uid://dy78uo5twypni" path="res://Assets/Models/Ship/ship.glb" id="25_x4phh"]
 [ext_resource type="PackedScene" uid="uid://c2jsmrlnsia25" path="res://Assets/Models/Console/console_corner.glb" id="26_2k6bk"]
 [ext_resource type="PackedScene" uid="uid://cj7lt7h1eln8u" path="res://Assets/Models/Ship/ship_flipped.glb" id="26_bjhni"]
@@ -90,9 +89,9 @@ icon = ExtResource("11_vxvie")
 
 [sub_resource type="Resource" id="Resource_1s442"]
 script = ExtResource("13_y7fks")
-base = ExtResource("12_jfotc")
-surface_layers = Array[Texture2D]([ExtResource("15_chgs3"), ExtResource("15_vx2wu"), ExtResource("20_lakcn"), ExtResource("21_m2y3b")])
-space_layers = Array[Texture2D]([ExtResource("15_chgs3"), ExtResource("14_eo5dw"), ExtResource("16_njebx"), ExtResource("17_jtkjo"), ExtResource("18_a0ban")])
+base = ExtResource("12_8xntv")
+surface_layers = Array[Texture2D]([ExtResource("14_sqnv4"), ExtResource("19_a15h7"), ExtResource("20_pye7m"), ExtResource("21_pp85b"), ExtResource("22_up6a1"), ExtResource("23_vchbp"), ExtResource("24_cvn0h")])
+space_layers = Array[Texture2D]([ExtResource("14_sqnv4")])
 
 [sub_resource type="Environment" id="Environment_llmir"]
 background_mode = 1
@@ -109,11 +108,6 @@ albedo_texture = ExtResource("8_e4v3j")
 texture_filter = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hp3yr"]
-resource_local_to_scene = true
-albedo_texture = ExtResource("8_e4v3j")
-texture_filter = 0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ghl4j"]
 resource_local_to_scene = true
 albedo_texture = ExtResource("8_e4v3j")
 texture_filter = 0
@@ -349,12 +343,6 @@ transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 4, -0.05, 
 [node name="dm_panel" parent="." instance=ExtResource("12_nuhxh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -1, -3.7)
 
-[node name="MeshInstance3D" parent="dm_panel/Button" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_ghl4j")
-
-[node name="messageTimer" parent="dm_panel" index="3"]
-autostart = true
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../MinigameMarker")
 libraries = {
@@ -402,12 +390,13 @@ material_override = ExtResource("19_aaicx")
 polygon = PackedVector2Array(0, 0, 4, 0, 7, 3, 7, 8, 4, 8, -4, 8, -7, 8, -7, 3, -4.06801, 0.0925572)
 
 [node name="Marker3D" type="Marker3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 10, -100)
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 2, -100)
 
 [node name="Planet Display 3D" parent="Marker3D" instance=ExtResource("40_kcvc0")]
 
 [connection signal="input_event" from="PlanetDetailPanel/WarpButton/Area3D" to="Map" method="_on_area_3d_input_event"]
-[connection signal="input_event" from="dm_panel/Button/Area3D" to="dm_panel/Interactive Screen/Viewport/direct_messages" method="_on_area_3d_input_event"]
+[connection signal="input_event" from="PlanetDetailPanel/Button1/Area3D" to="PlanetDetailPanel/Trend Selection/Viewport/Trend Selection UI" method="_button_1_input_event"]
+[connection signal="input_event" from="PlanetDetailPanel/Button2/Area3D" to="PlanetDetailPanel/Trend Selection/Viewport/Trend Selection UI" method="_button_2_input_event"]
 
 [editable path="PlanetDetailPanel"]
 [editable path="PlanetDetailPanel/Planet Detail"]
@@ -418,7 +407,3 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 10, -100)
 [editable path="PlanetDetailPanel/Model"]
 [editable path="TrendGraphPanel"]
 [editable path="TrendGraphPanel/Interactive Screen"]
-[editable path="dm_panel"]
-[editable path="dm_panel/Interactive Screen"]
-[editable path="dm_panel/Interactive Screen/Viewport/direct_messages"]
-[editable path="dm_panel/Button"]
