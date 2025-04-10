@@ -1,16 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cl1oc80j2h8t"]
+[gd_scene load_steps=5 format=3 uid="uid://cl1oc80j2h8t"]
 
 [ext_resource type="PackedScene" uid="uid://cv1en8wupfl5t" path="res://Scenes/interactive_screen.tscn" id="1_60cor"]
 [ext_resource type="Script" path="res://Scripts/Direct Messages/dm_panel.gd" id="1_tcmo4"]
 [ext_resource type="PackedScene" uid="uid://g7f7el2gx4ia" path="res://direct_messages.tscn" id="2_epgcd"]
-[ext_resource type="PackedScene" uid="uid://b6gtfr75y14no" path="res://Scenes/Controls/button.tscn" id="4_8x7vq"]
-[ext_resource type="Texture2D" uid="uid://ctgoirmgbo6si" path="res://Assets/Models/buttons/console_small_button.png" id="5_2kq8d"]
 [ext_resource type="PackedScene" uid="uid://dlfenh0ck17nd" path="res://Assets/Models/Monitors/monitor_30x20_flipped.glb" id="7_d38s4"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h0uc0"]
-resource_local_to_scene = true
-albedo_texture = ExtResource("5_2kq8d")
-texture_filter = 0
 
 [node name="dm_panel" type="Node3D"]
 script = ExtResource("1_tcmo4")
@@ -24,18 +17,10 @@ size = Vector2i(960, 640)
 
 [node name="direct_messages" parent="Interactive Screen/Viewport" index="0" instance=ExtResource("2_epgcd")]
 
-[node name="Button" parent="." instance=ExtResource("4_8x7vq")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1, 0, 0)
-
-[node name="MeshInstance3D" parent="Button" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_h0uc0")
-
 [node name="blockbench_export" parent="." instance=ExtResource("7_d38s4")]
 
 [node name="messageTimer" type="Timer" parent="."]
 
-[connection signal="input_event" from="Button/Area3D" to="Interactive Screen/Viewport/direct_messages" method="_on_area_3d_input_event"]
 [connection signal="timeout" from="messageTimer" to="." method="_on_message_timer_timeout"]
 
 [editable path="Interactive Screen"]
-[editable path="Button"]

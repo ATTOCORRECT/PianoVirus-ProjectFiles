@@ -21,7 +21,7 @@ func _ready() -> void:
 	Singleton.minigame_controller.minigame_failed()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	queue_redraw()
 
 func _draw() -> void:
@@ -38,9 +38,9 @@ func _draw() -> void:
 
 func draw_faliure():
 	var center = size/2
-	var min = min(size.x/2,size.y/2)
-	var width = min * 0.25
-	var span = min - width/2 - 20
+	var min_size = min(size.x/2,size.y/2)
+	var width = min_size * 0.25
+	var span = min_size - width/2 - 20
 	
 	var color = Color.RED
 	
@@ -49,9 +49,9 @@ func draw_faliure():
 
 func draw_sucess():
 	var center = size/2
-	var min = min(size.x/2,size.y/2)
-	var width = min * 0.25
-	var span = min - width/2 - 20
+	var min_size = min(size.x/2,size.y/2)
+	var width = min_size * 0.25
+	var span = min_size - width/2 - 20
 	
 	var color = Color.YELLOW_GREEN
 	
@@ -63,9 +63,9 @@ func draw_sucess():
 
 func draw_timer_pie():
 	var center = size/2
-	var min = min(size.x/2,size.y/2)
-	var width = min * 0.5
-	var radius = min - width/2 - 10
+	var min_size = min(size.x/2,size.y/2)
+	var width = min_size * 0.5
+	var radius = min_size - width/2 - 10
 	var start_angle = deg_to_rad(-90)
 	var time_left = timer.time_left / wait_time
 	var end_angle = deg_to_rad(1 - time_left * 360) + start_angle

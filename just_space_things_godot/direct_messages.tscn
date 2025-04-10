@@ -1,10 +1,11 @@
-[gd_scene load_steps=20 format=3 uid="uid://g7f7el2gx4ia"]
+[gd_scene load_steps=21 format=3 uid="uid://g7f7el2gx4ia"]
 
 [ext_resource type="Script" path="res://Scripts/direct_messages.gd" id="1_7ewgt"]
 [ext_resource type="Script" path="res://Scripts/dm_data.gd" id="2_fbcgs"]
 [ext_resource type="Script" path="res://Scripts/sender_res.gd" id="3_lyt44"]
 [ext_resource type="Texture2D" uid="uid://creyxhkts34ix" path="res://Assets/Sprites/pfps/manager_profileicon.png" id="3_mlwet"]
 [ext_resource type="Texture2D" uid="uid://05y6i8e5fnfl" path="res://Assets/Sprites/pfps/pastelgirl_profileicon.png" id="5_xdkgh"]
+[ext_resource type="Texture2D" uid="uid://b7yvd0bxe8da1" path="res://Assets/Textures/trendwindow_texture.png" id="6_6i3od"]
 
 [sub_resource type="Resource" id="Resource_u85op"]
 script = ExtResource("3_lyt44")
@@ -87,14 +88,11 @@ grow_vertical = 2
 script = ExtResource("1_7ewgt")
 Messages = Array[ExtResource("2_fbcgs")]([SubResource("Resource_01h6g"), SubResource("Resource_j0oru"), SubResource("Resource_iaf0p"), SubResource("Resource_pi4kc"), SubResource("Resource_77i0o"), SubResource("Resource_y8lhq"), SubResource("Resource_k8e4y")])
 
-[node name="bg_color" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 300.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 960.0
+offset_bottom = 640.0
+texture = ExtResource("6_6i3od")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 2

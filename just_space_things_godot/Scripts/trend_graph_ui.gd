@@ -39,7 +39,8 @@ func _process(_delta: float) -> void:
 func slow_process():
 	while true:
 		await get_tree().create_timer(1.0).timeout
-		step_graph()
+		if get_tree().paused == false:
+			step_graph()
 
 func step_graph():
 	for i in Singleton.trends.size():
